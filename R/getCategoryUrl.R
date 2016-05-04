@@ -7,6 +7,7 @@
 #' @return Get data.frame(cate_name, cate_url).
 #' @export
 #' @import rvest
+#'
 
 getCategoryUrl<-function(){
 
