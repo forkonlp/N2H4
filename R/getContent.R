@@ -1,0 +1,6 @@
+getContent<-function(newslists=newslists){
+  
+  
+  
+  
+}

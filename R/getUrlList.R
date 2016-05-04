@@ -1,0 +1,7 @@
+getUrlList<-function(urls=urls){
+  
+  
+  
+  
+}
+
