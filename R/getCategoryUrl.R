@@ -13,7 +13,7 @@ getCategoryUrl<-function(){
 
   home <- "http://news.naver.com/"
   tem <- readLines(home,warn=F)
-  tem <- tem[grep("class=\"m[2-8] nclick",tem)]
+  tem <- tem[grep("class=\"m[3-8] nclick",tem)]
   cate_names<-xml2::read_html(paste0(tem,collapse=" ")) %>%
     rvest::html_nodes("a") %>%
     rvest::html_text()
