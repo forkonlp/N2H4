@@ -6,8 +6,8 @@
 #'
 #' @return Get data.frame(cate_name, cate_url).
 #' @export
+#' @import xml2
 #' @import rvest
-#'
 
 getCategoryUrl<-function(){
 
@@ -24,11 +24,11 @@ getCategoryUrl<-function(){
       tem <- tem[-grep("snb_s17",tem)]
     }
     tem <- tem[-length(tem)]
-    cate_names<-rvest::read_html(paste0(tem,collapse=" ")) %>%
+    cate_names<-xml2::read_html(paste0(tem,collapse=" ")) %>%
       rvest::html_nodes("a") %>%
       rvest::html_text()
     Encoding(cate_names)<-"UTF-8"
-    cate_urls<-rvest::read_html(paste0(tem,collapse=" ")) %>%
+    cate_urls<-xml2::read_html(paste0(tem,collapse=" ")) %>%
       rvest::html_nodes("a") %>%
       rvest::html_attr("href")
 
