@@ -11,7 +11,14 @@
 
 getCategoryUrl<-function(){
 
-  cate_code<-data.frame(cate_name=c("정치","경제","사회","생활/문화","세계","IT/과학"),code=c(100,101,102,103,104,105))
+  home <- "http://news.naver.com/"
+  tem <- readLines(home,warn=F)
+  tem <- tem[grep("class=\"m[2-8] nclick",tem)]
+  cate_names<-xml2::read_html(paste0(tem,collapse=" ")) %>%
+    rvest::html_nodes("a") %>%
+    rvest::html_text()
+  Encoding(cate_names)<-"UTF-8"
+  cate_code<-data.frame(cate_name=cate_names,code=c(100,101,102,103,104,105))
   url  <- "http://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1="
   urls <- data.frame(cate_name=NA,cate_sub=NA,cate_url=NA)
   urls <- urls[-1,]
