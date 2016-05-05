@@ -11,13 +11,13 @@
 
 getCategoryUrl<-function(){
 
-  cate_code<-c(100,101,102,103,104,105)
+  cate_code<-data.frame(cate_name=c("정치","경제","사회","생활/문화","세계","IT/과학"),code=c(100,101,102,103,104,105))
   url  <- "http://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1="
-  urls <- data.frame(cate_name=NA,cate_url=NA)
+  urls <- data.frame(cate_name=NA,cate_sub=NA,cate_url=NA)
   urls <- urls[-1,]
-  for (code in cate_code){
+  for (code in 1:nrow(cate_code)){
 
-    category_url<-paste0(url,code)
+    category_url<-paste0(url,cate_code[code,2])
     tem <- readLines(category_url,warn=F)
     tem <- tem[grep("class=\"snb_s",tem)]
     if(!identical(grep("snb_s17",tem),integer(0))){
@@ -32,7 +32,7 @@ getCategoryUrl<-function(){
       rvest::html_nodes("a") %>%
       rvest::html_attr("href")
 
-    urls<-rbind(urls,data.frame(cate_name=cate_names,cate_url=cate_urls))
+    urls<-rbind(urls,data.frame(cate_name=cate_code[code,1],cate_sub=cate_names,cate_url=cate_urls))
   }
   return(urls)
 }
