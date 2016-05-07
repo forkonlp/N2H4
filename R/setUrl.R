@@ -27,7 +27,7 @@ setUrlByCategory <- function(select=select,targetDate=today()-1){
 #' @import lubridate
 #' @import RCurl
 
-setUrlQuery <- function(query="",targetDate=today()-1){
+setUrlByQuery <- function(query="",targetDate=today()-1){
 
   base_url   <- "http://news.naver.com/main/search/search.nhn?query="
   query_for_url  <- curlEscape(query)
