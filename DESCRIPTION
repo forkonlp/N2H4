@@ -21,4 +21,3 @@ LazyData: TRUE
 RoxygenNote: 5.0.1
 language: r
 cache: packages
-
