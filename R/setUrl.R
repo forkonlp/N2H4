@@ -31,7 +31,7 @@ setUrlByQuery <- function(query="",targetDate=today()-1){
 
   base_url   <- "http://news.naver.com/main/search/search.nhn?query="
   query_for_url  <- curlEscape(query)
-  urls        <- data.frame(query_name=query,query_for_url=query_for_url,query_url=paste0(base_url,query,"&startDate=",targetDate,"&endDate=",targetDate))
+  urls        <- data.frame(query_name=query,query_for_url=query_for_url,query_url=paste0(base_url,query_for_url,"&startDate=",targetDate,"&endDate=",targetDate),stringsAsFactors = F)
   return(urls)
 
 }

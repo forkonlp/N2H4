@@ -19,6 +19,9 @@ getContent<-function(url=url){
     html_text()
   datetime <- as.POSIXlt(datetime)
 
+  if(length(datetime)==1){edittime<-""}
+  if(length(datetime)==2){edittime<-datetime[2];datetime<-datetime[1]}
+
   press <- tem %>%
     html_nodes("div.article_header div a img") %>%
     html_attr("title")
@@ -32,6 +35,6 @@ getContent<-function(url=url){
 
 #  tet<-GET("https://apis.naver.com/commentBox/cbox5/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&_callback=window.__cbox_jindo_callback._9023&lang=ko&country=KR&objectId=news421%2C0002040415&categoryId=&pageSize=10&indexSize=10&groupId=&page=1&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=&userType=")
 
-  newsInfo <- data.frame(url=url,datetime=datetime,press=press,title=title,content=content)
+  newsInfo <- data.frame(url=url,datetime=datetime,edittime=edittime,press=press,title=title,content=content,stringsAsFactors = F)
   return(newsInfo)
 }
