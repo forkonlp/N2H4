@@ -4,13 +4,13 @@
 \alias{getContent}
 \title{Get naver news content from links.}
 \usage{
-getContent(newslists = AllurlList)
+getContent(url = url)
 }
 \arguments{
-\item{newslists}{is target links getting from getAllUrlList function.}
+\item{url}{is naver news link.}
 }
 \value{
-Get data.frame(cate_name, cate_sub, cate_url).
+Get data.frame(url,datetime,press,title,content).
 }
 \description{
 Get naver news content from links.
