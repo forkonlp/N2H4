@@ -10,9 +10,11 @@ setUrlByCategory <- function(targetDate=today()-1,select=select){
 
   targetDate <- gsub("-","",as.character(targetDate))
   urls <- getCategoryUrl(select=select)
-  urls <- paste0("http://news.naver.com",urls,"&date=",targetDate)
-  getPageNum(urls)
-
+  urls[,3] <- paste0("http://news.naver.com",urls[,3],"&date=",targetDate)
+  for (url in 1:nrow(urls)){
+    urls[url,4] <- getPageNum(urls[url,3])
+  }
+  names(urls)[4]<-"last_page_num"
 }
 
 setUrlQuery <- function(strDate=strDate,endDate=endDate,query=query,clusterSize=10){
