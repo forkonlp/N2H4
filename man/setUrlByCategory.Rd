@@ -4,7 +4,7 @@
 \alias{setUrlByCategory}
 \title{Get naver news urls from category.}
 \usage{
-setUrlByCategory(select = select, targetDate = today() - 1)
+setUrlByCategory(select = c(1, 2, 3, 4, 5, 6), targetDate = today() - 1)
 }
 \arguments{
 \item{select}{is target categories. Default is all}
