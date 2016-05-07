@@ -3,13 +3,13 @@
 #' No pram needed.
 #' Main category urls are written manually like blow.
 #' cate_code<-c(100,101,102,103,104,105)
-#'
-#' @return Get data.frame(cate_name, cate_url).
+#' @param select from 0 to 5 numeric values which mean categories.
+#' @return Get data.frame(cate_name, cate_sub, cate_url).
 #' @export
 #' @import xml2
 #' @import rvest
 
-getCategoryUrl<-function(){
+getCategoryUrl<-function(select=c(1,2,3,4,5,6)){
 
   home <- "http://news.naver.com/"
   tem <- readLines(home,warn=F)
@@ -22,6 +22,9 @@ getCategoryUrl<-function(){
   url  <- "http://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1="
   urls <- data.frame(cate_name=NA,cate_sub=NA,cate_url=NA)
   urls <- urls[-1,]
+
+  cate_code <- cate_code[select,]
+
   for (code in 1:nrow(cate_code)){
 
     category_url<-paste0(url,cate_code[code,2])
