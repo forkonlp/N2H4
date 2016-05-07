@@ -12,6 +12,7 @@ for (Date in strDate:endDate){
     print(url)
     newsData <- getContent(url)
     filenames <- substr(newsData$url,nchar(newsData$url)-9,nchar(newsData$url))
+    dir.create("./data",showWarnings = FALSE)
     write.csv(newsData,paste0("./data/",Date,"_",filenames,".csv"),row.names=F)
   }
 
@@ -42,6 +43,7 @@ for (Date in strDate:endDate){
     print(url)
     newsData <- getContent(url)
     filenames <- substr(newsData$url,nchar(newsData$url)-9,nchar(newsData$url))
+    dir.create("./data",showWarnings = FALSE)
     write.csv(newsData,paste0("./data/",Date,"_",filenames,".csv"),row.names=F)
   }
 
