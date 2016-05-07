@@ -19,3 +19,6 @@ URL: http://github.com/mrchypark/N2H4
 BugReports: http://github.com/mrchypark/N2H4/issues
 LazyData: TRUE
 RoxygenNote: 5.0.1
+language: r
+cache: packages
+
