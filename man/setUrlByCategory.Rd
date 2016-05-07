@@ -12,7 +12,7 @@ setUrlByCategory(select = select, targetDate = today() - 1)
 \item{targetDate}{is one date to get news like "2016-01-01". Default date is yesterday.}
 }
 \value{
-Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
+Get data.frame(cate_name, cate_sub, cate_url).
 }
 \description{
 There are 6 categories in never news.

@@ -5,7 +5,7 @@
 #'
 #' @param select is target categories. Default is all
 #' @param targetDate is one date to get news like "2016-01-01". Default date is yesterday.
-#' @return Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
+#' @return Get data.frame(cate_name, cate_sub, cate_url).
 #' @export
 #' @import lubridate
 
@@ -22,17 +22,17 @@ setUrlByCategory <- function(select=select,targetDate=today()-1){
 #'
 #' @param query is target keyword.
 #' @param targetDate is one date to get news like "2016-01-01". Default date is yesterday.
-#' @return Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
+#' @return Get data.frame(query_name, query_for_url, query_url).
 #' @export
 #' @import lubridate
 #' @import RCurl
 
 setUrlQuery <- function(query="",targetDate=today()-1){
 
-  url   <- "http://news.naver.com/main/search/search.nhn?query="
-  query <- curlEscape(query)
-  url <-paste0(url,query,"&startDate=",targetDate,"&endDate=",targetDate)
-  return(url)
+  base_url   <- "http://news.naver.com/main/search/search.nhn?query="
+  query_for_url  <- curlEscape(query)
+  urls        <- data.frame(query_name=query,query_for_url=query_for_url,query_url=paste0(base_url,query,"&startDate=",targetDate,"&endDate=",targetDate))
+  return(urls)
 
 }
 
