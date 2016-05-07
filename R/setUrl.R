@@ -1,13 +1,24 @@
-setUrlByCategory<-function(strDate=strDate,endDate=endDate,category=category){
+#' Get naver news urls from category or query.
+#'
+#' @param targetDate is one date to get news. Defult date is yesterday.
+#' @param select is target categories. Defult is all
+#' @return Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
+#' @export
+#' @import lubridate
 
+setUrlByCategory <- function(targetDate=today()-1,select=select){
 
+  targetDate <- gsub("-","",as.character(targetDate))
+  urls <- getCategoryUrl(select=select)
+  urls <- paste0("http://news.naver.com",urls,"&date=",targetDate)
+  getPageNum(urls)
 
 }
 
-setUrlQuery<-function(strDate=strDate,endDate=endDate,query=query,clusterSize=10){
+setUrlQuery <- function(strDate=strDate,endDate=endDate,query=query,clusterSize=10){
 
-  url<-"http://news.naver.com/main/search/search.nhn?"
-  query=URLencode(iconv(query, to="UTF-8"))
+  url   <- "http://news.naver.com/main/search/search.nhn?"
+  query <- URLencode(iconv(query, to="UTF-8"))
   #startDate=2016-01-01&endDate=2016-05-01
   #st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&
 

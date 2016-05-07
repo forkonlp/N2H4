@@ -1,6 +1,5 @@
 #' Get naver news sub_category names and urls recently.
 #'
-#' No pram needed.
 #' Main category urls are written manually like blow.
 #' cate_code<-c(100,101,102,103,104,105)
 #' @param select from 0 to 5 numeric values which mean categories.

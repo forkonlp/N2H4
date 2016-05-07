@@ -1,3 +1,14 @@
+#' Get urls last page number.
+#'
+#' Main category urls are written manually like blow.
+#' cate_code<-c(100,101,102,103,104,105)
+#' @param target urls getting function getCategoryUrl()
+#' @return Get page number to end
+#' @export
+#' @import xml2
+#' @import rvest
+#'
+#'
 getPageNum <- function(url){
 
   tem     <- readLines(url,warn=F)
