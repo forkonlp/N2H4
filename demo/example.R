@@ -24,4 +24,4 @@ strDate <- "2016-01-01"
 endDate <- "2016-01-02"
 
 
-urls <- setUrlByQuery(query="")
+urls <- setUrlByQuery(query="대통령")

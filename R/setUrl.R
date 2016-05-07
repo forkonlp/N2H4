@@ -9,7 +9,7 @@
 #' @export
 #' @import lubridate
 
-setUrlByCategory <- function(select=select,targetDate=today()-1){
+setUrlByCategory <- function(select=c(1,2,3,4,5,6),targetDate=today()-1){
 
   targetDate <- gsub("-","",as.character(targetDate))
   urls <- getCategoryUrl(select=select)
