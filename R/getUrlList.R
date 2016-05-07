@@ -33,7 +33,7 @@ getUrlList<-function(url=url){
       rvest::html_attr("href")
     news_links <- unique(news_links)
 
-    news_lists <- data.frame(news_title=news_title,news_links=news_links)
+    news_lists <- data.frame(news_title=news_title,news_links=news_links,stringsAsFactors = F)
     return(news_lists)
 
 }
