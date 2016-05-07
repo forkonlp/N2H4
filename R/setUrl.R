@@ -1,12 +1,15 @@
-#' Get naver news urls from category or query.
+#' Get naver news urls from category.
 #'
-#' @param targetDate is one date to get news like "2016-01-01". Defult date is yesterday.
-#' @param select is target categories. Defult is all
+#' There are 6 categories in never news.
+#' 1: Politics, 2: Economics, 3: Social, 4: Living / Culture, 5: World, 6: IT / science
+#'
+#' @param select is target categories. Default is all
+#' @param targetDate is one date to get news like "2016-01-01". Default date is yesterday.
 #' @return Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
 #' @export
 #' @import lubridate
 
-setUrlByCategory <- function(targetDate=today()-1,select=select){
+setUrlByCategory <- function(select=select,targetDate=today()-1){
 
   targetDate <- gsub("-","",as.character(targetDate))
   urls <- getCategoryUrl(select=select)
@@ -15,18 +18,21 @@ setUrlByCategory <- function(targetDate=today()-1,select=select){
 
 }
 
-setUrlQuery <- function(strDate=strDate,endDate=endDate,query=query,clusterSize=10){
+#' Get naver news urls from query.
+#'
+#' @param query is target keyword.
+#' @param targetDate is one date to get news like "2016-01-01". Default date is yesterday.
+#' @return Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
+#' @export
+#' @import lubridate
+#' @import RCurl
 
-  url   <- "http://news.naver.com/main/search/search.nhn?"
-  query <- URLencode(iconv(query, to="UTF-8"))
-  #startDate=2016-01-01&endDate=2016-05-01
-  #st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&
+setUrlQuery <- function(query="",targetDate=today()-1){
 
+  url   <- "http://news.naver.com/main/search/search.nhn?query="
+  query <- curlEscape(query)
+  url <-paste0(url,query,"&startDate=",targetDate,"&endDate=",targetDate)
+  return(url)
 
 }
-#&st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&stDate=range:20160101:20160501&detail=1&pd=4&r_cluster2_start=1&r_cluster2_display=10&start=1&display=5&startDate=2016-01-01&endDate=2016-05-01&dnaSo=rel.dsc
-#&st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&stDate=range:20160101:20160501&detail=0&pd=4&r_cluster2_start=1&r_cluster2_display=10&start=1&display=5&startDate=2016-01-01&endDate=2016-05-01&dnaSo=rel.dsc
-
-#&st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&stDate=range:20160101:20160501&detail=0&pd=4&r_cluster2_start=1&r_cluster2_display=10&start=1&display=5&startDate=2016-01-01&endDate=2016-05-01&page=2
-#&st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=rel.dsc&stDate=range:20160101:20160501&detail=1&pd=4&r_cluster2_start=1&r_cluster2_display=10&start=1&display=5&startDate=2016-01-01&endDate=2016-05-01&page=2
 

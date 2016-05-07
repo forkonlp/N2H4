@@ -4,14 +4,18 @@
 \alias{getCategoryUrl}
 \title{Get naver news sub_category names and urls recently.}
 \usage{
-getCategoryUrl()
+getCategoryUrl(select = c(1, 2, 3, 4, 5, 6))
+}
+\arguments{
+\item{select}{from 0 to 5 numeric values which mean categories.}
 }
 \value{
-Get data.frame(cate_name, cate_url).
+Get data.frame(cate_name, cate_sub, cate_url).
 }
 \description{
-No pram needed.
 Main category urls are written manually like blow.
 cate_code<-c(100,101,102,103,104,105)
+There are 6 categories in never news.
+1: Politics, 2: Economics, 3: Social, 4: Living / Culture, 5: World, 6: IT / science
 }
 

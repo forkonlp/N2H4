@@ -2,6 +2,9 @@
 #'
 #' Main category urls are written manually like blow.
 #' cate_code<-c(100,101,102,103,104,105)
+#' There are 6 categories in never news.
+#' 1: Politics, 2: Economics, 3: Social, 4: Living / Culture, 5: World, 6: IT / science
+#'
 #' @param select from 0 to 5 numeric values which mean categories.
 #' @return Get data.frame(cate_name, cate_sub, cate_url).
 #' @export

@@ -12,7 +12,8 @@ License: GPL-2
 Imports:
   xml2,
   rvest,
-  lubridate
+  lubridate,
+  RCurl
 URL: http://github.com/mrchypark/N2H4
 BugReports: http://github.com/mrchypark/N2H4/issues
 LazyData: TRUE
