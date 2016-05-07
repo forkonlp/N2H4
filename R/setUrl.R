@@ -1,6 +1,6 @@
 #' Get naver news urls from category or query.
 #'
-#' @param targetDate is one date to get news. Defult date is yesterday.
+#' @param targetDate is one date to get news like "2016-01-01". Defult date is yesterday.
 #' @param select is target categories. Defult is all
 #' @return Get data.frame(cate_name, cate_sub, cate_url, last_page_num).
 #' @export
@@ -11,10 +11,8 @@ setUrlByCategory <- function(targetDate=today()-1,select=select){
   targetDate <- gsub("-","",as.character(targetDate))
   urls <- getCategoryUrl(select=select)
   urls[,3] <- paste0("http://news.naver.com",urls[,3],"&date=",targetDate)
-  for (url in 1:nrow(urls)){
-    urls[url,4] <- getPageNum(urls[url,3])
-  }
-  names(urls)[4]<-"last_page_num"
+  return(urls)
+
 }
 
 setUrlQuery <- function(strDate=strDate,endDate=endDate,query=query,clusterSize=10){
