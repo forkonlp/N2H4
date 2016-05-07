@@ -5,4 +5,4 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load_gh("mrchypark/N2H4")
 ```
 
-please check code example.R
+please check code demo/example.R
