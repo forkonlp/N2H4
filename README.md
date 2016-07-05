@@ -17,6 +17,7 @@ favorite 호감순, reply 답글순, old 과거순, new 최신순 입니다.<br>
 
 댓글 정보인 성별 비율, 연령대 비율 등 데이터도 확인 할 수 있어 유용해 보입니다.<br>
 쓸모 없는 데이터도 많아서 한번 정리해서 옵션화 해보겠습니다.<br>
+getComment(url)$result$commentList[[1]] 하시면 익숙한 data.frame 형태로 댓글 데이터를 보실 수 있습니다.
 
 ## v.01
 
