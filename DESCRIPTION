@@ -14,7 +14,8 @@ Imports:
   rvest,
   lubridate,
   RCurl,
-  stringi
+  stringi,
+  jsonlite
 URL: http://github.com/mrchypark/N2H4
 BugReports: http://github.com/mrchypark/N2H4/issues
 LazyData: TRUE
