@@ -1,6 +1,7 @@
 # N2H4 
 ## 네이버 뉴스 크롤링을 위한 도구
-
+### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
+### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
 ```
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load_gh("mrchypark/N2H4")
@@ -22,6 +23,3 @@ favorite 호감순, reply 답글순, old 과거순, new 최신순 입니다.<br>
 MIT License.<br>
 Check code demo/example.R<br>
 Please [let me know](mailto:mrchypark@gmail.com) use this package.
-
-## MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
-## 기왕 사용하시는거 출처를 밝혀주시면 감사하겠습니다.
