@@ -7,7 +7,7 @@ Author: person("ChanYub", "Park", email = "mrchypark@gmail.com",
                   role = c("aut", "cre"))
 Maintainer: <mrchypark@gmail.com>
 Description: Provides some utils to get korean text sample from news articles
-            in naver which is famus news portal servise in korea.
+            in naver which is popular news portal servise in korea.
 License: MIT
 Imports:
   xml2,
