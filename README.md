@@ -2,6 +2,8 @@
 ## 네이버 뉴스 크롤링을 위한 도구
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
 #### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
+######문의는 [mrchypark@gmail.com](mailto:mrchypark@gmail.com)로 주시거나 이슈로 남겨주세요.
+######이슈로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
 ```
 if (!require("pacman")) install.packages("pacman")
 pacman::p_load_gh("mrchypark/N2H4")
