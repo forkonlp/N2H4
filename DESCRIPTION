@@ -10,7 +10,6 @@ Description: Provides some utils to get korean text sample from news articles
             in naver which is popular news portal servise in korea.
 License: MIT
 Imports:
-  xml2,
   rvest,
   lubridate,
   RCurl,
