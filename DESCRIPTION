@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling method for naver news text crawling.
-Version: 0.2
+Version: 0.21
 Date: 2016-05-05
 Author: person("ChanYub", "Park", email = "mrchypark@gmail.com",
                   role = c("aut", "cre"))
@@ -9,16 +9,18 @@ Maintainer: <mrchypark@gmail.com>
 Description: Provides some utils to get korean text sample from news articles
             in naver which is popular news portal servise in korea.
 License: MIT
-Imports:
-  Rcpp,
-  rvest,
-  lubridate,
-  RCurl,
-  stringi,
-  jsonlite
 URL: http://github.com/mrchypark/N2H4
 BugReports: http://github.com/mrchypark/N2H4/issues
-LazyData: TRUE
 RoxygenNote: 5.0.1
 language: r
 cache: packages
+Imports:
+  Rcpp,
+  rvest,
+  xml2,
+  lubridate,
+  stringr,
+  httr,
+  RCurl,
+  stringi,
+  jsonlite

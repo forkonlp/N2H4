@@ -2,13 +2,13 @@
 #'
 #'
 #'
-#' @param url is data.frame generated from setUrl function.
+#' @param urls is data.frame generated from setUrl function.
 #' @return Get data.frame(news_title, news_links).
 #' @export
 #' @import stringi
 
 getAllUrlListByCategory <- function(urls = urls) {
-    
+
     forurlend <- nrow(urls)
     AllurlList <- c()
     for (loc in 1:forurlend) {
@@ -35,13 +35,13 @@ getAllUrlListByCategory <- function(urls = urls) {
 #'
 #'
 #'
-#' @param url is data.frame generated from setUrl function.
+#' @param urls is data.frame generated from setUrl function.
 #' @return Get data.frame(news_title, news_links).
 #' @export
 #' @import stringi
 
 getAllUrlListByQuery <- function(urls = urls) {
-    
+
     AllurlList <- c()
     print(paste0("start ", urls[1, 1]))
     urlList <- getUrlListByQuery(urls[1, 3])
@@ -59,4 +59,3 @@ getAllUrlListByQuery <- function(urls = urls) {
     }
     return(AllurlList)
 }
- 

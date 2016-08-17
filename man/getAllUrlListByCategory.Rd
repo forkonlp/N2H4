@@ -7,7 +7,7 @@
 getAllUrlListByCategory(urls = urls)
 }
 \arguments{
-\item{url}{is data.frame generated from setUrl function.}
+\item{urls}{is data.frame generated from setUrl function.}
 }
 \value{
 Get data.frame(news_title, news_links).

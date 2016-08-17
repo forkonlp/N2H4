@@ -49,7 +49,7 @@ endDate <- as.Date("2016-01-02")
 
 for (Date in strDate:endDate){
 
-  urls <- setUrlByQuery(query="대통령",targetDate = as.Date(Date,origin= "1970-01-01"))
+  urls <- setUrlByQuery(query="work",targetDate = as.Date(Date,origin= "1970-01-01"))
   allList <- getAllUrlListByQuery(urls)
 
   if(!identical(grep("no naver news",allList[,2]),integer(0))){

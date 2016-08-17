@@ -5,7 +5,6 @@
 #' @return Get data.frame(url,datetime,press,title,content).
 #' @export
 #' @import rvest
-#' @import RCurl
 
 getContent <- function(url = url) {
     
@@ -35,13 +34,14 @@ getContent <- function(url = url) {
         
         # tet<-GET('https://apis.naver.com/commentBox/cbox5/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&_callback=window.__cbox_jindo_callback._9023&lang=ko&country=KR&objectId=news421%2C0002040415&categoryId=&pageSize=10&indexSize=10&groupId=&page=1&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=&userType=')
         
-        newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, content = content, stringsAsFactors = F)
+        newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, 
+            content = content, stringsAsFactors = F)
         
     } else {
         
-        newsInfo <- data.frame(url = url, datetime = "page is moved.", edittime = "page is moved.", press = "page is moved.", title = "page is moved.", 
-            content = "page is moved.", stringsAsFactors = F)
+        newsInfo <- data.frame(url = url, datetime = "page is moved.", edittime = "page is moved.", press = "page is moved.", 
+            title = "page is moved.", content = "page is moved.", stringsAsFactors = F)
         
     }
     return(newsInfo)
-} 
+}
