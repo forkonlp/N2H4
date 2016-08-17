@@ -5,9 +5,14 @@
 ######문의는 [mrchypark@gmail.com](mailto:mrchypark@gmail.com)로 주시거나 이슈로 남겨주세요.
 ######이슈로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
 ```
-if (!require("pacman")) install.packages("pacman")
-pacman::p_load_gh("mrchypark/N2H4")
+if (!require("devtools")) install.packages("devtools")
+devtools::install_github("mrchypark/N2H4")
+library(N2H4)
 ```
+
+## v.021
+
+자잘한 버그들을 해결했습니다.
 
 ## v.02
 
