@@ -8,7 +8,7 @@
 #' @import stringi
 
 getAllUrlListByCategory <- function(urls = urls) {
-
+    
     forurlend <- nrow(urls)
     AllurlList <- c()
     for (loc in 1:forurlend) {
@@ -41,7 +41,7 @@ getAllUrlListByCategory <- function(urls = urls) {
 #' @import stringi
 
 getAllUrlListByQuery <- function(urls = urls) {
-
+    
     AllurlList <- c()
     print(paste0("start ", urls[1, 1]))
     urlList <- getUrlListByQuery(urls[1, 3])

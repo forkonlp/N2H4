@@ -14,6 +14,7 @@ BugReports: http://github.com/mrchypark/N2H4/issues
 RoxygenNote: 5.0.1
 language: r
 cache: packages
+LazyData: true
 Imports:
   Rcpp,
   rvest,
