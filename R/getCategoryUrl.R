@@ -40,7 +40,8 @@ getCategoryUrl <- function(select = c(1, 2, 3, 4, 5, 6)) {
 #
 #         urls <- rbind(urls, data.frame(cate_name = cate_code[code, 1], cate_sub = cate_names, cate_url = cate_urls))
 #     }
-    load("https://github.com/mrchypark/N2H4/urls.RData")
+    #download.file("https://github.com/mrchypark/N2H4/urls.RData",destfile = "./urls.RData")
+    load("https://github.com/mrchypark/N2H4/blob/master/urls.RData")
     urls<-urls[urls$select %in% select,c(2,3,4)]
     return(urls)
 }
