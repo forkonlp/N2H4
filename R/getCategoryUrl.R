@@ -45,5 +45,4 @@ getCategoryUrl <- function(select = c(1, 2, 3, 4, 5, 6)) {
     return(urls)
 }
 
-devtools::use_data(urls, urls, internal = TRUE)
 
