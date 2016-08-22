@@ -40,7 +40,8 @@ getCategoryUrl <- function(select = c(1, 2, 3, 4, 5, 6)) {
 #
 #         urls <- rbind(urls, data.frame(cate_name = cate_code[code, 1], cate_sub = cate_names, cate_url = cate_urls))
 #     }
-
+    urls[,2]<-iconv(urls[,2],from="CP949",to="UTF-8")
+    urls[,3]<-iconv(urls[,3],from="CP949",to="UTF-8")
     urls<-urls[urls$select %in% select,c(2,3,4)]
     return(urls)
 }
