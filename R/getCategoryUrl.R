@@ -40,7 +40,6 @@ getCategoryUrl <- function(select = c(1, 2, 3, 4, 5, 6)) {
 #
 #         urls <- rbind(urls, data.frame(cate_name = cate_code[code, 1], cate_sub = cate_names, cate_url = cate_urls))
 #     }
-
     urls<-system.file("urls", "catedata.csv", package = "N2H4")
     urls<-urls[urls$select %in% select,c(2,3,4)]
     return(urls)
