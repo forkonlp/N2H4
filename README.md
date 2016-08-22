@@ -12,7 +12,19 @@ library(N2H4)
 
 ## v.021
 
-자잘한 버그들을 해결했습니다.
+자잘한 버그들을 해결했습니다. 데모들을 3개로 나누고, 사용방법을 추가했습니다.
+
+```
+# 실행할 수 있는 데모 리스트를 확인합니다.
+demo(package="N2H4")
+
+# example_category
+# example_query
+# example_comment
+
+# 데모를 실행합니다.
+demo(example_comment,package="N2H4")
+```
 
 ## v.02
 
