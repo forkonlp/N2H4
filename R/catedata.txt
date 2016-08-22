@@ -57,4 +57,4 @@ cate_url<-c("/main/list.nhn?mode=LS2D&mid=shm&sid1=100&sid2=264",
             "/main/list.nhn?mode=LS2D&mid=shm&sid1=105&sid2=283",
             "/main/list.nhn?mode=LS2D&mid=shm&sid1=105&sid2=229",
             "/main/list.nhn?mode=LS2D&mid=shm&sid1=105&sid2=228")
-urls<-data.frame(select=select, cate_name=cate_name, cate_sub=cate_sub, cate_url=cate_url, stringsAsFactors=F)
+cateUrls<-data.frame(select=select, cate_name=cate_name, cate_sub=cate_sub, cate_url=cate_url, stringsAsFactors=F)
