@@ -1,2 +1,9 @@
 language: r
+sudo: true
 cache: packages
+addons:
+  apt:
+    packages:
+      - libv8-dev
+      - libcurl4-openssl-dev
+      - libxml2-dev
