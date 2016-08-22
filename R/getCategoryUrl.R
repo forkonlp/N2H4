@@ -42,7 +42,7 @@ getCategoryUrl <- function(select = c(1, 2, 3, 4, 5, 6)) {
 #     }
     cateUrls[,2]<-iconv(cateUrls[,2],from="CP949",to="UTF-8")
     cateUrls[,3]<-iconv(cateUrls[,3],from="CP949",to="UTF-8")
-    urls<-cateUrls[urls$select %in% select,c(2,3,4)]
+    urls<-cateUrls[cateUrls$select %in% select,c(2,3,4)]
     return(urls)
 }
 
