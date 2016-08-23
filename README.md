@@ -11,6 +11,16 @@
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("mrchypark/N2H4")
 library(N2H4)
+
+# 실행할 수 있는 데모 리스트를 확인합니다.
+demo(package="N2H4")
+
+# example_category
+# example_query
+# example_comment
+
+# 데모를 실행합니다.
+demo(example_comment,package="N2H4")
 ```
 
 ## v.021
