@@ -5,7 +5,7 @@
 ######문의는 [mrchypark@gmail.com](mailto:mrchypark@gmail.com)로 주시거나 [이슈](https://github.com/mrchypark/N2H4/issues/new)로 남겨주세요.
 ######[이슈](https://github.com/mrchypark/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
 
-###### windows10, ubuntu 14.04에서 작동 확인했습니다. mac에서 아직 확인 못했으니 확인해주신 분은 알려주시면 반영하겠습니다.<br> sessionInfo() 명령을 통해 환경을 보내주세요~
+###### TESTEDSESSIONINFO 에 동작 확인한 sessionInfo()가 있습니다. OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
 
 ```
 if (!require("devtools")) install.packages("devtools")
