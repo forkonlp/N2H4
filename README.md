@@ -1,5 +1,8 @@
 # N2H4 
 ## 네이버 뉴스 크롤링을 위한 도구
+
+## * [ForkonLP/N2H4](https://github.com/forkonlp/N2H4)로 이관하였습니다.
+
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
 #### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
 ######문의는 [mrchypark@gmail.com](mailto:mrchypark@gmail.com)로 주시거나 [이슈](https://github.com/mrchypark/N2H4/issues/new)로 남겨주세요.
