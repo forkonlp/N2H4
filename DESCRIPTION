@@ -17,8 +17,10 @@ cache: packages
 LazyData: true
 Imports:
   Rcpp,
-  rvest,
+  bitops,
+  magrittr,
   xml2,
+  rvest,
   lubridate,
   stringr,
   httr,
