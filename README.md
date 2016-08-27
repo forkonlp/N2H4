@@ -2,14 +2,14 @@
 ## 네이버 뉴스 크롤링을 위한 도구
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
 #### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
-######문의는 [mrchypark@gmail.com](mailto:mrchypark@gmail.com)로 주시거나 [이슈](https://github.com/mrchypark/N2H4/issues/new)로 남겨주세요.
-######[이슈](https://github.com/mrchypark/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
+######문의는 [forkonlp@gmail.com](mailto:mrchypark@gmail.com)로 주시거나 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요.
+######[이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
 
 ###### TESTEDSESSIONINFO 에 동작 확인한 sessionInfo()가 있습니다. OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
 
 ```
 if (!require("devtools")) install.packages("devtools")
-devtools::install_github("mrchypark/N2H4")
+devtools::install_github("forkonlp/N2H4")
 library(N2H4)
 
 # 실행할 수 있는 데모 리스트를 확인합니다.
@@ -61,4 +61,4 @@ getComment(url)$result$commentList[[1]] 하시면 익숙한 data.frame 형태로
 
 MIT License.<br>
 Check code demo/example.R<br>
-Please [let me know](mailto:mrchypark@gmail.com) use this package.
+Please [let me know](mailto:forkonlp@gmail.com) use this package.
