@@ -12,7 +12,7 @@
 
 getContentParallel <- function(url = url) {
 
-  if(identical(url,character(0))){
+  if(!identical(url,character(0))){
   noNewsInfo<-c()
   rmloc<-c()
   for(i in 1:length(url))
