@@ -7,7 +7,7 @@
 getCategoryUrl(select = c(1, 2, 3, 4, 5, 6))
 }
 \arguments{
-\item{select}{from 0 to 5 numeric values which mean categories.}
+\item{select}{from 1 to 6 numeric values which mean categories.}
 }
 \value{
 Get data.frame(cate_name, cate_sub, cate_url).
