@@ -25,7 +25,7 @@ demo(package="N2H4")
 # 데모를 실행합니다.
 demo(example_comment,package="N2H4")
 ```
-## v.022
+## v.03
 getContentParallel 기능을 추가하였습니다. 기능에 대한 데모도 추가하였습니다. 조금 더 빠르게 수집 가능합니다.
 
 ## v.021
