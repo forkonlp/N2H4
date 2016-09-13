@@ -53,7 +53,7 @@ getContentParallel <- function(url = url) {
 
     newsInfo <- data.frame(url = url[i], datetime = datetime, edittime = edittime, press = press, title = title, content = content, stringsAsFactors = F)
   }
-  stopCluster(cl)
+  parallel::stopCluster(cl)
   newsInfo<-do.call(rbind.data.frame, newsInfo)
   newsInfo<-rbind(noNewsInfo,newsInfo)
   return(newsInfo)
