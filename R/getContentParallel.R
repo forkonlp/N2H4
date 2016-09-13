@@ -10,9 +10,9 @@
 #' @import RCurl
 #' @import foreach
 
-
 getContentParallel <- function(url = url) {
 
+  if(identical(url,character(0))){ stop("no news links",call. = FALSE) }
   noNewsInfo<-c()
   rmloc<-c()
   for(i in 1:length(url))
