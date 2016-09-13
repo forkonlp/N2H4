@@ -24,8 +24,8 @@ getContentParallel <- function(url = url) {
   }
   if(identical(rmloc,c())){url<-url[-rmloc]}
 
-  cl<-parallel::makeCluster(parallel::detectCores())
-  registerDoParallel(cl)
+#  cl<-parallel::makeCluster(parallel::detectCores())
+#  registerDoParallel(cl)
 
   newsInfo <- foreach(i = 1:length(url), .packages = c("rvest","stringi")) %dopar% {
 
@@ -53,7 +53,7 @@ getContentParallel <- function(url = url) {
 
     newsInfo <- data.frame(url = url[i], datetime = datetime, edittime = edittime, press = press, title = title, content = content, stringsAsFactors = F)
   }
-  parallel::stopCluster(cl)
+#  parallel::stopCluster(cl)
   newsInfo<-do.call(rbind.data.frame, newsInfo)
   newsInfo<-unique(newsInfo)
   if(identical(noNewsInfo,c())){newsInfo<-rbind(noNewsInfo,newsInfo)}
