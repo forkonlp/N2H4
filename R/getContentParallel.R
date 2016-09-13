@@ -12,7 +12,7 @@
 
 getContentParallel <- function(url = url) {
 
-  if(identical(url,character(0))){ stop("no news links",call. = FALSE) }
+  if(identical(url,character(0))){
   noNewsInfo<-c()
   rmloc<-c()
   for(i in 1:length(url))
@@ -58,4 +58,10 @@ getContentParallel <- function(url = url) {
   newsInfo<-unique(newsInfo)
   if(identical(noNewsInfo,c())){newsInfo<-rbind(noNewsInfo,newsInfo)}
   return(newsInfo)
+} else { print("no news links")
+
+  newsInfo <- data.frame(url = "no news links", datetime = "no news links", edittime = "no news links", press = "no news links", title = "no news links", content = "no news links",
+                         stringsAsFactors = F)
+  return(newsInfo)
+}
 }
