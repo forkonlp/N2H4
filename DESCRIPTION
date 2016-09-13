@@ -1,8 +1,8 @@
 Package: N2H4
 Type: Package
 Title: Handling method for naver news text crawling.
-Version: 0.21
-Date: 2016-05-05
+Version: 0.22
+Date: 2016-09-13
 Author: person("ChanYub", "Park", email = "mrchypark@gmail.com",
                   role = c("aut", "cre"))
 Maintainer: <mrchypark@gmail.com>
@@ -12,7 +12,7 @@ License: MIT
 URL: http://github.com/mrchypark/N2H4
 BugReports: http://github.com/mrchypark/N2H4/issues
 RoxygenNote: 5.0.1
-language: r
+language: r(>=3.3.0)
 cache: packages
 LazyData: true
 Imports:
@@ -24,4 +24,5 @@ Imports:
   httr,
   RCurl,
   stringi,
-  jsonlite
+  jsonlite,
+  doParallel

@@ -1,6 +1,7 @@
 # example using category
 
 strDate <- as.Date("2016-01-01")
+# Date <- as.Date("2016-01-01")
 endDate <- as.Date("2016-01-02")
 
 for (Date in strDate:endDate){
