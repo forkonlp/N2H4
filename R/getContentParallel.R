@@ -55,6 +55,7 @@ getContentParallel <- function(url = url) {
   }
   parallel::stopCluster(cl)
   newsInfo<-do.call(rbind.data.frame, newsInfo)
-  newsInfo<-rbind(noNewsInfo,newsInfo)
+  newsInfo<-unique(newsInfo)
+  if(identical(noNewsInfo,c())){newsInfo<-rbind(noNewsInfo,newsInfo)}
   return(newsInfo)
 }
