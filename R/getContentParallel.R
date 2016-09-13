@@ -8,6 +8,7 @@
 #' @import doParallel
 #' @import stringi
 #' @import RCurl
+#' @import foreach
 
 
 getContentParallel <- function(url = url) {

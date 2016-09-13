@@ -27,4 +27,5 @@ Imports:
   RCurl,
   stringi,
   jsonlite,
-  doParallel
+  doParallel,
+  foreach
