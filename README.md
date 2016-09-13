@@ -1,8 +1,6 @@
 # N2H4 
 ## 네이버 뉴스 크롤링을 위한 도구
 
-## * [ForkonLP/N2H4](https://github.com/forkonlp/N2H4)로 이관하였습니다.
-
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
 ###### (MIT 라이선스는 마음껏 쓰되, 출처를 표시해달라는 뜻입니다.)
 #### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
@@ -20,12 +18,15 @@ library(N2H4)
 demo(package="N2H4")
 
 # example_category
+# example_category_parallel
 # example_query
 # example_comment
 
 # 데모를 실행합니다.
 demo(example_comment,package="N2H4")
 ```
+## v.022
+getContentParallel 기능을 추가하였습니다. 기능에 대한 데모도 추가하였습니다. 조금 더 빠르게 수집 가능합니다.
 
 ## v.021
 
