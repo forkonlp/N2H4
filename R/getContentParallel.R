@@ -13,16 +13,20 @@
 getContentParallel <- function(url = url) {
 
   if(!identical(url,character(0))){
-  noNewsInfo<-c()
+
+      noNewsInfo<-c()
   rmloc<-c()
-  for(i in 1:length(url))
-  if (url.exists(url[i])) {
+
+  for(i in 1:length(url)){
+  if (!url.exists(url[i])) {
 
     noNewsInfo <- rbind(noNewsInfo,data.frame(url = url[i], datetime = "page is moved.", edittime = "page is moved.",
                   press = "page is moved.", title = "page is moved.", content = "page is moved.",  stringsAsFactors = F) )
     rmloc<-c(rmloc,i)
   }
-  if(identical(rmloc,c())){url<-url[-rmloc]}
+  }
+  if(!identical(rmloc,c())){url<-url[-rmloc]}
+
 
 #  cl<-parallel::makeCluster(parallel::detectCores())
 #  registerDoParallel(cl)
