@@ -30,6 +30,7 @@ getContentParallel <- function(url = url) {
 
 #  cl<-parallel::makeCluster(parallel::detectCores())
 #  registerDoParallel(cl)
+  if(!idencital(url,character(0))){
 
   newsInfo <- foreach(i = 1:length(url), .packages = c("rvest","stringi")) %dopar% {
 
@@ -62,7 +63,7 @@ getContentParallel <- function(url = url) {
   newsInfo<-unique(newsInfo)
   if(identical(noNewsInfo,c())){newsInfo<-rbind(noNewsInfo,newsInfo)}
   return(newsInfo)
-} else { print("no news links")
+}} else { print("no news links")
 
   newsInfo <- data.frame(url = "no news links", datetime = "no news links", edittime = "no news links", press = "no news links", title = "no news links", content = "no news links",
                          stringsAsFactors = F)
