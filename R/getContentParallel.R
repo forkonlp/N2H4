@@ -30,7 +30,7 @@ getContentParallel <- function(url = url) {
 
 #  cl<-parallel::makeCluster(parallel::detectCores())
 #  registerDoParallel(cl)
-  if(!idencital(url,character(0))){
+  if(!identical(url,character(0))){
 
   newsInfo <- foreach(i = 1:length(url), .packages = c("rvest","stringi")) %dopar% {
 
