@@ -2,7 +2,7 @@
 % Please edit documentation in R/getUrlListByQuery.R
 \name{getUrlListByQuery}
 \alias{getUrlListByQuery}
-\title{Get naver news titles and links from target url.}
+\title{Get Url List By Query}
 \usage{
 getUrlListByQuery(url = url)
 }

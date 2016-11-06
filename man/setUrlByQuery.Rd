@@ -2,14 +2,16 @@
 % Please edit documentation in R/setUrlByQuery.R
 \name{setUrlByQuery}
 \alias{setUrlByQuery}
-\title{Get naver news urls from query.}
+\title{Set Url By Query}
 \usage{
-setUrlByQuery(query = "", targetDate = as.Date("2016-01-01"))
+setUrlByQuery(query = "", targetDate = as.Date("2016-01-01"), pageNum = 1)
 }
 \arguments{
 \item{query}{is target keyword.}
 
 \item{targetDate}{is one date to get news like '2016-01-01'. Default date is yesterday.}
+
+\item{pageNum}{is one page number to get news like '1'. Default number is 1.}
 }
 \value{
 Get data.frame(query_name, query_for_url, query_url).

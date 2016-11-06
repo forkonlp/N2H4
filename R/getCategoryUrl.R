@@ -1,5 +1,6 @@
-#' Get naver news sub_category names and urls recently.
+#' Get Category Url
 #'
+#' Get naver news sub_category names and urls recently.
 #' Main category urls are written manually like blow.
 #' cate_code<-c(100,101,102,103,104,105)
 #' There are 6 categories in never news.

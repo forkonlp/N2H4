@@ -2,7 +2,7 @@
 % Please edit documentation in R/getContentParallel.R
 \name{getContentParallel}
 \alias{getContentParallel}
-\title{Get naver news content from links parallelly.}
+\title{Get Content Parallel}
 \usage{
 getContentParallel(url = url)
 }

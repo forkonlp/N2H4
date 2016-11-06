@@ -2,9 +2,7 @@
 % Please edit documentation in R/getComment.R
 \name{getComment}
 \alias{getComment}
-\title{Get naver news comments
-if you want to get data only comment, enter commend like below.
-getComment(url)$result$commentList[[1]]}
+\title{Get Comment}
 \usage{
 getComment(turl = url, pageSize = 10, page = 1, sort = c("favorite",
   "reply", "old", "new"))

@@ -2,7 +2,7 @@
 % Please edit documentation in R/getCategoryUrl.R
 \name{getCategoryUrl}
 \alias{getCategoryUrl}
-\title{Get naver news sub_category names and urls recently.}
+\title{Get Category Url}
 \usage{
 getCategoryUrl(select = c(1, 2, 3, 4, 5, 6))
 }
@@ -13,6 +13,7 @@ getCategoryUrl(select = c(1, 2, 3, 4, 5, 6))
 Get data.frame(cate_name, cate_sub, cate_url).
 }
 \description{
+Get naver news sub_category names and urls recently.
 Main category urls are written manually like blow.
 cate_code<-c(100,101,102,103,104,105)
 There are 6 categories in never news.

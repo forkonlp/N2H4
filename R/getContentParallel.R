@@ -1,5 +1,6 @@
-#' Get naver news content from links parallelly.
+#' Get Content Parallel
 #'
+#' Get naver news content from links parallelly.
 #'
 #' @param url is naver news links.
 #' @return Get data.frame(url,datetime,press,title,content).

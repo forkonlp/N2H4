@@ -1,11 +1,11 @@
+#' Get Url List By Category
+#'
 #' Get naver news titles and links from target url.
 #'
 #' @param url is target url naver news.
 #' @return Get data.frame(news_title, news_links).
 #' @export
 #' @import stringi
-
-url<-"http://news.naver.com/main/list.nhn?sid2=260&sid1=101&mid=shm&mode=LS2D&date=20110422&page=11"
 
 getUrlListByCategory <- function(url = url) {
 

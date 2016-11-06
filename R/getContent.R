@@ -1,5 +1,6 @@
-#' Get naver news content from links.
+#' Get Content
 #'
+#' Get naver news content from links.
 #'
 #' @param url is naver news link.
 #' @return Get data.frame(url,datetime,press,title,content).
