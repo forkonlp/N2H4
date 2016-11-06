@@ -6,7 +6,6 @@
 #'
 #' @return Get data.frame(chr:cate_name, chr:sid1).
 #' @export
-#' @import xml2
 #' @import rvest
 #' @import stringr
 
