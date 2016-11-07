@@ -1,8 +1,6 @@
-#' Get Main Category
+#' Get Main Category data
 #'
 #' Get naver news main category names and urls recently.
-#' There are 7 categories in never news.
-#' 1: Politics, 2: Economics, 3: Social, 4: Living / Culture, 5: World, 6: IT / science, 7: Opinion
 #'
 #' @return Get data.frame(chr:cate_name, chr:sid1).
 #' @export
@@ -11,9 +9,10 @@
 
 getSid1 <- function() {
 
+  print("This function use internet. If get error, please check the internet.")
   home <- "http://news.naver.com/"
-  titles <- read_html(home) %>% html_nodes("a") %>% html_text()
-  links <- read_html(home) %>% html_nodes("a") %>% html_attr("href")
+  titles <- read_html(home) %>% html_nodes("div.lnb_menu ul li a") %>% html_text()
+  links <- read_html(home) %>% html_nodes("div.lnb_menu ul li a") %>% html_attr("href")
   titles<-titles[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1",links)]
   titles<-str_trim(titles)
   links<-links[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1",links)]
