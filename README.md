@@ -13,18 +13,9 @@
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("forkonlp/N2H4")
 library(N2H4)
-
-# 실행할 수 있는 데모 리스트를 확인합니다.
-demo(package="N2H4")
-
-# example_category
-# example_category_parallel
-# example_query
-# example_comment
-
-# 데모를 실행합니다.
-demo(example_comment,package="N2H4")
 ```
+## v0.0.4
+
 ## v0.3
 getContentParallel 기능을 추가하였습니다. 기능에 대한 데모도 추가하였습니다. 조금 더 빠르게 수집 가능합니다. 이 정도 속도로 네이버가 막지는 않겠습니다만 서버에 과한 부하를 가하는 빠른 수집은 비매너에 해당합니다. 확실히 필요한 만큼만 적정한 속도로 수집하시길 권장드립니다.
 
