@@ -1,5 +1,4 @@
 # N2H4 
------
 [![Travis-CI Build Status](https://travis-ci.org/forkonlp/N2H4.png?branch=master)](https://travis-ci.org/forkonlp/N2H4)
 [![Coverage Status](https://coveralls.io/repos/forkonlp/N2H4/badge.svg?branch=master)](https://coveralls.io/r/forkonlp/N2H4?branch=master)
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php)
