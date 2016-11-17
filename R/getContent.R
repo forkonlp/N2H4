@@ -36,8 +36,7 @@ getContent <- function(url = url) {
         content <- tem %>% html_nodes("div#articleBodyContents") %>% html_text()
         Encoding(content) <- "UTF-8"
         content <- str_trim(content,side="both")
-
-        # tet<-GET('https://apis.naver.com/commentBox/cbox5/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&_callback=window.__cbox_jindo_callback._9023&lang=ko&country=KR&objectId=news421%2C0002040415&categoryId=&pageSize=10&indexSize=10&groupId=&page=1&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=&userType=')
+        content <- gsub("\r?\n|\r", " ", content)
 
         newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, content = content, stringsAsFactors = F)
 
