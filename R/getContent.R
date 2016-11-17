@@ -10,12 +10,12 @@
 #' @import rvest
 #' @import stringr
 
-getContent <- function(turl = url) {
+getContent <- function(url = url) {
 
-  if(!identical(turl,character(0))){
-    if (RCurl::url.exists(turl)) {
+  if(!identical(url,character(0))){
+    if (RCurl::url.exists(url)) {
 
-        tem <- read_html(turl)
+        tem <- read_html(url)
         title <- tem %>% html_nodes("div.article_info h3") %>% html_text()
         Encoding(title) <- "UTF-8"
 
