@@ -1,17 +1,21 @@
-#' Get naver news content from links.
+#' Get Content
 #'
+#' Get naver news content from links.
 #'
 #' @param url is naver news link.
 #' @return Get data.frame(url,datetime,press,title,content).
 #' @export
+#' @import RCurl
+#' @import xml2
 #' @import rvest
+#' @import stringr
 
-getContent <- function(url = url) {
+getContent <- function(turl = url) {
 
-  if(!identical(url,character(0))){
-    if (url.exists(url)) {
+  if(!identical(turl,character(0))){
+    if (RCurl::turl.exists(url)) {
 
-        tem <- read_html(url)
+        tem <- read_html(turl)
         title <- tem %>% html_nodes("div.article_info h3") %>% html_text()
         Encoding(title) <- "UTF-8"
 
@@ -31,7 +35,7 @@ getContent <- function(url = url) {
 
         content <- tem %>% html_nodes("div#articleBodyContents") %>% html_text()
         Encoding(content) <- "UTF-8"
-        content <- stri_trim(content)
+        content <- str_trim(content,side="both")
 
         # tet<-GET('https://apis.naver.com/commentBox/cbox5/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&_callback=window.__cbox_jindo_callback._9023&lang=ko&country=KR&objectId=news421%2C0002040415&categoryId=&pageSize=10&indexSize=10&groupId=&page=1&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=&userType=')
 

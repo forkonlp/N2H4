@@ -2,9 +2,9 @@
 % Please edit documentation in R/getUrlListByQuery.R
 \name{getUrlListByQuery}
 \alias{getUrlListByQuery}
-\title{Get naver news titles and links from target url.}
+\title{Get Url List By Query}
 \usage{
-getUrlListByQuery(url = url)
+getUrlListByQuery(turl = url)
 }
 \arguments{
 \item{url}{is target url naver news.}
@@ -13,6 +13,6 @@ getUrlListByQuery(url = url)
 Get data.frame(news_title, news_links).
 }
 \description{
-Get naver news titles and links from target url.
+Get naver news(only not other sites links) titles(are just "dummy" now) and links from target url.
 }
 

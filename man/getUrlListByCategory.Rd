@@ -2,9 +2,9 @@
 % Please edit documentation in R/getUrlListByCategory.R
 \name{getUrlListByCategory}
 \alias{getUrlListByCategory}
-\title{Get naver news titles and links from target url.}
+\title{Get Url List By Category}
 \usage{
-getUrlListByCategory(url = url)
+getUrlListByCategory(turl = url)
 }
 \arguments{
 \item{url}{is target url naver news.}

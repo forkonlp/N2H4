@@ -2,9 +2,9 @@
 % Please edit documentation in R/getContent.R
 \name{getContent}
 \alias{getContent}
-\title{Get naver news content from links.}
+\title{Get Content}
 \usage{
-getContent(url = url)
+getContent(turl = url)
 }
 \arguments{
 \item{url}{is naver news link.}
