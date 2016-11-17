@@ -7,6 +7,9 @@ addons:
       - libv8-dev
       - libcurl4-openssl-dev
       - libxml2-dev
-      
+
+r_packages:
+  - covr
+
 after_success:
   - Rscript -e 'covr::coveralls()'
