@@ -14,7 +14,6 @@
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("forkonlp/N2H4")
 library(N2H4)
-
 ```
 ## v0.0.4
 버전 네이밍 규칙을 변경하였습니다. 함수를 단순화하였습니다. [위키](https://github.com/forkonlp/N2H4/wiki/%EA%B8%B0%EB%8A%A5-%EC%84%A4%EB%AA%85)를 참고해 주세요. [코드예시](https://github.com/forkonlp/N2H4/wiki/%ED%81%AC%EB%A1%A4%EB%9F%AC-%EC%9E%91%EC%84%B1-%EC%98%88%EC%8B%9C)도 참고하시면 좋습니다.
