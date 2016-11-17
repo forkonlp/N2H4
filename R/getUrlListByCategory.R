@@ -2,7 +2,7 @@
 #'
 #' Get naver news titles and links from target url.
 #'
-#' @param url is target url naver news.
+#' @param turl is target url naver news.
 #' @return Get data.frame(news_title, news_links).
 #' @export
 #' @import xml2

@@ -7,7 +7,7 @@
 getUrlListByQuery(turl = url)
 }
 \arguments{
-\item{url}{is target url naver news.}
+\item{turl}{is target url naver news.}
 }
 \value{
 Get data.frame(news_title, news_links).
