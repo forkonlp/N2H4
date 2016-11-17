@@ -10,7 +10,7 @@
 #' @import rvest
 #' @import stringr
 
-getSubCategory <- function(sid1=100, onlySid2=TRUE) {
+getSubCategory <- function(sid1="100", onlySid2=TRUE) {
 
   print("This function use internet. If get error, please check the internet.")
   home <- paste0("http://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=",sid1)
@@ -22,12 +22,10 @@ getSubCategory <- function(sid1=100, onlySid2=TRUE) {
   urls <- data.frame(sub_cate_name=titles,url=links,stringsAsFactors = F)
   if (onlySid2==FALSE)  {return(urls)}
   else{
-    urls <- urls[grep("sid2=",urls$urls),]
-    sid2 <- str_sub(urls$urls,-3,-1)
+    urls <- urls[grep("sid2=",urls$url),]
+    sid2 <- str_sub(urls$url,-3,-1)
     urls <- data.frame(sub_cate_name=urls$sub_cate_name,sid2=sid2,stringsAsFactors = F)
     return(urls)
   }
 
 }
-
-
