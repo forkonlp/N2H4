@@ -1,13 +1,13 @@
-#' Get Main Category data
+#' Get News Main Categories
 #'
-#' Get naver news main category names and urls recently.
+#' Get naver news main category names and ids recently.
 #'
 #' @return Get data.frame(chr:cate_name, chr:sid1).
 #' @export
 #' @import rvest
 #' @import stringr
 
-getSid1 <- function() {
+getMainCategory <- function() {
 
   print("This function use internet. If get error, please check the internet.")
   home <- "http://news.naver.com/"

@@ -5,7 +5,7 @@
 #' @param url is target url naver news.
 #' @return Get data.frame(news_title, news_links).
 #' @export
-#' @import stringi
+#' @import stringr
 
 getUrlListByCategory <- function(url = url) {
 
@@ -18,10 +18,10 @@ getUrlListByCategory <- function(url = url) {
 
     news_lists <- data.frame(news_title = news_title, news_links = news_links, stringsAsFactors = F)
 
-    news_lists$news_title <- stri_trim_both(news_lists$news_title)
+    news_lists$news_title <- str_trim(news_lists$news_title, side="both")
     news_lists <- news_lists[nchar(news_lists$news_title) > 0,]
 
-    rm_target <- stri_trim_both(rm_target)
+    rm_target <- str_trim(rm_target, side="both")
     rm_target <- rm_target[nchar(rm_target) > 0]
 
     if (!identical(paste0(rm_target, collapse = " "), "")) {

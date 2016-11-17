@@ -1,6 +1,7 @@
 #' Get Max Page Number
 #'
-#' @param url is target url include sid1, sid2, date like 'http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102'
+#' @param url is target url include sid1, sid2, date like below.
+#'             'http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102'
 #' @param max is also interval to try max page number is numeric. Default is 100.
 #' @return Get numeric
 #' @export

@@ -13,6 +13,6 @@ getUrlListByQuery(url = url)
 Get data.frame(news_title, news_links).
 }
 \description{
-Get naver news titles and links from target url.
+Get naver news(only not other sites links) titles(are just "dummy" now) and links from target url.
 }
 
