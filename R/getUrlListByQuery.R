@@ -5,6 +5,8 @@
 #' @param url is target url naver news.
 #' @return Get data.frame(news_title, news_links).
 #' @export
+#' @import xml2
+#' @import rvest
 #' @import stringr
 
 

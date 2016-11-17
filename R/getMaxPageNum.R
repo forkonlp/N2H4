@@ -5,6 +5,7 @@
 #' @param max is also interval to try max page number is numeric. Default is 100.
 #' @return Get numeric
 #' @export
+#' @import xml2
 #' @import rvest
 
 getMaxPageNum <- function(url=url, max=100) {

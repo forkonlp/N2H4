@@ -5,6 +5,7 @@
 #' @param url is naver news link.
 #' @return Get data.frame(url,datetime,press,title,content).
 #' @export
+#' @import xml2
 #' @import rvest
 
 getContent <- function(url = url) {

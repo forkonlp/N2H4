@@ -6,6 +6,7 @@
 #' @param onlySid2 sid2 is sub category id. some sub categories don't have id. If TRUE, functions return data.frame(chr:sub_cate_naem, char:sid2). Defaults is False.
 #' @return Get data.frame(chr:sub_cate_name, chr:urls).
 #' @export
+#' @import xml2
 #' @import rvest
 #' @import stringr
 
