@@ -19,7 +19,7 @@ getSubCategory <- function(sid1=100, onlySid2=TRUE) {
   titles<-str_trim(titles)
   links <- tem %>% html_nodes("div.snb ul.nav li a") %>% html_attr("href")
   links <- paste0("http://news.naver.com",links)
-  urls <- data.frame(sub_cate_name=titles,urls=links,stringsAsFactors = F)
+  urls <- data.frame(sub_cate_name=titles,url=links,stringsAsFactors = F)
   if (onlySid2==FALSE)  {return(urls)}
   else{
     urls <- urls[grep("sid2=",urls$urls),]

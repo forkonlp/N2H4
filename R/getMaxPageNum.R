@@ -8,14 +8,14 @@
 #' @import xml2
 #' @import rvest
 
-getMaxPageNum <- function(url=url, max=100) {
+getMaxPageNum <- function(turl=url, max=100) {
 
-  ifmaxUrl <- paste0(url,"&page=",max)
+  ifmaxUrl <- paste0(turl,"&page=",max)
   tem <- read_html(ifmaxUrl)
   ifmax <- tem %>% html_node("a.next")
   while(class(ifmax)=="xml_node"){
     max <- max + max
-    ifmaxUrl <- paste0(url,"&page=",max)
+    ifmaxUrl <- paste0(turl,"&page=",max)
     tem <- read_html(ifmaxUrl)
     ifmax <- tem %>% html_node("a.next")
   }

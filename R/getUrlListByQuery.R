@@ -10,9 +10,9 @@
 #' @import stringr
 
 
-getUrlListByQuery <- function(url = url) {
+getUrlListByQuery <- function(turl = url) {
 
-    tem <- read_html(url)
+    tem <- read_html(turl)
     news_title <- "dummy"
 
     news_links <- tem %>% rvest::html_nodes("a.go_naver") %>% rvest::html_attr("href")

@@ -4,7 +4,7 @@
 \alias{getUrlListByQuery}
 \title{Get Url List By Query}
 \usage{
-getUrlListByQuery(url = url)
+getUrlListByQuery(turl = url)
 }
 \arguments{
 \item{url}{is target url naver news.}

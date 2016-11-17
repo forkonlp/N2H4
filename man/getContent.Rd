@@ -4,7 +4,7 @@
 \alias{getContent}
 \title{Get Content}
 \usage{
-getContent(url = url)
+getContent(turl = url)
 }
 \arguments{
 \item{url}{is naver news link.}

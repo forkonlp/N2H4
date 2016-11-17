@@ -9,9 +9,9 @@
 #' @import rvest
 #' @import stringr
 
-getUrlListByCategory <- function(url = url) {
+getUrlListByCategory <- function(turl = url) {
 
-    tem <- read_html(url)
+    tem <- read_html(turl)
     news_title <- tem %>% rvest::html_nodes("dt a") %>% rvest::html_text()
     Encoding(news_title) <- "UTF-8"
     rm_target <- tem %>% rvest::html_nodes("dt.photo a") %>% rvest::html_text()
