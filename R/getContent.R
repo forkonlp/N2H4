@@ -10,12 +10,12 @@
 #' @import rvest
 #' @import stringr
 
-getContent <- function(turl = url) {
+getContent <- function(url = url) {
 
-  if(!identical(turl,character(0))){
-    if (RCurl::turl.exists(url)) {
+  if(!identical(url,character(0))){
+    if (RCurl::url.exists(url)) {
 
-        tem <- read_html(turl)
+        tem <- read_html(url)
         title <- tem %>% html_nodes("div.article_info h3") %>% html_text()
         Encoding(title) <- "UTF-8"
 
@@ -23,7 +23,7 @@ getContent <- function(turl = url) {
         datetime <- as.POSIXlt(datetime)
 
         if (length(datetime) == 1) {
-            edittime <- ""
+            edittime <- datetime[1]
         }
         if (length(datetime) == 2) {
             edittime <- datetime[2]
@@ -36,8 +36,7 @@ getContent <- function(turl = url) {
         content <- tem %>% html_nodes("div#articleBodyContents") %>% html_text()
         Encoding(content) <- "UTF-8"
         content <- str_trim(content,side="both")
-
-        # tet<-GET('https://apis.naver.com/commentBox/cbox5/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&_callback=window.__cbox_jindo_callback._9023&lang=ko&country=KR&objectId=news421%2C0002040415&categoryId=&pageSize=10&indexSize=10&groupId=&page=1&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=&userType=')
+        content <- gsub("\r?\n|\r", " ", content)
 
         newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, content = content, stringsAsFactors = F)
 
