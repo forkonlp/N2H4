@@ -5,7 +5,7 @@
 #' @param url is target url naver news.
 #' @return Get data.frame(news_title, news_links).
 #' @export
-#' @import stringi
+#' @import stringr
 
 
 getUrlListByQuery <- function(url = url) {
