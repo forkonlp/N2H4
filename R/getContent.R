@@ -13,7 +13,7 @@
 getContent <- function(turl = url) {
 
   if(!identical(turl,character(0))){
-    if (RCurl::turl.exists(url)) {
+    if (RCurl::url.exists(url)) {
 
         tem <- read_html(turl)
         title <- tem %>% html_nodes("div.article_info h3") %>% html_text()
