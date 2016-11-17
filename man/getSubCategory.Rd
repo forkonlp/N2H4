@@ -4,12 +4,12 @@
 \alias{getSubCategory}
 \title{Get News Sub Categories}
 \usage{
-getSubCategory(sid1 = 100, onlySid2 = FALSE)
+getSubCategory(sid1 = 100, onlySid2 = TRUE)
 }
 \arguments{
 \item{sid1}{Main category id in naver news url. Only 1 value is passible. Default is 100 means Politics.}
 
-\item{onlySid2}{sid2 is sub category id. some sub categories don't have id. If TRUE, functions return data.frame(chr:sub_cate_naem, char:sid2). Defaults is False.}
+\item{onlySid2}{sid2 is sub category id. some sub categories don't have id. If TRUE, functions return data.frame(chr:sub_cate_naem, char:sid2). Defaults is TRUE.}
 }
 \value{
 Get data.frame(chr:sub_cate_name, chr:urls).
