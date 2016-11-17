@@ -16,7 +16,7 @@ devtools::install_github("forkonlp/N2H4")
 library(N2H4)
 ```
 ## v0.0.4
-버전 네이밍 규칙을 변경하였습니다. 함수를 단순화하였습니다. [위키](https://github.com/forkonlp/N2H4/wiki/%EA%B8%B0%EB%8A%A5-%EC%84%A4%EB%AA%85)를 참고해 주세요. [코드예시](https://github.com/forkonlp/N2H4/wiki/%ED%81%AC%EB%A1%A4%EB%9F%AC-%EC%9E%91%EC%84%B1-%EC%98%88%EC%8B%9C)도 참고하시면 좋습니다.
+버전 네이밍 규칙을 변경하였습니다. 함수를 단순화하였습니다. [위키](https://github.com/forkonlp/N2H4/wiki/%EA%B8%B0%EB%8A%A5-%EC%84%A4%EB%AA%85)를 참고해 주세요. [코드예시](https://github.com/forkonlp/N2H4/wiki/%EC%82%AC%EC%9A%A9-%EC%98%88%EC%8B%9C)도 참고하시면 좋습니다.
 
 ## v0.3
 getContentParallel 기능을 추가하였습니다. 기능에 대한 데모도 추가하였습니다. 조금 더 빠르게 수집 가능합니다. 이 정도 속도로 네이버가 막지는 않겠습니다만 서버에 과한 부하를 가하는 빠른 수집은 비매너에 해당합니다. 확실히 필요한 만큼만 적정한 속도로 수집하시길 권장드립니다.
