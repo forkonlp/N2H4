@@ -23,7 +23,7 @@ getContent <- function(url = url) {
         datetime <- as.POSIXlt(datetime)
 
         if (length(datetime) == 1) {
-            edittime <- NULL
+            edittime <- datetime
         }
         if (length(datetime) == 2) {
             edittime <- datetime[2]
