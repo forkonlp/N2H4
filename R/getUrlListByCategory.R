@@ -1,35 +1,36 @@
 #' Get Url List By Category
 #'
-#' Get naver news titles and links from target url.
+#' Get naver news titless and links from target url.
 #'
 #' @param turl is target url naver news.
-#' @return Get data.frame(news_title, news_links).
+#' @param  col is what you want to get from news. Defualt is all.
+#' @return Get data.frame(titles, links).
 #' @export
 #' @import xml2
 #' @import rvest
 #' @import stringr
 
-getUrlListByCategory <- function(turl = url) {
+getUrlListByCategory <- function(turl = url, col=c("titles", "links")) {
 
     tem <- read_html(turl)
-    news_title <- tem %>% rvest::html_nodes("dt a") %>% rvest::html_text()
-    Encoding(news_title) <- "UTF-8"
+    titles <- tem %>% rvest::html_nodes("dt a") %>% rvest::html_text()
+    Encoding(titles) <- "UTF-8"
     rm_target <- tem %>% rvest::html_nodes("dt.photo a") %>% rvest::html_text()
     Encoding(rm_target) <- "UTF-8"
-    news_links <- tem %>% rvest::html_nodes("dt a") %>% rvest::html_attr("href")
+    links <- tem %>% rvest::html_nodes("dt a") %>% rvest::html_attr("href")
 
-    news_lists <- data.frame(news_title = news_title, news_links = news_links, stringsAsFactors = F)
+    news_lists <- data.frame(titles = titles, links = links, stringsAsFactors = F)
 
-    news_lists$news_title <- str_trim(news_lists$news_title, side="both")
-    news_lists <- news_lists[nchar(news_lists$news_title) > 0,]
+    news_lists$titles <- str_trim(news_lists$titles, side="both")
+    news_lists <- news_lists[nchar(news_lists$titles) > 0,]
 
     rm_target <- str_trim(rm_target, side="both")
     rm_target <- rm_target[nchar(rm_target) > 0]
 
     if (!identical(paste0(rm_target, collapse = " "), "")) {
-      news_lists <- news_lists[-grep(rm_target[1], news_lists$news_title),]
+      news_lists <- news_lists[-grep(rm_target[1], news_lists$titles),]
     }
 
-    return(news_lists)
+    return(news_lists[,col])
 
 }

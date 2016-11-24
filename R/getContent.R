@@ -3,6 +3,7 @@
 #' Get naver news content from links.
 #'
 #' @param url is naver news link.
+#' @param col is what you want to get from news. Defualt is all.
 #' @return Get data.frame(url,datetime,press,title,content).
 #' @export
 #' @import RCurl
@@ -10,7 +11,7 @@
 #' @import rvest
 #' @import stringr
 
-getContent <- function(url = url) {
+getContent <- function(url = url, col=c("url","datetime","press","title","content")) {
 
   if(!identical(url,character(0))){
     if (RCurl::url.exists(url)) {
@@ -46,11 +47,11 @@ getContent <- function(url = url) {
             stringsAsFactors = F)
 
     }
-    return(newsInfo)
+    return(newsInfo[,col])
   } else { print("no news links")
 
     newsInfo <- data.frame(url = "no news links", datetime = "no news links", edittime = "no news links", press = "no news links", title = "no news links", content = "no news links",
                            stringsAsFactors = F)
-    return(newsInfo)
+    return(newsInfo[,col])
     }
 }

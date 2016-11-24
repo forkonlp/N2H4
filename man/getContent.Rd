@@ -4,10 +4,13 @@
 \alias{getContent}
 \title{Get Content}
 \usage{
-getContent(url = url)
+getContent(url = url, col = c("url", "datetime", "press", "title",
+  "content"))
 }
 \arguments{
 \item{url}{is naver news link.}
+
+\item{col}{is what you want to get from news. Defualt is all.}
 }
 \value{
 Get data.frame(url,datetime,press,title,content).

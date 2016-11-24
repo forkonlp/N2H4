@@ -4,15 +4,17 @@
 \alias{getUrlListByCategory}
 \title{Get Url List By Category}
 \usage{
-getUrlListByCategory(turl = url)
+getUrlListByCategory(turl = url, col = c("titles", "links"))
 }
 \arguments{
 \item{turl}{is target url naver news.}
+
+\item{col}{is what you want to get from news. Defualt is all.}
 }
 \value{
-Get data.frame(news_title, news_links).
+Get data.frame(titles, links).
 }
 \description{
-Get naver news titles and links from target url.
+Get naver news titless and links from target url.
 }
 
