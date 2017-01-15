@@ -14,7 +14,9 @@
 getContent <- function(url = url, col=c("url","datetime","press","title","content")) {
 
   if(!identical(url,character(0))){
-    if (RCurl::url.exists(url)) {
+    if (RCurl::url.exists(url)&
+       "error_msg 404"!=read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class")
+        ) {
 
         tem <- read_html(url)
         title <- tem %>% html_nodes("div.article_info h3") %>% html_text()
