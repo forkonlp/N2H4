@@ -15,7 +15,7 @@ getContent <- function(url = url, col=c("url","datetime","press","title","conten
 
   if(!identical(url,character(0))){
     if (RCurl::url.exists(url)&
-       "error_msg 404"!=read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class")
+       "error_msg 404"!=(read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1]
         ) {
 
         tem <- read_html(url)
