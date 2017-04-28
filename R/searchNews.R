@@ -57,5 +57,5 @@ searchNews=function(client_id,client_secret,term,start=1,display=10,sort=c("sim"
 #' @import XML
 html2text=function(x)
 {
-  XML::xmlValue(XML::getNodeSet(XML::htmlParse(x, asText = TRUE,encoding="UTF-8"), "//p|//body")[[1]])
+  xmlValue(getNodeSet(htmlParse(x, asText = TRUE,encoding="UTF-8"), "//p|//body")[[1]])
 }
