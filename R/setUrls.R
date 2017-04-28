@@ -9,11 +9,12 @@
 #' @param strDate target date of start.
 #' @param endDate target date of end.
 #' @param page_vec pageNum default is NA.
-#' @return Get data.frame(sid1,sid2,date,pageNum,pageUrl).
+#' @param return_type list or data.frame. default is list.
+#' @return Get data.frame(sid1,sid2,date,pageNum,pageUrl) or list(sid1,sid2,date,pageNum,pageUrl)
 #' @export
 #' @import httr
 
-setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA){
+setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA, return_type=c("list","df")[1]){
   url_list <- expand.grid(sid1_vec, sid2_vec, strDate:endDate, page_vec, stringsAsFactors=FALSE)
   colnames(url_list) <- c("sid1", "sid2", "date", "pageNum")
   url_list <- apply(url_list, 1, as.list)
@@ -27,5 +28,6 @@ setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA){
     x$pageUrl <- build_url(pageUrl)
     return(x)
   })
-  return(as.data.frame(t(url_list)))
+  if(return_type=="list"){return(url_list)}
+  if(return_type=="df"){return(as.data.frame(t(url_list)))}
 }
