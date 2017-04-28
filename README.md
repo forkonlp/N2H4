@@ -7,9 +7,9 @@
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
 ###### (MIT 라이선스는 마음껏 쓰되, 출처를 표시해달라는 뜻입니다.)
 #### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
-######문의는 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요. [질문용이슈](https://github.com/forkonlp/N2H4/issues/13)도 열었으니 댓글로 질문해주셔도 좋습니다.
-######[이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
-######[위키](https://github.com/forkonlp/N2H4/wiki/)에 한글 설명이 준비되어 있습니다.
+###### 문의는 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요. [질문용이슈](https://github.com/forkonlp/N2H4/issues/13)도 열었으니 댓글로 질문해주셔도 좋습니다.
+###### [이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
+###### [위키](https://github.com/forkonlp/N2H4/wiki/)에 한글 설명이 준비되어 있습니다.
 
 ###### OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
 
@@ -18,6 +18,9 @@ if (!require("devtools")) install.packages("devtools")
 devtools::install_github("forkonlp/N2H4")
 library(N2H4)
 ```
+## v0.4.2
+setUrls, searchNews, html2text, getAllComment, getVideoUrl 함수를 추가했습니다. 제안 및 코드 기여해주신 두분께 다시 한번 감사드립니다. 동작함만 확인하고 추가하였기 때문에 문제가 있을 수 있습니다. setUrls는 본래 제안자의 의도와 다르게 결과물이 list가 아닌 data.frame으로 나오도록 수정하였습니다. 의견이 있으면 옵션으로 넣는 방향으로 진행하겠습니다.
+
 ## v0.4.1
 버전 네이밍 규칙을 다시 변경하였습니다. getContent나 getUrlListbyCategory 에서 필요한 부분만 가져올 수 있습니다.
 
