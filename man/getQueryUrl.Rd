@@ -7,8 +7,8 @@
 getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
   r_format = "xml", rp = "none", sm = "all.basic", ic = "all",
   so = "datetime.dsc", startDate = as.Date(Sys.time()) - 3,
-  endDate = as.Date(Sys.time()), page = 1, detail = 1, pd = 1,
-  dnaSo = "rel.dsc")
+  endDate = as.Date(Sys.time()), stPaper = "exist:1", page = 1,
+  detail = 1, pd = 1, dnaSo = "rel.dsc")
 }
 \arguments{
 \item{query}{requred.}
@@ -32,6 +32,8 @@ getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
 \item{startDate}{Dfault is 3 days before today.}
 
 \item{endDate}{Default is today.}
+
+\item{stPaper}{Default is exist:1.}
 
 \item{page}{Default is 1.}
 
