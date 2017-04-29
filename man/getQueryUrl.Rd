@@ -6,8 +6,9 @@
 \usage{
 getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
   r_format = "xml", rp = "none", sm = "all.basic", ic = "all",
-  so = "datetime.dsc", page = 1, detail = 1, pd = 1,
-  dnaSo = "rel.dsc")
+  so = "datetime.dsc", startDate = as.Date(Sys.time()) - 3,
+  endDate = as.Date(Sys.time()), stPaper = "exist:1", detail = 1,
+  pd = 1, dnaSo = "rel.dsc")
 }
 \arguments{
 \item{query}{requred.}
@@ -28,7 +29,11 @@ getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
 
 \item{so}{Default is datetime.dsc.}
 
-\item{page}{Default is 1.}
+\item{startDate}{Dfault is 3 days before today.}
+
+\item{endDate}{Default is today.}
+
+\item{stPaper}{Default is exist:1.}
 
 \item{detail}{Default is 1 means only display title.}
 
@@ -40,5 +45,5 @@ getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
 Get url.
 }
 \description{
-Get naver news(only not other sites links) titles(are just "dummy" now) and links from target url.
+Get naver news query page url withput pageNum.
 }
