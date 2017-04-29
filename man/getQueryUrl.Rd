@@ -6,7 +6,8 @@
 \usage{
 getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
   r_format = "xml", rp = "none", sm = "all.basic", ic = "all",
-  so = "datetime.dsc", page = 1, detail = 1, pd = 1,
+  so = "datetime.dsc", startDate = as.Date(Sys.time()) - 3,
+  endDate = as.Date(Sys.time()), page = 1, detail = 1, pd = 1,
   dnaSo = "rel.dsc")
 }
 \arguments{
@@ -27,6 +28,10 @@ getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
 \item{ic}{Default is all.}
 
 \item{so}{Default is datetime.dsc.}
+
+\item{startDate}{Dfault is 3 days before today.}
+
+\item{endDate}{Default is today.}
 
 \item{page}{Default is 1.}
 

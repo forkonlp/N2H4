@@ -12,6 +12,8 @@
 #' @param ic Default is all.
 #' @param so Default is datetime.dsc.
 #' @param detail Default is 1 means only display title.
+#' @param startDate Dfault is 3 days before today.
+#' @param endDate Default is today.
 #' @param pd Default is 1.
 #' @param page Default is 1.
 #' @param dnaSo Default is rel.dsc.
@@ -26,6 +28,8 @@ getQueryUrl <- function(query,st="news.all",
                         sm="all.basic",
                         ic="all",
                         so="datetime.dsc",
+                        startDate=as.Date(Sys.time())-3,
+                        endDate=as.Date(Sys.time()),
                         page=1,
                         detail=1,
                         pd=1,
@@ -41,6 +45,8 @@ getQueryUrl <- function(query,st="news.all",
                  "&detail=",detail,
                  "&pd=",pd,
                  "&dnaSo=",dnaSo,
+                 "&startDate=",startDate,
+                 "&endDate=",endDate,
                  "&page=",page,
                  "&query=",query)
   return(link)
