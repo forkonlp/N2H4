@@ -3,7 +3,6 @@
 #' Search Naver News using Naver news search API
 #'
 #'
-#'
 #' @param client_id character. provided by Naver after registering application here : 'https://developers.naver.com'
 #' @param client_secret character.Refers to 'client_secret' provided by naver when you register application.
 #' @param term character. Search keyword
@@ -14,14 +13,12 @@
 #' @export
 #' @import httr
 
-
-
 searchNews=function(client_id,client_secret,term,start=1,display=10,sort=c("sim","date"))
 {
   sort=sort[1]
   news_api="https://openapi.naver.com/v1/search/news.json"
 
-  encoded.term=URLencode(iconv(term,localeToCharset()[1],"UTF-8"))
+  encoded.term=utils::URLencode(iconv(term,utils::localeToCharset()[1],"UTF-8"))
   term2=paste("?query=",encoded.term,sep="")
   display2=paste("display=",display,sep="")
   start2=paste("start=",start,sep="")
@@ -52,10 +49,11 @@ searchNews=function(client_id,client_secret,term,start=1,display=10,sort=c("sim"
 #'
 #'
 #' @param x character to be converted from html format to plain text
-#' @return
+#' @return plain text.
 #' @export
 #' @import XML
 html2text=function(x)
 {
-  xmlValue(getNodeSet(htmlParse(x, asText = TRUE,encoding="UTF-8"), "//p|//body")[[1]])
+  result<-xmlValue(getNodeSet(htmlParse(x, asText = TRUE,encoding="UTF-8"), "//p|//body")[[1]])
+  return(result)
 }

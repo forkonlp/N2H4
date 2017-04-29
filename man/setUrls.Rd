@@ -28,4 +28,3 @@ Set naver news links with sid, date, etc.
 sid1, sid2, page can use vectors.
 sid1, sid2, start Date, end Date is requred.
 }
-
