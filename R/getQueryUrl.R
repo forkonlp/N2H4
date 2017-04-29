@@ -1,6 +1,6 @@
 #' Get Query page url
 #'
-#' Get naver news(only not other sites links) titles(are just "dummy" now) and links from target url.
+#' Get naver news query page url withput pageNum.
 #'
 #' @param query requred.
 #' @param st Default is news.all.
@@ -16,7 +16,6 @@
 #' @param endDate Default is today.
 #' @param stPaper Default is exist:1.
 #' @param pd Default is 1.
-#' @param page Default is 1.
 #' @param dnaSo Default is rel.dsc.
 #' @return Get url.
 #' @export
@@ -32,7 +31,6 @@ getQueryUrl <- function(query,st="news.all",
                         startDate=as.Date(Sys.time())-3,
                         endDate=as.Date(Sys.time()),
                         stPaper="exist:1",
-                        page=1,
                         detail=1,
                         pd=1,
                         dnaSo="rel.dsc") {
@@ -50,7 +48,6 @@ getQueryUrl <- function(query,st="news.all",
                  "&startDate=",startDate,
                  "&endDate=",endDate,
                  "&stPaper=",stPaper,
-                 "&page=",page,
                  "&query=",query)
   return(link)
 }
