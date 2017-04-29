@@ -18,4 +18,3 @@ Get data.frame(url,datetime,press,title,content).
 \description{
 Get naver news content from links.
 }
-
