@@ -40,6 +40,7 @@ getContent <- function(url = url, col=c("url","datetime","press","title","conten
         Encoding(content) <- "UTF-8"
         content <- str_trim(content,side="both")
         content <- gsub("\r?\n|\r", " ", content)
+        content <- strsplit(content,"back\\(\\) \\{\\} ")[[1]][2]
 
         newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, content = content, stringsAsFactors = F)
 
