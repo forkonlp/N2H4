@@ -36,7 +36,9 @@ getQueryUrl <- function(query,st="news.all",
                         dnaSo="rel.dsc") {
   query <- utils::URLencode(query)
   root <- "http://news.naver.com/main/search/search.nhn?"
-  link <- paste0(root,"st=",st,"&q_enc=",q_enc,"&r_enc=",r_enc,
+  link <- paste0(root,"st=",st,
+                 "&q_enc=",q_enc,
+                 "&r_enc=",r_enc,
                  "&r_format=",r_format,
                  "&rp=",rp,
                  "&sm=",sm,
