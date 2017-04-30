@@ -14,6 +14,7 @@ RoxygenNote: 6.0.1
 Depends: R (>= 3.3.0)
 cache: packages
 LazyData: true
+Suggests: testthat 
 Imports: Rcpp,
   XML,
   bitops,
