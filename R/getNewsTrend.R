@@ -1,4 +1,4 @@
-#' Get Query news trand by date.
+#' Get Query news trend by date.
 #'
 #' Get number of query volume in naver news. Params depend on getQueryUrl function.
 #'
@@ -6,13 +6,14 @@
 #' @param startDate requred form YYYY-MM-DD.
 #' @param endDate requred form YYYY-MM-DD.
 #' @param onlyPaper Default is False means all count of internet news.
+#' @param ... depend on getQueryUrl function.
 #' @return Get data.frame(date, cnt).
 #' @export
 #' @import xml2
 #' @import rvest
 #' @import stringr
 
-getNewsTrand <- function(query, startDate, endDate, onlyPaper=FALSE, ...){
+getNewsTrend <- function(query, startDate, endDate, onlyPaper=FALSE, ...){
   if (onlyPaper==F){stPaper<-""}
   if (onlyPaper==T){stPaper<-"exist:1"}
   result <- c()
