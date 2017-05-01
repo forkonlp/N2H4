@@ -39,7 +39,8 @@ test_that("getVideoUrl",{
   download.file(test,destfile = "fortestthat")
   tem <- system("ls -al",intern=T)
   tem <- tem[grep("fortestthat$",tem)]
-  expect_identical(strsplit(tem," ")[[1]][6],"5578647")
+  expected <- ""
+  expect_identical(strsplit(tem," ")[[1]][5],"5578647")
 
 })
 
