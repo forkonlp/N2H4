@@ -40,7 +40,7 @@ test_that("getVideoUrl",{
   tem <- system("ls -al",intern=T)
   tem <- tem[grep("fortestthat$",tem)]
   expected <- ""
-  expect_identical(strsplit(tem," ")[[1]][5],"5578647")
+  expect_true(as.numeric(strsplit(tem," ")[[1]][5])>5500000)
 
 })
 
