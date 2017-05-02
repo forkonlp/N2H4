@@ -39,16 +39,15 @@ test_that("getVideoUrl",{
   download.file(test,destfile = "fortestthat")
   tem <- system("ls -al",intern=T)
   tem <- tem[grep("fortestthat$",tem)]
-  expected <- ""
   expect_true(as.numeric(strsplit(tem," ")[[1]][5])>5500000)
 
 })
 
 test_that("getQueryUrl",{
 
-  test <- getQueryUrl("test")
+  test <- getQueryUrl("test",startDate = "2017-04-28",endDate = "2017-05-01")
   expected <- "http://news.naver.com/main/search/search.nhn?st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=datetime.dsc&detail=1&pd=1&dnaSo=rel.dsc&startDate=2017-04-28&endDate=2017-05-01&stPaper=exist:1&query=test"
-  expect_identical(test,expected)
+  expect_equal(test,expected)
 
 })
 
