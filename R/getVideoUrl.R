@@ -11,7 +11,9 @@
 
 getVideoUrl <- function(turl = url) {
 
-  src <- turl %>% read_html %>% html_nodes("iframe") %>% html_attr("_src")
+  src <- read_html(turl)
+  src <- html_nodes(src, "iframe")
+  src <- html_attr(src, "_src")
   src <- src[!is.na(src)]
 
   tar <- paste0("http://news.naver.com",src)
@@ -19,7 +21,9 @@ getVideoUrl <- function(turl = url) {
   tem<-GET(tar,httr::add_headers(Referer = turl))
   tem<-content(tem,"parsed")
   tem <- as.character(tem)
-  src <- tem %>% read_html %>% html_nodes("script") %>% html_text
+  src <- read_html(tem)
+  src <- html_nodes(src, "script")
+  src <- html_text(src)
   src <- src[nchar(src)>0]
 
   cod<-strsplit(x = src,split = "'")
