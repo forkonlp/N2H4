@@ -18,16 +18,31 @@ setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA, return_ty
   url_list <- expand.grid(sid1_vec, sid2_vec, strDate:endDate, page_vec, stringsAsFactors=FALSE)
   colnames(url_list) <- c("sid1", "sid2", "date", "pageNum")
   url_list <- apply(url_list, 1, as.list)
-  url_list <- sapply(url_list, function(x){
-    pageUrl <- parse_url("http://news.naver.com/main/list.nhn")
-    if(is.na(x$page)){
-      pageUrl$query <- list(sid1=x$sid1, sid2=x$sid2, mid="shm", mode="LS2D", date=x$date)
-    } else {
-      pageUrl$query <- list(sid1=x$sid1, sid2=x$sid2, mid="shm", mode="LS2D", date=x$date, page=x$pageNum)
-    }
-    x$pageUrl <- build_url(pageUrl)
-    return(x)
-  })
-  if(return_type=="list"){return(url_list)}
-  if(return_type=="df"){return(as.data.frame(t(url_list)))}
+  if(return_type=="list"){
+    url_list <- lapply(url_list, function(x){
+      pageUrl <- parse_url("http://news.naver.com/main/list.nhn")
+      if(is.na(x$page)){
+        pageUrl$query <- list(sid1=x$sid1, sid2=x$sid2, mid="shm", mode="LS2D", date=x$date)
+      } else {
+        pageUrl$query <- list(sid1=x$sid1, sid2=x$sid2, mid="shm", mode="LS2D", date=x$date, page=x$pageNum)
+      }
+      x$pageUrl <- build_url(pageUrl)
+      return(x)
+    })
+  return(url_list)
+  }
+  
+  if(return_type=="df"){
+    url_list <- sapply(url_list, function(x){
+      pageUrl <- parse_url("http://news.naver.com/main/list.nhn")
+      if(is.na(x$page)){
+        pageUrl$query <- list(sid1=x$sid1, sid2=x$sid2, mid="shm", mode="LS2D", date=x$date)
+      } else {
+        pageUrl$query <- list(sid1=x$sid1, sid2=x$sid2, mid="shm", mode="LS2D", date=x$date, page=x$pageNum)
+      }
+      x$pageUrl <- build_url(pageUrl)
+      return(x)
+    })
+    return(as.data.frame(t(url_list)))
+  }
 }

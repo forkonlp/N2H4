@@ -38,3 +38,29 @@ getComment <- function(turl = url, pageSize = 10, page = 1, sort = c("favorite",
     return(data)
 
 }
+
+
+
+#' Get All Comment
+#'
+#' Get all comments from the provided news articl url on naver
+#'
+#' Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
+#'
+#' @param turl character. News areticl on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.
+#' @return Get data.frame.
+#' @export
+
+
+getAllComment <- function(turl = url)
+{
+
+  temp=getComment(turl,pageSize=1,page=1,sort="favorite")
+  numPage=ceiling(temp$pageModel$totalRows/100)
+  comments=sapply(1:numPage,getComment,turl=url,pageSize=100,sort="favorite")
+  commentList=comments[10,]
+  commentList=do.call(rbind, lapply(commentList, data.frame, stringsAsFactors=FALSE))
+
+  return(comments=commentList)
+}
+
