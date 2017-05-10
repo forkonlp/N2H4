@@ -1,6 +1,6 @@
 #' Get Url List By Category
 #'
-#' Get naver news titless and links from target url.
+#' Get naver news titles and links from target url.
 #'
 #' @param turl is target url naver news.
 #' @param  col is what you want to get from news. Defualt is all.
