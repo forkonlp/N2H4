@@ -1,11 +1,11 @@
 #' Get Comment
 #'
 #' Get naver news comments
-#' if you want to get data only comment, enter commend like below.
+#' if you want to get data only comment, enter command like below.
 #' getComment(url)$result$commentList[[1]]
 #'
 #' @param turl like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.
-#' @param pageSize is number of comment. defult is 10.
+#' @param pageSize is a number of comments per page. defult is 10.
 #' @param page is defult is 1.
 #' @param sort you can select favorite, reply, old, new. favorite is defult.
 #' @return Get data.frame.
@@ -43,11 +43,11 @@ getComment <- function(turl = url, pageSize = 10, page = 1, sort = c("favorite",
 
 #' Get All Comment
 #'
-#' Get all comments from the provided news articl url on naver
+#' Get all comments from the provided news article url on naver
 #'
 #' Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
 #'
-#' @param turl character. News areticl on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.
+#' @param turl character. News article on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.
 #' @return Get data.frame.
 #' @export
 
