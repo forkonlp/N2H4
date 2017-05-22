@@ -4,16 +4,18 @@
 \alias{getContent}
 \title{Get Content}
 \usage{
-getContent(url = url, col = c("url", "datetime", "press", "title",
-  "content"))
+getContent(url, col = c("url", "datetime", "press", "title", "body"),
+  async = FALSE)
 }
 \arguments{
 \item{url}{is naver news link.}
 
 \item{col}{is what you want to get from news. Defualt is all.}
+
+\item{async}{async crawling if it is TRUE. Defualt is FALSE.}
 }
 \value{
-Get data.frame(url,datetime,press,title,content).
+Get data.frame(url,datetime,press,title,body).
 }
 \description{
 Get naver news content from links.
