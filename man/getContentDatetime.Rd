@@ -4,15 +4,15 @@
 \alias{getContentDatetime}
 \title{Get Content datetime}
 \usage{
-getContentDatetime(html_obj, node_info = "span.t11", attr = "",
-  getEdittime = TRUE)
+getContentDatetime(html_obj, datetime_node_info = "span.t11",
+  datetime_attr = "", getEdittime = TRUE)
 }
 \arguments{
 \item{html_obj}{"xml_document" "xml_node" using read_html function.}
 
-\item{node_info}{Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.}
+\item{datetime_node_info}{Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.}
 
-\item{attr}{if you want to get attribution text, please write down here.}
+\item{datetime_attr}{if you want to get attribution text, please write down here.}
 
 \item{getEdittime}{if TRUE, can get POSIXlt type datetime length 2 means published time and final edited time. if FALSE, get Date length 1.}
 }

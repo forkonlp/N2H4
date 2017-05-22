@@ -5,7 +5,7 @@
 \title{Get Content}
 \usage{
 getContent(url, col = c("url", "datetime", "press", "title", "body"),
-  async = FALSE)
+  async = FALSE, ...)
 }
 \arguments{
 \item{url}{is naver news link.}
@@ -13,6 +13,8 @@ getContent(url, col = c("url", "datetime", "press", "title", "body"),
 \item{col}{is what you want to get from news. Defualt is all.}
 
 \item{async}{async crawling if it is TRUE. Defualt is FALSE.}
+
+\item{...}{you can use child function params like title_node_info.}
 }
 \value{
 Get data.frame(url,datetime,press,title,body).

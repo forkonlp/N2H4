@@ -4,15 +4,15 @@
 \alias{getContentPress}
 \title{Get Content Press name.}
 \usage{
-getContentPress(html_obj, node_info = "div.article_header div a img",
-  attr = "title")
+getContentPress(html_obj, press_node_info = "div.article_header div a img",
+  press_attr = "title")
 }
 \arguments{
 \item{html_obj}{"xml_document" "xml_node" using read_html function.}
 
-\item{node_info}{Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.}
+\item{press_node_info}{Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.}
 
-\item{attr}{if you want to get attribution text, please write down here. Defalt is "title".}
+\item{press_attr}{if you want to get attribution text, please write down here. Defalt is "title".}
 }
 \value{
 Get character press.
