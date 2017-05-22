@@ -16,6 +16,9 @@ if (!require("devtools")) install.packages("devtools")
 devtools::install_github("forkonlp/N2H4")
 library(N2H4)
 ```
+## v0.4.4
+getContent 함수를 리펙토링했습니다. 각각 가져오려는 내용(title, press body 등)으로 함수를 나누고 그 함수는 tag class나 id를 입력할 수 있는 형태로 수정했습니다. 각 함수에 옵션 이름을 달리해야 getContent에서 수정할 수 있겠네요.
+
 ## v0.4.3
 getQueryUrl 함수를 추가했습니다. 검색어를 입력하면 네이버에서 뉴스를 검색할 때 나오는 페이지의 url을 조합해서 결과로 줍니다. 여러 설정이 있지만 검색어와 페이지 넘버를 자주 사용하실 것 같습니다. (사실 다른 설정은 뭔지 잘 모르...) detail을 1로 하면 제목만 검색 결과로 나오고 0으로 하면 본문 일부도 함께 나옵니다. 1을 기본으로 해뒀습니다. getQueryUrl를 만들면서 getNewsTrend 함수를 추가했습니다. 예시 코드는 [여기](https://github.com/forkonlp/N2H4/wiki/%EB%89%B4%EC%8A%A4-%EC%83%9D%EC%82%B0%EB%9F%89-(trend)-%ED%91%9C-%EA%B7%B8%EB%A6%AC%EA%B8%B0-%EC%98%88%EC%8B%9C)를 참고해주세요.
 
