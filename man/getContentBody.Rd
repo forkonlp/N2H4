@@ -4,14 +4,15 @@
 \alias{getContentBody}
 \title{Get Content body name.}
 \usage{
-getContentBody(html_obj, node_info = "div#articleBodyContents", attr = "")
+getContentBody(html_obj, body_node_info = "div#articleBodyContents",
+  body_attr = "")
 }
 \arguments{
 \item{html_obj}{"xml_document" "xml_node" using read_html function.}
 
-\item{node_info}{Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.}
+\item{body_node_info}{Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.}
 
-\item{attr}{if you want to get attribution text, please write down here.}
+\item{body_attr}{if you want to get attribution text, please write down here.}
 }
 \value{
 Get character body content.
