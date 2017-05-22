@@ -16,6 +16,10 @@ if (!require("devtools")) install.packages("devtools")
 devtools::install_github("forkonlp/N2H4")
 library(N2H4)
 ```
+
+## v0.4.5
+아래 언급한 내용으로 수정했습니다.
+
 ## v0.4.4
 getContent 함수를 리펙토링했습니다. 각각 가져오려는 내용(title, press body 등)으로 함수를 나누고 그 함수는 tag class나 id를 입력할 수 있는 형태로 수정했습니다. 각 함수에 옵션 이름을 달리해야 getContent에서 수정할 수 있겠네요.
 
