@@ -26,6 +26,5 @@ Imports: Rcpp,
   stringi,
   stringr,
   httr,
-  curl,
   RCurl,
   jsonlite
