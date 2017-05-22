@@ -11,9 +11,9 @@
 #' @import RCurl
 #' @import xml2
 #' @import rvest
-#' @import stringr
+#' @import stringi
 
-getContent <- function(url = url, col=c("url","datetime","press","title","body"), async=FALSE) {
+getContent <- function(url, col=c("url","datetime","press","title","body"), async=FALSE) {
 
   if(!identical(url,character(0))){
     if (RCurl::url.exists(url)&
@@ -22,12 +22,12 @@ getContent <- function(url = url, col=c("url","datetime","press","title","body")
       urlcheck<-curl::curl_fetch_memory(url)$url
       if(!identical(grep("news.naver.com",urlcheck),integer(0))){
 
-          tem <- read_html(url)
-          title<-getContentTitle(tem)
-          datetime<-getContentDatetime(tem)[1]
-          edittime<-getContentDatetime(tem)[2]
-          press<-getContentPress(tem)
-          body<-getContentBody(tem)
+          html_obj <- read_html(url)
+          title<-getContentTitle(html_obj)
+          datetime<-getContentDatetime(html_obj)[1]
+          edittime<-getContentDatetime(html_obj)[2]
+          press<-getContentPress(html_obj)
+          body<-getContentBody(html_obj)
 
           newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, body = body, stringsAsFactors = F)
 
@@ -72,14 +72,15 @@ getContent <- function(url = url, col=c("url","datetime","press","title","body")
 #'
 #' @param html_obj "xml_document" "xml_node" using read_html function.
 #' @param node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
+#' @param attr if you want to get attribution text, please write down here.
 #' @return Get character title.
 #' @export
 #' @import xml2
 #' @import rvest
 
-getContentTitle<-function(html_ojb=tem, node_info="div.article_info h3", attr=""){
-  if(attr!=""){title <- html_ojb %>% html_nodes(node_info) %>% html_attr(attr)}else{
-  title <- html_ojb %>% html_nodes(node_info) %>% html_text()}
+getContentTitle<-function(html_obj, node_info="div.article_info h3", attr=""){
+  if(attr!=""){title <- html_obj %>% html_nodes(node_info) %>% html_attr(attr)}else{
+  title <- html_obj %>% html_nodes(node_info) %>% html_text()}
   Encoding(title) <- "UTF-8"
   return(title)
 }
@@ -91,18 +92,19 @@ getContentTitle<-function(html_ojb=tem, node_info="div.article_info h3", attr=""
 #'
 #' @param html_obj "xml_document" "xml_node" using read_html function.
 #' @param node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
+#' @param attr if you want to get attribution text, please write down here.
 #' @param getEdittime if TRUE, can get POSIXlt type datetime length 2 means published time and final edited time. if FALSE, get Date length 1.
 #' @return Get POSIXlt type datetime.
 #' @export
 #' @import xml2
 #' @import rvest
 
-getContentDatetime<-function(html_ojb=tem, node_info="span.t11", attr="", getEdittime=TRUE){
-  if(attr!=""){datetime <- html_ojb %>% html_nodes(node_info) %>% html_attr(attr)}else{
-    datetime <- html_ojb %>% html_nodes(node_info) %>% html_text()}
+getContentDatetime<-function(html_obj, node_info="span.t11", attr="", getEdittime=TRUE){
+  if(attr!=""){datetime <- html_obj %>% html_nodes(node_info) %>% html_attr(attr)}else{
+    datetime <- html_obj %>% html_nodes(node_info) %>% html_text()}
   datetime <- as.POSIXlt(datetime)
 
-  if(getedittime){
+  if(getEdittime){
     if (length(datetime) == 1) {
       edittime <- datetime[1]
     }
@@ -123,14 +125,15 @@ getContentDatetime<-function(html_ojb=tem, node_info="span.t11", attr="", getEdi
 #'
 #' @param html_obj "xml_document" "xml_node" using read_html function.
 #' @param node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
+#' @param attr if you want to get attribution text, please write down here. Defalt is "title".
 #' @return Get character press.
 #' @export
 #' @import xml2
 #' @import rvest
 
-getContentPress<-function(html_ojb=tem, node_info="div.article_header div a img", attr="title"){
-  if(attr!=""){press <- html_ojb %>% html_nodes(node_info) %>% html_attr(attr)}else{
-    press <- html_ojb %>% html_nodes(node_info) %>% html_text()}
+getContentPress<-function(html_obj, node_info="div.article_header div a img", attr="title"){
+  if(attr!=""){press <- html_obj %>% html_nodes(node_info) %>% html_attr(attr)}else{
+    press <- html_obj %>% html_nodes(node_info) %>% html_text()}
   Encoding(press) <- "UTF-8"
   return(press)
 }
@@ -143,18 +146,19 @@ getContentPress<-function(html_ojb=tem, node_info="div.article_header div a img"
 #'
 #' @param html_obj "xml_document" "xml_node" using read_html function.
 #' @param node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
+#' @param attr if you want to get attribution text, please write down here.
 #' @return Get character body content.
 #' @export
 #' @import xml2
 #' @import rvest
-#' @import stingr
+#' @import stringi
 
-getContentBody<-function(html_ojb=tem, node_info="div#articleBodyContents", attr=""){
-  if(attr!=""){body <- html_ojb %>% html_nodes(node_info) %>% html_attr(attr)}else{
-    body <- html_ojb %>% html_nodes(node_info) %>% html_text()}
+getContentBody<-function(html_obj, node_info="div#articleBodyContents", attr=""){
+  if(attr!=""){body <- html_obj %>% html_nodes(node_info) %>% html_attr(attr)}else{
+    body <- html_obj %>% html_nodes(node_info) %>% html_text()}
   Encoding(body) <- "UTF-8"
-  content <- str_trim(content,side="both")
-  content <- gsub("\r?\n|\r", " ", content)
+  body <- stri_trim_both(body)
+  body <- gsub("\r?\n|\r", " ", body)
   return(body)
 }
 
