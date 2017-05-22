@@ -18,4 +18,3 @@ Get numeric
 \description{
 Get Max Page Number
 }
-

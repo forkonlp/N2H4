@@ -19,7 +19,7 @@ getContent <- function(url = url, col=c("url","datetime","press","title","body")
     if (RCurl::url.exists(url)&
        "error_msg 404"!=(read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1]
         ) {
-      urlcheck<-GET(url)$url
+      urlcheck<-curl::curl_fetch_memory(url)$url
       if(!identical(grep("news.naver.com",urlcheck),integer(0))){
 
           tem <- read_html(url)
