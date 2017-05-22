@@ -8,7 +8,7 @@
 #' @param ... you can use child function params like title_node_info.
 #' @return Get data.frame(url,datetime,press,title,body).
 #' @export
-#' @import curl
+#' @import httr
 #' @import RCurl
 #' @import xml2
 #' @import rvest
@@ -20,7 +20,7 @@ getContent <- function(url, col=c("url","datetime","press","title","body"), asyn
     if (RCurl::url.exists(url)&
        "error_msg 404"!=(read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1]
         ) {
-      urlcheck<-curl::curl_fetch_memory(url)$url
+      urlcheck<-httr::GET(url)$url
       if(!identical(grep("news.naver.com",urlcheck),integer(0))){
 
           html_obj <- read_html(url)
