@@ -17,12 +17,11 @@
 getContent <- function(url, col=c("url","datetime","press","title","body"), async=FALSE, ...) {
 
   if(!identical(url,character(0))){
-    if (RCurl::url.exists(url)&
+    urlcheck<-httr::GET(url)$url
+    if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
+        if (RCurl::url.exists(url)&
        "error_msg 404"!=(read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1]
         ) {
-      urlcheck<-httr::GET(url)$url
-      if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
-
           html_obj <- read_html(url)
           title<-getContentTitle(html_obj)
           datetime<-getContentDatetime(html_obj)[1]
@@ -33,22 +32,24 @@ getContent <- function(url, col=c("url","datetime","press","title","body"), asyn
           newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, body = body, stringsAsFactors = F)
 
       } else {
-        newsInfo <- data.frame(url = url, datetime = "page is not news section.",
-                               edittime = "page is not news section.",
-                               press = "page is not news section.",
-                               title = "page is not news section.",
-                               body = "page is not news section.",
-                               stringsAsFactors = F)
-      }
-      return(newsInfo[,col])
-    } else {
 
         newsInfo <- data.frame(url = url, datetime = "page is moved.",
                                edittime = "page is moved.",
                                press = "page is moved.",
                                title = "page is moved.",
                                body = "page is moved.",
-            stringsAsFactors = F)
+                               stringsAsFactors = F)
+
+      }
+      return(newsInfo[,col])
+    } else {
+
+      newsInfo <- data.frame(url = url, datetime = "page is not news section.",
+                             edittime = "page is not news section.",
+                             press = "page is not news section.",
+                             title = "page is not news section.",
+                             body = "page is not news section.",
+                             stringsAsFactors = F)
 
     }
     return(newsInfo[,col])
