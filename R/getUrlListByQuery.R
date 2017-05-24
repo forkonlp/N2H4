@@ -19,7 +19,8 @@ getUrlListByQuery <- function(turl = url) {
         news_links <- "no naver news"
     }
 
-    news_lists <- data.frame(news_title = news_title, news_links = news_links, stringsAsFactors = F)
+    #news_lists <- data.frame(news_title = news_title, news_links = news_links, stringsAsFactors = F)
+    news_lists <- data.frame(news_title = "dummy", news_links = news_links, stringsAsFactors = F)
     return(news_lists)
 
 }
