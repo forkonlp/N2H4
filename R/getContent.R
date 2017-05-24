@@ -21,7 +21,7 @@ getContent <- function(url, col=c("url","datetime","press","title","body"), asyn
        "error_msg 404"!=(read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1]
         ) {
       urlcheck<-httr::GET(url)$url
-      if(!identical(grep("news.naver.com",urlcheck),integer(0))){
+      if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
 
           html_obj <- read_html(url)
           title<-getContentTitle(html_obj)
