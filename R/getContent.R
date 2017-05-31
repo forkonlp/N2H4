@@ -4,25 +4,42 @@
 #'
 #' @param url is naver news link.
 #' @param col is what you want to get from news. Defualt is all.
-#' @param async async crawling if it is TRUE. Defualt is FALSE.
+#' @param try_cnt is how many you want to try again if error. Default is 3.
+#' @param sleep_time is wait time to try again. Default is rnorm(1).
+#' @param async async crawling if it is TRUE. Default is FALSE.
 #' @param ... you can use child function params like title_node_info.
 #' @return Get data.frame(url,datetime,press,title,body).
 #' @export
+#' @import stats
 #' @import httr
 #' @import RCurl
 #' @import xml2
+#' @import selectr
 #' @import rvest
 #' @import stringi
 
-getContent <- function(url, col=c("url","datetime","press","title","body"), async=FALSE, ...) {
+getContent <- function(url, col = c("url", "datetime", "press", "title", "body"), try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
 
   if(!identical(url,character(0))){
     urlcheck<-httr::GET(url)$url
     if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
+      tryk<-0
+      chk<-try((read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1], silent = T)
+        while(tryk<=try_cnt&&class(chk)=="try-error"){
+          chk<-try((read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1], silent = T)
+          tryk <- tryk+1
+        }
         if (RCurl::url.exists(url)&
-       "error_msg 404"!=(read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1]
+       "error_msg 404"!=chk
         ) {
-          html_obj <- read_html(url)
+          tryn<-0
+          html_obj <- try(read_html(url), silent = T)
+            while(tryn<=try_cnt&&class(html_obj)=="try-error"){
+              html_obj <- try(read_html(url), silent = T)
+              Sys.sleep(abs(sleep_time))
+              tryn <- tryn+1
+              print(paste0("try ",tryn, " times target : ", url))
+            }
           title<-getContentTitle(html_obj)
           datetime<-getContentDatetime(html_obj)[1]
           edittime<-getContentDatetime(html_obj)[2]

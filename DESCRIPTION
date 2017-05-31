@@ -1,8 +1,8 @@
 Package: N2H4
 Type: Package
 Title: Handling methods for naver news text crawling
-Version: 0.4.5
-Date: 2017-04-30
+Version: 0.4.6
+Date: 2017-05-31
 Author@R: person("ChanYub","Park",role = c("aut","cre"), email="mrchypark@gmail.com")
 Author: ChanYub Park [aut, cre]
 Maintainer: ChanYub Park <mrchypark@gmail.com>
@@ -16,6 +16,7 @@ cache: packages
 LazyData: true
 Suggests: testthat 
 Imports: Rcpp,
+  stats,
   XML,
   bitops,
   magrittr,
