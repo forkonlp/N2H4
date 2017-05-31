@@ -5,14 +5,18 @@
 \title{Get Content}
 \usage{
 getContent(url, col = c("url", "datetime", "press", "title", "body"),
-  async = FALSE, ...)
+  try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...)
 }
 \arguments{
 \item{url}{is naver news link.}
 
 \item{col}{is what you want to get from news. Defualt is all.}
 
-\item{async}{async crawling if it is TRUE. Defualt is FALSE.}
+\item{try_cnt}{is how many you want to try again if error. Default is 3.}
+
+\item{sleep_time}{is wait time to try again. Default is rnorm(1).}
+
+\item{async}{async crawling if it is TRUE. Default is FALSE.}
 
 \item{...}{you can use child function params like title_node_info.}
 }
