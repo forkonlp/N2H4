@@ -40,6 +40,15 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
               tryn <- tryn+1
               print(paste0("try ",tryn, " times target : ", url))
             }
+          if(tryn>try_cnt){
+            newsInfo <- data.frame(url = url, datetime = "try out.",
+                                   edittime = "try out.",
+                                   press = "try out.",
+                                   title = "try out.",
+                                   body = "try out.",
+                                   stringsAsFactors = F)
+            return(newsInfo[,col])
+          }
           title<-getContentTitle(html_obj)
           datetime<-getContentDatetime(html_obj)[1]
           edittime<-getContentDatetime(html_obj)[2]
