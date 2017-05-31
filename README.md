@@ -16,6 +16,8 @@ if (!require("devtools")) install.packages("devtools")
 devtools::install_github("forkonlp/N2H4")
 library(N2H4)
 ```
+## v0.4.6
+getContent에 timeout 시 재시도 기능을 추가했습니다. 3번이 기본이고 rnorm(1)으로 sleep 합니다. sleep 시간을 없애고 싶으시면 0으로 설정하시면 됩니다.
 
 ## v0.4.5
 아래 언급한 내용으로 수정했습니다.
