@@ -12,3 +12,4 @@ Get data.frame(chr:cate_name, chr:sid1).
 \description{
 Get naver news main category names and ids recently.
 }
+

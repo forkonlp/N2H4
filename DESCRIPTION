@@ -3,29 +3,34 @@ Type: Package
 Title: Handling methods for naver news text crawling
 Version: 0.4.6
 Date: 2017-05-31
-Author@R: person("ChanYub","Park",role = c("aut","cre"), email="mrchypark@gmail.com")
+Author@R: person("ChanYub","Park",role = c("aut","cre"),
+    email="mrchypark@gmail.com")
 Author: ChanYub Park [aut, cre]
 Maintainer: ChanYub Park <mrchypark@gmail.com>
-Description: Provides some utils to get korean text sample from news articles in naver which is popular news portal servise in korea.
+Description: Provides some utils to get korean text sample from news articles in
+    naver which is popular news portal servise in korea.
 License: MIT + file LICENSE
 URL: http://github.com/forkonlp/N2H4
 BugReports: http://github.com/forkonlp/N2H4/issues
-RoxygenNote: 6.0.1
-Depends: R (>= 3.3.0)
+RoxygenNote: 5.0.1
+Depends:
+    R (>= 3.3.0)
 cache: packages
 LazyData: true
-Suggests: testthat 
-Imports: Rcpp,
-  stats,
-  XML,
-  bitops,
-  magrittr,
-  xml2,
-  selectr,
-  rvest,
-  lubridate,
-  stringi,
-  stringr,
-  httr,
-  RCurl,
-  jsonlite
+Suggests:
+    testthat
+Imports:
+    Rcpp,
+    stats,
+    XML,
+    bitops,
+    magrittr,
+    xml2,
+    selectr,
+    rvest,
+    lubridate,
+    stringi,
+    stringr,
+    httr,
+    RCurl,
+    jsonlite

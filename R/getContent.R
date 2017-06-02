@@ -166,8 +166,6 @@ getContentPress<-function(html_obj, press_node_info="div.article_header div a im
   return(press)
 }
 
-
-
 #' Get Content body name.
 #'
 #' Get naver news body from link.
@@ -187,6 +185,7 @@ getContentBody<-function(html_obj, body_node_info="div#articleBodyContents", bod
   Encoding(body) <- "UTF-8"
   body <- stri_trim_both(body)
   body <- gsub("\r?\n|\r", " ", body)
+  body <- gsub("// flash .* function _flash_removeCallback\\(\\) \\{\\} ","",body)
   return(body)
 }
 

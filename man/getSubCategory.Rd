@@ -17,3 +17,4 @@ Get data.frame(chr:sub_cate_name, chr:urls).
 \description{
 Get naver news sub category names and urls recently.
 }
+
