@@ -24,3 +24,4 @@ Get naver news comments
 if you want to get data only comment, enter commend like below.
 getComment(url)$result$commentList[[1]]
 }
+

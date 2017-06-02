@@ -20,3 +20,4 @@ Get character press.
 \description{
 Get naver news press name from link.
 }
+
