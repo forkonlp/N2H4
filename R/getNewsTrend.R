@@ -22,6 +22,7 @@ getNewsTrend <- function(query, startDate, endDate, onlyPaper=FALSE, ...){
   result$date<-tdate
   result$cnt<-sapply(turl, function(x) str_trim(html_text(html_nodes(read_html(x),"span.result_num"))))
   names(result$cnt)<-NULL
+  result$cnt<-sapply(result$cnt, function(x) ifelse(identical(x,character(0)),"/0",x) )
   tem<-strsplit(result$cnt,"/")
   result$cnt <- sapply(tem, function(x) x[2])
   result$cnt <- as.numeric(gsub("[^0-9]","",result$cnt))
