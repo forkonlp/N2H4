@@ -22,4 +22,3 @@ Get POSIXlt type datetime.
 \description{
 Get naver news published datetime from link.
 }
-

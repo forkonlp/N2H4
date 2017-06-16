@@ -17,4 +17,3 @@ Get data.frame(titles, links).
 \description{
 Get naver news titless and links from target url.
 }
-

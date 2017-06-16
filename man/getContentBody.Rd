@@ -20,4 +20,3 @@ Get character body content.
 \description{
 Get naver news body from link.
 }
-
