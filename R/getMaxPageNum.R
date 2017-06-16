@@ -12,6 +12,10 @@ getMaxPageNum <- function(turl=url, max=100) {
 
   ifmaxUrl <- paste0(turl,"&page=",max)
   tem <- read_html(ifmaxUrl)
+  noContent <- tem %>% html_node("div.no_content")
+  if (class(noContent)!="xml_missing"){
+    return("no result.")
+  }
   ifmax <- tem %>% html_node("a.next")
   while(class(ifmax)=="xml_node"){
     max <- max + max
