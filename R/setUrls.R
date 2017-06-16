@@ -15,7 +15,13 @@
 #' @import httr
 
 setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA, return_type=c("list","df")[1]){
-  url_list <- expand.grid(sid1_vec, sid2_vec, strDate:endDate, page_vec, stringsAsFactors=FALSE)
+  # Generate date lists from strDate to endDate
+  strDate_POSIX <- strptime(strDate, format="%Y%m%d")
+  diff_day <- as.numeric(strptime(endDate, format="%Y%m%d", tz="") - strptime(strDate, format="%Y%m%d", tz=""))
+  date_list <- as.numeric(strftime(seq(strDate_POSIX, by="day", length.out = diff_day), format="%Y%m%d"))
+  
+  # Generate url lists for query
+  url_list <- expand.grid(sid1_vec, sid2_vec, date_list, page_vec, stringsAsFactors=FALSE)
   colnames(url_list) <- c("sid1", "sid2", "date", "pageNum")
   url_list <- apply(url_list, 1, as.list)
   if(return_type=="list"){
@@ -29,7 +35,7 @@ setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA, return_ty
       x$pageUrl <- build_url(pageUrl)
       return(x)
     })
-  return(url_list)
+    return(url_list)
   }
   
   if(return_type=="df"){
