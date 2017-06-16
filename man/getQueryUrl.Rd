@@ -47,4 +47,3 @@ Get url.
 \description{
 Get naver news query page url withput pageNum.
 }
-

@@ -18,4 +18,3 @@ Get all comments from the provided news articl url on naver
 \details{
 Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
 }
-
