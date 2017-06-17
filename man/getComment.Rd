@@ -10,7 +10,7 @@ getComment(turl = url, pageSize = 10, page = 1, sort = c("favorite",
 \arguments{
 \item{turl}{like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.}
 
-\item{pageSize}{is number of comment. defult is 10.}
+\item{pageSize}{is a number of comments per page. defult is 10.}
 
 \item{page}{is defult is 1.}
 
@@ -21,6 +21,6 @@ Get data.frame.
 }
 \description{
 Get naver news comments
-if you want to get data only comment, enter commend like below.
+if you want to get data only comment, enter command like below.
 getComment(url)$result$commentList[[1]]
 }

@@ -15,5 +15,5 @@ getUrlListByCategory(turl = url, col = c("titles", "links"))
 Get data.frame(titles, links).
 }
 \description{
-Get naver news titless and links from target url.
+Get naver news titles and links from target url.
 }
