@@ -175,9 +175,11 @@ getContentBody<-function(html_obj, body_node_info="div#articleBodyContents", bod
   if(body_attr!=""){body <- html_obj %>% html_nodes(body_node_info) %>% html_attr(body_attr)}else{
     body <- html_obj %>% html_nodes(body_node_info) %>% html_text()}
   Encoding(body) <- "UTF-8"
-  body <- stri_trim_both(body)
+
   body <- gsub("\r?\n|\r", " ", body)
   body <- gsub("// flash .* function _flash_removeCallback\\(\\) \\{\\} ","",body)
+  body <- stri_trim_both(body)
+
   return(body)
 }
 
