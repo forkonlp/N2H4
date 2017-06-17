@@ -22,7 +22,14 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
 
   if(!identical(url,character(0))){
 
-    root<-httr::GET(url,user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))
+    tryn<-0
+    root<-try(httr::GET(url, user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")), silent=T)
+    while(tryn<=try_cnt&&class(root)=="try-error"){
+      root<-try(httr::GET(url,user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")), silent=T)
+      Sys.sleep(abs(rnorm(1)))
+      tryn<-tryn+1
+      print(paste0("try again: ", url))
+    }
     urlcheck<-root$url
 
     if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
@@ -30,7 +37,6 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
         if (RCurl::url.exists(url)&
        "error_msg 404"!=chk
         ) {
-          tryn<-0
           html_obj <- read_html(root)
           if(tryn>try_cnt){
             newsInfo <- data.frame(url = url, datetime = "try out.",
