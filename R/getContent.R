@@ -21,25 +21,17 @@
 getContent <- function(url, col = c("url", "datetime", "press", "title", "body"), try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
 
   if(!identical(url,character(0))){
-    urlcheck<-httr::GET(url)$url
+
+    root<-httr::GET(url,user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))
+    urlcheck<-root$url
+
     if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
-      tryk<-0
-      chk<-try((read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1], silent = T)
-        while(tryk<=try_cnt&&class(chk)=="try-error"){
-          chk<-try((read_html(url)%>%html_nodes("div#main_content div div")%>%html_attr("class"))[1], silent = T)
-          tryk <- tryk+1
-        }
+      chk<-read_html(root)%>%html_nodes("div#main_content div div")%>%html_attr("class") %>%.[1]
         if (RCurl::url.exists(url)&
        "error_msg 404"!=chk
         ) {
           tryn<-0
-          html_obj <- try(read_html(url), silent = T)
-            while(tryn<=try_cnt&&class(html_obj)=="try-error"){
-              html_obj <- try(read_html(url), silent = T)
-              Sys.sleep(abs(sleep_time))
-              tryn <- tryn+1
-              print(paste0("try ",tryn, " times target : ", url))
-            }
+          html_obj <- read_html(root)
           if(tryn>try_cnt){
             newsInfo <- data.frame(url = url, datetime = "try out.",
                                    edittime = "try out.",

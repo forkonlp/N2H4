@@ -24,7 +24,10 @@ getComment <- function(turl = url, pageSize = 10, page = 1, sort = c("favorite",
     url <- paste0("https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&pool=cbox5&lang=ko&country=KR&objectId=news",
         oid, "%2C", aid, "&categoryId=&pageSize=", pageSize, "&indexSize=10&groupId=&page=", page, "&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=",
         sort)
-    con <- httr::GET(url, httr::add_headers(Referer = turl))
+
+    con <- httr::GET(url,
+                     user_agent("N2H4 using r by chanyub.park mrchypark@gmail.com"),
+                     httr::add_headers(Referer = turl))
     tt <- httr::content(con, "text")
 
     tt <- gsub("_callback", "", tt)

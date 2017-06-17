@@ -40,16 +40,14 @@ test_that("getMaxPageNum", {
 
 })
 
-test_that("getVideoUrl",{
-
-  url  <- "http://news.naver.com/main/read.nhn?mode=LPOD&mid=tvh&oid=437&aid=0000143025"
-  test <- getVideoUrl(url)
-  download.file(test,destfile = "fortestthat")
-  tem <- system("ls -al",intern=T)
-  tem <- tem[grep("fortestthat$",tem)]
-  expect_true(as.numeric(strsplit(tem," ")[[1]][5])>5500000)
-
-})
+# test_that("getVideoUrl",{
+#
+#   url  <- "http://news.naver.com/main/read.nhn?mode=LPOD&mid=tvh&oid=437&aid=0000143025"
+#   test <- getVideoUrl(url)
+#   expected  <- "http://news.video.p.rmcnmv.naver.com/owfs_rmc/read/NEWS_2017_01_01_5/531C05F39305F3AC2033EE1A93792813B82_muploader_e_270P_480_500_64_2.mp4?_lsu_sa_=67d595fc611060e610de45ff6c55e7bc6eef3e88c6063f7c3fd7f8c497cc3e051e228a8e6c15e00e40623852d43c7b4d57664b3483a2ff7d843930bced98ea0d9c507066ad92a275d3901fa6c1546fed"
+#   expect_equal(test,expected)
+#
+# })
 
 test_that("getQueryUrl",{
 
