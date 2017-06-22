@@ -8,6 +8,8 @@
 ###### 문의는 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요. [질문용이슈](https://github.com/forkonlp/N2H4/issues/13)도 열었으니 댓글로 질문해주셔도 좋습니다.
 ###### [이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
 ###### [위키](https://github.com/forkonlp/N2H4/wiki/)에 한글 설명이 준비되어 있습니다.
+###### [슬랙](https://forkonlp.slack.com/messages/C53R7L2UT/)에 질문해주셔도 좋습니다. 가입은 [여기](https://forkonlpforslack.herokuapp.com/)에서 메일로 신청해주세요. 자동으로 진행됩니다.
+
 
 ###### OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
 
