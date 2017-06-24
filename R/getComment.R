@@ -17,6 +17,9 @@
 getComment <- function(turl = url, pageSize = 10, page = 1, sort = c("favorite", "reply", "old", "new")) {
 
     sort <- sort[1]
+    tem<-stringr::str_split(turl, "[.]")[[1]]
+    ticket<-tem[1]
+    ticket<-gsub("http[s]*://","",ticket)
     tem <- stringr::str_split(turl, "[=&]")[[1]]
     oid <- tem[grep("oid", tem) + 1]
     aid <- tem[grep("aid", tem) + 1]
