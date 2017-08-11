@@ -1,5 +1,6 @@
 # N2H4 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) [![Travis-CI Build Status](https://travis-ci.org/forkonlp/N2H4.png?branch=master)](https://travis-ci.org/forkonlp/N2H4) [![Coverage Status](https://coveralls.io/repos/github/forkonlp/N2H4/badge.svg)](https://coveralls.io/github/forkonlp/N2H4)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/N2H4)](https://cran.r-project.org/package=N2H4)
 
 ## 네이버 뉴스 크롤링을 위한 도구
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
