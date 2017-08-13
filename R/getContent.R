@@ -18,21 +18,23 @@
 #' @import rvest
 #' @import stringi
 
-getContent <- function(url, col = c("url", "datetime", "press", "title", "body"), try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
+getContent <- function(url, col = c("url", "datetime", "press", "title", "body"),
+                       try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
 
   if(!identical(url,character(0))){
 
     tryn<-0
-    root<-try(httr::GET(url, user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")), silent=T)
+    ua<-user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
+    root<-try(httr::GET(url, ua), silent=T)
     while(tryn<=try_cnt&&class(root)=="try-error"){
-      root<-try(httr::GET(url,user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")), silent=T)
+      root<-try(httr::GET(url,ua), silent=T)
       Sys.sleep(abs(rnorm(1)))
       tryn<-tryn+1
       print(paste0("try again: ", url))
     }
     urlcheck<-root$url
 
-    if(!identical(grep("^http://news.naver.com",urlcheck),integer(0))){
+    if(!identical(grep("^http://(news|finance).naver.com",urlcheck),integer(0))){
       chk<-read_html(root)%>%html_nodes("div#main_content div div")%>%html_attr("class") %>%.[1]
         if (RCurl::url.exists(url)&
        "error_msg 404"!=chk
@@ -188,27 +190,3 @@ getContentBody<-function(html_obj, body_node_info="div#articleBodyContents", bod
 
   return(body)
 }
-
-
-
-
-#
-# tem<-getUrlListByCategory("http://news.naver.com/main/list.nhn?mode=LS2D&mid=shm&sid1=101&sid2=258")
-#
-# pool <- new_pool()
-#
-# data <- list()
-# success <- function(res){
-#   cat("Request done! Status:", res$status, "\n")
-#   res$content<-iconv(rawToChar(res$content),from="CP949",to="UTF-8")
-#   data <<- c(data, list(res))
-# }
-# failure <- function(msg){
-#   cat("Oh noes! Request failed!", msg, "\n")
-# }
-#
-# sapply(tem$links, function(x) curl_fetch_multi(x,success,failure))
-#
-# multi_run()
-# str(data)
-
