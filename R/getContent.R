@@ -35,11 +35,15 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
     urlcheck<-root$url
 
     if(!identical(grep("^http://(news|finance).naver.com",urlcheck),integer(0))){
-      chk<-read_html(root)%>%html_nodes("div#main_content div div")%>%html_attr("class") %>%.[1]
+
+      chk<-read_html(root, encoding="EUC-KR")%>%
+        html_nodes("div#main_content div div")%>%
+        html_attr("class") %>%.[1]
+
         if (RCurl::url.exists(url)&
        "error_msg 404"!=chk
         ) {
-          html_obj <- read_html(root)
+          html_obj <- read_html(root, encoding="EUC-KR")
           if(tryn>try_cnt){
             newsInfo <- data.frame(url = url, datetime = "try out.",
                                    edittime = "try out.",
