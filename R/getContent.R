@@ -18,14 +18,16 @@
 #' @import rvest
 #' @import stringi
 
-getContent <- function(url, col = c("url", "datetime", "press", "title", "body"), try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
+getContent <- function(url, col = c("url", "datetime", "press", "title", "body"),
+                       try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
 
   if(!identical(url,character(0))){
 
     tryn<-0
-    root<-try(httr::GET(url, user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")), silent=T)
+    ua<-user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
+    root<-try(httr::GET(url, ua), silent=T)
     while(tryn<=try_cnt&&class(root)=="try-error"){
-      root<-try(httr::GET(url,user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")), silent=T)
+      root<-try(httr::GET(url,ua), silent=T)
       Sys.sleep(abs(rnorm(1)))
       tryn<-tryn+1
       print(paste0("try again: ", url))

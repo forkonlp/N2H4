@@ -1,5 +1,6 @@
 # N2H4 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) [![Travis-CI Build Status](https://travis-ci.org/forkonlp/N2H4.png?branch=master)](https://travis-ci.org/forkonlp/N2H4) [![Coverage Status](https://coveralls.io/repos/github/forkonlp/N2H4/badge.svg)](https://coveralls.io/github/forkonlp/N2H4)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/N2H4)](https://cran.r-project.org/package=N2H4)
 
 ## 네이버 뉴스 크롤링을 위한 도구
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
@@ -8,6 +9,8 @@
 ###### 문의는 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요. [질문용이슈](https://github.com/forkonlp/N2H4/issues/13)도 열었으니 댓글로 질문해주셔도 좋습니다.
 ###### [이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
 ###### [위키](https://github.com/forkonlp/N2H4/wiki/)에 한글 설명이 준비되어 있습니다.
+###### [슬랙](https://forkonlp.slack.com/messages/C53R7L2UT/)에 질문해주셔도 좋습니다. 가입은 [여기](https://forkonlpforslack.herokuapp.com/)에서 메일로 신청해주세요. 자동으로 진행됩니다.
+
 
 ###### OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
 
