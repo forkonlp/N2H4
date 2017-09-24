@@ -9,6 +9,14 @@ test_that("getComment", {
 
 })
 
+test_that("getAllComment", {
+
+  url  <- "http://news.naver.com/main/read.nhn?mode=LS2D&mid=shm&sid1=100&sid2=264&oid=015&aid=0002303155"
+  test <- getAllComment(url)
+  expect_equal(test$contents, c("test","test2","test"))
+
+})
+
 test_that("getContent", {
 
   url  <- "http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=102&oid=001&aid=0009205077"

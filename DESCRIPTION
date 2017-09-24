@@ -1,8 +1,8 @@
 Package: N2H4
 Type: Package
 Title: Handling methods for naver news text crawling
-Version: 0.4.6.3
-Date: 2017-06-17
+Version: 0.4.6.4
+Date: 2017-09-25
 Author@R: person("ChanYub","Park",role = c("aut","cre"),
     email="mrchypark@gmail.com")
 Author: ChanYub Park [aut, cre]

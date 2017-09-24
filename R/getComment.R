@@ -14,7 +14,8 @@
 #' @import jsonlite
 #' @import stringr
 
-getComment <- function(turl = url, pageSize = 10, page = 1, sort = c("favorite", "reply", "old", "new")) {
+getComment <- function(turl = url, pageSize = 10, page = 1,
+                       sort = c("favorite", "reply", "old", "new")) {
 
     sort <- sort[1]
     tem <- stringr::str_split(turl, "[=&]")[[1]]
@@ -55,14 +56,18 @@ getComment <- function(turl = url, pageSize = 10, page = 1, sort = c("favorite",
 #' @export
 
 
-getAllComment <- function(turl = url)
-{
+getAllComment <- function(turl = url){
 
-  temp=getComment(turl,pageSize=1,page=1,sort="favorite")
-  numPage=ceiling(temp$pageModel$totalRows/100)
-  comments=sapply(1:numPage,getComment,turl=url,pageSize=100,sort="favorite")
-  commentList=comments[10,]
-  commentList=do.call(rbind, lapply(commentList, data.frame, stringsAsFactors=FALSE))
+    temp        <- getComment(turl,pageSize=1,page=1,sort="favorite")
+    numPage     <- ceiling(temp$result$pageModel$totalRows/100)
+    comments    <- lapply(1:numPage, function(x) getComment(turl=turl
+                                                            , pageSize=100
+                                                            , page=x
+                                                            , sort="favorite"
+                                                            )
+                          )
+    comments    <- lapply(comments, function(x) x$result$commentList[[1]])
+    commentList <- do.call(rbind, lapply(comments, data.frame, stringsAsFactors=FALSE))
 
-  return(comments=commentList)
-}
+    return(commentList)
+  }
