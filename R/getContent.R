@@ -40,6 +40,10 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
         html_nodes("div#main_content div div")%>%
         html_attr("class") %>%.[1]
 
+      if(is.na(chk)){
+        chk<-"not error"
+      }
+
         if (RCurl::url.exists(url)&
        "error_msg 404"!=chk
         ) {
