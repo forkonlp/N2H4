@@ -13,7 +13,7 @@ getUrlListByQuery <- function(turl = url) {
     tem <- read_html(turl)
 #    news_title <- tem %>% rvest::html_nodes("a.tit") %>% rvest::html_text()
 
-    news_links <- tem %>% rvest::html_nodes("a.go_naver") %>% rvest::html_attr("href")
+    news_links <- tem %>% rvest::html_nodes("dd.txt_inline a._sp_each_url") %>% rvest::html_attr("href")
 
     if (identical(news_links, character(0))) {
         news_links <- "no naver news"
