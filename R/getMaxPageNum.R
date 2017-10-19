@@ -2,8 +2,6 @@
 #'
 #' @param turl is target url include sid1, sid2, date like below.
 #'             'http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102'
-#'             in search page url like below.
-#'             "https://search.naver.com/search.naver?where=news&query=%EA%B2%BD%EA%B8%B0%EB%8F%84%EA%B5%90%EC%9C%A1%EC%B2%AD&ie=utf8&sm=tab_opt&sort=1&photo=0&field=0&reporter_article=&pd=3&ds=2017.10.19&de=2017.10.19&docid=&nso=so%3Add%2Cp%3Afrom20171019to20171019%2Ca%3Aall&mynews=0&mson=0&refresh_start=0&related=0"
 #' @param max is also interval to try max page number is numeric. Default is 100.
 #' @param search if TRUE, get max page number in news search page ordered date.
 #' @return Get numeric
