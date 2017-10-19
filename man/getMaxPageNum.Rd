@@ -4,13 +4,15 @@
 \alias{getMaxPageNum}
 \title{Get Max Page Number}
 \usage{
-getMaxPageNum(turl = url, max = 100)
+getMaxPageNum(turl = url, max = 100, search = F)
 }
 \arguments{
 \item{turl}{is target url include sid1, sid2, date like below.
 'http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102'}
 
 \item{max}{is also interval to try max page number is numeric. Default is 100.}
+
+\item{search}{if TRUE, get max page number in news search page ordered date.}
 }
 \value{
 Get numeric
