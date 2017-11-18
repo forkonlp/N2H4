@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling methods for naver news text crawling
-Version: 0.4.6.5
+Version: 0.4.6.6
 Date: 2017-10-19
 Author@R: person("ChanYub","Park",role = c("aut","cre"),
     email="mrchypark@gmail.com")
@@ -12,7 +12,7 @@ Description: Provides some utils to get korean text sample from news articles in
 License: MIT + file LICENSE
 URL: http://github.com/forkonlp/N2H4
 BugReports: http://github.com/forkonlp/N2H4/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.0.1.9000
 Depends:
     R (>= 3.3.0)
 cache: packages
