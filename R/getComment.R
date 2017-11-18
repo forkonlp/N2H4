@@ -19,10 +19,19 @@ getComment <- function(turl = url, pageSize = 10, page = 1,
 
     sort <- sort[1]
     tem <- stringr::str_split(turl, "[=&]")[[1]]
+    ticket <- "news"
+    pool <- "cbox5"
     oid <- tem[grep("oid", tem) + 1]
     aid <- tem[grep("aid", tem) + 1]
+    templateId <- "view_politics"
 
-    url <- paste0("https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?ticket=news&templateId=view_politics&pool=cbox5&lang=ko&country=KR&objectId=news",
+    if(grepl("http://sports.news.naver.com", turl)){
+      ticket <- "sports"
+      pool <- "cbox2"
+      templateId <- ""
+    }
+
+    url <- paste0("https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?ticket=", ticket, "&templateId=",templateId,"&pool=",pool,"&lang=ko&country=KR&objectId=news",
         oid, "%2C", aid, "&categoryId=&pageSize=", pageSize, "&indexSize=10&groupId=&page=", page, "&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=",
         sort)
 
