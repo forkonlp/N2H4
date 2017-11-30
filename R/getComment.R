@@ -26,7 +26,7 @@ getComment <- function(turl = url, pageSize = 10, page = 1,
     templateId <- "view_politics"
     useAltSort <- "&useAltSort=true"
 
-    if(grepl("http://sports.", turl)){
+    if(grepl("http://(m.|)sports.", turl)){
       ticket <- "sports"
       pool <- "cbox2"
       templateId <- "view"
