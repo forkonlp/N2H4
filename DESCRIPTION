@@ -22,7 +22,6 @@ Suggests:
 Imports:
     Rcpp,
     stats,
-    XML,
     bitops,
     magrittr,
     xml2,

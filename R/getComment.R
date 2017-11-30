@@ -24,19 +24,27 @@ getComment <- function(turl = url, pageSize = 10, page = 1,
     oid <- tem[grep("oid", tem) + 1]
     aid <- tem[grep("aid", tem) + 1]
     templateId <- "view_politics"
+    useAltSort <- "&useAltSort=true"
 
-    if(grepl("http://sports.news.naver.com", turl)){
+    if(grepl("http://sports.", turl)){
       ticket <- "sports"
       pool <- "cbox2"
-      templateId <- ""
+      templateId <- "view"
+      useAltSort <- ""
     }
 
-    url <- paste0("https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?ticket=", ticket, "&templateId=",templateId,"&pool=",pool,"&lang=ko&country=KR&objectId=news",
-        oid, "%2C", aid, "&categoryId=&pageSize=", pageSize, "&indexSize=10&groupId=&page=", page, "&initialize=true&useAltSort=true&replyPageSize=30&moveTo=&sort=",
-        sort)
+    url <- paste0("https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?",
+                  "ticket=", ticket,
+                  "&templateId=",templateId,
+                  "&pool=",pool,
+                  "&lang=ko&country=KR&objectId=news",oid, "%2C", aid,
+                  "&categoryId=&pageSize=", pageSize,
+                  "&indexSize=10&groupId=&page=", page,
+                  "&initialize=true", useAltSort,
+                  "&replyPageSize=30&moveTo=&sort=",sort)
 
     con <- httr::GET(url,
-                     user_agent("N2H4 using r by chanyub.park mrchypark@gmail.com"),
+                     httr::user_agent("N2H4 using r by chanyub.park mrchypark@gmail.com"),
                      httr::add_headers(Referer = turl))
     tt <- httr::content(con, "text")
 
