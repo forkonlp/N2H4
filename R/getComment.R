@@ -28,7 +28,7 @@ getComment <- function(turl = url, pageSize = 10, page = 1,
     if(grepl("http://sports.news.naver.com", turl)){
       ticket <- "sports"
       pool <- "cbox2"
-      templateId <- ""
+      templateId <- "view"
     }
 
     url <- paste0("https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?ticket=", ticket, "&templateId=",templateId,"&pool=",pool,"&lang=ko&country=KR&objectId=news",
