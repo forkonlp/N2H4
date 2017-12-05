@@ -12,7 +12,7 @@
 
 getUrlListByCategory <- function(turl = url, col=c("titles", "links")) {
 
-    tem <- read_html(turl)
+    tem <- xml2::read_html(turl)
     titles <- tem %>% rvest::html_nodes("dt a") %>% rvest::html_text()
     Encoding(titles) <- "UTF-8"
     rm_target <- tem %>% rvest::html_nodes("dt.photo a") %>% rvest::html_text()
