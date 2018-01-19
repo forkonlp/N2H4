@@ -28,7 +28,7 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
     root<-try(httr::GET(url, ua), silent=T)
     while(tryn<=try_cnt&&class(root)=="try-error"){
       root<-try(httr::GET(url,ua), silent=T)
-      Sys.sleep(abs(rnorm(1)))
+      Sys.sleep(abs(sleep_time))
       tryn<-tryn+1
       print(paste0("try again: ", url))
     }
