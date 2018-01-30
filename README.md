@@ -14,9 +14,12 @@
 
 ###### OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
 
+## 설치방법
+
 ```
-if (!require("devtools")) install.packages("devtools")
-devtools::install_github("forkonlp/N2H4")
+if (!requireNamespace("N2H4")){
+  source("https://raw.githubusercontent.com/r-lib/remotes/master/install-github.R")$value("forkonlp/N2H4") 
+}
 library(N2H4)
 ```
 ## v0.4.6
