@@ -22,6 +22,9 @@ if (!requireNamespace("N2H4")){
 }
 library(N2H4)
 ```
+## v0.4.7.0
+getComment에 type을 추가하여 df와 list중에 선택할 수 있습니다. 기본 값은 df이며 df는 댓글 데이터만 돌려줍니다. 네이버는 댓글에 대한 풍부한 정보를 제공하며 list로 선택해야 모두 가져올 수 있습니다.
+
 ## v0.4.6
 getContent에 timeout 시 재시도 기능을 추가했습니다. 3번이 기본이고 rnorm(1)으로 sleep 합니다. sleep 시간을 없애고 싶으시면 0으로 설정하시면 됩니다. docker 파일을 추가하고 https://hub.docker.com/r/mrchypark/n2h4/ 에 도커 이미지를 호스팅하고 있습니다. rocker/tidyverse 가 업데이트되거나 패키지가 업데이트되면 항상 최신 빌드가 되게 되어 있으니 docker를 사용하시는 분들은 추가 세팅 없이 사용하실 수 있습니다. 아래 명령으로 실행됩니다.
 

@@ -5,7 +5,7 @@
 \title{Get Comment}
 \usage{
 getComment(turl = url, pageSize = 10, page = 1, sort = c("favorite",
-  "reply", "old", "new"))
+  "reply", "old", "new"), type = c("df", "list"))
 }
 \arguments{
 \item{turl}{like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.}
@@ -15,6 +15,8 @@ getComment(turl = url, pageSize = 10, page = 1, sort = c("favorite",
 \item{page}{is defult is 1.}
 
 \item{sort}{you can select favorite, reply, old, new. favorite is defult.}
+
+\item{type}{type return df or list. Defult is df. df return part of data not all.}
 }
 \value{
 Get data.frame.

@@ -8,6 +8,7 @@
 #' @param pageSize is a number of comments per page. defult is 10.
 #' @param page is defult is 1.
 #' @param sort you can select favorite, reply, old, new. favorite is defult.
+#' @param type type return df or list. Defult is df. df return part of data not all.
 #' @return Get data.frame.
 #' @export
 #' @import httr
@@ -15,7 +16,8 @@
 #' @import stringr
 
 getComment <- function(turl = url, pageSize = 10, page = 1,
-                       sort = c("favorite", "reply", "old", "new")) {
+                       sort = c("favorite", "reply", "old", "new"),
+                       type = c("df","list")) {
 
     sort <- sort[1]
     tem <- stringr::str_split(turl, "[=&]")[[1]]
@@ -56,6 +58,9 @@ getComment <- function(turl = url, pageSize = 10, page = 1,
 
     data <- jsonlite::fromJSON(tt)
     print(paste0("success : ", data$success))
+    if(type[1]=="df"){
+      data <- data$result$commentList[[1]]
+    }
     return(data)
 
 }
