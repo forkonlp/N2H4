@@ -1,3 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ./docker*
+^appveyor\.yml$
+^_pkgdown\.yml$
+^docs$
+^revdep$
+^\.travis\.yml$
+^codecov\.yml$

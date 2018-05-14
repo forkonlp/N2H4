@@ -1,15 +1,15 @@
-language: r
-sudo: true
-cache: packages
-addons:
-  apt:
-    packages:
-      - libv8-dev
-      - libcurl4-openssl-dev
-      - libxml2-dev
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-r_packages:
-  - covr
+language: R
+sudo: false
+cache: packages
+
+r:
+- 3.1
+- 3.2
+- oldrel
+- release
+- devel
 
 after_success:
-  - Rscript -e 'covr::coveralls()'
+  - Rscript -e 'covr::codecov()'
