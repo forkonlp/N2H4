@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling methods for naver news text crawling
-Version: 0.4.8
+Version: 0.4.7.1
 Date: 2018-05-14
 Authors@R: c(
     person("ChanYub", "Park", , "mrchypark@gmail.com", c("aut", "cre"))
@@ -15,6 +15,7 @@ RoxygenNote: 6.0.1
 Depends: 
     R (>= 3.1)
 cache: packages
+Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat,
