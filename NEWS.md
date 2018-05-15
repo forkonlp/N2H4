@@ -1,9 +1,16 @@
+# N2H4 0.4.8
+
+* 많은 패키지 의존성을 제거하였습니다.
+* `getMaxPageNum()` 함수가 더 이상 search 옵션을 지원하지 않습니다.
+* Removed many package dependencies.
+* `getMaxPageNum()` function no longer supports the search option.
+
 # N2H4 0.4.7.1
 
 * `News.md` 파일을 추가하였습니다.
 * Added a `NEWS.md` file to track changes to the package.
 
-# N2H4 0.4.7.0
+# N2H4 0.4.7
 
 * `getComment()`에 `type`을 추가하여 `df`와 `list`중에 선택할 수 있습니다. 기본 값은 `df`이며 `df`는 댓글 데이터만 돌려줍니다. 네이버는 댓글에 대한 풍부한 정보를 제공하며 `list`로 선택해야 모두 가져올 수 있습니다.
 * You can choose between `df` and `list` by adding `type` to `getComment()`. The default value is `df`, and `df` returns only comment data. Naver provides a wealth of information about the comments and can be picked up as `list`.

@@ -44,13 +44,13 @@
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47822682-14"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-47822682-17"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'UA-47822682-14');
+  gtag('config', 'UA-47822682-17');
 </script>
 
   </head>
@@ -68,7 +68,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.7.0</span>
+        <span class="label label-default" data-toggle="tooltip" data-placement="bottom" title="Released package">0.4.8</span>
       </span>
     </div>
 
@@ -118,14 +118,14 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>getContent</span>(<span class='no'>url</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"url"</span>, <span class='st'>"datetime"</span>, <span class='st'>"press"</span>, <span class='st'>"title"</span>, <span class='st'>"body"</span>),
-  <span class='kw'>try_cnt</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>sleep_time</span> <span class='kw'>=</span> <span class='fu'>rnorm</span>(<span class='fl'>1</span>), <span class='kw'>async</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>getContent</span>(<span class='no'>turl</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"url"</span>, <span class='st'>"datetime"</span>, <span class='st'>"edittime"</span>, <span class='st'>"press"</span>, <span class='st'>"title"</span>,
+  <span class='st'>"body"</span>), <span class='kw'>try_cnt</span> <span class='kw'>=</span> <span class='fl'>3</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>url</th>
+      <th>turl</th>
       <td><p>is naver news link.</p></td>
     </tr>
     <tr>
@@ -136,23 +136,11 @@
       <th>try_cnt</th>
       <td><p>is how many you want to try again if error. Default is 3.</p></td>
     </tr>
-    <tr>
-      <th>sleep_time</th>
-      <td><p>is wait time to try again. Default is rnorm(1).</p></td>
-    </tr>
-    <tr>
-      <th>async</th>
-      <td><p>async crawling if it is TRUE. Default is FALSE.</p></td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td><p>you can use child function params like title_node_info.</p></td>
-    </tr>
     </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>Get data.frame(url,datetime,press,title,body).</p>
+    <p>Get data.frame(url,datetime,edittime,press,title,body).</p>
     
 
   </div>

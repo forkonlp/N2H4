@@ -11,16 +11,15 @@
 #' @param type type return df or list. Defult is df. df return part of data not all.
 #' @return Get data.frame.
 #' @export
-#' @import httr
-#' @import jsonlite
-#' @import stringr
+#' @importFrom httr GET user_agent add_headers content
+#' @importFrom jsonlite fromJSON
 
 getComment <- function(turl = url, pageSize = 10, page = 1,
                        sort = c("favorite", "reply", "old", "new"),
                        type = c("df","list")) {
 
     sort <- sort[1]
-    tem <- stringr::str_split(turl, "[=&]")[[1]]
+    tem <- strsplit(turl, "[=&]")[[1]]
     ticket <- "news"
     pool <- "cbox5"
     oid <- tem[grep("oid", tem) + 1]
@@ -80,12 +79,13 @@ getComment <- function(turl = url, pageSize = 10, page = 1,
 
 getAllComment <- function(turl = url){
 
-    temp        <- getComment(turl,pageSize=1,page=1,sort="favorite")
+    temp        <- getComment(turl,pageSize=1,page=1,sort="favorite", type="list")
     numPage     <- ceiling(temp$result$pageModel$totalRows/100)
     comments    <- lapply(1:numPage, function(x) getComment(turl=turl
                                                             , pageSize=100
                                                             , page=x
                                                             , sort="favorite"
+                                                            , type="list"
                                                             )
                           )
     comments    <- lapply(comments, function(x) x$result$commentList[[1]])

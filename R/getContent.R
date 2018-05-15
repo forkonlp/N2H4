@@ -2,105 +2,75 @@
 #'
 #' Get naver news content from links.
 #'
-#' @param url is naver news link.
+#' @param turl is naver news link.
 #' @param col is what you want to get from news. Defualt is all.
 #' @param try_cnt is how many you want to try again if error. Default is 3.
-#' @param sleep_time is wait time to try again. Default is rnorm(1).
-#' @param async async crawling if it is TRUE. Default is FALSE.
-#' @param ... you can use child function params like title_node_info.
-#' @return Get data.frame(url,datetime,press,title,body).
+#' @return Get data.frame(url,datetime,edittime,press,title,body).
 #' @export
-#' @import stats
-#' @import httr
-#' @import RCurl
-#' @import xml2
-#' @import selectr
-#' @import rvest
-#' @import stringi
+#' @importFrom httr user_agent RETRY content
+#' @importFrom rvest html_nodes html_text html_attr
 
-getContent <- function(url, col = c("url", "datetime", "press", "title", "body"),
-                       try_cnt = 3, sleep_time = rnorm(1), async = FALSE, ...) {
 
-  if(!identical(url,character(0))){
+getContent <-
+  function(turl,
+           col = c("url", "datetime", "edittime", "press", "title", "body"),
+           try_cnt = 3) {
+    uat <-
+      httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
 
-    tryn<-0
-    ua<-user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
-    root<-try(httr::GET(url, ua), silent=T)
-    while(tryn<=try_cnt&&class(root)=="try-error"){
-      root<-try(httr::GET(url,ua), silent=T)
-      Sys.sleep(abs(sleep_time))
-      tryn<-tryn+1
-      print(paste0("try again: ", url))
+    root <- httr::RETRY("GET", turl, uat, times = try_cnt)
+    urlcheck <- root$url
+    value <- F
+
+    if (identical(grep("^http://(news|finance).naver.com", urlcheck),
+                  integer(0)) | !value) {
+      title <- "page is not news section."
+      datetime <- "page is not news section."
+      edittime <- "page is not news section."
+      press <- "page is not news section."
+      body <- "page is not news section."
+      value <- T
     }
-    urlcheck<-root$url
 
-    if(!identical(grep("^http://(news|finance).naver.com",urlcheck),integer(0))){
+    html_obj <- httr::content(root)
+    chk <-
+      rvest::html_nodes(html_obj, "div#main_content div div")
+    chk <- rvest::html_attr(chk, "class")
+    chk <- chk[1]
 
-      chk<-read_html(root, encoding="EUC-KR")%>%
-        html_nodes("div#main_content div div")%>%
-        html_attr("class") %>%.[1]
-
-      if(is.na(chk)){
-        chk<-"not error"
-      }
-
-        if (RCurl::url.exists(url)&
-       "error_msg 404"!=chk
-        ) {
-          html_obj <- read_html(root, encoding="EUC-KR")
-          if(tryn>try_cnt){
-            newsInfo <- data.frame(url = url, datetime = "try out.",
-                                   edittime = "try out.",
-                                   press = "try out.",
-                                   title = "try out.",
-                                   body = "try out.",
-                                   stringsAsFactors = F)
-            return(newsInfo[,col])
-          }
-          title<-getContentTitle(html_obj)
-          datetime<-getContentDatetime(html_obj)[1]
-          edittime<-getContentDatetime(html_obj)[2]
-          press<-getContentPress(html_obj)
-          body<-getContentBody(html_obj)
-
-          newsInfo <- data.frame(url = url, datetime = datetime, edittime = edittime, press = press, title = title, body = body, stringsAsFactors = F)
-
-      } else {
-
-        newsInfo <- data.frame(url = url, datetime = "page is moved.",
-                               edittime = "page is moved.",
-                               press = "page is moved.",
-                               title = "page is moved.",
-                               body = "page is moved.",
-                               stringsAsFactors = F)
-
-      }
-      return(newsInfo[,col])
-    } else {
-
-      newsInfo <- data.frame(url = url, datetime = "page is not news section.",
-                             edittime = "page is not news section.",
-                             press = "page is not news section.",
-                             title = "page is not news section.",
-                             body = "page is not news section.",
-                             stringsAsFactors = F)
-
+    if (is.na(chk)) {
+      chk <- "not error"
     }
-    return(newsInfo[,col])
-  } else { print("no news links")
 
-    newsInfo <- data.frame(url = "no news links",
-                           datetime = "no news links",
-                           edittime = "no news links",
-                           press = "no news links",
-                           title = "no news links",
-                           body = "no news links",
-                           stringsAsFactors = F)
-    return(newsInfo[,col])
+    if ("error_msg 404" == chk | !value) {
+      title <- "page is moved."
+      datetime <- "page is moved."
+      edittime <- "page is moved."
+      press <- "page is moved."
+      body <- "page is moved."
+      value <- T
+    }
+
+    if (!value) {
+      title <- getContentTitle(html_obj)
+      datetime <- getContentDatetime(html_obj)[1]
+      edittime <- getContentDatetime(html_obj)[2]
+      press <- getContentPress(html_obj)
+      body <- getContentBody(html_obj)
+    }
+
+    newsInfo <-
+      data.frame(
+        url = turl,
+        datetime = datetime,
+        edittime = edittime,
+        press = press,
+        title = title,
+        body = body,
+        stringsAsFactors = F
+      )
+    return(newsInfo[, col])
   }
-}
-
-
 
 #' Get Content Title
 #'
@@ -111,15 +81,22 @@ getContent <- function(url, col = c("url", "datetime", "press", "title", "body")
 #' @param title_attr if you want to get attribution text, please write down here.
 #' @return Get character title.
 #' @export
-#' @import xml2
-#' @import rvest
+#' @importFrom rvest html_nodes html_attr html_text
 
-getContentTitle<-function(html_obj, title_node_info="div.article_info h3", title_attr=""){
-  if(title_attr!=""){title <- html_obj %>% html_nodes(title_node_info) %>% html_attr(title_attr)}else{
-  title <- html_obj %>% html_nodes(title_node_info) %>% html_text()}
-  Encoding(title) <- "UTF-8"
-  return(title)
-}
+getContentTitle <-
+  function(html_obj,
+           title_node_info = "div.article_info h3",
+           title_attr = "") {
+    if (title_attr != "") {
+      title <- html_nodes(html_obj, title_node_info)
+      title <- html_attr(title, title_attr)
+    } else{
+      title <- html_nodes(html_obj, title_node_info)
+      title <- html_text(title)
+    }
+    Encoding(title) <- "UTF-8"
+    return(title)
+  }
 
 
 #' Get Content datetime
@@ -132,27 +109,35 @@ getContentTitle<-function(html_obj, title_node_info="div.article_info h3", title
 #' @param getEdittime if TRUE, can get POSIXlt type datetime length 2 means published time and final edited time. if FALSE, get Date length 1.
 #' @return Get POSIXlt type datetime.
 #' @export
-#' @import xml2
-#' @import rvest
+#' @importFrom rvest html_nodes html_attr html_text
 
-getContentDatetime<-function(html_obj, datetime_node_info="span.t11", datetime_attr="", getEdittime=TRUE){
-  if(datetime_attr!=""){datetime <- html_obj %>% html_nodes(datetime_node_info) %>% html_attr(datetime_attr)}else{
-    datetime <- html_obj %>% html_nodes(datetime_node_info) %>% html_text()}
-  datetime <- as.POSIXlt(datetime)
+getContentDatetime <-
+  function(html_obj,
+           datetime_node_info = "span.t11",
+           datetime_attr = "",
+           getEdittime = TRUE) {
+    if (datetime_attr != "") {
+      datetime <- html_nodes(html_obj, datetime_node_info)
+      datetime <- html_attr(datetime, datetime_attr)
+    } else{
+      datetime <- html_nodes(html_obj, datetime_node_info)
+      datetime <- html_text(datetime)
+    }
+    datetime <- as.POSIXlt(datetime)
 
-  if(getEdittime){
-    if (length(datetime) == 1) {
-      edittime <- datetime[1]
+    if (getEdittime) {
+      if (length(datetime) == 1) {
+        edittime <- datetime[1]
+      }
+      if (length(datetime) == 2) {
+        edittime <- datetime[2]
+        datetime <- datetime[1]
+      }
+      datetime <- c(datetime, edittime)
+      return(datetime)
     }
-    if (length(datetime) == 2) {
-      edittime <- datetime[2]
-      datetime <- datetime[1]
-    }
-    datetime<-c(datetime,edittime)
     return(datetime)
   }
-  return(datetime)
-}
 
 
 #' Get Content Press name.
@@ -164,15 +149,22 @@ getContentDatetime<-function(html_obj, datetime_node_info="span.t11", datetime_a
 #' @param press_attr if you want to get attribution text, please write down here. Defalt is "title".
 #' @return Get character press.
 #' @export
-#' @import xml2
-#' @import rvest
+#' @importFrom rvest html_nodes html_attr html_text
 
-getContentPress<-function(html_obj, press_node_info="div.article_header div a img", press_attr="title"){
-  if(press_attr!=""){press <- html_obj %>% html_nodes(press_node_info) %>% html_attr(press_attr)}else{
-    press <- html_obj %>% html_nodes(press_node_info) %>% html_text()}
-  Encoding(press) <- "UTF-8"
-  return(press)
-}
+getContentPress <-
+  function(html_obj,
+           press_node_info = "div.article_header div a img",
+           press_attr = "title") {
+    if (press_attr != "") {
+      press <- html_nodes(html_obj, press_node_info)
+      press <- html_attr(press, press_attr)
+    } else{
+      press <- html_nodes(html_obj, press_node_info)
+      press <- html_text(press)
+    }
+    Encoding(press) <- "UTF-8"
+    return(press)
+  }
 
 #' Get Content body name.
 #'
@@ -183,18 +175,27 @@ getContentPress<-function(html_obj, press_node_info="div.article_header div a im
 #' @param body_attr if you want to get attribution text, please write down here.
 #' @return Get character body content.
 #' @export
-#' @import xml2
-#' @import rvest
-#' @import stringi
+#' @importFrom rvest html_nodes html_attr html_text
 
-getContentBody<-function(html_obj, body_node_info="div#articleBodyContents", body_attr=""){
-  if(body_attr!=""){body <- html_obj %>% html_nodes(body_node_info) %>% html_attr(body_attr)}else{
-    body <- html_obj %>% html_nodes(body_node_info) %>% html_text()}
-  Encoding(body) <- "UTF-8"
+getContentBody <-
+  function(html_obj,
+           body_node_info = "div#articleBodyContents",
+           body_attr = "") {
+    if (body_attr != "") {
+      body <- html_nodes(html_obj, body_node_info)
+      body <- html_attr(body, body_attr)
+    } else{
+      body <- html_nodes(html_obj, body_node_info)
+      body <- html_text(body)
+    }
+    Encoding(body) <- "UTF-8"
 
-  body <- gsub("\r?\n|\r", " ", body)
-  body <- gsub("// flash .* function _flash_removeCallback\\(\\) \\{\\} ","",body)
-  body <- stri_trim_both(body)
+    body <- gsub("\r?\n|\r", " ", body)
+    body <-
+      gsub("// flash .* function _flash_removeCallback\\(\\) \\{\\} ",
+           "",
+           body)
+    body <- trimws(body)
 
-  return(body)
-}
+    return(body)
+  }

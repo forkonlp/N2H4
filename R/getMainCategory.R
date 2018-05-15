@@ -4,31 +4,36 @@
 #'
 #' @return Get data.frame(chr:cate_name, chr:sid1).
 #' @export
-#' @import xml2
-#' @import rvest
-#' @import stringr
+#' @importFrom rvest html_nodes html_attr html_text
+#' @importFrom httr GET content user_agent
 
 getMainCategory <- function() {
+  root   <- "http://news.naver.com/"
 
-  print("This function use internet. If get error, please check the internet.")
-  root   <- read_html("http://news.naver.com/")
+  uat <-
+    httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
+  src <- httr::GET(root, uat)
+  hobj <- httr::content(src)
+
+  titles <- rvest::html_nodes(hobj, "div.lnb_menu ul li a")
+  titles <- rvest::html_text(titles)
+
+  links <- rvest::html_nodes(hobj, "div.lnb_menu ul li a")
+  links <- rvest::html_attr(links, "href")
+
   titles <-
-    root %>%
-    html_nodes("div.lnb_menu ul li a") %>%
-    html_text()
-  links  <- root %>%
-    html_nodes("div.lnb_menu ul li a") %>%
-    html_attr("href")
-  titles <- titles[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1",links)]
-  titles <- str_trim(titles)
-  links  <- links[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1",links)]
-  sid1   <- str_sub(links,-3,-1)
-  urls   <- data.frame(cate_name=titles
-                       , sid1=sid1
-                       , stringsAsFactors = F
-                       )
+    titles[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1", links)]
+  titles <- trimws(titles)
+  links <-
+    links[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1", links)]
+
+  sid1 <- sapply(strsplit(links, "="), function(x)
+    x[4])
+
+  urls <-
+    data.frame(cate_name = titles,
+               sid1 = sid1,
+               stringsAsFactors = F)
   return(urls)
 
 }
-
-
