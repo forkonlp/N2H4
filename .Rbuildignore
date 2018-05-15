@@ -8,3 +8,4 @@
 ^\.travis\.yml$
 ^codecov\.yml$
 CODE_OF_CONDUCT.md
+^LICENSE\.md$
