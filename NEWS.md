@@ -2,8 +2,10 @@
 
 * 많은 패키지 의존성을 제거하였습니다.
 * `getMaxPageNum()` 함수가 더 이상 search 옵션을 지원하지 않습니다.
+* `getContent()` 함수의 retry 기능을 `httr::RETRY()` 함수로 변경하였습니다.
 * Removed many package dependencies.
 * `getMaxPageNum()` function no longer supports the search option.
+* We changed the retry function of `getContent()` to `httr::RETRY()`.
 
 # N2H4 0.4.7.1
 
