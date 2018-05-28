@@ -1,3 +1,8 @@
+# N2H4 0.4.8.1
+
+* `getContent()`의 예외 기능의 오류를 수정하였습니다.
+* fix `getContent()` functions error in bypass.
+
 # N2H4 0.4.8
 
 * 많은 패키지 의존성을 제거하였습니다.
