@@ -23,7 +23,7 @@ getContent <-
     value <- F
 
     if (identical(grep("^http://(news|finance).naver.com", urlcheck),
-                  integer(0)) | !value) {
+                  integer(0)) | value) {
       title <- "page is not news section."
       datetime <- "page is not news section."
       edittime <- "page is not news section."
@@ -42,7 +42,7 @@ getContent <-
       chk <- "not error"
     }
 
-    if ("error_msg 404" == chk | !value) {
+    if ("error_msg 404" == chk | value) {
       title <- "page is moved."
       datetime <- "page is moved."
       edittime <- "page is moved."
