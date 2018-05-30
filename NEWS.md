@@ -1,3 +1,9 @@
+# N2H4 0.4.8.2
+
+* `getComment()`의 `snsList` 컬럼을 제거하였습니다.
+* Removed the `snsList` column from the result of the `getComment()` function.
+
+
 # N2H4 0.4.8.1
 
 * `getContent()`의 예외 기능의 오류를 수정하였습니다.

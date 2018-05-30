@@ -1,8 +1,8 @@
 Package: N2H4
 Type: Package
 Title: Handling methods for naver news text crawling
-Version: 0.4.8.1
-Date: 2018-05-28
+Version: 0.4.8.2
+Date: 2018-05-30
 Authors@R: c(
     person("ChanYub", "Park", , "mrchypark@gmail.com", c("aut", "cre"))
     )
@@ -24,4 +24,5 @@ Imports:
     xml2,
     rvest,
     httr,
-    jsonlite
+    jsonlite,
+    tidyr 
