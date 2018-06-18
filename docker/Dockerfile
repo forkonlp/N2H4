@@ -1,6 +1,6 @@
-FROM rocker/tidyverse
+FROM rocker/r-base:latest
 MAINTAINER chanyub park <mrchypark@gmail.com>
 
-RUN sudo apt-get update \
-    && Rscript -e 'install.packages(c("curl","selectr"), lib ="/usr/local/lib/R/site-library")' \
-    && Rscript -e 'devtools::install_github("forkonlp/N2H4")'
+RUN apt-get update \
+    && apt-get install libcurl4-openssl-dev libssl-dev libxml2-dev \
+    && Rscript -e 'source("https://install-github.me/forkonlp/N2H4")'
