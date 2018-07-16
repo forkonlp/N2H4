@@ -4,10 +4,12 @@
 \alias{getAllComment}
 \title{Get All Comment}
 \usage{
-getAllComment(turl = url)
+getAllComment(turl = url, ...)
 }
 \arguments{
 \item{turl}{character. News article on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.}
+
+\item{...}{parameter in getComment function.}
 }
 \value{
 Get data.frame.

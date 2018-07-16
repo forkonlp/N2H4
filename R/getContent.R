@@ -20,16 +20,16 @@ getContent <-
 
     root <- httr::RETRY("GET", turl, uat, times = try_cnt)
     urlcheck <- root$url
-    value <- F
+    value <- T
 
     if (identical(grep("^http://(news|finance).naver.com", urlcheck),
-                  integer(0)) | !value) {
+                  integer(0)) & value) {
       title <- "page is not news section."
       datetime <- "page is not news section."
       edittime <- "page is not news section."
       press <- "page is not news section."
       body <- "page is not news section."
-      value <- T
+      value <- F
     }
 
     html_obj <- httr::content(root)
@@ -42,16 +42,16 @@ getContent <-
       chk <- "not error"
     }
 
-    if ("error_msg 404" == chk | !value) {
+    if ("error_msg 404" == chk & value) {
       title <- "page is moved."
       datetime <- "page is moved."
       edittime <- "page is moved."
       press <- "page is moved."
       body <- "page is moved."
-      value <- T
+      value <- F
     }
 
-    if (!value) {
+    if (value) {
       title <- getContentTitle(html_obj)
       datetime <- getContentDatetime(html_obj)[1]
       edittime <- getContentDatetime(html_obj)[2]
