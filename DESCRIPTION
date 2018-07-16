@@ -18,8 +18,7 @@ cache: packages
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat,
-    covr
+    testthat
 Imports:
     xml2,
     rvest,
