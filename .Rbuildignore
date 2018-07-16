@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ./docker*
+.gitlab-ci.yml
 ^appveyor\.yml$
 ^_pkgdown\.yml$
 ^docs$
