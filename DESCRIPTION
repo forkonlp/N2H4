@@ -3,9 +3,11 @@ Type: Package
 Title: Handling methods for naver news text crawling
 Version: 0.4.8.2
 Date: 2018-05-30
-Authors@R: c(
-    person("ChanYub", "Park", , "mrchypark@gmail.com", c("aut", "cre"))
-    )
+Authors@R: person(given = "Chanyub",
+             family = "Park",
+             role = c("aut","cre"),
+             email = "mrchypark@gmail.com",
+             comment = c(ORCID = "0000-0001-6474-2570"))
 Description: Provides some utils to get korean text sample from news articles in
     naver which is popular news portal servise in korea.
 License: MIT + file LICENSE
