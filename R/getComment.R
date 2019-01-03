@@ -18,7 +18,7 @@
 getComment <- function(turl = url,
                        pageSize = 10,
                        page = 1,
-                       sort = c("favorite", "reply", "old", "new"),
+                       sort = c("favorite", "reply", "old", "new", "best"),
                        type = c("df", "list")) {
   sort <- sort[1]
   tem <- strsplit(turl, "[=&]")[[1]]
@@ -29,7 +29,7 @@ getComment <- function(turl = url,
   templateId <- "view_politics"
   useAltSort <- "&useAltSort=true"
 
-  if (grepl("http://(m.|)sports.", turl)) {
+  if (grepl("http(|s)://(m.|)sports.", turl)) {
     ticket <- "sports"
     pool <- "cbox2"
     templateId <- "view"
@@ -79,7 +79,6 @@ getComment <- function(turl = url,
     dat <- tidyr::unnest(dat)
   }
   return(dat)
-
 }
 
 
