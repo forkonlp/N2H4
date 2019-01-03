@@ -4,10 +4,10 @@
 \alias{getQueryUrl}
 \title{Get Query page url}
 \usage{
-getQueryUrl(query, st = "news.all", q_enc = "EUC-KR", r_enc = "UTF-8",
-  r_format = "xml", rp = "none", sm = "all.basic", ic = "all",
-  so = "datetime.dsc", startDate = as.Date(Sys.time()) - 3,
-  endDate = as.Date(Sys.time()), stPaper = "exist:1", detail = 1,
+getQueryUrl(query, st = "news.all", q_enc = "EUC-KR",
+  r_enc = "UTF-8", r_format = "xml", rp = "none", sm = "all.basic",
+  ic = "all", so = "datetime.dsc", startDate = as.Date(Sys.time()) -
+  3, endDate = as.Date(Sys.time()), stPaper = "exist:1", detail = 1,
   pd = 1, dnaSo = "rel.dsc")
 }
 \arguments{

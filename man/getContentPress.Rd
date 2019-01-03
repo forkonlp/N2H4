@@ -4,7 +4,8 @@
 \alias{getContentPress}
 \title{Get Content Press name.}
 \usage{
-getContentPress(html_obj, press_node_info = "div.article_header div a img",
+getContentPress(html_obj,
+  press_node_info = "div.article_header div a img",
   press_attr = "title")
 }
 \arguments{

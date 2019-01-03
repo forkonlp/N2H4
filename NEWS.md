@@ -1,5 +1,8 @@
 # N2H4 0.4.8.3
 
+* `getComment()`의 sports news를 수집할 때 url이 `https`로 시작해도 동작합니다.
+* When collecting sports news using `getComment()` function, it works even if url starts with `https`.
+
 # N2H4 0.4.8.2
 
 * `getComment()`의 `snsList` 컬럼을 제거하였습니다.

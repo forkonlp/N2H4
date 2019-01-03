@@ -4,8 +4,9 @@
 \alias{getComment}
 \title{Get Comment}
 \usage{
-getComment(turl = url, pageSize = 10, page = 1, sort = c("favorite",
-  "reply", "old", "new"), type = c("df", "list"))
+getComment(turl = url, pageSize = 10, page = 1,
+  sort = c("favorite", "reply", "old", "new", "best"), type = c("df",
+  "list"))
 }
 \arguments{
 \item{turl}{like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.}
