@@ -1,5 +1,8 @@
 # N2H4 0.4.8.4
 
+* `getComment()`가 댓글이 없을 때 빈 `data.frame()`을 반환합니다.
+* `getComment()` returns an empty `data.frame()` when there is no comment.
+
 # N2H4 0.4.8.3
 
 * `getComment()`의 sports news를 수집할 때 url이 `https`로 시작해도 동작합니다.
