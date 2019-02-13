@@ -76,7 +76,11 @@ getComment <- function(turl = url,
   if (type[1] == "df") {
     dat <- dat$result$commentList[[1]]
     dat$snsList <- NULL
-    dat <- tidyr::unnest(dat)
+    if (length(dat) != 0) {
+      dat <- tidyr::unnest(dat)
+    } else {
+      dat <- data.frame()
+    }
   }
   return(dat)
 }
