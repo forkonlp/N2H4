@@ -1,3 +1,5 @@
+# N2H4 0.4.8.4
+
 # N2H4 0.4.8.3
 
 * `getComment()`의 sports news를 수집할 때 url이 `https`로 시작해도 동작합니다.
