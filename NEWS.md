@@ -1,5 +1,8 @@
 # N2H4 0.5.0
 
+* `getQueryUrl()` 함수를 고치면서 변수를 조절하였습니다.
+* fix and chanage params `getQueryUrl()` function.
+
 # N2H4 0.4.8.4
 
 * `getComment()`가 댓글이 없을 때 빈 `data.frame()`을 반환합니다.
