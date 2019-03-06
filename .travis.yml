@@ -18,7 +18,6 @@ r:
 - 3.5
 - oldrel
 - release
-- devel
 
 after_success:
   - Rscript -e 'covr::codecov()'
