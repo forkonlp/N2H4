@@ -3,57 +3,41 @@
 #' Get naver news query page url without pageNum.
 #'
 #' @param query requred.
-#' @param st Default is news.all.
-#' @param q_enc Default is UTF-8.
-#' @param r_enc Default is UTF-8.
-#' @param r_format Default is xml.
-#' @param rp Default is none.
-#' @param sm Default is all.basic.
-#' @param ic Default is all.
-#' @param so Default is datetime.dsc.
-#' @param detail Default is 1 means only display title.
 #' @param startDate Dfault is 3 days before today.
 #' @param endDate Default is today.
-#' @param stPaper Default is exist:1.
-#' @param pd Default is 1.
-#' @param dnaSo Default is rel.dsc.
-#' @return Get url.
+#' @return url.
 #' @export
 
-getQueryUrl <- function(query,st="news.all",
-                        q_enc="UTF-8",
-                        r_enc="UTF-8",
-                        r_format="xml",
-                        rp="none",
-                        sm="all.basic",
-                        ic="all",
-                        so="datetime.dsc",
+getQueryUrl <- function(query,
                         startDate=as.Date(Sys.time()) - 3,
-                        endDate=as.Date(Sys.time()),
-                        stPaper="exist:1",
-                        detail=1,
-                        pd=1,
-                        dnaSo="rel.dsc") {
+                        endDate=as.Date(Sys.time())
+                        ) {
   if (Encoding(query) != "UTF-8") {
     query <- iconv(query, to = "UTF-8")
   }
 
+  ds_str <- gsub("-",".",as.character(startDate))
+  ds_end <- gsub("-",".",as.character(endDate))
+
+  from <- gsub("-","",as.character(startDate))
+  to <- gsub("-","",as.character(endDate))
+
   query <- utils::URLencode(query)
-  root <- "http://news.naver.com/main/search/search.nhn?"
-  link <- paste0(root,"st=",st,
-                 "&q_enc=",q_enc,
-                 "&r_enc=",r_enc,
-                 "&r_format=",r_format,
-                 "&rp=",rp,
-                 "&sm=",sm,
-                 "&ic=",ic,
-                 "&so=",so,
-                 "&detail=",detail,
-                 "&pd=",pd,
-                 "&dnaSo=",dnaSo,
-                 "&startDate=",startDate,
-                 "&endDate=",endDate,
-                 "&stPaper=",stPaper,
-                 "&query=",query)
+  root <- "https://search.naver.com/search.naver?"
+  link <-
+    paste0(
+      root,
+      "where=news&query=",
+      query,
+      "&sm=tab_opt&sort=1&photo=0&field=0&reporter_article=&pd=3&ds=",
+      ds_str,
+      "&de=",
+      ds_end,
+      "&docid=&nso=so%3Add%2Cp%3Afrom",
+      from,
+      "to",
+      to,
+      "%2Ca%3Aall&mynews=0&refresh_start=0&related=0"
+    )
   return(link)
 }

@@ -4,46 +4,19 @@
 \alias{getQueryUrl}
 \title{Get Query page url}
 \usage{
-getQueryUrl(query, st = "news.all", q_enc = "EUC-KR",
-  r_enc = "UTF-8", r_format = "xml", rp = "none", sm = "all.basic",
-  ic = "all", so = "datetime.dsc", startDate = as.Date(Sys.time()) -
-  3, endDate = as.Date(Sys.time()), stPaper = "exist:1", detail = 1,
-  pd = 1, dnaSo = "rel.dsc")
+getQueryUrl(query, startDate = as.Date(Sys.time()) - 3,
+  endDate = as.Date(Sys.time()))
 }
 \arguments{
 \item{query}{requred.}
 
-\item{st}{Default is news.all.}
-
-\item{q_enc}{Default is euc-kr.}
-
-\item{r_enc}{Default is UTF-8.}
-
-\item{r_format}{Default is xml.}
-
-\item{rp}{Default is none.}
-
-\item{sm}{Default is all.basic.}
-
-\item{ic}{Default is all.}
-
-\item{so}{Default is datetime.dsc.}
-
 \item{startDate}{Dfault is 3 days before today.}
 
 \item{endDate}{Default is today.}
-
-\item{stPaper}{Default is exist:1.}
-
-\item{detail}{Default is 1 means only display title.}
-
-\item{pd}{Default is 1.}
-
-\item{dnaSo}{Default is rel.dsc.}
 }
 \value{
-Get url.
+url.
 }
 \description{
-Get naver news query page url withput pageNum.
+Get naver news query page url without pageNum.
 }

@@ -5,21 +5,14 @@
 #' @param query requred.
 #' @param startDate requred form YYYY-MM-DD.
 #' @param endDate requred form YYYY-MM-DD.
-#' @param onlyPaper Default is False means all count of internet news.
-#' @param ... depend on getQueryUrl function.
 #' @return Get data.frame(date, cnt).
 #' @export
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes html_text
 
 getNewsTrend <-
-  function(query, startDate, endDate, onlyPaper = FALSE, ...) {
-    if (onlyPaper == F) {
-      stPaper <- ""
-    }
-    if (onlyPaper == T) {
-      stPaper <- "exist:1"
-    }
+  function(query, startDate, endDate) {
+
     result <- c()
     tdate <-
       as.Date(as.Date(startDate):as.Date(endDate), origin = "1970-01-01")
@@ -27,15 +20,13 @@ getNewsTrend <-
       N2H4::getQueryUrl(
         query,
         startDate = tdate,
-        endDate = tdate,
-        stPaper = stPaper,
-        ...
+        endDate = tdate
       )
     result$date <- tdate
     result$cnt <-
       sapply(turl, function(x)
         trimws(rvest::html_text(
-          rvest::html_nodes(xml2::read_html(x), "span.result_num")
+          rvest::html_nodes(xml2::read_html(x), "div.title_desc span")
         )))
     names(result$cnt) <- NULL
     result$cnt <-

@@ -4,7 +4,7 @@
 \alias{getNewsTrend}
 \title{Get Query news trend by date.}
 \usage{
-getNewsTrend(query, startDate, endDate, onlyPaper = FALSE, ...)
+getNewsTrend(query, startDate, endDate)
 }
 \arguments{
 \item{query}{requred.}
@@ -12,10 +12,6 @@ getNewsTrend(query, startDate, endDate, onlyPaper = FALSE, ...)
 \item{startDate}{requred form YYYY-MM-DD.}
 
 \item{endDate}{requred form YYYY-MM-DD.}
-
-\item{onlyPaper}{Default is False means all count of internet news.}
-
-\item{...}{depend on getQueryUrl function.}
 }
 \value{
 Get data.frame(date, cnt).

@@ -48,23 +48,6 @@ test_that("getMaxPageNum", {
 
 })
 
-# test_that("getVideoUrl",{
-#
-#   url  <- "http://news.naver.com/main/read.nhn?mode=LPOD&mid=tvh&oid=437&aid=0000143025"
-#   test <- getVideoUrl(url)
-#   expected  <- "http://news.video.p.rmcnmv.naver.com/owfs_rmc/read/NEWS_2017_01_01_5/531C05F39305F3AC2033EE1A93792813B82_muploader_e_270P_480_500_64_2.mp4?_lsu_sa_=67d595fc611060e610de45ff6c55e7bc6eef3e88c6063f7c3fd7f8c497cc3e051e228a8e6c15e00e40623852d43c7b4d57664b3483a2ff7d843930bced98ea0d9c507066ad92a275d3901fa6c1546fed"
-#   expect_equal(test,expected)
-#
-# })
-
-test_that("getQueryUrl",{
-
-  test <- getQueryUrl("test",startDate = "2017-04-28",endDate = "2017-05-01")
-  expected <- "http://news.naver.com/main/search/search.nhn?st=news.all&q_enc=EUC-KR&r_enc=UTF-8&r_format=xml&rp=none&sm=all.basic&ic=all&so=datetime.dsc&detail=1&pd=1&dnaSo=rel.dsc&startDate=2017-04-28&endDate=2017-05-01&stPaper=exist:1&query=test"
-  expect_equal(test,expected)
-
-})
-
 test_that("getUrlListByCategory",{
 
   url <- "http://news.naver.com/main/list.nhn?sid2=267&sid1=100&mid=shm&mode=LS2D&date=20170101"
