@@ -1,10 +1,10 @@
 #' Get Query page url
 #'
-#' Get naver news query page url withput pageNum.
+#' Get naver news query page url without pageNum.
 #'
 #' @param query requred.
 #' @param st Default is news.all.
-#' @param q_enc Default is euc-kr.
+#' @param q_enc Default is UTF-8.
 #' @param r_enc Default is UTF-8.
 #' @param r_format Default is xml.
 #' @param rp Default is none.
@@ -21,19 +21,23 @@
 #' @export
 
 getQueryUrl <- function(query,st="news.all",
-                        q_enc="EUC-KR",
+                        q_enc="UTF-8",
                         r_enc="UTF-8",
                         r_format="xml",
                         rp="none",
                         sm="all.basic",
                         ic="all",
                         so="datetime.dsc",
-                        startDate=as.Date(Sys.time())-3,
+                        startDate=as.Date(Sys.time()) - 3,
                         endDate=as.Date(Sys.time()),
                         stPaper="exist:1",
                         detail=1,
                         pd=1,
                         dnaSo="rel.dsc") {
+  if (Encoding(query) != "UTF-8") {
+    query <- iconv(query, to = "UTF-8")
+  }
+
   query <- utils::URLencode(query)
   root <- "http://news.naver.com/main/search/search.nhn?"
   link <- paste0(root,"st=",st,
