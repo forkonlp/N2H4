@@ -14,7 +14,7 @@ getNewsTrend(query, startDate, endDate)
 \item{endDate}{requred form YYYY-MM-DD.}
 }
 \value{
-Get data.frame(date, cnt).
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get number of query volume in naver news. Params depend on getQueryUrl function.

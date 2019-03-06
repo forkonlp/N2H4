@@ -3,7 +3,7 @@
 #' Get naver news(only not other sites links) titles and links from target url.
 #'
 #' @param turl is target url naver news.
-#' @return Get data.frame(news_title, news_links).
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom rvest html_nodes html_attr
 #' @importFrom httr GET content user_agent
@@ -26,10 +26,9 @@ getUrlListByQuery <- function(turl = url) {
 
   # news_lists <- data.frame(news_title = news_title, news_links = news_links, stringsAsFactors = F)
   news_lists <-
-    data.frame(
+    tibble::tibble(
       news_title = "help to improve",
-      news_links = news_links,
-      stringsAsFactors = F
+      news_links = news_links
     )
   return(news_lists)
 

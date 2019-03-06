@@ -5,7 +5,7 @@
 #' @param turl is naver news link.
 #' @param col is what you want to get from news. Defualt is all.
 #' @param try_cnt is how many you want to try again if error. Default is 3.
-#' @return Get data.frame(url,datetime,edittime,press,title,body).
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom httr user_agent RETRY content
 #' @importFrom rvest html_nodes html_text html_attr
@@ -60,14 +60,13 @@ getContent <-
     }
 
     newsInfo <-
-      data.frame(
+      tibble::tibble(
         url = turl,
         datetime = datetime,
         edittime = edittime,
         press = press,
         title = title,
-        body = body,
-        stringsAsFactors = F
+        body = body
       )
     return(newsInfo[, col])
   }

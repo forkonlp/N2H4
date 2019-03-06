@@ -15,7 +15,7 @@ getContent(turl, col = c("url", "datetime", "edittime", "press", "title",
 \item{try_cnt}{is how many you want to try again if error. Default is 3.}
 }
 \value{
-Get data.frame(url,datetime,edittime,press,title,body).
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get naver news content from links.

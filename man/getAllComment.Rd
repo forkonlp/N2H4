@@ -12,7 +12,7 @@ getAllComment(turl = url, ...)
 \item{...}{parameter in getComment function.}
 }
 \value{
-Get data.frame.
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get all comments from the provided news article url on naver

@@ -2,7 +2,7 @@
 #'
 #' Get naver news main category names and ids recently.
 #'
-#' @return Get data.frame(chr:cate_name, chr:sid1).
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
@@ -27,13 +27,11 @@ getMainCategory <- function() {
   links <-
     links[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1", links)]
 
-  sid1 <- sapply(strsplit(links, "="), function(x)
-    x[4])
+  sid1 <- sapply(strsplit(links, "="), function(x) x[4])
 
   urls <-
-    data.frame(cate_name = titles,
-               sid1 = sid1,
-               stringsAsFactors = F)
+    tibble::tibble(cate_name = titles,
+               sid1 = sid1)
   return(urls)
 
 }

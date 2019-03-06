@@ -12,7 +12,7 @@ getUrlListByCategory(turl = url, col = c("titles", "links"))
 \item{col}{is what you want to get from news. Defualt is all.}
 }
 \value{
-Get data.frame(titles, links).
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get naver news titles and links from target url.

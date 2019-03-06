@@ -4,7 +4,7 @@
 #'
 #' @param turl is target url naver news.
 #' @param  col is what you want to get from news. Defualt is all.
-#' @return Get data.frame(titles, links).
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
@@ -29,9 +29,8 @@ getUrlListByCategory <-
     links <- rvest::html_attr(links, "href")
 
     news_lists <-
-      data.frame(titles = titles,
-                 links = links,
-                 stringsAsFactors = F)
+      tibble::tibble(titles = titles,
+                 links = links)
 
     news_lists$titles <- trimws(news_lists$titles)
     news_lists <- news_lists[nchar(news_lists$titles) > 0, ]

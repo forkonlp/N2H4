@@ -10,7 +10,7 @@ getUrlListByQuery(turl = url)
 \item{turl}{is target url naver news.}
 }
 \value{
-Get data.frame(news_title, news_links).
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get naver news(only not other sites links) titles and links from target url.

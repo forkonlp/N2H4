@@ -26,4 +26,6 @@ Imports:
     rvest,
     httr,
     jsonlite,
-    tidyr 
+    tidyr,
+    tibble,
+    dplyr

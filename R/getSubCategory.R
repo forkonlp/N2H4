@@ -4,7 +4,7 @@
 #'
 #' @param sid1 Main category id in naver news url. Only 1 value is passible. Default is 100 means Politics.
 #' @param onlySid2 sid2 is sub category id. some sub categories don't have id. If TRUE, functions return data.frame(chr:sub_cate_naem, char:sid2). Defaults is TRUE.
-#' @return Get data.frame(chr:sub_cate_name, chr:urls).
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
@@ -26,10 +26,9 @@ getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
   links <- paste0("http://news.naver.com", links)
 
   urls <-
-    data.frame(
+    tibble::tibble(
       sub_cate_name = titles,
-      url = links,
-      stringsAsFactors = F
+      url = links
     )
   if (onlySid2 == FALSE)  {
     return(urls)
@@ -39,10 +38,9 @@ getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
     sid2 <- sapply(strsplit(urls$url, "="), function(x)
       x[5])
     urls <-
-      data.frame(
+      tibble::tibble(
         sub_cate_name = urls$sub_cate_name,
-        sid2 = sid2,
-        stringsAsFactors = F
+        sid2 = sid2
       )
     return(urls)
   }

@@ -7,7 +7,7 @@
 getMainCategory()
 }
 \value{
-Get data.frame(chr:cate_name, chr:sid1).
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get naver news main category names and ids recently.

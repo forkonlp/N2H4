@@ -5,7 +5,7 @@
 #' @param query requred.
 #' @param startDate requred form YYYY-MM-DD.
 #' @param endDate requred form YYYY-MM-DD.
-#' @return Get data.frame(date, cnt).
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes html_text
@@ -37,5 +37,6 @@ getNewsTrend <-
       x[2])
     result$cnt <- as.numeric(gsub("[^0-9]", "", result$cnt))
     result <- as.data.frame(result)
+    result <- tibble::as_tibble(result)
     return(result)
   }

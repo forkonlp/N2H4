@@ -20,7 +20,7 @@ getComment(turl = url, pageSize = 10, page = 1,
 \item{type}{type return df or list. Defult is df. df return part of data not all.}
 }
 \value{
-Get data.frame.
+a [tibble][tibble::tibble-package]
 }
 \description{
 Get naver news comments

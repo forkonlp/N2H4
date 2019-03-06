@@ -9,11 +9,12 @@
 #' @param page is defult is 1.
 #' @param sort you can select favorite, reply, old, new. favorite is defult.
 #' @param type type return df or list. Defult is df. df return part of data not all.
-#' @return Get data.frame.
+#' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom httr GET user_agent add_headers content
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest
+#' @importFrom tibble as_tibble
 
 getComment <- function(turl = url,
                        pageSize = 10,
@@ -78,8 +79,9 @@ getComment <- function(turl = url,
     dat$snsList <- NULL
     if (length(dat) != 0) {
       dat <- tidyr::unnest(dat)
+      dat <- tibble::as_tibble(dat)
     } else {
-      dat <- data.frame()
+      dat <- tibble::tibble()
     }
   }
   return(dat)
@@ -95,10 +97,9 @@ getComment <- function(turl = url,
 #'
 #' @param turl character. News article on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.
 #' @param ... parameter in getComment function.
-#' @return Get data.frame.
+#' @return a [tibble][tibble::tibble-package]
+#' @importFrom dplyr bind_rows
 #' @export
-
-
 getAllComment <- function(turl = url, ...) {
   temp        <-
     getComment(
@@ -119,7 +120,7 @@ getAllComment <- function(turl = url, ...) {
         ...
       ))
 
-  comments <- do.call(rbind, comments)
+  comments <- dplyr::bind_rows(comments)
 
   return(comments)
 }
