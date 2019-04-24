@@ -1,4 +1,7 @@
-# N2H4 (development version)
+# N2H4 0.5.1
+
+* https 로 시작하는 주소를 사용합니다.
+* fix accept https schema.
 
 # N2H4 0.5.0
 
