@@ -1,3 +1,5 @@
+# N2H4 (development version)
+
 # N2H4 0.5.0
 
 * `getQueryUrl()` 함수를 고치면서 변수를 조절하였습니다.
