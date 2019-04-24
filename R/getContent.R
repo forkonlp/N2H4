@@ -22,7 +22,7 @@ getContent <-
     urlcheck <- root$url
     value <- T
 
-    if (identical(grep("^http://(news|finance).naver.com", urlcheck),
+    if (identical(grep("^https?://(news|finance).naver.com", urlcheck),
                   integer(0)) & value) {
       title <- "page is not news section."
       datetime <- "page is not news section."
@@ -122,7 +122,7 @@ getContentDatetime <-
       datetime <- html_nodes(html_obj, datetime_node_info)
       datetime <- html_text(datetime)
     }
-    datetime <- as.POSIXlt(datetime)
+    datetime <- as.POSIXct(datetime)
 
     if (getEdittime) {
       if (length(datetime) == 1) {
