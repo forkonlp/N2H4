@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling methods for naver news text crawling
-Version: 0.5.1
+Version: 0.5.2
 Date: 2019-04-24
 Authors@R: person(given = "Chanyub",
              family = "Park",
