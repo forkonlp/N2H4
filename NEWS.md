@@ -1,5 +1,8 @@
 # N2H4 0.5.2
 
+* 뉴스의 날짜시간 형식을 맞추었습니다.
+* fix datetime parse format.
+
 # N2H4 0.5.1
 
 * https 로 시작하는 주소를 사용합니다.
