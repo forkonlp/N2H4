@@ -28,4 +28,5 @@ Imports:
     jsonlite,
     tidyr,
     tibble,
-    dplyr
+    dplyr,
+    lubridate

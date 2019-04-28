@@ -87,11 +87,11 @@ getContentTitle <-
            title_node_info = "div.article_info h3",
            title_attr = "") {
     if (title_attr != "") {
-      title <- html_nodes(html_obj, title_node_info)
-      title <- html_attr(title, title_attr)
+      title <- rvest::html_nodes(html_obj, title_node_info)
+      title <- rvest::html_attr(title, title_attr)
     } else{
-      title <- html_nodes(html_obj, title_node_info)
-      title <- html_text(title)
+      title <- rvest::html_nodes(html_obj, title_node_info)
+      title <- rvest::html_text(title)
     }
     Encoding(title) <- "UTF-8"
     return(title)
@@ -109,6 +109,7 @@ getContentTitle <-
 #' @return Get POSIXlt type datetime.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
+#' @importFrom lubridate parse_date_time
 
 getContentDatetime <-
   function(html_obj,
@@ -116,13 +117,25 @@ getContentDatetime <-
            datetime_attr = "",
            getEdittime = TRUE) {
     if (datetime_attr != "") {
-      datetime <- html_nodes(html_obj, datetime_node_info)
-      datetime <- html_attr(datetime, datetime_attr)
+      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
+      datetime <- rvest::html_attr(datetime, datetime_attr)
     } else{
-      datetime <- html_nodes(html_obj, datetime_node_info)
-      datetime <- html_text(datetime)
+      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
+      datetime <- rvest::html_text(datetime)
     }
-    datetime <- as.POSIXct(datetime)
+
+    for (i in 1:length(datetime)) {
+      tar <- datetime[i]
+      if (any(utf8ToInt(tar) == 51204)) {
+        tar <- paste(tar, "am")
+      }
+      if (any(utf8ToInt(tar) == 54980)) {
+        tar <- paste(tar, "pm")
+      }
+      datetime[i] <- tar
+    }
+
+    datetime <- lubridate::parse_date_time(datetime, "ymd HM Op!*", tz = "Asia/Seoul")
 
     if (getEdittime) {
       if (length(datetime) == 1) {
@@ -155,11 +168,11 @@ getContentPress <-
            press_node_info = "div.article_header div a img",
            press_attr = "title") {
     if (press_attr != "") {
-      press <- html_nodes(html_obj, press_node_info)
-      press <- html_attr(press, press_attr)
+      press <- rvest::html_nodes(html_obj, press_node_info)
+      press <- rvest::html_attr(press, press_attr)
     } else{
-      press <- html_nodes(html_obj, press_node_info)
-      press <- html_text(press)
+      press <- rvest::html_nodes(html_obj, press_node_info)
+      press <- rvest::html_text(press)
     }
     Encoding(press) <- "UTF-8"
     return(press)
@@ -181,11 +194,11 @@ getContentBody <-
            body_node_info = "div#articleBodyContents",
            body_attr = "") {
     if (body_attr != "") {
-      body <- html_nodes(html_obj, body_node_info)
-      body <- html_attr(body, body_attr)
+      body <- rvest::html_nodes(html_obj, body_node_info)
+      body <- rvest::html_attr(body, body_attr)
     } else{
-      body <- html_nodes(html_obj, body_node_info)
-      body <- html_text(body)
+      body <- rvest::html_nodes(html_obj, body_node_info)
+      body <- rvest::html_text(body)
     }
     Encoding(body) <- "UTF-8"
 
