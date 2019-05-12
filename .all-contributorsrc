@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "LeeKwangHo",
+      "name": "leekw",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/10602776?v=4",
+      "profile": "https://github.com/LeeKwangHo",
+      "contributions": [
+        "bug"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "N2H4",
+  "projectOwner": "forkonlp",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
