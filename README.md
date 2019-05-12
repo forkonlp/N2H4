@@ -1,4 +1,5 @@
 # N2H4 
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) 
 [![Travis-CI Build Status](https://travis-ci.org/forkonlp/N2H4.png?branch=master)](https://travis-ci.org/forkonlp/N2H4) 
@@ -26,3 +27,15 @@ if (!requireNamespace("N2H4")){
 }
 library(N2H4)
 ```
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/LeeKwangHo"><img src="https://avatars3.githubusercontent.com/u/10602776?v=4" width="100px;" alt="leekw"/><br /><sub><b>leekw</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/issues?q=author%3ALeeKwangHo" title="Bug reports">🐛</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
