@@ -4,6 +4,8 @@ language: R
 sudo: false
 cache: packages
 
+warnings_are_errors: false
+
 addons:
   apt:
     packages:
@@ -11,13 +13,14 @@ addons:
       - libcurl4-openssl-dev
       - libxml2-dev
 
-r:
-  - 3.2
-  - 3.3
-  - 3.4
-  - 3.5
-  - oldrel
-  - release
+matrix:
+  include:
+  - r: 3.2
+  - r: 3.3
+  - r: 3.4
+  - r: 3.5
+  - r: oldrel
+  - r: release
     r_packages:
       - covr
       - pkgdown
