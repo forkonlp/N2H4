@@ -17,7 +17,7 @@ matrix:
   include:
   - r: 3.4
   - r: 3.5
-  - r: r-devel
+  - r: devel
   - r: oldrel
   - r: release
     r_packages:
