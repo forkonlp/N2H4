@@ -12,12 +12,24 @@ addons:
       - libxml2-dev
 
 r:
-- 3.2
-- 3.3
-- 3.4
-- 3.5
-- oldrel
-- release
-
-after_success:
-  - Rscript -e 'covr::codecov()'
+  - 3.2
+  - 3.3
+  - 3.4
+  - 3.5
+  - oldrel
+  - release
+    r_packages:
+      - covr
+      - pkgdown
+    after_success:
+      - Rscript -e 'covr::codecov()'
+      - R CMD INSTALL .
+      - Rscript -e 'pkgdown::build_site()'
+    deploy:
+      - provider: pages
+        skip-cleanup: true
+        github-token: $GITHUB_PAT
+        keep-history: true
+        local-dir: docs
+        on:
+          branch: master
