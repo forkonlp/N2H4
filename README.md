@@ -17,8 +17,6 @@
 ###### [슬랙](https://forkonlp.slack.com/messages/C53R7L2UT/)에 질문해주셔도 좋습니다. 가입은 [여기](https://forkonlpforslack.herokuapp.com/)에서 메일로 신청해주세요. 자동으로 진행됩니다.
 ###### [엑셀에서 UTF 8 csv 파일 다루기](https://github.com/forkonlp/N2H4/wiki/%EC%97%91%EC%85%80%EC%97%90%EC%84%9C-UTF-8-csv-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EB%A3%A8%EA%B8%B0)를 잘 정리해 주신 글이 있어 공유합니다.
 
-###### OS X 10.11.5, Ubuntu 14.04.4 LTS, Windows >= 8 x64 (build 9200) 에서 확인했습니다.
-
 ## 설치방법
 
 ```
