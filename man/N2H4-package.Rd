@@ -4,10 +4,10 @@
 \name{N2H4-package}
 \alias{N2H4}
 \alias{N2H4-package}
-\title{N2H4: Handling methods for naver news text crawling}
+\title{N2H4: Handling Methods for Naver News Text Crawling}
 \description{
-Provides some utils to get korean text sample from news articles in
-    naver which is popular news portal servise in korea.
+Provides some functions to get Korean text sample from news articles in
+             naver which is popular news portal service in Korea.
 }
 \seealso{
 Useful links:
