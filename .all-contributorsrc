@@ -13,6 +13,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "yoonjaej",
+      "name": "yoonjaej",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/15105968?v=4",
+      "profile": "https://github.com/yoonjaej",
+      "contributions": [
+        "code",
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
