@@ -1,5 +1,5 @@
 # N2H4 
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) 
 [![Travis-CI Build Status](https://travis-ci.org/forkonlp/N2H4.png?branch=master)](https://travis-ci.org/forkonlp/N2H4) 
@@ -34,7 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-<table><tr><td align="center"><a href="https://github.com/LeeKwangHo"><img src="https://avatars3.githubusercontent.com/u/10602776?v=4" width="100px;" alt="leekw"/><br /><sub><b>leekw</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/issues?q=author%3ALeeKwangHo" title="Bug reports">🐛</a></td></tr></table>
+<table><tr><td align="center"><a href="https://github.com/LeeKwangHo"><img src="https://avatars3.githubusercontent.com/u/10602776?v=4" width="100px;" alt="leekw"/><br /><sub><b>leekw</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/issues?q=author%3ALeeKwangHo" title="Bug reports">🐛</a></td><td align="center"><a href="https://github.com/yoonjaej"><img src="https://avatars0.githubusercontent.com/u/15105968?v=4" width="100px;" alt="yoonjaej"/><br /><sub><b>yoonjaej</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/commits?author=yoonjaej" title="Code">💻</a> <a href="https://github.com/forkonlp/N2H4/issues?q=author%3Ayoonjaej" title="Bug reports">🐛</a></td></tr></table>
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
