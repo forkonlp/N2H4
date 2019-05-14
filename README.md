@@ -41,4 +41,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/gorelforkonlp/N2H4](https://starchart.cc/gorelforkonlp/N2H4   
+[![Stargazers over time](https://starchart.cc/forkonlp/N2H4.svg)](https://starchart.cc/forkonlp/N2H4)
