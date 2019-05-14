@@ -5,7 +5,7 @@
 \title{Set url for crawling}
 \usage{
 setUrls(sid1_vec, sid2_vec, strDate, endDate, page_vec = NA,
-  return_type = c("list", "df")[1])
+  return_type = c("list", "df"))
 }
 \arguments{
 \item{sid1_vec}{is news code in naver news url}
@@ -27,4 +27,7 @@ Get data.frame(sid1,sid2,date,pageNum,pageUrl) or list(sid1,sid2,date,pageNum,pa
 Set naver news links with sid, date, etc.
 sid1, sid2, page can use vectors.
 sid1, sid2, start Date, end Date is requred.
+}
+\examples{
+  setUrls(105, 227, "20180101", "20180102")
 }

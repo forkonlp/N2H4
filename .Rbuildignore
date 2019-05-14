@@ -11,3 +11,5 @@
 CODE_OF_CONDUCT.md
 ^LICENSE\.md$
 .all-contributorsrc
+^NEWS\.md$
+^README\.md$

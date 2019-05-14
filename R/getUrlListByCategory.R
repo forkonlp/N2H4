@@ -8,6 +8,9 @@
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
+#' @examples
+#'   print(cate_list_url_ex)
+#'   getUrlListByCategory(cate_list_url_ex)
 
 getUrlListByCategory <-
   function(turl = url,

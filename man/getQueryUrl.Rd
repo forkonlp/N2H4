@@ -20,3 +20,6 @@ url.
 \description{
 Get naver news query page url without pageNum.
 }
+\examples{
+  getQueryUrl("endgame")
+}

@@ -1,12 +1,15 @@
 #' Get Max Page Number
 #'
 #' @param turl is target url include sid1, sid2, date like below.
-#'             'http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102'
+#'             <http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102>
 #' @param max is also interval to try max page number is numeric. Default is 100.
 #' @return Get numeric
 #' @export
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_node html_text
+#' @examples
+#'   print(cate_list_url_ex)
+#'   getMaxPageNum(cate_list_url_ex)
 
 getMaxPageNum <- function(turl = url, max = 100) {
   ifmaxUrl <- paste0(turl, "&page=", max)

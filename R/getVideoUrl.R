@@ -2,11 +2,14 @@
 #'
 #' Get naver news video url
 #'
-#' @param turl like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.
+#' @param turl like <https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>.
 #' @return Get character url.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content add_headers user_agent
+#' @examples
+#'   print(video_url_ex)
+#'   getVideoUrl(video_url_ex)
 
 getVideoUrl <- function(turl = url) {
   uat <-

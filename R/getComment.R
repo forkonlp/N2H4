@@ -4,7 +4,7 @@
 #' if you want to get data only comment, enter command like below.
 #' getComment(url)$result$commentList[[1]]
 #'
-#' @param turl like 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'.
+#' @param turl like <https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>.
 #' @param pageSize is a number of comments per page. defult is 10. max is 100.
 #' @param page is defult is 1.
 #' @param sort you can select favorite, reply, old, new. favorite is defult.
@@ -15,6 +15,9 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom tidyr unnest
 #' @importFrom tibble as_tibble
+#' @examples
+#'   print(news_url_ex)
+#'   getComment(news_url_ex)
 
 getComment <- function(turl = url,
                        pageSize = 10,
@@ -95,11 +98,15 @@ getComment <- function(turl = url,
 #'
 #' Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
 #'
-#' @param turl character. News article on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.
+#' @param turl character. News article on 'Naver' such as <http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>. News articl url that is not on Naver.com domain will generate an error.
 #' @param ... parameter in getComment function.
 #' @return a [tibble][tibble::tibble-package]
 #' @importFrom dplyr bind_rows
 #' @export
+#' @examples
+#'   print(news_url_ex)
+#'   getAllComment(news_url_ex)
+
 getAllComment <- function(turl = url, ...) {
   temp        <-
     getComment(

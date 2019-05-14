@@ -20,3 +20,7 @@ a [tibble][tibble::tibble-package]
 \description{
 Get naver news content from links.
 }
+\examples{
+  print(news_url_ex)
+  getContent(news_url_ex)
+}

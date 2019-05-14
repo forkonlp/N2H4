@@ -19,3 +19,6 @@ a [tibble][tibble::tibble-package]
 \description{
 Get number of query volume in naver news. Params depend on getQueryUrl function.
 }
+\examples{
+  getNewsTrend("endgame", "2019-03-03", "2019-03-04")
+}

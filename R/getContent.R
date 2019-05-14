@@ -9,7 +9,9 @@
 #' @export
 #' @importFrom httr user_agent RETRY content
 #' @importFrom rvest html_nodes html_text html_attr
-
+#' @examples
+#'   print(news_url_ex)
+#'   getContent(news_url_ex)
 
 getContent <-
   function(turl,
@@ -81,6 +83,10 @@ getContent <-
 #' @return Get character title.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
+#' @examples
+#'   print(news_url_ex)
+#'   hobj <- xml2::read_html(news_url_ex)
+#'   getContentTitle(hobj)
 
 getContentTitle <-
   function(html_obj,
@@ -110,6 +116,10 @@ getContentTitle <-
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom lubridate parse_date_time
+#' @examples
+#'   print(news_url_ex)
+#'   hobj <- xml2::read_html(news_url_ex)
+#'   getContentDatetime(hobj)
 
 getContentDatetime <-
   function(html_obj,
@@ -162,6 +172,10 @@ getContentDatetime <-
 #' @return Get character press.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
+#' @examples
+#'   print(news_url_ex)
+#'   hobj <- xml2::read_html(news_url_ex)
+#'   getContentPress(hobj)
 
 getContentPress <-
   function(html_obj,
@@ -188,6 +202,10 @@ getContentPress <-
 #' @return Get character body content.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
+#' @examples
+#'   print(news_url_ex)
+#'   hobj <- xml2::read_html(news_url_ex)
+#'   getContentBody(hobj)
 
 getContentBody <-
   function(html_obj,

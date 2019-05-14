@@ -17,3 +17,6 @@ a [tibble][tibble::tibble-package]
 \description{
 Get naver news sub category names and urls recently.
 }
+\examples{
+  getSubCategory(100)
+}

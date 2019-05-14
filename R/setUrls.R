@@ -13,8 +13,11 @@
 #' @return Get data.frame(sid1,sid2,date,pageNum,pageUrl) or list(sid1,sid2,date,pageNum,pageUrl)
 #' @export
 #' @importFrom httr build_url parse_url
+#' @examples
+#'   setUrls(105, 227, "20180101", "20180102")
 
-setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA, return_type=c("list","df")[1]){
+setUrls <- function(sid1_vec, sid2_vec, strDate, endDate, page_vec=NA, return_type=c("list","df")){
+  return_type <- return_type[1]
   # Generate date lists from strDate to endDate
   strDate_POSIX <- strptime(strDate, format="%Y%m%d")
   diff_day <- as.numeric(strptime(endDate, format="%Y%m%d", tz="") - strptime(strDate, format="%Y%m%d", tz=""))

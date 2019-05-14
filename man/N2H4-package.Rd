@@ -7,7 +7,7 @@
 \title{N2H4: Handling Methods for Naver News Text Crawling}
 \description{
 Provides some functions to get Korean text sample from news articles in
-             naver which is popular news portal service in Korea.
+             Naver which is popular news portal service <https://news.naver.com/> in Korea.
 }
 \seealso{
 Useful links:

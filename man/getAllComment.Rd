@@ -7,7 +7,7 @@
 getAllComment(turl = url, ...)
 }
 \arguments{
-\item{turl}{character. News article on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.}
+\item{turl}{character. News article on 'Naver' such as <http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>. News articl url that is not on Naver.com domain will generate an error.}
 
 \item{...}{parameter in getComment function.}
 }
@@ -19,4 +19,8 @@ Get all comments from the provided news article url on naver
 }
 \details{
 Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
+}
+\examples{
+  print(news_url_ex)
+  getAllComment(news_url_ex)
 }

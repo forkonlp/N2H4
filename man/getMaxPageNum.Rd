@@ -8,7 +8,7 @@ getMaxPageNum(turl = url, max = 100)
 }
 \arguments{
 \item{turl}{is target url include sid1, sid2, date like below.
-'http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102'}
+<http://news.naver.com/main/list.nhn?sid2=265&sid1=100&mid=shm&mode=LS2D&date=20161102>}
 
 \item{max}{is also interval to try max page number is numeric. Default is 100.}
 }
@@ -17,4 +17,8 @@ Get numeric
 }
 \description{
 Get Max Page Number
+}
+\examples{
+  print(cate_list_url_ex)
+  getMaxPageNum(cate_list_url_ex)
 }

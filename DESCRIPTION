@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling Methods for Naver News Text Crawling
-Version: 0.5.2
+Version: 0.5.2.1
 Date: 2019-04-24
 Authors@R: person(given = "Chanyub",
              family = "Park",
@@ -9,7 +9,7 @@ Authors@R: person(given = "Chanyub",
              email = "mrchypark@gmail.com",
              comment = c(ORCID = "0000-0001-6474-2570"))
 Description: Provides some functions to get Korean text sample from news articles in
-             Naver which is popular news portal service in Korea.
+             Naver which is popular news portal service <https://news.naver.com/> in Korea.
 License: MIT + file LICENSE
 URL: http://github.com/forkonlp/N2H4
 BugReports: http://github.com/forkonlp/N2H4/issues

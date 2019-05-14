@@ -7,6 +7,8 @@
 #' @param endDate Default is today.
 #' @return url.
 #' @export
+#' @examples
+#'   getQueryUrl("endgame")
 
 getQueryUrl <- function(query,
                         startDate=as.Date(Sys.time()) - 3,

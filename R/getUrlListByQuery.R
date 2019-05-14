@@ -7,6 +7,9 @@
 #' @export
 #' @importFrom rvest html_nodes html_attr
 #' @importFrom httr GET content user_agent
+#' @examples
+#'   print(query_list_url_ex)
+#'   getUrlListByQuery(query_list_url_ex)
 
 getUrlListByQuery <- function(turl = url) {
   uat <-
@@ -24,7 +27,6 @@ getUrlListByQuery <- function(turl = url) {
     news_links <- "no naver news"
   }
 
-  # news_lists <- data.frame(news_title = news_title, news_links = news_links, stringsAsFactors = F)
   news_lists <-
     tibble::tibble(
       news_title = "help to improve",

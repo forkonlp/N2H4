@@ -12,3 +12,6 @@ a [tibble][tibble::tibble-package]
 \description{
 Get naver news main category names and ids recently.
 }
+\examples{
+  getMainCategory()
+}
