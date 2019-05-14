@@ -75,7 +75,7 @@ sid1, sid2, start Date, end Date is requred." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2.1</span>
       </span>
     </div>
 
@@ -128,7 +128,7 @@ sid1, sid2, start Date, end Date is requred.</p>
     </div>
 
     <pre class="usage"><span class='fu'>setUrls</span>(<span class='no'>sid1_vec</span>, <span class='no'>sid2_vec</span>, <span class='no'>strDate</span>, <span class='no'>endDate</span>, <span class='kw'>page_vec</span> <span class='kw'>=</span> <span class='fl'>NA</span>,
-  <span class='kw'>return_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"list"</span>, <span class='st'>"df"</span>)[<span class='fl'>1</span>])</pre>
+  <span class='kw'>return_type</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"list"</span>, <span class='st'>"df"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,6 +164,24 @@ sid1, sid2, start Date, end Date is requred.</p>
     <p>Get data.frame(sid1,sid2,date,pageNum,pageUrl) or list(sid1,sid2,date,pageNum,pageUrl)</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>  <span class='fu'>setUrls</span>(<span class='fl'>105</span>, <span class='fl'>227</span>, <span class='st'>"20180101"</span>, <span class='st'>"20180102"</span>)</div><div class='output co'>#&gt; [[1]]
+#&gt; [[1]]$sid1
+#&gt; [1] 105
+#&gt; 
+#&gt; [[1]]$sid2
+#&gt; [1] 227
+#&gt; 
+#&gt; [[1]]$date
+#&gt; [1] 20180101
+#&gt; 
+#&gt; [[1]]$pageNum
+#&gt; [1] NA
+#&gt; 
+#&gt; [[1]]$pageUrl
+#&gt; [1] "http://news.naver.com/main/list.nhn?sid1=105&amp;sid2=227&amp;mid=shm&amp;mode=LS2D&amp;date=20180101"
+#&gt; 
+#&gt; </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -171,7 +189,9 @@ sid1, sid2, start Date, end Date is requred.</p>
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

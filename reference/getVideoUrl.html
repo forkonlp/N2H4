@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2.1</span>
       </span>
     </div>
 
@@ -130,7 +130,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>turl</th>
-      <td><p>like 'http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=056&amp;aid=0010335895'.</p></td>
+      <td><p>like &lt;https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=056&amp;aid=0010335895&gt;.</p></td>
     </tr>
     </table>
     
@@ -139,6 +139,8 @@
     <p>Get character url.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>video_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=tvh&amp;oid=052&amp;aid=0001293766&amp;sid1=292"</div><div class='input'>  <span class='fu'>getVideoUrl</span>(<span class='no'>video_url_ex</span>)</div><div class='output co'>#&gt; [1] "http://g-vod-naver.pstatic.net/navertv/global/read/navertv_2019_05_14_1970/a0aae8e6-764f-11e9-b3c5-246e963a41ed.mp4?__gda__=1557856812_7257487cb956b74aa740ea8d461ae0ab"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -146,7 +148,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

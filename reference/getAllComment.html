@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2.1</span>
       </span>
     </div>
 
@@ -130,7 +130,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>turl</th>
-      <td><p>character. News article on 'Naver' such as 'http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=056&amp;aid=0010335895'. News articl url that is not on Naver.com domain will generate an error.</p></td>
+      <td><p>character. News article on 'Naver' such as &lt;http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=056&amp;aid=0010335895&gt;. News articl url that is not on Naver.com domain will generate an error.</p></td>
     </tr>
     <tr>
       <th>...</th>
@@ -147,6 +147,40 @@
     <p>Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</div><div class='input'>  <span class='fu'>getAllComment</span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; # A tibble: 169 x 76
+#&gt;    ticket objectId categoryId templateId commentNo parentCommentNo replyLevel
+#&gt;    &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;          &lt;int&gt;           &lt;int&gt;      &lt;int&gt;
+#&gt;  1 news   news374… *          view_econ…    1.71e9      1707517192          1
+#&gt;  2 news   news374… *          default_e…    1.71e9      1707510802          1
+#&gt;  3 news   news374… *          view_econ…    1.71e9      1707483882          1
+#&gt;  4 news   news374… *          view_econ…    1.71e9      1707476782          1
+#&gt;  5 news   news374… *          default_e…    1.71e9      1707469652          1
+#&gt;  6 news   news374… *          default_e…    1.71e9      1707459492          1
+#&gt;  7 news   news374… *          view_econ…    1.71e9      1707456362          1
+#&gt;  8 news   news374… *          view_econ…    1.71e9      1707446812          1
+#&gt;  9 news   news374… *          default_e…    1.71e9      1707442522          1
+#&gt; 10 news   news374… *          view_econ…    1.71e9      1707437462          1
+#&gt; # … with 159 more rows, and 69 more variables: replyCount &lt;int&gt;,
+#&gt; #   replyAllCount &lt;int&gt;, replyPreviewNo &lt;lgl&gt;, replyList &lt;lgl&gt;,
+#&gt; #   imageCount &lt;int&gt;, imageList &lt;lgl&gt;, imagePathList &lt;lgl&gt;,
+#&gt; #   imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;, commentType &lt;chr&gt;,
+#&gt; #   stickerId &lt;lgl&gt;, sticker &lt;lgl&gt;, sortValue &lt;dbl&gt;, contents &lt;chr&gt;,
+#&gt; #   userIdNo &lt;chr&gt;, exposedUserIp &lt;lgl&gt;, lang &lt;chr&gt;, country &lt;chr&gt;,
+#&gt; #   idType &lt;chr&gt;, idProvider &lt;chr&gt;, userName &lt;chr&gt;, userProfileImage &lt;chr&gt;,
+#&gt; #   profileType &lt;chr&gt;, modTime &lt;chr&gt;, modTimeGmt &lt;chr&gt;, regTime &lt;chr&gt;,
+#&gt; #   regTimeGmt &lt;chr&gt;, sympathyCount &lt;int&gt;, antipathyCount &lt;int&gt;,
+#&gt; #   userBlind &lt;lgl&gt;, hideReplyButton &lt;lgl&gt;, status &lt;int&gt;, mine &lt;lgl&gt;,
+#&gt; #   best &lt;lgl&gt;, mentions &lt;lgl&gt;, toUser &lt;lgl&gt;, userStatus &lt;int&gt;,
+#&gt; #   categoryImage &lt;lgl&gt;, open &lt;lgl&gt;, levelCode &lt;lgl&gt;, grades &lt;lgl&gt;,
+#&gt; #   sympathy &lt;lgl&gt;, antipathy &lt;lgl&gt;, metaInfo &lt;lgl&gt;, extension &lt;lgl&gt;,
+#&gt; #   audioInfoList &lt;lgl&gt;, translation &lt;lgl&gt;, report &lt;lgl&gt;,
+#&gt; #   middleBlindReport &lt;lgl&gt;, spamInfo &lt;lgl&gt;, userHomepageUrl &lt;lgl&gt;,
+#&gt; #   defamation &lt;lgl&gt;, hiddenByCleanbot &lt;lgl&gt;, visible &lt;lgl&gt;, serviceId &lt;lgl&gt;,
+#&gt; #   manager &lt;lgl&gt;, deleted &lt;lgl&gt;, anonymous &lt;lgl&gt;, blindReport &lt;lgl&gt;,
+#&gt; #   virtual &lt;lgl&gt;, secret &lt;lgl&gt;, blind &lt;lgl&gt;, expose &lt;lgl&gt;,
+#&gt; #   profileUserId &lt;lgl&gt;, exposeByCountry &lt;lgl&gt;, containText &lt;lgl&gt;,
+#&gt; #   maskedUserId &lt;chr&gt;, maskedUserName &lt;chr&gt;, validateBanWords &lt;lgl&gt;</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -156,7 +190,9 @@
       <li><a href="#value">Value</a></li>
 
       <li><a href="#details">Details</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>

@@ -73,7 +73,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.2.1</span>
       </span>
     </div>
 
@@ -131,7 +131,7 @@
     <tr>
       <th>turl</th>
       <td><p>is target url include sid1, sid2, date like below.
-'http://news.naver.com/main/list.nhn?sid2=265&amp;sid1=100&amp;mid=shm&amp;mode=LS2D&amp;date=20161102'</p></td>
+&lt;http://news.naver.com/main/list.nhn?sid2=265&amp;sid1=100&amp;mid=shm&amp;mode=LS2D&amp;date=20161102&gt;</p></td>
     </tr>
     <tr>
       <th>max</th>
@@ -144,6 +144,8 @@
     <p>Get numeric</p>
     
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>cate_list_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid2=230&amp;sid1=105&amp;date=20190514"</div><div class='input'>  <span class='fu'>getMaxPageNum</span>(<span class='no'>cate_list_url_ex</span>)</div><div class='output co'>#&gt; [1] 23</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -151,7 +153,9 @@
       <li><a href="#arguments">Arguments</a></li>
       
       <li><a href="#value">Value</a></li>
-          </ul>
+      
+      <li><a href="#examples">Examples</a></li>
+    </ul>
 
   </div>
 </div>
