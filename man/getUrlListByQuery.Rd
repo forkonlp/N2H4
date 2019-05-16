@@ -16,6 +16,8 @@ a [tibble][tibble::tibble-package]
 Get naver news(only not other sites links) titles and links from target url.
 }
 \examples{
+ \donttest{
   print(query_list_url_ex)
   getUrlListByQuery(query_list_url_ex)
+  }
 }

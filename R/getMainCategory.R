@@ -7,7 +7,9 @@
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
 #' @examples
+#' \donttest{
 #'   getMainCategory()
+#'   }
 
 getMainCategory <- function() {
   root   <- "http://news.naver.com/"

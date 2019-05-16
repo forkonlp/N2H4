@@ -22,7 +22,9 @@ Get character press.
 Get naver news press name from link.
 }
 \examples{
+\donttest{
   print(news_url_ex)
   hobj <- xml2::read_html(news_url_ex)
   getContentPress(hobj)
+  }
 }

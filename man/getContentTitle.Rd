@@ -21,7 +21,9 @@ Get character title.
 Get naver news Title from link.
 }
 \examples{
+\donttest{
   print(news_url_ex)
   hobj <- xml2::read_html(news_url_ex)
   getContentTitle(hobj)
+  }
 }

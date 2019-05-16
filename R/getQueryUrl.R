@@ -8,7 +8,9 @@
 #' @return url.
 #' @export
 #' @examples
+#' \donttest{
 #'   getQueryUrl("endgame")
+#'   }
 
 getQueryUrl <- function(query,
                         startDate=as.Date(Sys.time()) - 3,

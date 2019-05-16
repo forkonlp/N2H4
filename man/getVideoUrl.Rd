@@ -16,6 +16,8 @@ Get character url.
 Get naver news video url
 }
 \examples{
+ \donttest{
   print(video_url_ex)
   getVideoUrl(video_url_ex)
+  }
 }

@@ -8,8 +8,10 @@
 #' @importFrom rvest html_nodes html_attr
 #' @importFrom httr GET content user_agent
 #' @examples
+#'  \donttest{
 #'   print(query_list_url_ex)
 #'   getUrlListByQuery(query_list_url_ex)
+#'   }
 
 getUrlListByQuery <- function(turl = url) {
   uat <-

@@ -21,6 +21,8 @@ a [tibble][tibble::tibble-package]
 Get naver news content from links.
 }
 \examples{
+\donttest{
   print(news_url_ex)
   getContent(news_url_ex)
+  }
 }

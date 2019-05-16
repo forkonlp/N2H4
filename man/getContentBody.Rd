@@ -21,7 +21,9 @@ Get character body content.
 Get naver news body from link.
 }
 \examples{
+\donttest{
   print(news_url_ex)
   hobj <- xml2::read_html(news_url_ex)
   getContentBody(hobj)
+  }
 }

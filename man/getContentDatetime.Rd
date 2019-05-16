@@ -23,7 +23,9 @@ Get POSIXlt type datetime.
 Get naver news published datetime from link.
 }
 \examples{
+\donttest{
   print(news_url_ex)
   hobj <- xml2::read_html(news_url_ex)
   getContentDatetime(hobj)
+  }
 }

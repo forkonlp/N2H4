@@ -16,8 +16,10 @@
 #' @importFrom tidyr unnest
 #' @importFrom tibble as_tibble
 #' @examples
+#' \donttest{
 #'   print(news_url_ex)
 #'   getComment(news_url_ex)
+#'}
 
 getComment <- function(turl = url,
                        pageSize = 10,
@@ -104,8 +106,10 @@ getComment <- function(turl = url,
 #' @importFrom dplyr bind_rows
 #' @export
 #' @examples
+#' \donttest{
 #'   print(news_url_ex)
 #'   getAllComment(news_url_ex)
+#'   }
 
 getAllComment <- function(turl = url, ...) {
   temp        <-

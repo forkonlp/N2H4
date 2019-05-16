@@ -10,7 +10,9 @@
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_nodes html_text
 #' @examples
+#' \donttest{
 #'   getNewsTrend("endgame", "2019-03-03", "2019-03-04")
+#'   }
 
 getNewsTrend <-
   function(query, startDate, endDate) {

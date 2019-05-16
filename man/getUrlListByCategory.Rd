@@ -18,6 +18,8 @@ a [tibble][tibble::tibble-package]
 Get naver news titles and links from target url.
 }
 \examples{
+ \donttest{
   print(cate_list_url_ex)
   getUrlListByCategory(cate_list_url_ex)
+  }
 }

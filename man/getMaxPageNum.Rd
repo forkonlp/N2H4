@@ -19,6 +19,8 @@ Get numeric
 Get Max Page Number
 }
 \examples{
+\donttest{
   print(cate_list_url_ex)
   getMaxPageNum(cate_list_url_ex)
+  }
 }

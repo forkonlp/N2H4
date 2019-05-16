@@ -8,8 +8,10 @@
 #' @importFrom xml2 read_html
 #' @importFrom rvest html_node html_text
 #' @examples
+#' \donttest{
 #'   print(cate_list_url_ex)
 #'   getMaxPageNum(cate_list_url_ex)
+#'   }
 
 getMaxPageNum <- function(turl = url, max = 100) {
   ifmaxUrl <- paste0(turl, "&page=", max)

@@ -9,7 +9,10 @@
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
 #' @examples
+#' \donttest{
 #'   getSubCategory(100)
+#'   getSubCategory(100, F)
+#'   }
 getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
   root <-
     paste0("http://news.naver.com/main/main.nhn?mode=LSD&mid=shm&sid1=",

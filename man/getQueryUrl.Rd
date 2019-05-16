@@ -21,5 +21,7 @@ url.
 Get naver news query page url without pageNum.
 }
 \examples{
+\donttest{
   getQueryUrl("endgame")
+  }
 }

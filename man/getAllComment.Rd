@@ -21,6 +21,8 @@ Get all comments from the provided news article url on naver
 Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
 }
 \examples{
+\donttest{
   print(news_url_ex)
   getAllComment(news_url_ex)
+  }
 }

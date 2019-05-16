@@ -8,8 +8,10 @@
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content add_headers user_agent
 #' @examples
+#'  \donttest{
 #'   print(video_url_ex)
 #'   getVideoUrl(video_url_ex)
+#'   }
 
 getVideoUrl <- function(turl = url) {
   uat <-
