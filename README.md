@@ -20,9 +20,7 @@
 ## 설치방법
 
 ```
-if (!requireNamespace("N2H4")){
-  source("https://install-github.me/forkonlp/N2H4")
-}
+install.packages("N2H4")
 library(N2H4)
 ```
 
