@@ -5,6 +5,7 @@
 [![Travis-CI Build Status](https://travis-ci.org/forkonlp/N2H4.png?branch=master)](https://travis-ci.org/forkonlp/N2H4) 
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/forkonlp/N2H4?branch=master&svg=true)](https://ci.appveyor.com/project/forkonlp/N2H4) 
 [![Coverage status](https://codecov.io/gh/forkonlp/N2H4/branch/master/graph/badge.svg)](https://codecov.io/github/forkonlp/N2H4?branch=master) 
+[![](https://cranlogs.r-pkg.org/badges/N2H4)](https://cran.r-project.org/package=N2H4)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/N2H4)](https://cran.r-project.org/package=N2H4)
 
 ## 네이버 뉴스 크롤링을 위한 도구
