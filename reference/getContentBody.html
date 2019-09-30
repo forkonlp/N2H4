@@ -8,21 +8,25 @@
 
 <title>Get Content body name. — getContentBody • N2H4</title>
 
+
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- sticky kit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
+<!-- headroom.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -30,10 +34,11 @@
 
 
 
-<meta property="og:title" content="Get Content body name. — getContentBody" />
 
+<meta property="og:title" content="Get Content body name. — getContentBody" />
 <meta property="og:description" content="Get naver news body from link." />
 <meta name="twitter:card" content="summary" />
+
 
 
 
@@ -57,6 +62,7 @@
   gtag('config', 'UA-47822682-17');
 </script>
 
+
   </head>
 
   <body>
@@ -73,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.4</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.5</span>
       </span>
     </div>
 
@@ -81,7 +87,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -92,11 +98,10 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/forkonlp/N2H4">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -107,6 +112,7 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
@@ -118,14 +124,12 @@
     </div>
 
     <div class="ref-description">
-    
     <p>Get naver news body from link.</p>
-    
     </div>
 
     <pre class="usage"><span class='fu'>getContentBody</span>(<span class='no'>html_obj</span>, <span class='kw'>body_node_info</span> <span class='kw'>=</span> <span class='st'>"div#articleBodyContents"</span>,
   <span class='kw'>body_attr</span> <span class='kw'>=</span> <span class='st'>""</span>)</pre>
-    
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -142,28 +146,28 @@
       <td><p>if you want to get attribution text, please write down here.</p></td>
     </tr>
     </table>
-    
+
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Get character body content.</p>
-    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'>  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</div><div class='input'>  <span class='no'>hobj</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>xml2</span><span class='kw ns'>::</span><span class='fu'><a href='https://www.rdocumentation.org/packages/xml2/topics/read_xml'>read_html</a></span>(<span class='no'>news_url_ex</span>)
-  <span class='fu'>getContentBody</span>(<span class='no'>hobj</span>)</div><div class='output co'>#&gt; [1] "동영상 뉴스 \t\t \t    서울 3곳, 인천 1곳, 광주 1곳, 충남 1곳…출혈·과당경쟁 우려[앵커]정부가 시내면세점 추가 특허 수를 결정했습니다.취재기자 연결합니다.장가희 기자, 정부가 허가를 내주기로 한 신규 시내면세점 얼마나 됩니까?[기자]기획재정부는 오늘(14일) 오후 보세판매장 제도운영위원회를 열고, 신규 시내 면세점을 6곳 추가로 출점할 것을 결정했습니다.대기업 시내면세점은 서울 3곳, 인천 1곳, 광주 1곳이며 중소, 중견기업은 충남 1곳입니다.서울의 경우 올해는 총 특허 수 제한 없이 개별기업 신청에 의해 심사 후 특허를 부여한다는 방침입니다.기재부는 위원회 심의 결과를 관세청에 통보하고, 관세청은 오는 11월 최종 사업자 선정을 할 예정입니다.[앵커]그런데 장기자, 가뜩이나 시내면세점 부진을 겪고 있는데, 또 면세점이 들어서면, 출혈경쟁이 더 심해지는 게 아닌가요?[기자]네, 국내 면세시장은 매월 매출 신기록을 내고 있지만, 중국인 보따리상 등을 유치하기 위해 과도한 수수료 경쟁으로 면세점에도 부익부 빈익빈이 심해진 상태입니다.여기에 최근 한화가 면세사업을 포기하며 그동안 적자에도 불구하고 면세사업을 강행하던 다른 면세점에도 파장이 예상됩니다.여기에 정부가 입국장 면세점까지 신규 사업 허가를 내주면서 이미 포화상태인 면세시장이 침체될 것이란 우려도 나옵니다.지금까지 SBSCNBC 장가희입니다.장가희 기자(gani@sbs.co.kr)☞ 의견 있는 경제채널 SBSCNBC [홈페이지]☞ 경제를 실험한다~ #머니랩 [네이버 TV] 저작권자 SBS플러스 &amp; SBS I&amp;M 무단전재-재배포 금지"</div><div class='input'>  </div></pre>
+    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
+  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</div><div class='input'>  <span class='no'>hobj</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>xml2</span><span class='kw ns'>::</span><span class='fu'><a href='http://xml2.r-lib.org/reference/read_xml.html'>read_html</a></span>(<span class='no'>news_url_ex</span>)
+  <span class='fu'>getContentBody</span>(<span class='no'>hobj</span>)</div><div class='output co'>#&gt; [1] "동영상 뉴스 \t\t \t    서울 3곳, 인천 1곳, 광주 1곳, 충남 1곳…출혈·과당경쟁 우려[앵커]정부가 시내면세점 추가 특허 수를 결정했습니다.취재기자 연결합니다.장가희 기자, 정부가 허가를 내주기로 한 신규 시내면세점 얼마나 됩니까?[기자]기획재정부는 오늘(14일) 오후 보세판매장 제도운영위원회를 열고, 신규 시내 면세점을 6곳 추가로 출점할 것을 결정했습니다.대기업 시내면세점은 서울 3곳, 인천 1곳, 광주 1곳이며 중소, 중견기업은 충남 1곳입니다.서울의 경우 올해는 총 특허 수 제한 없이 개별기업 신청에 의해 심사 후 특허를 부여한다는 방침입니다.기재부는 위원회 심의 결과를 관세청에 통보하고, 관세청은 오는 11월 최종 사업자 선정을 할 예정입니다.[앵커]그런데 장기자, 가뜩이나 시내면세점 부진을 겪고 있는데, 또 면세점이 들어서면, 출혈경쟁이 더 심해지는 게 아닌가요?[기자]네, 국내 면세시장은 매월 매출 신기록을 내고 있지만, 중국인 보따리상 등을 유치하기 위해 과도한 수수료 경쟁으로 면세점에도 부익부 빈익빈이 심해진 상태입니다.여기에 최근 한화가 면세사업을 포기하며 그동안 적자에도 불구하고 면세사업을 강행하던 다른 면세점에도 파장이 예상됩니다.여기에 정부가 입국장 면세점까지 신규 사업 허가를 내주면서 이미 포화상태인 면세시장이 침체될 것이란 우려도 나옵니다.지금까지 SBSCNBC 장가희입니다.장가희 기자(gani@sbs.co.kr)☞ 의견 있는 경제채널 SBSCNBC [홈페이지]☞ 경제를 실험한다~ #머니랩 [네이버 TV] 저작권자 SBS플러스 &amp; SBS I&amp;M 무단전재-재배포 금지"</div><div class='input'>  # }
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      
       <li><a href="#value">Value</a></li>
-      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -171,13 +175,16 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 
