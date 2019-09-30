@@ -13,3 +13,4 @@ CODE_OF_CONDUCT.md
 .all-contributorsrc
 ^NEWS\.md$
 ^README\.md$
+^\.github*
