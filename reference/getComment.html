@@ -131,9 +131,13 @@ if you want to get data only comment, enter command like below.
 getComment(url)$result$commentList[[1]]</p>
     </div>
 
-    <pre class="usage"><span class='fu'>getComment</span>(<span class='kw'>turl</span> <span class='kw'>=</span> <span class='no'>url</span>, <span class='kw'>pageSize</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"favorite"</span>, <span class='st'>"reply"</span>, <span class='st'>"old"</span>, <span class='st'>"new"</span>, <span class='st'>"best"</span>), <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"df"</span>,
-  <span class='st'>"list"</span>))</pre>
+    <pre class="usage"><span class='fu'>getComment</span>(
+  <span class='kw'>turl</span> <span class='kw'>=</span> <span class='no'>url</span>,
+  <span class='kw'>pageSize</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"favorite"</span>, <span class='st'>"reply"</span>, <span class='st'>"old"</span>, <span class='st'>"new"</span>, <span class='st'>"best"</span>),
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"df"</span>, <span class='st'>"list"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -195,7 +199,7 @@ getComment(url)$result$commentList[[1]]</p>
 #&gt; #   audioInfoList &lt;lgl&gt;, translation &lt;lgl&gt;, report &lt;lgl&gt;,
 #&gt; #   middleBlindReport &lt;lgl&gt;, spamInfo &lt;lgl&gt;, userHomepageUrl &lt;lgl&gt;,
 #&gt; #   defamation &lt;lgl&gt;, hiddenByCleanbot &lt;lgl&gt;, visible &lt;lgl&gt;, serviceId &lt;lgl&gt;,
-#&gt; #   idNo &lt;chr&gt;, manager &lt;lgl&gt;, deleted &lt;lgl&gt;, blindReport &lt;lgl&gt;,
+#&gt; #   idNo &lt;chr&gt;, deleted &lt;lgl&gt;, manager &lt;lgl&gt;, blindReport &lt;lgl&gt;,
 #&gt; #   anonymous &lt;lgl&gt;, expose &lt;lgl&gt;, virtual &lt;lgl&gt;, secret &lt;lgl&gt;, blind &lt;lgl&gt;,
 #&gt; #   profileUserId &lt;lgl&gt;, containText &lt;lgl&gt;, exposeByCountry &lt;lgl&gt;,
 #&gt; #   maskedUserId &lt;chr&gt;, maskedUserName &lt;chr&gt;, validateBanWords &lt;lgl&gt;</div><div class='input'># }
