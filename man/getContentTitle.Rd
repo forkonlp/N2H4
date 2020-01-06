@@ -4,8 +4,11 @@
 \alias{getContentTitle}
 \title{Get Content Title}
 \usage{
-getContentTitle(html_obj, title_node_info = "div.article_info h3",
-  title_attr = "")
+getContentTitle(
+  html_obj,
+  title_node_info = "div.article_info h3",
+  title_attr = ""
+)
 }
 \arguments{
 \item{html_obj}{"xml_document" "xml_node" using read_html function.}

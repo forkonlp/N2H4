@@ -4,8 +4,11 @@
 \alias{getContentBody}
 \title{Get Content body name.}
 \usage{
-getContentBody(html_obj, body_node_info = "div#articleBodyContents",
-  body_attr = "")
+getContentBody(
+  html_obj,
+  body_node_info = "div#articleBodyContents",
+  body_attr = ""
+)
 }
 \arguments{
 \item{html_obj}{"xml_document" "xml_node" using read_html function.}

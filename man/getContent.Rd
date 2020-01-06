@@ -4,8 +4,11 @@
 \alias{getContent}
 \title{Get Content}
 \usage{
-getContent(turl, col = c("url", "datetime", "edittime", "press", "title",
-  "body"), try_cnt = 3)
+getContent(
+  turl,
+  col = c("url", "datetime", "edittime", "press", "title", "body"),
+  try_cnt = 3
+)
 }
 \arguments{
 \item{turl}{is naver news link.}

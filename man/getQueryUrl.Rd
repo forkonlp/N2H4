@@ -4,8 +4,11 @@
 \alias{getQueryUrl}
 \title{Get Query page url}
 \usage{
-getQueryUrl(query, startDate = as.Date(Sys.time()) - 3,
-  endDate = as.Date(Sys.time()))
+getQueryUrl(
+  query,
+  startDate = as.Date(Sys.time()) - 3,
+  endDate = as.Date(Sys.time())
+)
 }
 \arguments{
 \item{query}{requred.}

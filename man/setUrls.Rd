@@ -4,8 +4,14 @@
 \alias{setUrls}
 \title{Set url for crawling}
 \usage{
-setUrls(sid1_vec, sid2_vec, strDate, endDate, page_vec = NA,
-  return_type = c("list", "df"))
+setUrls(
+  sid1_vec,
+  sid2_vec,
+  strDate,
+  endDate,
+  page_vec = NA,
+  return_type = c("list", "df")
+)
 }
 \arguments{
 \item{sid1_vec}{is news code in naver news url}

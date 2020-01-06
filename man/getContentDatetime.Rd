@@ -4,8 +4,12 @@
 \alias{getContentDatetime}
 \title{Get Content datetime}
 \usage{
-getContentDatetime(html_obj, datetime_node_info = "span.t11",
-  datetime_attr = "", getEdittime = TRUE)
+getContentDatetime(
+  html_obj,
+  datetime_node_info = "span.t11",
+  datetime_attr = "",
+  getEdittime = TRUE
+)
 }
 \arguments{
 \item{html_obj}{"xml_document" "xml_node" using read_html function.}
