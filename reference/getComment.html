@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -171,41 +171,41 @@ getComment(url)$result$commentList[[1]]</p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
   <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</div><div class='input'>  <span class='fu'>getComment</span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
-#&gt; <span class='warning'>Please use `cols = c()`</span></div><div class='output co'>#&gt; # A tibble: 10 x 77
+#&gt; <span class='warning'>Please use `cols = c()`</span></div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 10 x 77</span><span>
 #&gt;    ticket objectId categoryId templateId commentNo parentCommentNo replyLevel
-#&gt;    &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;          &lt;int&gt;           &lt;int&gt;      &lt;int&gt;
-#&gt;  1 news   news374… *          default_e…    1.71e9      1707777412          1
-#&gt;  2 news   news374… *          view_econ…    1.71e9      1707772282          1
-#&gt;  3 news   news374… *          default_e…    1.71e9      1707723522          1
-#&gt;  4 news   news374… *          view_econ…    1.71e9      1707710742          1
-#&gt;  5 news   news374… *          view_econ…    1.71e9      1707691422          1
-#&gt;  6 news   news374… *          view_econ…    1.71e9      1707682112          1
-#&gt;  7 news   news374… *          view_econ…    1.71e9      1707645262          1
-#&gt;  8 news   news374… *          view_econ…    1.71e9      1707644392          1
-#&gt;  9 news   news374… *          default_e…    1.71e9      1707638522          1
-#&gt; 10 news   news374… *          view_econ…    1.71e9      1707632452          1
-#&gt; # … with 70 more variables: replyCount &lt;int&gt;, replyAllCount &lt;int&gt;,
-#&gt; #   replyPreviewNo &lt;lgl&gt;, replyList &lt;lgl&gt;, imageCount &lt;int&gt;, imageList &lt;lgl&gt;,
-#&gt; #   imagePathList &lt;lgl&gt;, imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;,
-#&gt; #   commentType &lt;chr&gt;, stickerId &lt;lgl&gt;, sticker &lt;lgl&gt;, sortValue &lt;dbl&gt;,
-#&gt; #   contents &lt;chr&gt;, userIdNo &lt;chr&gt;, exposedUserIp &lt;lgl&gt;, lang &lt;chr&gt;,
-#&gt; #   country &lt;chr&gt;, idType &lt;chr&gt;, idProvider &lt;chr&gt;, userName &lt;chr&gt;,
-#&gt; #   userProfileImage &lt;chr&gt;, profileType &lt;chr&gt;, modTime &lt;chr&gt;, modTimeGmt &lt;chr&gt;,
-#&gt; #   regTime &lt;chr&gt;, regTimeGmt &lt;chr&gt;, sympathyCount &lt;int&gt;, antipathyCount &lt;int&gt;,
-#&gt; #   userBlind &lt;lgl&gt;, hideReplyButton &lt;lgl&gt;, status &lt;int&gt;, mine &lt;lgl&gt;,
-#&gt; #   best &lt;lgl&gt;, mentions &lt;lgl&gt;, toUser &lt;lgl&gt;, userStatus &lt;int&gt;,
-#&gt; #   categoryImage &lt;lgl&gt;, open &lt;lgl&gt;, levelCode &lt;lgl&gt;, grades &lt;lgl&gt;,
-#&gt; #   sympathy &lt;lgl&gt;, antipathy &lt;lgl&gt;, metaInfo &lt;lgl&gt;, extension &lt;lgl&gt;,
-#&gt; #   audioInfoList &lt;lgl&gt;, translation &lt;lgl&gt;, report &lt;lgl&gt;,
-#&gt; #   middleBlindReport &lt;lgl&gt;, spamInfo &lt;lgl&gt;, userHomepageUrl &lt;lgl&gt;,
-#&gt; #   defamation &lt;lgl&gt;, hiddenByCleanbot &lt;lgl&gt;, visible &lt;lgl&gt;, serviceId &lt;lgl&gt;,
-#&gt; #   idNo &lt;chr&gt;, deleted &lt;lgl&gt;, manager &lt;lgl&gt;, blindReport &lt;lgl&gt;,
-#&gt; #   anonymous &lt;lgl&gt;, expose &lt;lgl&gt;, virtual &lt;lgl&gt;, secret &lt;lgl&gt;, blind &lt;lgl&gt;,
-#&gt; #   profileUserId &lt;lgl&gt;, containText &lt;lgl&gt;, exposeByCountry &lt;lgl&gt;,
-#&gt; #   maskedUserId &lt;chr&gt;, maskedUserName &lt;chr&gt;, validateBanWords &lt;lgl&gt;</div><div class='input'># }
-</div></pre>
+#&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>  </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>           </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>      </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span>
+#&gt; </span><span style='color: #555555;'> 1</span><span> news   news374… *          default_e…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>777</span><span>412          1
+#&gt; </span><span style='color: #555555;'> 2</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>772</span><span>282          1
+#&gt; </span><span style='color: #555555;'> 3</span><span> news   news374… *          default_e…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>723</span><span>522          1
+#&gt; </span><span style='color: #555555;'> 4</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>710</span><span>742          1
+#&gt; </span><span style='color: #555555;'> 5</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>691</span><span>422          1
+#&gt; </span><span style='color: #555555;'> 6</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>682</span><span>112          1
+#&gt; </span><span style='color: #555555;'> 7</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>645</span><span>262          1
+#&gt; </span><span style='color: #555555;'> 8</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>644</span><span>392          1
+#&gt; </span><span style='color: #555555;'> 9</span><span> news   news374… *          default_e…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>638</span><span>522          1
+#&gt; </span><span style='color: #555555;'>10</span><span> news   news374… *          view_econ…    1.71</span><span style='color: #555555;'>e</span><span>9      </span><span style='text-decoration: underline;'>1</span><span>707</span><span style='text-decoration: underline;'>632</span><span>452          1
+#&gt; </span><span style='color: #555555;'># … with 70 more variables: replyCount </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, replyAllCount </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,
+#&gt; #   replyPreviewNo </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, replyList </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, imageCount </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, imageList </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   imagePathList </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, imageWidthList </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, imageHeightList </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   commentType </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, stickerId </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, sticker </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, sortValue </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span style='color: #555555;'>,
+#&gt; #   contents </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, userIdNo </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, exposedUserIp </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, lang </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   country </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, idType </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, idProvider </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, userName </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   userProfileImage </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, profileType </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, modTime </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, modTimeGmt </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>,
+#&gt; #   regTime </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, regTimeGmt </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, sympathyCount </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, antipathyCount </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,
+#&gt; #   userBlind </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, hideReplyButton </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, status </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>, mine </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   best </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, mentions </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, toUser </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, userStatus </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span style='color: #555555;'>,
+#&gt; #   categoryImage </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, open </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, levelCode </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, grades </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   sympathy </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, antipathy </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, metaInfo </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, extension </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   audioInfoList </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, translation </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, report </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   middleBlindReport </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, spamInfo </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, userHomepageUrl </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   defamation </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, hiddenByCleanbot </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, visible </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, serviceId </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   idNo </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, deleted </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, manager </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, blindReport </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   anonymous </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, expose </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, virtual </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, secret </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, blind </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   profileUserId </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, containText </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>, exposeByCountry </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span style='color: #555555;'>,
+#&gt; #   maskedUserId </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, maskedUserName </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span style='color: #555555;'>, validateBanWords </span><span style='color: #555555;font-style: italic;'>&lt;lgl&gt;</span><span></div><div class='input'># }
+</div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
@@ -223,7 +223,7 @@ getComment(url)$result$commentList[[1]]</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>

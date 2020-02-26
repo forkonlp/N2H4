@@ -18,8 +18,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
@@ -144,21 +144,21 @@
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'> <span class='co'># \donttest{</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>query_list_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://search.naver.com/search.naver?query=%EC%82%BC%EC%84%B1&amp;where=news&amp;ie=utf8&amp;sm=nws_hty"</div><div class='input'>  <span class='fu'>getUrlListByQuery</span>(<span class='no'>query_list_url_ex</span>)</div><div class='output co'>#&gt; # A tibble: 9 x 2
+  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>query_list_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://search.naver.com/search.naver?query=%EC%82%BC%EC%84%B1&amp;where=news&amp;ie=utf8&amp;sm=nws_hty"</div><div class='input'>  <span class='fu'>getUrlListByQuery</span>(<span class='no'>query_list_url_ex</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 9 x 2</span><span>
 #&gt;   news_title     news_links                                                     
-#&gt;   &lt;chr&gt;          &lt;chr&gt;                                                          
-#&gt; 1 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…
-#&gt; 2 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…
-#&gt; 3 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
-#&gt; 4 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
-#&gt; 5 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
-#&gt; 6 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…
-#&gt; 7 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…
-#&gt; 8 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
-#&gt; 9 help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…</div><div class='input'>  # }
-</div></pre>
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>          </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                                          
+#&gt; </span><span style='color: #555555;'>1</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
+#&gt; </span><span style='color: #555555;'>2</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=102…
+#&gt; </span><span style='color: #555555;'>3</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=102…
+#&gt; </span><span style='color: #555555;'>4</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
+#&gt; </span><span style='color: #555555;'>5</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…
+#&gt; </span><span style='color: #555555;'>6</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
+#&gt; </span><span style='color: #555555;'>7</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…
+#&gt; </span><span style='color: #555555;'>8</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=105…
+#&gt; </span><span style='color: #555555;'>9</span><span> help to impro… https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=sec&amp;sid1=101…</div><div class='input'>  # }
+</div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
@@ -176,7 +176,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
 
       </footer>
