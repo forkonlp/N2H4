@@ -1,6 +1,6 @@
-pandoc: 2.7.3
-pkgdown: 1.4.1.9000
-pkgdown_sha: 5e873fd9e478dddd784c31d8c8f994fd4b341c2a
+pandoc: '2.2'
+pkgdown: 1.4.1
+pkgdown_sha: ~
 articles: []
 urls:
   reference: https://forkonlp.github.io/N2H4/reference
