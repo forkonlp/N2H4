@@ -11,7 +11,7 @@
 #' @examples
 #' \donttest{
 #'   getSubCategory(100)
-#'   getSubCategory(100, F)
+#'   getSubCategory(100, FALSE)
 #'   }
 getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
   root <-
