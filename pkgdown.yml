@@ -1,8 +1,7 @@
-pandoc: 2.7.3
-pkgdown: 1.4.1.9000
-pkgdown_sha: 0c219e74e2742765d7759bd9450fa4915857c295
+pandoc: '2.2'
+pkgdown: 1.4.1
+pkgdown_sha: ~
 articles: []
-last_built: 2020-03-19T22:31Z
 urls:
   reference: https://forkonlp.github.io/N2H4/reference
   article: https://forkonlp.github.io/N2H4/articles
