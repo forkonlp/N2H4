@@ -1,5 +1,8 @@
 # N2H4 0.5.7
 
+* doctest 오류를 수정했습니다.
+* hotfix for doctest.
+
 # N2H4 0.5.6
 
 * getMaxPageNum() 함수에서 인코딩 에러 나는 것을 수정했습니다.
