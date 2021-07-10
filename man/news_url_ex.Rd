@@ -4,7 +4,9 @@
 \name{news_url_ex}
 \alias{news_url_ex}
 \title{News Url Example}
-\format{example url character}
+\format{
+example url character
+}
 \usage{
 news_url_ex
 }

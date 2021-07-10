@@ -13,7 +13,7 @@ Description: Provides some functions to get Korean text sample from news article
 License: MIT + file LICENSE
 URL: http://github.com/forkonlp/N2H4
 BugReports: http://github.com/forkonlp/N2H4/issues
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Depends: 
     R (>= 3.2)
 Encoding: UTF-8

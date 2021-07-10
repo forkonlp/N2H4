@@ -4,7 +4,9 @@
 \name{query_list_url_ex}
 \alias{query_list_url_ex}
 \title{Query Result Page Url Example}
-\format{example url character}
+\format{
+example url character
+}
 \usage{
 query_list_url_ex
 }

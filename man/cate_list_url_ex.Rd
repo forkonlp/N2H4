@@ -4,7 +4,9 @@
 \name{cate_list_url_ex}
 \alias{cate_list_url_ex}
 \title{Category Page Url Example}
-\format{example url character}
+\format{
+example url character
+}
 \usage{
 cate_list_url_ex
 }

@@ -4,7 +4,9 @@
 \name{video_url_ex}
 \alias{video_url_ex}
 \title{Video Url Example}
-\format{example url character}
+\format{
+example url character
+}
 \usage{
 video_url_ex
 }
