@@ -26,10 +26,10 @@ getMainCategory <- function() {
   links <- rvest::html_attr(links, "href")
 
   titles <-
-    titles[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1", links)]
+    titles[grep("^\\/main\\/main.naver\\?mode=LSD&mid=shm&sid1=1", links)]
   titles <- trimws(titles)
   links <-
-    links[grep("^\\/main\\/main.nhn\\?mode=LSD&mid=shm&sid1=1", links)]
+    links[grep("^\\/main\\/main.naver\\?mode=LSD&mid=shm&sid1=1", links)]
 
   sid1 <- sapply(strsplit(links, "="), function(x) x[4])
 

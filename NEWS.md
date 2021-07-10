@@ -1,5 +1,8 @@
 # N2H4 0.5.8
 
+* getMainCategory() 함수에서 변경된 주소를 반영하였습니다.
+* Fix getMainCategory() Function with change address.
+
 # N2H4 0.5.7
 
 * doctest 오류를 수정했습니다.
