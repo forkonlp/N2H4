@@ -1,5 +1,7 @@
 # N2H4 0.5.9
 
+* http to https
+
 # N2H4 0.5.8
 
 * getMainCategory() 함수에서 변경된 주소를 반영하였습니다.
