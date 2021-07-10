@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://forkonlp.github.io/N2H4/404.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/authors.html</loc>
+  </url>
+  <url>
     <loc>https://forkonlp.github.io/N2H4/index.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/news/index.html</loc>
   </url>
   <url>
     <loc>https://forkonlp.github.io/N2H4/reference/N2H4-package.html</loc>
@@ -56,6 +74,9 @@
   </url>
   <url>
     <loc>https://forkonlp.github.io/N2H4/reference/getVideoUrl.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/reference/index.html</loc>
   </url>
   <url>
     <loc>https://forkonlp.github.io/N2H4/reference/news_url_ex.html</loc>

@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/yeti/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -39,7 +43,8 @@
 <meta property="og:description" content="Get naver news comments
 if you want to get data only comment, enter command like below.
 getComment(url)$result$commentList[[1]]" />
-<meta name="twitter:card" content="summary" />
+
+
 
 
 
@@ -65,9 +70,15 @@ getComment(url)$result$commentList[[1]]" />
 </script>
 
 
+  
+
+  
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -81,19 +92,13 @@ getComment(url)$result$commentList[[1]]" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.7</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.5.8</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li>
@@ -102,8 +107,8 @@ getComment(url)$result$commentList[[1]]" />
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/forkonlp/N2H4">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="http://github.com/forkonlp/N2H4/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -121,7 +126,7 @@ getComment(url)$result$commentList[[1]]" />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get Comment</h1>
-    <small class="dont-index">Source: <a href='https://github.com/forkonlp/N2H4/blob/master/R/getComment.R'><code>R/getComment.R</code></a></small>
+    <small class="dont-index">Source: <a href='http://github.com/forkonlp/N2H4/blob/master/R/getComment.R'><code>R/getComment.R</code></a></small>
     <div class="hidden name"><code>getComment.Rd</code></div>
     </div>
 
@@ -131,13 +136,13 @@ if you want to get data only comment, enter command like below.
 getComment(url)$result$commentList[[1]]</p>
     </div>
 
-    <pre class="usage"><span class='fu'>getComment</span>(
-  <span class='kw'>turl</span> <span class='kw'>=</span> <span class='no'>url</span>,
-  <span class='kw'>pageSize</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>page</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>sort</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"favorite"</span>, <span class='st'>"reply"</span>, <span class='st'>"old"</span>, <span class='st'>"new"</span>, <span class='st'>"best"</span>),
-  <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"df"</span>, <span class='st'>"list"</span>)
-)</pre>
+    <div class="ref-usage sourceCode"><pre class='sourceCode r'><code><span class='fu'>getComment</span><span class='op'>(</span>
+  turl <span class='op'>=</span> <span class='va'>url</span>,
+  pageSize <span class='op'>=</span> <span class='fl'>10</span>,
+  page <span class='op'>=</span> <span class='fl'>1</span>,
+  sort <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"favorite"</span>, <span class='st'>"reply"</span>, <span class='st'>"old"</span>, <span class='st'>"new"</span>, <span class='st'>"best"</span><span class='op'>)</span>,
+  type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"df"</span>, <span class='st'>"list"</span><span class='op'>)</span>
+<span class='op'>)</span></code></pre></div>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -169,61 +174,63 @@ getComment(url)$result$commentList[[1]]</p>
     <p>a [tibble][tibble::tibble-package]</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</div><div class='input'>  <span class='fu'>getComment</span>(<span class='no'>news_url_ex</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: `cols` is now required.</span>
-#&gt; <span class='warning'>Please use `cols = c()`</span></div><div class='output co'>#&gt; # A tibble: 10 x 77
-#&gt;    ticket objectId categoryId templateId commentNo parentCommentNo replyLevel
-#&gt;    &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt;      &lt;chr&gt;          &lt;int&gt;           &lt;int&gt;      &lt;int&gt;
-#&gt;  1 news   news374… *          default_e…    1.71e9      1707777412          1
-#&gt;  2 news   news374… *          view_econ…    1.71e9      1707772282          1
-#&gt;  3 news   news374… *          default_e…    1.71e9      1707723522          1
-#&gt;  4 news   news374… *          view_econ…    1.71e9      1707710742          1
-#&gt;  5 news   news374… *          view_econ…    1.71e9      1707691422          1
-#&gt;  6 news   news374… *          view_econ…    1.71e9      1707682112          1
-#&gt;  7 news   news374… *          view_econ…    1.71e9      1707645262          1
-#&gt;  8 news   news374… *          view_econ…    1.71e9      1707644392          1
-#&gt;  9 news   news374… *          default_e…    1.71e9      1707638522          1
-#&gt; 10 news   news374… *          view_econ…    1.71e9      1707632452          1
-#&gt; # … with 70 more variables: replyCount &lt;int&gt;, replyAllCount &lt;int&gt;,
-#&gt; #   replyPreviewNo &lt;lgl&gt;, replyList &lt;lgl&gt;, imageCount &lt;int&gt;, imageList &lt;lgl&gt;,
-#&gt; #   imagePathList &lt;lgl&gt;, imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;,
-#&gt; #   commentType &lt;chr&gt;, stickerId &lt;lgl&gt;, sticker &lt;lgl&gt;, sortValue &lt;dbl&gt;,
-#&gt; #   contents &lt;chr&gt;, userIdNo &lt;chr&gt;, exposedUserIp &lt;lgl&gt;, lang &lt;chr&gt;,
-#&gt; #   country &lt;chr&gt;, idType &lt;chr&gt;, idProvider &lt;chr&gt;, userName &lt;chr&gt;,
-#&gt; #   userProfileImage &lt;chr&gt;, profileType &lt;chr&gt;, modTime &lt;chr&gt;, modTimeGmt &lt;chr&gt;,
-#&gt; #   regTime &lt;chr&gt;, regTimeGmt &lt;chr&gt;, sympathyCount &lt;int&gt;, antipathyCount &lt;int&gt;,
-#&gt; #   userBlind &lt;lgl&gt;, hideReplyButton &lt;lgl&gt;, status &lt;int&gt;, mine &lt;lgl&gt;,
-#&gt; #   best &lt;lgl&gt;, mentions &lt;lgl&gt;, toUser &lt;lgl&gt;, userStatus &lt;int&gt;,
-#&gt; #   categoryImage &lt;lgl&gt;, open &lt;lgl&gt;, levelCode &lt;lgl&gt;, grades &lt;lgl&gt;,
-#&gt; #   sympathy &lt;lgl&gt;, antipathy &lt;lgl&gt;, metaInfo &lt;lgl&gt;, extension &lt;lgl&gt;,
-#&gt; #   audioInfoList &lt;lgl&gt;, translation &lt;lgl&gt;, report &lt;lgl&gt;,
-#&gt; #   middleBlindReport &lt;lgl&gt;, spamInfo &lt;lgl&gt;, userHomepageUrl &lt;lgl&gt;,
-#&gt; #   defamation &lt;lgl&gt;, hiddenByCleanbot &lt;lgl&gt;, visible &lt;lgl&gt;, serviceId &lt;lgl&gt;,
-#&gt; #   idNo &lt;chr&gt;, manager &lt;lgl&gt;, deleted &lt;lgl&gt;, blindReport &lt;lgl&gt;,
-#&gt; #   anonymous &lt;lgl&gt;, expose &lt;lgl&gt;, virtual &lt;lgl&gt;, secret &lt;lgl&gt;, blind &lt;lgl&gt;,
-#&gt; #   profileUserId &lt;lgl&gt;, containText &lt;lgl&gt;, exposeByCountry &lt;lgl&gt;,
-#&gt; #   maskedUserId &lt;chr&gt;, maskedUserName &lt;chr&gt;, validateBanWords &lt;lgl&gt;</div><div class='input'># }
-</div></pre>
+    <div class="ref-examples sourceCode"><pre class='sourceCode r'><code><span class='r-in'><span class='co'># \donttest{</span></span>
+<span class='r-in'>  <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>news_url_ex</span><span class='op'>)</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</span>
+<span class='r-in'>  <span class='fu'>getComment</span><span class='op'>(</span><span class='va'>news_url_ex</span><span class='op'>)</span></span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> <span class='warning'>Warning: </span>`cols` is now required when using unnest().</span>
+<span class='r-wrn co'><span class='r-pr'>#&gt;</span> Please use `cols = c()`</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># A tibble: 10 x 79</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    ticket objectId   categoryId templateId  commentNo parentCommentNo replyLevel</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span>    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>           <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 1</span> news   news374,0… *          default_ec…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>777</span>412          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 2</span> news   news374,0… *          view_econo…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>772</span>282          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 3</span> news   news374,0… *          default_ec…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>723</span>522          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 4</span> news   news374,0… *          view_econo…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>710</span>742          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 5</span> news   news374,0… *          view_econo…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>691</span>422          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 6</span> news   news374,0… *          view_econo…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>682</span>112          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 7</span> news   news374,0… *          view_econo…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>644</span>392          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 8</span> news   news374,0… *          default_ec…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>638</span>522          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'> 9</span> news   news374,0… *          view_econo…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>632</span>452          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #BCBCBC;'>10</span> news   news374,0… *          default_ec…    1.71<span style='color: #949494;'>e</span>9      <span style='text-decoration: underline;'>1</span>707<span style='text-decoration: underline;'>592</span>752          1</span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'># … with 72 more variables: replyCount &lt;int&gt;, replyAllCount &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   replyPreviewNo &lt;lgl&gt;, replyList &lt;lgl&gt;, imageCount &lt;int&gt;, imageList &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   imagePathList &lt;lgl&gt;, imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   commentType &lt;chr&gt;, stickerId &lt;lgl&gt;, sticker &lt;lgl&gt;, sortValue &lt;dbl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   contents &lt;chr&gt;, userIdNo &lt;chr&gt;, exposedUserIp &lt;lgl&gt;, lang &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   country &lt;chr&gt;, idType &lt;chr&gt;, idProvider &lt;chr&gt;, userName &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   userProfileImage &lt;chr&gt;, profileType &lt;chr&gt;, modTime &lt;chr&gt;, modTimeGmt &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   regTime &lt;chr&gt;, regTimeGmt &lt;chr&gt;, sympathyCount &lt;int&gt;, antipathyCount &lt;int&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   hideReplyButton &lt;lgl&gt;, status &lt;int&gt;, mine &lt;lgl&gt;, best &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   mentions &lt;lgl&gt;, toUser &lt;lgl&gt;, userStatus &lt;int&gt;, categoryImage &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   open &lt;lgl&gt;, levelCode &lt;lgl&gt;, grades &lt;lgl&gt;, sympathy &lt;lgl&gt;, antipathy &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   metaInfo &lt;lgl&gt;, extension &lt;lgl&gt;, audioInfoList &lt;lgl&gt;, translation &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   report &lt;lgl&gt;, middleBlindReport &lt;lgl&gt;, spamInfo &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   userHomepageUrl &lt;lgl&gt;, defamation &lt;lgl&gt;, hiddenByCleanbot &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   score &lt;dbl&gt;, managerLike &lt;lgl&gt;, visible &lt;lgl&gt;, manager &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   deleted &lt;lgl&gt;, expose &lt;lgl&gt;, exposeByCountry &lt;lgl&gt;, virtual &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   secret &lt;lgl&gt;, profileUserId &lt;lgl&gt;, blindReport &lt;lgl&gt;, idNo &lt;chr&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   blind &lt;lgl&gt;, serviceId &lt;lgl&gt;, containText &lt;lgl&gt;, userBlocked &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   maskedUserId &lt;chr&gt;, maskedUserName &lt;chr&gt;, validateBanWords &lt;lgl&gt;,</span></span>
+<span class='r-out co'><span class='r-pr'>#&gt;</span> <span style='color: #949494;'>#   anonymous &lt;lgl&gt;</span></span>
+<span class='r-in'><span class='co'># }</span></span>
+</code></pre></div>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Chanyub Park.</p>
+  <p><p>Developed by Chanyub Park.</p></p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.</p>
+  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9001.</p></p>
 </div>
 
       </footer>
@@ -231,6 +238,8 @@ getComment(url)$result$commentList[[1]]</p>
 
   
 
+
+  
 
   </body>
 </html>
