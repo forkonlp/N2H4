@@ -12,8 +12,8 @@ Provides some functions to get Korean text sample from news articles in
 \seealso{
 Useful links:
 \itemize{
-  \item \url{http://github.com/forkonlp/N2H4}
-  \item Report bugs at \url{http://github.com/forkonlp/N2H4/issues}
+  \item \url{https://github.com/forkonlp/N2H4}
+  \item Report bugs at \url{https://github.com/forkonlp/N2H4/issues}
 }
 
 }
