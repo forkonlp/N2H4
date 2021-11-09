@@ -55,7 +55,7 @@ getContent <-
     edittime <- getContentDatetime(html_obj)[2]
     press <- getContentPress(html_obj)
     body <- getContentBody(html_obj)
-    section <- getsection(html_obj)
+    section <- getSection(html_obj)
   }
   newsInfo <- tibble::tibble(url = turl, datetime = datetime, 
                              edittime = edittime, press = press, title = title, body = body,section = section,value = value)
