@@ -33,11 +33,21 @@
         "bug",
         "doc"
       ]
+    },
+    {
+      "login": "seokho92",
+      "name": "seokho92",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22064612?v=4",
+      "profile": "https://github.com/seokho92",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsPerLine": 7,
   "projectName": "N2H4",
   "projectOwner": "forkonlp",
   "repoType": "github",
-  "repoHost": "https://github.com"
+  "repoHost": "https://github.com",
+  "skipCi": true
 }
