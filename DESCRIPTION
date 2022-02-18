@@ -27,5 +27,4 @@ Imports:
     tibble,
     dplyr,
     lubridate,
-    urltools,
-    lifecycle
+    urltools
