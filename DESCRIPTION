@@ -19,8 +19,9 @@ Depends:
 Encoding: UTF-8
 LazyData: true
 Suggests: 
+    vcr (>= 0.6.0),
     testthat
-Imports:
+Imports: 
     rvest,
     httr,
     jsonlite,
