@@ -1,5 +1,5 @@
 # N2H4 
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg)](#contributors)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) 
 [![Coverage status](https://codecov.io/gh/forkonlp/N2H4/branch/master/graph/badge.svg)](https://codecov.io/github/forkonlp/N2H4?branch=master) 
