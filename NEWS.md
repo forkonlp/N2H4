@@ -1,8 +1,13 @@
 # N2H4 0.6.0
 
-# N2H4 0.5.10
-
-* 
+* getMainCategory() 함수가 동작하지 않는 것을 수정했습니다.
+* getVidioUrl(), getUrlListByQuery(), getQueryUrl(), getNewsTrend() 함수를 제거했습니다.
+* getUrlListByCategory() 함수를 getUrlList()로 이름을 바꾸었습니다.
+* 사용하지 않는 의존성 패키지를 제거하였습니다.
+* Fix getMainCategory() function don't work.
+* Remove functions getVidioUrl(), getUrlListByQuery(), getQueryUrl(), getNewsTrend().
+* Rename function getUrlListByCategory() to getUrlList().
+* Remove un-use package dependency.
 
 # N2H4 0.5.9
 

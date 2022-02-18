@@ -6,9 +6,7 @@
 #' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom httr GET user_agent add_headers content
-#' @importFrom jsonlite fromJSON
-#' @importFrom tidyr unnest
-#' @importFrom tibble as_tibble
+#' @importFrom tibble tibble
 #' @examples
 #' \donttest{
 #'   print(news_url_ex)
@@ -34,8 +32,6 @@ getLike <- function(turl = url) {
   tt <- tt$contents[[1]]$reactions
   cate <- sapply(tt, function(x) x$reactionType)
   cnt <- sapply(tt, function(x) x$count)
-  dat <- tibble::as_tibble(cbind(cate, cnt))
-  dat <- dplyr::mutate(dat, cnt = as.integer(cnt))
+  dat <- tibble::tibble(cate, cnt)
   return(dat)
 }
-

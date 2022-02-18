@@ -16,51 +16,68 @@
 #'   }
 
 getContent <-
-  function (turl, col = c("url", "datetime", "edittime", 
-                               "press", "title", "body","section","value"), try_cnt = 3) 
-{
-  uat <- httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
-  root <- httr::RETRY("GET", turl, uat, times = try_cnt)
-  urlcheck <- root$url
-  value <- T
-  if (identical(grep("^https?://(news|finance).naver.com", 
-                     urlcheck), integer(0)) & value) {
-    title <- "page is not news section."
-    datetime <- "page is not news section."
-    edittime <- "page is not news section."
-    press <- "page is not news section."
-    body <- "page is not news section."
-    section <- "page is not news section."
-    value <- F
+  function(turl,
+           col = c("url",
+                   "section",
+                   "datetime",
+                   "edittime",
+                   "press",
+                   "title",
+                   "body",
+                   "value"),
+           try_cnt = 3) {
+    uat <-
+      httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
+    root <- httr::RETRY("GET", turl, uat, times = try_cnt)
+    urlcheck <- root$url
+    value <- T
+    if (identical(grep("^https?://(news|finance).naver.com",
+                       urlcheck),
+                  integer(0)) & value) {
+      title <- "page is not news section."
+      datetime <- "page is not news section."
+      edittime <- "page is not news section."
+      press <- "page is not news section."
+      body <- "page is not news section."
+      section <- "page is not news section."
+      value <- F
+    }
+    html_obj <- httr::content(root)
+    chk <- rvest::html_nodes(html_obj, "div#main_content div div")
+    chk <- rvest::html_attr(chk, "class")
+    chk <- chk[1]
+    if (is.na(chk)) {
+      chk <- "not error"
+    }
+    if ("error_msg 404" == chk & value) {
+      title <- "page is moved."
+      datetime <- "page is moved."
+      edittime <- "page is moved."
+      press <- "page is moved."
+      body <- "page is moved."
+      section <- "page is moved."
+      value <- F
+    }
+    if (value) {
+      title <- getContentTitle(html_obj)
+      datetime <- getContentDatetime(html_obj)[1]
+      edittime <- getContentDatetime(html_obj)[2]
+      press <- getContentPress(html_obj)
+      body <- getContentBody(html_obj)
+      section <- getSection(turl)
+    }
+    newsInfo <- tibble::tibble(
+      url = turl,
+      datetime = datetime,
+      edittime = edittime,
+      press = press,
+      title = title,
+      body = body,
+      section = section,
+      value = value
+    )
+    return(newsInfo[, col])
   }
-  html_obj <- httr::content(root)
-  chk <- rvest::html_nodes(html_obj, "div#main_content div div")
-  chk <- rvest::html_attr(chk, "class")
-  chk <- chk[1]
-  if (is.na(chk)) {
-    chk <- "not error"
-  }
-  if ("error_msg 404" == chk & value) {
-    title <- "page is moved."
-    datetime <- "page is moved."
-    edittime <- "page is moved."
-    press <- "page is moved."
-    body <- "page is moved."
-    section <- "page is moved."
-    value <- F
-  }
-  if (value) {
-    title <- getContentTitle(html_obj)
-    datetime <- getContentDatetime(html_obj)[1]
-    edittime <- getContentDatetime(html_obj)[2]
-    press <- getContentPress(html_obj)
-    body <- getContentBody(html_obj)
-    section <- getSection(html_obj)
-  }
-  newsInfo <- tibble::tibble(url = turl, datetime = datetime, 
-                             edittime = edittime, press = press, title = title, body = body,section = section,value = value)
-  return(newsInfo[, col])
-}
 
 #' Get Content Title
 #'
@@ -75,7 +92,7 @@ getContent <-
 #' @examples
 #' \donttest{
 #'   print(news_url_ex)
-#'   hobj <- xml2::read_html(news_url_ex)
+#'   hobj <- rvest::read_html(news_url_ex)
 #'   getContentTitle(hobj)
 #'   }
 
@@ -110,7 +127,7 @@ getContentTitle <-
 #' @examples
 #' \donttest{
 #'   print(news_url_ex)
-#'   hobj <- xml2::read_html(news_url_ex)
+#'   hobj <- rvest::read_html(news_url_ex)
 #'   getContentDatetime(hobj)
 #'   }
 
@@ -127,7 +144,7 @@ getContentDatetime <-
       datetime <- rvest::html_text(datetime)
     }
 
-    for (i in 1:length(datetime)) {
+    for (i in seq_len(length(datetime))) {
       tar <- datetime[i]
       if (any(utf8ToInt(tar) == 51204)) {
         tar <- paste(tar, "am")
@@ -138,7 +155,8 @@ getContentDatetime <-
       datetime[i] <- tar
     }
 
-    datetime <- lubridate::parse_date_time(datetime, "ymd HM Op!*", tz = "Asia/Seoul")
+    datetime <-
+      lubridate::parse_date_time(datetime, "ymd HM Op!*", tz = "Asia/Seoul")
 
     if (getEdittime) {
       if (length(datetime) == 1) {
@@ -168,7 +186,7 @@ getContentDatetime <-
 #' @examples
 #' \donttest{
 #'   print(news_url_ex)
-#'   hobj <- xml2::read_html(news_url_ex)
+#'   hobj <- rvest::read_html(news_url_ex)
 #'   getContentPress(hobj)
 #'   }
 
@@ -200,7 +218,7 @@ getContentPress <-
 #' @examples
 #' \donttest{
 #'   print(news_url_ex)
-#'   hobj <- xml2::read_html(news_url_ex)
+#'   hobj <- rvest::read_html(news_url_ex)
 #'   getContentBody(hobj)
 #'   }
 
@@ -226,3 +244,8 @@ getContentBody <-
 
     return(body)
   }
+
+#' @importFrom urltools param_get
+getSection <- function(turl) {
+  return(urltools::param_get(turl, "sid1")$sid1)
+}

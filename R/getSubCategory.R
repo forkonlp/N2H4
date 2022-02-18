@@ -38,7 +38,7 @@ getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
     return(urls)
   }
   else{
-    urls <- urls[grep("sid2=", urls$url),]
+    urls <- urls[grep("sid2=", urls$url), ]
     sid2 <- sapply(strsplit(urls$url, "="), function(x)
       x[5])
     urls <-

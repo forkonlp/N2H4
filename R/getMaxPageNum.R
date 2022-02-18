@@ -5,8 +5,7 @@
 #' @param max is also interval to try max page number is numeric. Default is 100.
 #' @return Get numeric
 #' @export
-#' @importFrom xml2 read_html
-#' @importFrom rvest html_node html_text
+#' @importFrom rvest read_html html_node html_text
 #' @importFrom httr GET content
 #' @examples
 #' \donttest{
@@ -16,7 +15,7 @@
 
 getMaxPageNum <- function(turl = url, max = 100) {
   ifmaxUrl <- paste0(turl, "&page=", max)
-  hobj <- read_html(httr::content(httr::GET(ifmaxUrl), "text"))
+  hobj <- rvest::read_html(httr::content(httr::GET(ifmaxUrl), "text"))
   noContent <-  rvest::html_node(hobj, "div.no_content")
   if (class(noContent) == "xml_node") {
     return("no result")
@@ -25,7 +24,7 @@ getMaxPageNum <- function(turl = url, max = 100) {
   while (class(ifmax) == "xml_node") {
     max <- max + max
     ifmaxUrl <- paste0(turl, "&page=", max)
-    hobj <- xml2::read_html(ifmaxUrl)
+    hobj <- rvest::read_html(ifmaxUrl)
     ifmax <- rvest::html_node(hobj, "a.next")
   }
   maxPageNum <- html_node(hobj, "div.paging strong")

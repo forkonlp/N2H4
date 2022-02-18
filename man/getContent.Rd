@@ -6,7 +6,7 @@
 \usage{
 getContent(
   turl,
-  col = c("url", "datetime", "edittime", "press", "title", "body"),
+  col = c("url", "section", "datetime", "edittime", "press", "title", "body", "value"),
   try_cnt = 3
 )
 }

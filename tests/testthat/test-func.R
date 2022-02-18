@@ -35,7 +35,7 @@ test_that("passSportsnews", {
 
 test_that("getMainCategory", {
   test <- getMainCategory()
-  expect_equal(test$sid1, c("100", "101", "102", "103", "104", "105"))
+  expect_equal(test$sid1, c("100", "101", "102", "103", "105", "104"))
 
 })
 
@@ -47,10 +47,10 @@ test_that("getMaxPageNum", {
 
 })
 
-test_that("getUrlListByCategory", {
+test_that("getUrlList", {
   url <-
     "https://news.naver.com/main/list.nhn?sid2=267&sid1=100&mid=shm&mode=LS2D&date=20170101"
-  test <- getUrlListByCategory(url)
-  expect_identical(dim(test) , c(20L, 2L))
+  test <- getUrlList(url)
+  expect_identical(dim(test), c(20L, 2L))
 
 })

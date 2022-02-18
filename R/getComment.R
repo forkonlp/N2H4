@@ -13,7 +13,6 @@
 #' @export
 #' @importFrom httr GET user_agent add_headers content
 #' @importFrom jsonlite fromJSON
-#' @importFrom tidyr unnest
 #' @importFrom tibble as_tibble
 #' @examples
 #' \donttest{
@@ -26,7 +25,7 @@ getComment <- function(turl = url,
                        page = 1,
                        sort = c("favorite", "reply", "old", "new", "best"),
                        type = c("df", "list")) {
-  sort <- sort[1]
+  sort <- toupper(sort[1])
   tem <- strsplit(turl, "[=&]")[[1]]
   ticket <- "news"
   pool <- "cbox5"
@@ -79,13 +78,14 @@ getComment <- function(turl = url,
   tt <- gsub("\n", "", tt)
 
   dat <- jsonlite::fromJSON(tt)
+  if (type[1] == "list") {
+    class(dat) <- "list"
+  }
   if (type[1] == "df") {
     dat <- dat$result$commentList[[1]]
     dat$snsList <- NULL
-    if (length(dat) != 0) {
-      dat <- tidyr::unnest(dat)
-      dat <- tibble::as_tibble(dat)
-    } else {
+    dat <- tibble::as_tibble(dat)
+    if (length(dat) == 0) {
       dat <- tibble::tibble()
     }
   }
@@ -112,7 +112,7 @@ getComment <- function(turl = url,
 #'   }
 
 getAllComment <- function(turl = url, ...) {
-  temp        <-
+  temp <-
     getComment(
       turl,
       pageSize = 1,
@@ -120,8 +120,8 @@ getAllComment <- function(turl = url, ...) {
       sort = "favorite",
       type = "list"
     )
-  numPage     <- ceiling(temp$result$pageModel$totalRows / 100)
-  comments    <-
+  numPage <- ceiling(temp$result$pageModel$totalRows / 100)
+  comments <-
     lapply(1:numPage, function(x)
       getComment(
         turl = turl,
