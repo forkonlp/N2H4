@@ -1,5 +1,8 @@
 # N2H4 0.6.1
 
+* 인터넷 연결이 안되는 환경에서의 테스트를 위해 httptest로 테스트합니다.
+* Change test using httptest with no wire.
+
 # N2H4 0.6.0
 
 * getMainCategory() 함수가 동작하지 않는 것을 수정했습니다.
