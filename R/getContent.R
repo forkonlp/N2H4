@@ -4,10 +4,9 @@
 #'
 #' @param turl is naver news link.
 #' @param col is what you want to get from news. Defualt is all.
-#' @param try_cnt is how many you want to try again if error. Default is 3.
 #' @return a [tibble][tibble::tibble-package]
 #' @export
-#' @importFrom httr user_agent RETRY content
+#' @importFrom httr GET user_agent content
 #' @importFrom rvest html_nodes html_text html_attr
 #' @examples
 #' \donttest{
@@ -24,11 +23,10 @@ getContent <-
                    "press",
                    "title",
                    "body",
-                   "value"),
-           try_cnt = 3) {
+                   "value")) {
     uat <-
       httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
-    root <- httr::RETRY("GET", turl, uat, times = try_cnt)
+    root <- httr::GET(turl, uat)
     urlcheck <- root$url
     value <- T
     if (identical(grep("^https?://(news|finance).naver.com",

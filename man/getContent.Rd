@@ -6,16 +6,13 @@
 \usage{
 getContent(
   turl,
-  col = c("url", "section", "datetime", "edittime", "press", "title", "body", "value"),
-  try_cnt = 3
+  col = c("url", "section", "datetime", "edittime", "press", "title", "body", "value")
 )
 }
 \arguments{
 \item{turl}{is naver news link.}
 
 \item{col}{is what you want to get from news. Defualt is all.}
-
-\item{try_cnt}{is how many you want to try again if error. Default is 3.}
 }
 \value{
 a [tibble][tibble::tibble-package]
