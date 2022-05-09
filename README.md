@@ -43,6 +43,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/howdark"><img src="https://avatars3.githubusercontent.com/u/8063927?v=4?s=100" width="100px;" alt=""/><br /><sub><b>howdark</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/issues?q=author%3Ahowdark" title="Bug reports">🐛</a> <a href="https://github.com/forkonlp/N2H4/commits?author=howdark" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/seokho92"><img src="https://avatars.githubusercontent.com/u/22064612?v=4?s=100" width="100px;" alt=""/><br /><sub><b>seokho92</b></sub></a><br /><a href="#ideas-seokho92" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/forkonlp/N2H4/commits?author=seokho92" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/aerongss"><img src="https://avatars.githubusercontent.com/u/99466132?v=4?s=100" width="100px;" alt=""/><br /><sub><b>aerongss</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/issues?q=author%3Aaerongss" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/bbserverdown"><img src="https://avatars.githubusercontent.com/u/103645237?v=4?s=100" width="100px;" alt=""/><br /><sub><b>bbserverdown</b></sub></a><br /><a href="https://github.com/forkonlp/N2H4/issues?q=author%3Abbserverdown" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
