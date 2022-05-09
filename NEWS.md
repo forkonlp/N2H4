@@ -1,4 +1,7 @@
-# N2H4 0.7.0
+# N2H4 0.6.2
+
+* 뉴스 페이지 구조와 주소가 변경되어 동작하지 않는 문제를 수정하였습니다.
+* Fixed the problem that the news page structure and address were changed and did not work.
 
 # N2H4 0.6.1
 

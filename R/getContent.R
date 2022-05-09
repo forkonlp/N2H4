@@ -29,7 +29,7 @@ getContent <-
     root <- httr::GET(turl, uat)
     urlcheck <- root$url
     value <- T
-    if (identical(grep("^https?://(news|finance).naver.com",
+    if (identical(grep("^https?://n.news.naver.com",
                        urlcheck),
                   integer(0)) & value) {
       title <- "page is not news section."
@@ -58,11 +58,15 @@ getContent <-
     }
     if (value) {
       title <- getContentTitle(html_obj)
-      datetime <- getContentDatetime(html_obj)[1]
-      edittime <- getContentDatetime(html_obj)[2]
+      datetime <- getContentDatetime(html_obj)
+      edittime <- getContentEditDatetime(html_obj)
       press <- getContentPress(html_obj)
       body <- getContentBody(html_obj)
       section <- getSection(turl)
+    }
+
+    if (length(edittime) == 0) {
+      edittime <- NA
     }
     newsInfo <- tibble::tibble(
       url = turl,
@@ -96,7 +100,7 @@ getContent <-
 
 getContentTitle <-
   function(html_obj,
-           title_node_info = "div.article_info h3",
+           title_node_info = "h2.media_end_head_headline",
            title_attr = "") {
     if (title_attr != "") {
       title <- rvest::html_nodes(html_obj, title_node_info)
@@ -105,7 +109,6 @@ getContentTitle <-
       title <- rvest::html_nodes(html_obj, title_node_info)
       title <- rvest::html_text(title)
     }
-    Encoding(title) <- "UTF-8"
     return(title)
   }
 
@@ -117,11 +120,9 @@ getContentTitle <-
 #' @param html_obj "xml_document" "xml_node" using read_html function.
 #' @param datetime_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
 #' @param datetime_attr if you want to get attribution text, please write down here.
-#' @param getEdittime if TRUE, can get POSIXlt type datetime length 2 means published time and final edited time. if FALSE, get Date length 1.
 #' @return Get POSIXlt type datetime.
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
-#' @importFrom lubridate parse_date_time
 #' @examples
 #' \donttest{
 #'   print(news_url_ex)
@@ -131,9 +132,8 @@ getContentTitle <-
 
 getContentDatetime <-
   function(html_obj,
-           datetime_node_info = "span.t11",
-           datetime_attr = "",
-           getEdittime = TRUE) {
+           datetime_node_info = "span._ARTICLE_DATE_TIME",
+           datetime_attr = "data-date-time") {
     if (datetime_attr != "") {
       datetime <- rvest::html_nodes(html_obj, datetime_node_info)
       datetime <- rvest::html_attr(datetime, datetime_attr)
@@ -141,35 +141,39 @@ getContentDatetime <-
       datetime <- rvest::html_nodes(html_obj, datetime_node_info)
       datetime <- rvest::html_text(datetime)
     }
-
-    for (i in seq_len(length(datetime))) {
-      tar <- datetime[i]
-      if (any(utf8ToInt(tar) == 51204)) {
-        tar <- paste(tar, "am")
-      }
-      if (any(utf8ToInt(tar) == 54980)) {
-        tar <- paste(tar, "pm")
-      }
-      datetime[i] <- tar
-    }
-
-    datetime <-
-      lubridate::parse_date_time(datetime, "ymd HM Op!*", tz = "Asia/Seoul")
-
-    if (getEdittime) {
-      if (length(datetime) == 1) {
-        edittime <- datetime[1]
-      }
-      if (length(datetime) == 2) {
-        edittime <- datetime[2]
-        datetime <- datetime[1]
-      }
-      datetime <- c(datetime, edittime)
-      return(datetime)
-    }
-    return(datetime)
+    as.POSIXct(datetime, tz = "Asia/Seoul")
   }
 
+#' Get Content Edit datetime
+#'
+#' Get naver news edited datetime from link.
+#'
+#' @param html_obj "xml_document" "xml_node" using read_html function.
+#' @param datetime_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
+#' @param datetime_attr if you want to get attribution text, please write down here.
+#' @return Get POSIXlt type datetime.
+#' @export
+#' @importFrom rvest html_nodes html_attr html_text
+#' @examples
+#' \donttest{
+#'   print(news_url_ex)
+#'   hobj <- rvest::read_html(news_url_ex)
+#'   getContentDatetime(hobj)
+#'   }
+
+getContentEditDatetime <-
+  function(html_obj,
+           datetime_node_info = "span._ARTICLE_MODIFY_DATE_TIME",
+           datetime_attr = "data-modify-date-time") {
+    if (datetime_attr != "") {
+      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
+      datetime <- rvest::html_attr(datetime, datetime_attr)
+    } else{
+      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
+      datetime <- rvest::html_text(datetime)
+    }
+    as.POSIXct(datetime, tz = "Asia/Seoul")
+  }
 
 #' Get Content Press name.
 #'
@@ -190,7 +194,7 @@ getContentDatetime <-
 
 getContentPress <-
   function(html_obj,
-           press_node_info = "div.article_header div a img",
+           press_node_info = "div.media_end_head_top a img",
            press_attr = "title") {
     if (press_attr != "") {
       press <- rvest::html_nodes(html_obj, press_node_info)
@@ -199,8 +203,7 @@ getContentPress <-
       press <- rvest::html_nodes(html_obj, press_node_info)
       press <- rvest::html_text(press)
     }
-    Encoding(press) <- "UTF-8"
-    return(press)
+    return(press[1])
   }
 
 #' Get Content body name.
@@ -222,7 +225,7 @@ getContentPress <-
 
 getContentBody <-
   function(html_obj,
-           body_node_info = "div#articleBodyContents",
+           body_node_info = "div#dic_area",
            body_attr = "") {
     if (body_attr != "") {
       body <- rvest::html_nodes(html_obj, body_node_info)
@@ -231,13 +234,8 @@ getContentBody <-
       body <- rvest::html_nodes(html_obj, body_node_info)
       body <- rvest::html_text(body)
     }
-    Encoding(body) <- "UTF-8"
 
-    body <- gsub("\r?\n|\r", " ", body)
-    body <-
-      gsub("// flash .* function _flash_removeCallback\\(\\) \\{\\} ",
-           "",
-           body)
+    body <- gsub("\r?\n|\r|\t|\n", " ", body)
     body <- trimws(body)
 
     return(body)
@@ -245,5 +243,5 @@ getContentBody <-
 
 #' @importFrom urltools param_get
 getSection <- function(turl) {
-  return(urltools::param_get(turl, "sid1")$sid1)
+  return(urltools::param_get(turl, "sid")$sid)
 }

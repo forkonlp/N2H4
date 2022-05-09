@@ -26,11 +26,11 @@ getComment <- function(turl = url,
                        sort = c("favorite", "reply", "old", "new", "best"),
                        type = c("df", "list")) {
   sort <- toupper(sort[1])
-  tem <- strsplit(turl, "[=&]")[[1]]
+  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
   ticket <- "news"
   pool <- "cbox5"
-  oid <- tem[grep("oid", tem) + 1]
-  aid <- tem[grep("aid", tem) + 1]
+  oid <- tem[3]
+  aid <- tem[4]
   templateId <- "view_politics"
   useAltSort <- "&useAltSort=true"
 

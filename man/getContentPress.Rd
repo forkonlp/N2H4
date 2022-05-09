@@ -6,7 +6,7 @@
 \usage{
 getContentPress(
   html_obj,
-  press_node_info = "div.article_header div a img",
+  press_node_info = "div.media_end_head_top a img",
   press_attr = "title"
 )
 }
