@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.2</span>
       </span>
     </div>
 
@@ -61,9 +61,8 @@
     <div id="ref-usage">
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getContentDatetime</span><span class="op">(</span>
   <span class="va">html_obj</span>,
-  datetime_node_info <span class="op">=</span> <span class="st">"span.t11"</span>,
-  datetime_attr <span class="op">=</span> <span class="st">""</span>,
-  getEdittime <span class="op">=</span> <span class="cn">TRUE</span>
+  datetime_node_info <span class="op">=</span> <span class="st">"span._ARTICLE_DATE_TIME"</span>,
+  datetime_attr <span class="op">=</span> <span class="st">"data-date-time"</span>
 <span class="op">)</span></code></pre></div>
     </div>
 
@@ -75,8 +74,6 @@
 <dd><p>Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.</p></dd>
 <dt>datetime_attr</dt>
 <dd><p>if you want to get attribution text, please write down here.</p></dd>
-<dt>getEdittime</dt>
-<dd><p>if TRUE, can get POSIXlt type datetime length 2 means published time and final edited time. if FALSE, get Date length 1.</p></dd>
 </dl></div>
     <div id="value">
     <h2>Value</h2>
@@ -90,7 +87,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</span>
 <span class="r-in">  <span class="va">hobj</span> <span class="op">&lt;-</span> <span class="fu">rvest</span><span class="fu">::</span><span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html" class="external-link">read_html</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
 <span class="r-in">  <span class="fu">getContentDatetime</span><span class="op">(</span><span class="va">hobj</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2019-05-14 21:04:00 KST" "2019-05-14 21:52:00 KST"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "2019-05-14 21:04:09 KST"</span>
 <span class="r-in">  <span class="co"># }</span></span>
 </code></pre></div>
     </div>
@@ -106,7 +103,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer></div>
