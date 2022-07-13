@@ -59,32 +59,39 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getContentBody</span><span class="op">(</span><span class="va">html_obj</span>, body_node_info <span class="op">=</span> <span class="st">"div#dic_area"</span>, body_attr <span class="op">=</span> <span class="st">""</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getContentBody</span><span class="op">(</span><span class="va">html_obj</span>, body_node_info <span class="op">=</span> <span class="st">"div#dic_area"</span>, body_attr <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>html_obj</dt>
 <dd><p>"xml_document" "xml_node" using read_html function.</p></dd>
+
+
 <dt>body_node_info</dt>
 <dd><p>Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.</p></dd>
+
+
 <dt>body_attr</dt>
 <dd><p>if you want to get attribution text, please write down here.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Get character body content.</p>
+    
+
+<p>Get character body content.</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</span>
-<span class="r-in">  <span class="va">hobj</span> <span class="op">&lt;-</span> <span class="fu">rvest</span><span class="fu">::</span><span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html" class="external-link">read_html</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
-<span class="r-in">  <span class="fu">getContentBody</span><span class="op">(</span><span class="va">hobj</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="va">hobj</span> <span class="op">&lt;-</span> <span class="fu">rvest</span><span class="fu">::</span><span class="fu"><a href="http://xml2.r-lib.org/reference/read_xml.html" class="external-link">read_html</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">getContentBody</span><span class="op">(</span><span class="va">hobj</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "서울 3곳, 인천 1곳, 광주 1곳, 충남 1곳…출혈·과당경쟁 우려[앵커]정부가 시내면세점 추가 특허 수를 결정했습니다.취재기자 연결합니다.장가희 기자, 정부가 허가를 내주기로 한 신규 시내면세점 얼마나 됩니까?[기자]기획재정부는 오늘(14일) 오후 보세판매장 제도운영위원회를 열고, 신규 시내 면세점을 6곳 추가로 출점할 것을 결정했습니다.대기업 시내면세점은 서울 3곳, 인천 1곳, 광주 1곳이며 중소, 중견기업은 충남 1곳입니다.서울의 경우 올해는 총 특허 수 제한 없이 개별기업 신청에 의해 심사 후 특허를 부여한다는 방침입니다.기재부는 위원회 심의 결과를 관세청에 통보하고, 관세청은 오는 11월 최종 사업자 선정을 할 예정입니다.[앵커]그런데 장기자, 가뜩이나 시내면세점 부진을 겪고 있는데, 또 면세점이 들어서면, 출혈경쟁이 더 심해지는 게 아닌가요?[기자]네, 국내 면세시장은 매월 매출 신기록을 내고 있지만, 중국인 보따리상 등을 유치하기 위해 과도한 수수료 경쟁으로 면세점에도 부익부 빈익빈이 심해진 상태입니다.여기에 최근 한화가 면세사업을 포기하며 그동안 적자에도 불구하고 면세사업을 강행하던 다른 면세점에도 파장이 예상됩니다.여기에 정부가 입국장 면세점까지 신규 사업 허가를 내주면서 이미 포화상태인 면세시장이 침체될 것이란 우려도 나옵니다.지금까지 SBSCNBC 장가희입니다.장가희 기자(gani@sbs.co.kr)☞ 의견 있는 경제채널 SBSCNBC [홈페이지]☞ 경제를 실험한다~ #머니랩 [네이버 TV] 저작권자 SBS플러스 &amp; SBS I&amp;M 무단전재-재배포 금지"</span>
-<span class="r-in">  <span class="co"># }</span></span>
+<span class="r-in"><span>  <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -99,7 +106,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

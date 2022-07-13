@@ -59,19 +59,24 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getAllComment</span><span class="op">(</span>turl <span class="op">=</span> <span class="va">url</span>, <span class="va">...</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getAllComment</span><span class="op">(</span>turl <span class="op">=</span> <span class="va">url</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>turl</dt>
 <dd><p>character. News article on 'Naver' such as &lt;http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=056&amp;aid=0010335895&gt;. News articl url that is not on Naver.com domain will generate an error.</p></dd>
+
+
 <dt>...</dt>
 <dd><p>parameter in getComment function.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>a [tibble][tibble::tibble-package]</p>
+    
+
+<p>a [tibble][tibble::tibble-package]</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -80,12 +85,12 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</span>
-<span class="r-in">  <span class="fu">getAllComment</span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="fu">getAllComment</span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 0 × 0</span></span>
-<span class="r-in">  <span class="co"># }</span></span>
+<span class="r-in"><span>  <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -100,7 +105,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

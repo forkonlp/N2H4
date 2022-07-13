@@ -59,35 +59,40 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getContent</span><span class="op">(</span>
-  <span class="va">turl</span>,
-  col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"url"</span>, <span class="st">"section"</span>, <span class="st">"datetime"</span>, <span class="st">"edittime"</span>, <span class="st">"press"</span>, <span class="st">"title"</span>, <span class="st">"body"</span>, <span class="st">"value"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getContent</span><span class="op">(</span></span>
+<span>  <span class="va">turl</span>,</span>
+<span>  col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"url"</span>, <span class="st">"section"</span>, <span class="st">"datetime"</span>, <span class="st">"edittime"</span>, <span class="st">"press"</span>, <span class="st">"title"</span>, <span class="st">"body"</span>, <span class="st">"value"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>turl</dt>
 <dd><p>is naver news link.</p></dd>
+
+
 <dt>col</dt>
 <dd><p>is what you want to get from news. Defualt is all.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>a [tibble][tibble::tibble-package]</p>
+    
+
+<p>a [tibble][tibble::tibble-package]</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=101&amp;oid=374&amp;aid=0000184049"</span>
-<span class="r-in">  <span class="fu">getContent</span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="fu">getContent</span><span class="op">(</span><span class="va">news_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 1 × 8</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   url    section datetime            edittime            press title body  value</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span> https… <span style="color: #BB0000;">NA</span>      2019-05-14 <span style="color: #949494;">21:04:09</span> 2019-05-14 <span style="color: #949494;">21:52:09</span> SBS … 업계… 서울… TRUE </span>
-<span class="r-in">  <span class="co"># }</span></span>
+<span class="r-in"><span>  <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -102,7 +107,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

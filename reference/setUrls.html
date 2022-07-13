@@ -63,40 +63,53 @@ sid1, sid2, start Date, end Date is requred.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">setUrls</span><span class="op">(</span>
-  <span class="va">sid1_vec</span>,
-  <span class="va">sid2_vec</span>,
-  <span class="va">strDate</span>,
-  <span class="va">endDate</span>,
-  page_vec <span class="op">=</span> <span class="cn">NA</span>,
-  return_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"list"</span>, <span class="st">"df"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">setUrls</span><span class="op">(</span></span>
+<span>  <span class="va">sid1_vec</span>,</span>
+<span>  <span class="va">sid2_vec</span>,</span>
+<span>  <span class="va">strDate</span>,</span>
+<span>  <span class="va">endDate</span>,</span>
+<span>  page_vec <span class="op">=</span> <span class="cn">NA</span>,</span>
+<span>  return_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"list"</span>, <span class="st">"df"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>sid1_vec</dt>
 <dd><p>is news code in naver news url</p></dd>
+
+
 <dt>sid2_vec</dt>
 <dd><p>is news code in naver news url.</p></dd>
+
+
 <dt>strDate</dt>
 <dd><p>target date of start.</p></dd>
+
+
 <dt>endDate</dt>
 <dd><p>target date of end.</p></dd>
+
+
 <dt>page_vec</dt>
 <dd><p>pageNum default is NA.</p></dd>
+
+
 <dt>return_type</dt>
 <dd><p>list or data.frame. default is list.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>Get data.frame(sid1,sid2,date,pageNum,pageUrl) or list(sid1,sid2,date,pageNum,pageUrl)</p>
+    
+
+<p>Get data.frame(sid1,sid2,date,pageNum,pageUrl) or list(sid1,sid2,date,pageNum,pageUrl)</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"> <span class="co"># \donttest{</span></span>
-<span class="r-in">  <span class="fu">setUrls</span><span class="op">(</span><span class="fl">105</span>, <span class="fl">227</span>, <span class="st">"20180101"</span>, <span class="st">"20180102"</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu">setUrls</span><span class="op">(</span><span class="fl">105</span>, <span class="fl">227</span>, <span class="st">"20180101"</span>, <span class="st">"20180102"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]$sid1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 105</span>
@@ -114,7 +127,7 @@ sid1, sid2, start Date, end Date is requred.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "http://news.naver.com/main/list.nhn?sid1=105&amp;sid2=227&amp;mid=shm&amp;mode=LS2D&amp;date=20180101"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-in">  <span class="co"># }</span></span>
+<span class="r-in"><span>  <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -129,7 +142,7 @@ sid1, sid2, start Date, end Date is requred.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

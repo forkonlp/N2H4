@@ -59,27 +59,32 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getUrlList</span><span class="op">(</span>turl <span class="op">=</span> <span class="va">url</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"titles"</span>, <span class="st">"links"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getUrlList</span><span class="op">(</span>turl <span class="op">=</span> <span class="va">url</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"titles"</span>, <span class="st">"links"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>turl</dt>
 <dd><p>is target url naver news.</p></dd>
+
+
 <dt>col</dt>
 <dd><p>is what you want to get from news. Defualt is all.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>a [tibble][tibble::tibble-package]</p>
+    
+
+<p>a [tibble][tibble::tibble-package]</p>
     </div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"> <span class="co"># \donttest{</span></span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">cate_list_url_ex</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">cate_list_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid2=230&amp;sid1=105&amp;date=20190514"</span>
-<span class="r-in">  <span class="fu">getUrlList</span><span class="op">(</span><span class="va">cate_list_url_ex</span><span class="op">)</span></span>
+<span class="r-in"><span>  <span class="fu">getUrlList</span><span class="op">(</span><span class="va">cate_list_url_ex</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 2</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    titles                                                                 links </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
@@ -103,7 +108,7 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> <span style="color: #949494;">"</span>[부고] 박구서(JW홀딩스 前부회장)씨 빙모상<span style="color: #949494;">"</span>                            https…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> <span style="color: #949494;">"</span>카카오뱅크 1년 8개월만에 흑자…속도 조절 돌입<span style="color: #949494;">"</span>                         https…</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span> <span style="color: #949494;">"</span>스패로우, ‘K쉴드 주니어’ 교육 업무협약 체결<span style="color: #949494;">"</span>                          https…</span>
-<span class="r-in">  <span class="co"># }</span></span>
+<span class="r-in"><span>  <span class="co"># }</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -118,7 +123,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>
