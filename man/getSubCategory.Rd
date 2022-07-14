@@ -18,7 +18,7 @@ a [tibble][tibble::tibble-package]
 Get naver news sub category names and urls recently.
 }
 \examples{
-\donttest{
+\dontrun{
   getSubCategory(100)
   getSubCategory(100, FALSE)
   }

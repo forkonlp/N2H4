@@ -32,8 +32,7 @@ if you want to get data only comment, enter command like below.
 getComment(url)$result$commentList[[1]]
 }
 \examples{
-\donttest{
-  print(news_url_ex)
-  getComment(news_url_ex)
+\dontrun{
+  getComment("https://n.news.naver.com/mnews/article/421/0002484966?sid=100")
 }
 }

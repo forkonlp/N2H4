@@ -15,9 +15,8 @@
 #' @importFrom jsonlite fromJSON
 #' @importFrom tibble as_tibble
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   getComment(news_url_ex)
+#' \dontrun{
+#'   getComment("https://n.news.naver.com/mnews/article/421/0002484966?sid=100")
 #'}
 
 getComment <- function(turl = url,
@@ -25,12 +24,15 @@ getComment <- function(turl = url,
                        page = 1,
                        sort = c("favorite", "reply", "old", "new", "best"),
                        type = c("df", "list")) {
+
+  tem1 <- strsplit(urltools::path(turl), "[/]")[[1]]
+  tem2 <- strsplit(turl, "[=&]")[[1]]
+
+  oid <- paste0(tem1[3], tem2[grep("oid", tem2) + 1])
+  aid <- paste0(tem2[4], tem2[grep("aid", tem2) + 1])
   sort <- toupper(sort[1])
-  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
   ticket <- "news"
   pool <- "cbox5"
-  oid <- tem[3]
-  aid <- tem[4]
   templateId <- "view_politics"
   useAltSort <- "&useAltSort=true"
 
@@ -106,9 +108,8 @@ getComment <- function(turl = url,
 #' @importFrom dplyr bind_rows
 #' @export
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   getAllComment(news_url_ex)
+#' \dontrun{
+#'   getAllComment("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   }
 
 getAllComment <- function(turl = url, ...) {

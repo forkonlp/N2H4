@@ -24,9 +24,8 @@ Get POSIXlt type datetime.
 Get naver news edited datetime from link.
 }
 \examples{
-\donttest{
-  print(news_url_ex)
-  hobj <- rvest::read_html(news_url_ex)
-  getContentDatetime(hobj)
+\dontrun{
+  hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
+  getContentEditDatetime(hobj)
   }
 }

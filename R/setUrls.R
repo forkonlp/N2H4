@@ -14,9 +14,7 @@
 #' @export
 #' @importFrom httr build_url parse_url
 #' @examples
-#'  \donttest{
 #'   setUrls(105, 227, "20180101", "20180102")
-#'   }
 
 setUrls <-
   function(sid1_vec,

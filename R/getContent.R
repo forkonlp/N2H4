@@ -9,9 +9,8 @@
 #' @importFrom httr GET user_agent content
 #' @importFrom rvest html_nodes html_text html_attr
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   getContent(news_url_ex)
+#' \dontrun{
+#'   getContent("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   }
 
 getContent <-
@@ -92,9 +91,8 @@ getContent <-
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   hobj <- rvest::read_html(news_url_ex)
+#' \dontrun{
+#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   getContentTitle(hobj)
 #'   }
 
@@ -124,9 +122,8 @@ getContentTitle <-
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   hobj <- rvest::read_html(news_url_ex)
+#' \dontrun{
+#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   getContentDatetime(hobj)
 #'   }
 
@@ -155,10 +152,9 @@ getContentDatetime <-
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   hobj <- rvest::read_html(news_url_ex)
-#'   getContentDatetime(hobj)
+#' \dontrun{
+#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
+#'   getContentEditDatetime(hobj)
 #'   }
 
 getContentEditDatetime <-
@@ -186,9 +182,8 @@ getContentEditDatetime <-
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   hobj <- rvest::read_html(news_url_ex)
+#' \dontrun{
+#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   getContentPress(hobj)
 #'   }
 
@@ -217,9 +212,8 @@ getContentPress <-
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   hobj <- rvest::read_html(news_url_ex)
+#' \dontrun{
+#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   getContentBody(hobj)
 #'   }
 

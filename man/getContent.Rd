@@ -21,8 +21,7 @@ a [tibble][tibble::tibble-package]
 Get naver news content from links.
 }
 \examples{
-\donttest{
-  print(news_url_ex)
-  getContent(news_url_ex)
+\dontrun{
+  getContent("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
   }
 }

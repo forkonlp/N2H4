@@ -13,7 +13,7 @@ a [tibble][tibble::tibble-package]
 Get naver news main category names and ids recently.
 }
 \examples{
-\donttest{
+\dontrun{
   getMainCategory()
   }
 }

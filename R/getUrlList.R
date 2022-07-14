@@ -9,9 +9,8 @@
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr GET content user_agent
 #' @examples
-#'  \donttest{
-#'   print(cate_list_url_ex)
-#'   getUrlList(cate_list_url_ex)
+#'  \dontrun{
+#'   getUrlList("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
 #'   }
 
 getUrlList <-

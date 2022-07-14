@@ -35,7 +35,5 @@ sid1, sid2, page can use vectors.
 sid1, sid2, start Date, end Date is requred.
 }
 \examples{
- \donttest{
   setUrls(105, 227, "20180101", "20180102")
-  }
 }

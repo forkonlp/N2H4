@@ -19,8 +19,7 @@ Get numeric
 Get Max Page Number
 }
 \examples{
-\donttest{
-  print(cate_list_url_ex)
-  getMaxPageNum(cate_list_url_ex)
+\dontrun{
+  getMaxPageNum("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
   }
 }

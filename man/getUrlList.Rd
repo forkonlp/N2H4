@@ -18,8 +18,7 @@ a [tibble][tibble::tibble-package]
 Get naver news titles and links from target url.
 }
 \examples{
- \donttest{
-  print(cate_list_url_ex)
-  getUrlList(cate_list_url_ex)
+ \dontrun{
+  getUrlList("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
   }
 }

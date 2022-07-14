@@ -16,8 +16,7 @@ a [tibble][tibble::tibble-package]
 Get naver news like Count
 }
 \examples{
-\donttest{
-  print(news_url_ex)
-  getLike(news_url_ex)
+\dontrun{
+  getLike("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 }
 }

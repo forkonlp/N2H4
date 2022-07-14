@@ -8,15 +8,14 @@
 #' @importFrom httr GET user_agent add_headers content
 #' @importFrom tibble tibble
 #' @examples
-#' \donttest{
-#'   print(news_url_ex)
-#'   getLike(news_url_ex)
+#' \dontrun{
+#'   getLike("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'}
 
 getLike <- function(turl = url) {
-  tem <- strsplit(turl, "[=&]")[[1]]
-  oid <- tem[grep("oid", tem) + 1]
-  aid <- tem[grep("aid", tem) + 1]
+  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
+  oid <- tem[3]
+  aid <- tem[4]
   url <- paste0(
     "https://news.like.naver.com/v1/search/contents?suppress_response_codes=true&q=NEWS[ne_",
     oid,
