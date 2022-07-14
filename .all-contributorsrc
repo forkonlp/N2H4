@@ -43,6 +43,24 @@
         "ideas",
         "code"
       ]
+    },
+    {
+      "login": "aerongss",
+      "name": "aerongss",
+      "avatar_url": "https://avatars.githubusercontent.com/u/99466132?v=4",
+      "profile": "https://github.com/aerongss",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "bbserverdown",
+      "name": "bbserverdown",
+      "avatar_url": "https://avatars.githubusercontent.com/u/103645237?v=4",
+      "profile": "https://github.com/bbserverdown",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
