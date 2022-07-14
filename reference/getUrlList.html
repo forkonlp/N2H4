@@ -23,7 +23,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">N2H4</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.6.3</span>
       </span>
     </div>
 
@@ -81,34 +81,9 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="co"># \donttest{</span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">cate_list_url_ex</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "https://news.naver.com/main/list.nhn?mode=LS2D&amp;mid=shm&amp;sid2=230&amp;sid1=105&amp;date=20190514"</span>
-<span class="r-in"><span>  <span class="fu">getUrlList</span><span class="op">(</span><span class="va">cate_list_url_ex</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 20 × 2</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    titles                                                                 links </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                                                                  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span> <span style="color: #949494;">"</span>화웨이 \"각국 정부와 '스파이활동 금지 합의' 체결 용의\"<span style="color: #949494;">"</span>              https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span> <span style="color: #949494;">"</span>KBS-행안부 핫라인 구축…‘신속·정확’ 재난 정보 제공<span style="color: #949494;">"</span>                    https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span> <span style="color: #949494;">"</span>'넥슨 매각' 본입찰 또 연기…매각 난항겪나<span style="color: #949494;">"</span>                             https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span> <span style="color: #949494;">"</span>달에서도 '지진' 진행 중…지각변동 영향<span style="color: #949494;">"</span>                                https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span> <span style="color: #949494;">"</span>네이버, 세계 딥러닝 학회 ICLR 참가…클로바 핵심기술 담은 논문 발표<span style="color: #949494;">"</span>    https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span> <span style="color: #949494;">"</span>전국집배노조 \"과도한 업무 탓에 집배원 사망 급증\"<span style="color: #949494;">"</span>                   https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span> <span style="color: #949494;">"</span>삼성전자·화웨이 특허분쟁 합의…관련 소송 모두 취하<span style="color: #949494;">"</span>                    https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span> <span style="color: #949494;">"</span>‘행복한 비명’ 셀트리온, 수요 증가로 ‘先공급’ 물량↑…252억원 규모 트룩… https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span> <span style="color: #949494;">"</span>이동통신유통協 \"방통위, 5G 불법보조금 조사하라\"<span style="color: #949494;">"</span>                    https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span> <span style="color: #949494;">"</span>에픽게임즈, 건축시각화 솔루션 트윈모션 인수…11월까지 무료 제공<span style="color: #949494;">"</span>       https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">11</span> <span style="color: #949494;">"</span>KBS-행안부 핫라인 구축…‘신속·정확’ 재난 정보 제공<span style="color: #949494;">"</span>                    https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">12</span> <span style="color: #949494;">"</span>게임빌, 내달 3일까지 상반기 신입 공채 신청접수<span style="color: #949494;">"</span>                       https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">13</span> <span style="color: #949494;">"</span>넷마블 \"하반기 대작 많아…영업이익률 20% 유지될 것{종합}<span style="color: #949494;">"</span>             https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span> <span style="color: #949494;">"</span>넷마블 \"킹오파 올스타, 구글 매출 순위 더 상승할 것\"<span style="color: #949494;">"</span>                https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span> <span style="color: #949494;">"</span>[부고]박종갑 전 삼성전자판매 대표이사 본인상<span style="color: #949494;">"</span>                         https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span> <span style="color: #949494;">"</span>KT, 유엔식량농업기구와 혁신적 농업혁명 시동<span style="color: #949494;">"</span>                          https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">17</span> <span style="color: #949494;">"</span>[부음]차용규(BNK금융지주 이사회 의장)씨 부친상<span style="color: #949494;">"</span>                       https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">18</span> <span style="color: #949494;">"</span>[부고] 박구서(JW홀딩스 前부회장)씨 빙모상<span style="color: #949494;">"</span>                            https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">19</span> <span style="color: #949494;">"</span>카카오뱅크 1년 8개월만에 흑자…속도 조절 돌입<span style="color: #949494;">"</span>                         https…</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">20</span> <span style="color: #949494;">"</span>스패로우, ‘K쉴드 주니어’ 교육 업무협약 체결<span style="color: #949494;">"</span>                          https…</span>
-<span class="r-in"><span>  <span class="co"># }</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span> <span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span>  <span class="fu">getUrlList</span><span class="op">(</span><span class="st">"https://news.naver.com/main/list.naver?mode=LS2D&amp;mid=shm&amp;sid1=103&amp;sid2=376"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
