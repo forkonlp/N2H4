@@ -24,8 +24,9 @@ getComment <- function(turl = url,
                        page = 1,
                        sort = c("favorite", "reply", "old", "new", "best"),
                        type = c("df", "list")) {
-
-  turl <- httr::GET(turl, httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
+  turl <-
+    httr::GET(turl,
+              httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
   tem <- strsplit(urltools::path(turl), "[/]")[[1]]
 
   oid <- tem[3]
