@@ -1,3 +1,8 @@
+# N2H4 0.6.4
+
+* Fix getComment() function not work.
+* Add url validate on getComment().
+
 # N2H4 0.6.3
 
 # N2H4 0.6.2
