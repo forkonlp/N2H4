@@ -26,11 +26,12 @@ getContent <-
     uat <-
       httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
     root <- httr::GET(turl, uat)
+    html_obj <- httr::content(root)
     urlcheck <- root$url
     value <- T
     if (identical(grep("^https?://n.news.naver.com",
                        urlcheck),
-                  integer(0)) & value) {
+                  integer(0))) {
       title <- "page is not news section."
       datetime <- "page is not news section."
       edittime <- "page is not news section."
@@ -38,22 +39,22 @@ getContent <-
       body <- "page is not news section."
       section <- "page is not news section."
       value <- F
-    }
-    html_obj <- httr::content(root)
-    chk <- rvest::html_nodes(html_obj, "div#main_content div div")
-    chk <- rvest::html_attr(chk, "class")
-    chk <- chk[1]
-    if (is.na(chk)) {
-      chk <- "not error"
-    }
-    if ("error_msg 404" == chk & value) {
-      title <- "page is moved."
-      datetime <- "page is moved."
-      edittime <- "page is moved."
-      press <- "page is moved."
-      body <- "page is moved."
-      section <- "page is moved."
-      value <- F
+    } else {
+      chk <- rvest::html_nodes(html_obj, "div#main_content div div")
+      chk <- rvest::html_attr(chk, "class")
+      chk <- chk[1]
+      if (is.na(chk)) {
+        chk <- "not error"
+      }
+      if ("error_msg 404" == chk & value) {
+        title <- "page is moved."
+        datetime <- "page is moved."
+        edittime <- "page is moved."
+        press <- "page is moved."
+        body <- "page is moved."
+        section <- "page is moved."
+        value <- F
+      }
     }
     if (value) {
       title <- getContentTitle(html_obj)

@@ -31,6 +31,10 @@ test_that("passSportsnews", {
     "https://sports.news.naver.com/news?oid=477&aid=0000073768"
   test <- getContent(url)
   expect_equal(test$body, "page is not news section.")
+
+  url <- getContent("https://n.news.naver.com/mnews/article/277/0003204982?sid=106")
+  expect_equal(test$body, "page is not news section.")
+
 })
 
 test_that("getMainCategory", {
