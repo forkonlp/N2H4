@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 2.0.5
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-07-14T06:23Z
+last_built: 2022-07-15T01:58Z
 urls:
   reference: https://forkonlp.github.io/N2H4/reference
   article: https://forkonlp.github.io/N2H4/articles
