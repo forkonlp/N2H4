@@ -25,11 +25,11 @@ getComment <- function(turl = url,
                        sort = c("favorite", "reply", "old", "new", "best"),
                        type = c("df", "list")) {
 
-  tem1 <- strsplit(urltools::path(turl), "[/]")[[1]]
-  tem2 <- strsplit(turl, "[=&]")[[1]]
+  turl <- httr::GET(turl, httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
+  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
 
-  oid <- paste0(tem1[3], tem2[grep("oid", tem2) + 1])
-  aid <- paste0(tem2[4], tem2[grep("aid", tem2) + 1])
+  oid <- tem[3]
+  aid <- tem[4]
   sort <- toupper(sort[1])
   ticket <- "news"
   pool <- "cbox5"
