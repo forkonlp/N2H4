@@ -7,7 +7,6 @@
 #' @export
 #' @importFrom rvest read_html html_node html_text
 #' @importFrom httr GET content
-#' @importFrom methods is
 #' @examples
 #' \dontrun{
 #'   getMaxPageNum("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
@@ -17,7 +16,7 @@ getMaxPageNum <- function(turl = url, max = 100) {
   ifmaxUrl <- paste0(turl, "&page=", max)
   hobj <- rvest::read_html(httr::content(httr::GET(ifmaxUrl), "text"))
   noContent <-  rvest::html_node(hobj, "div.no_content")
-  if (methods::is(noContent, "xml_node")) {
+  if (inherits(noContent, "xml_node")) {
     return("no result")
   }
   ifmax <- rvest::html_node(hobj, "a.next")

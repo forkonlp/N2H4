@@ -26,5 +26,4 @@ Imports:
     jsonlite,
     tibble,
     dplyr,
-    urltools,
-    methods
+    urltools
