@@ -1,3 +1,5 @@
+# N2H4 0.6.5
+
 # N2H4 0.6.4
 
 * Fix getComment() function not work.
