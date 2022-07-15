@@ -1,5 +1,7 @@
 # N2H4 0.6.5
 
+* Update date on DESCRIPTION for cran.
+
 # N2H4 0.6.4
 
 * Fix getComment() function not work.
