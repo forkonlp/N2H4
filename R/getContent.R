@@ -40,6 +40,7 @@ getContent <-
       section <- "page is not news section."
       value <- F
     } else {
+      # TODO: 이거 동작하는지 확인해야 함.
       chk <- rvest::html_nodes(html_obj, "div#main_content div div")
       chk <- rvest::html_attr(chk, "class")
       chk <- chk[1]
