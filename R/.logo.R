@@ -25,9 +25,9 @@ sticker(
   filename = "man/figures/logo.png",
   h_fill = "#3f63bf",
   p_color = "#ffffff",
-  h_color = "#00bd39",
+  h_color = "#3f63bf",
   url = "forkonlp.github.io/N2H4",
   u_size = 9,
-  u_color = "#3f3936",
+  u_color = "#00bd39",
   dpi = 500
 )
