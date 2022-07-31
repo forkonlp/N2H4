@@ -1,0 +1,48 @@
+pre {
+  word-wrap: normal;
+  word-break: normal;
+  /*border: 1px solid #eee;*/
+  border: 0px !important;
+}
+
+pre, code {
+  background-color: #1c1c1c;
+  color: #ccc;
+}
+
+pre code {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
+
+pre .img {
+  margin: 5px 0;
+}
+
+pre .img img {
+  background-color: #aaa;
+  display: block;
+  height: auto;
+}
+
+code a, pre a {
+  font-family: ui-monospace, SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  color: #85AACC;
+  text-decoration: underline;
+}
+
+a.sourceLine:hover {
+  text-decoration: none;
+}
+
+pre code span.fl      {color: #ae81ff;}
+pre code span.fu      {color: #ade837;} /* function */
+pre code span.ch, pre code span.st  {color: #e7db74;} /* string */
+pre code span.kw      {color: #f92672;} /* keyword */
+pre code span.co      {color: #696d70;} /* comment */
+pre code span.va      {color: #fd971f;} /* values */
+
+pre code span.message { color: black;   font-weight: bolder;}
+pre code span.error   { color: orange;  font-weight: bolder;}
+pre code span.warning { color: #6A0366; font-weight: bolder;}
