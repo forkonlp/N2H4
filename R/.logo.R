@@ -14,6 +14,11 @@ image_write(imc,
             format = "png",
             )
 
+library(showtext)
+
+font_add_google('Inconsolata', 'inconsolata')
+showtext_auto()
+
 library(hexSticker)
 
 # for windows
