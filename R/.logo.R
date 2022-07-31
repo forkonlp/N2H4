@@ -24,17 +24,17 @@ library(hexSticker)
 # for windows
 sticker(
   "./man/figures/logo_crop.png",
-  s_x = 1, s_y = 0.7,
+  s_x = 1.04, s_y = 0.6,
   package = "N2H4",
   p_family = "inconsolata",
   p_fontface = "bold",
-  p_size = 100, p_y = 1.2, p_x = 1,
+  p_size = 100, p_y = 1.15, p_x = 1.02,
   filename = "man/figures/logo.png",
   h_fill = "#3f63bf",
   p_color = "#ffffff",
   h_color = "#3f63bf",
   url = "forkonlp.github.io/N2H4",
-  u_size = 9,
+  u_size = 10,
   u_color = "#00bd39",
   dpi = 500
 )
