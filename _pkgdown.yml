@@ -7,4 +7,4 @@ template:
     base_font: {google: "Noto Sans"}
   params:
     toggle: manual
-    ganalytics: UA-47822682-14
+    ganalytics: UA-47822682-17
