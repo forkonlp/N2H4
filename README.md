@@ -10,7 +10,7 @@
 [![runiverse-package](https://forkonlp.r-universe.dev/badges/N2H4)](https://forkonlp.r-universe.dev/ui#packages)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/N2H4)](https://cran.r-project.org/package=N2H4)
 
-## 네이버 뉴스 크롤링을 위한 도구 (A Tool for Crawling Naver News)
+## 네이버 뉴스 수집을 위한 도구 (Naver News Text)
 #### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
 #### Feel free to use under the MIT license, but stars make the owner happy.
 ###### (MIT 라이선스는 마음껏 쓰되, 출처를 표시해달라는 뜻입니다.)
