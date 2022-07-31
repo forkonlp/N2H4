@@ -1,4 +1,6 @@
-# N2H4 (Handling Methods for Naver News Text Crawling) [<img src="man/figures/logo.png" align="right" height=140/>](https://forkonlp.github.io/N2H4/index.html)
+# N2H4 [<img src="man/figures/logo.png" align="right" height=140/>](https://forkonlp.github.io/N2H4/index.html)
+
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg)](#contributors)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) 
