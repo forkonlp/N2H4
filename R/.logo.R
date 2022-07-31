@@ -14,6 +14,11 @@ image_write(imc,
             format = "png",
             )
 
+library(showtext)
+
+font_add_google('Inconsolata', 'inconsolata')
+showtext_auto()
+
 library(hexSticker)
 
 # for windows
@@ -21,7 +26,9 @@ sticker(
   "./man/figures/logo_crop.png",
   s_x = 1, s_y = 0.7,
   package = "N2H4",
-  p_size = 70, p_y = 1.2, p_x = 1,
+  p_family = "inconsolata",
+  p_fontface = "bold",
+  p_size = 100, p_y = 1.2, p_x = 1,
   filename = "man/figures/logo.png",
   h_fill = "#3f63bf",
   p_color = "#ffffff",
