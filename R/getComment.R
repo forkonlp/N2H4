@@ -29,8 +29,8 @@ getComment <- function(turl = url,
               httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
   tem <- strsplit(urltools::path(turl), "[/]")[[1]]
 
-  oid <- tem[3]
-  aid <- tem[4]
+  oid <- tem[2]
+  aid <- tem[3]
   sort <- toupper(sort[1])
   ticket <- "news"
   pool <- "cbox5"
@@ -62,7 +62,7 @@ getComment <- function(turl = url,
       "&indexSize=10&groupId=&page=",
       page,
       "&initialize=true",
-      useAltSort,
+      # useAltSort,
       "&replyPageSize=30&moveTo=&sort=",
       sort
     )
@@ -73,14 +73,9 @@ getComment <- function(turl = url,
     httr::add_headers(Referer = turl)
   )
   tt <- httr::content(con, "text")
-
-  tt <- gsub("_callback", "", tt)
-  tt <- gsub("\\(", "[", tt)
-  tt <- gsub("\\)", "]", tt)
-  tt <- gsub(";", "", tt)
-  tt <- gsub("\n", "", tt)
-
+  tt <- rm_callback(tt)
   dat <- jsonlite::fromJSON(tt)
+
   if (type[1] == "list") {
     class(dat) <- "list"
   }
@@ -95,6 +90,14 @@ getComment <- function(turl = url,
   return(dat)
 }
 
+
+rm_callback <- function(text) {
+  text <- gsub("_callback", "", text)
+  text <- gsub("\\(", "[", text)
+  text <- gsub("\\)", "]", text)
+  text <- gsub(";", "", text)
+  text <- gsub("\n", "", text)
+}
 
 
 #' Get All Comment
