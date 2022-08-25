@@ -35,13 +35,11 @@ getComment <- function(turl = url,
   ticket <- "news"
   pool <- "cbox5"
   templateId <- "view_politics"
-  useAltSort <- "&useAltSort=true"
 
   if (grepl("http(|s)://(m.|)sports.", turl)) {
     ticket <- "sports"
     pool <- "cbox2"
     templateId <- "view"
-    useAltSort <- ""
   }
 
   url <-
@@ -62,7 +60,6 @@ getComment <- function(turl = url,
       "&indexSize=10&groupId=&page=",
       page,
       "&initialize=true",
-      # useAltSort,
       "&replyPageSize=30&moveTo=&sort=",
       sort
     )
