@@ -1,4 +1,16 @@
 context("function test")
+
+test_that("help functions", {
+  url  <-
+    "https://n.news.naver.com/mnews/article/001/0009205077?sid=102"
+  oid <- get_oid(url)
+  expect_equal(oid, "001%2C0009205077")
+  url  <-
+    "https://n.news.naver.com/article/028/0002603835"
+  oid <- get_oid(url)
+  expect_equal(oid, "028%2C0002603835")
+})
+
 test_that("getComment", {
   skip_on_cran()
   url  <-
@@ -6,6 +18,11 @@ test_that("getComment", {
   test <- getComment(url, type = "list")
   test <- test$result$commentList[[1]]
   expect_equal(test$contents, "test")
+  url  <-
+    "https://n.news.naver.com/mnews/article/015/0002303155?sid=100"
+  test <- getComment(url, type = "list")
+  test <- test$result$commentList[[1]]
+  expect_equal(test$contents, c("test", "test2", "test"))
 })
 
 test_that("getAllComment", {

@@ -27,10 +27,8 @@ getComment <- function(turl = url,
   turl <-
     httr::GET(turl,
               httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
-  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
 
-  oid <- tem[2]
-  aid <- tem[3]
+  oid <- get_oid(turl)
   sort <- toupper(sort[1])
   ticket <- "news"
   pool <- "cbox5"
@@ -53,8 +51,6 @@ getComment <- function(turl = url,
       pool,
       "&lang=ko&country=KR&objectId=news",
       oid,
-      "%2C",
-      aid,
       "&categoryId=&pageSize=",
       pageSize,
       "&indexSize=10&groupId=&page=",
@@ -87,6 +83,12 @@ getComment <- function(turl = url,
   return(dat)
 }
 
+get_oid <- function(turl) {
+  turl <- gsub("mnews/", "", turl)
+  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
+  paste0(tem[2], "%2C", tem[3])
+}
+
 
 rm_callback <- function(text) {
   text <- gsub("_callback", "", text)
@@ -117,9 +119,8 @@ getAllComment <- function(turl = url, ...) {
   temp <-
     getComment(
       turl,
-      pageSize = 1,
+      pageSize = 10,
       page = 1,
-      sort = "favorite",
       type = "list"
     )
   numPage <- ceiling(temp$result$pageModel$totalRows / 100)
@@ -133,7 +134,7 @@ getAllComment <- function(turl = url, ...) {
         ...
       ))
 
-  comments <- dplyr::bind_rows(comments)
+  comments <- rbind(comments)
 
   return(comments)
 }
