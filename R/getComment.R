@@ -108,7 +108,6 @@ rm_callback <- function(text) {
 #' @param turl character. News article on 'Naver' such as <http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>. News articl url that is not on Naver.com domain will generate an error.
 #' @param ... parameter in getComment function.
 #' @return a [tibble][tibble::tibble-package]
-#' @importFrom dplyr bind_rows
 #' @export
 #' @examples
 #' \dontrun{
@@ -134,7 +133,5 @@ getAllComment <- function(turl = url, ...) {
         ...
       ))
 
-  comments <- rbind(comments)
-
-  return(comments)
+  return(do.call(rbind, comments))
 }
