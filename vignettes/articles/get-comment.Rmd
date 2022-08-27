@@ -13,6 +13,10 @@ knitr::opts_chunk$set(
 library(N2H4)
 ```
 
+## 함수 소개
+
+### getComment
+
 기사에는 사용자의 댓글들이 있습니다.
 `{N2H4}` 패키지는 셀리늄 등의 브라우저 자동화 도구를 사용하지 않고,
 바로 댓글 데이터를 가져올 수 있어 빠르게 수집할 수 있습니다.
@@ -22,6 +26,34 @@ dat <- getComment("https://n.news.naver.com/article/374/0000300375")
 dat
 str(dat)
 ```
+### 데이터 설명
+
+컬럼이 많고, 사용하지 않을 정보들이 많아서 주요 컬럼만 소개합니다.
+
+`objectId`: 기사의 고유 아이디입니다. 앞의 3자리는 매체의, 뒤의 10자리는 기사 아이디인 것으로 파악하고 있습니다.
+기사 url에 들어간 아이디와 같습니다.
+`commentNo`: 댓글의 고유 아이디입니다.
+`parentCommentNo`: 현재 댓글이 대댓글인 경우 앞의 댓글의 고유 아이디입니다.
+`reply*`: 대댓글에 대한 정보들입니다.
+`image*`: 댓글에 이미지가 포함되어 있는 경우 제공하는 정보들입니다.
+`contents`: 댓글 본문 텍스트입니다.
+`userIdNo`: 사용자 고유 아이디입니다. `idNo`와 같습니다. 내부적으로 전체 서비스내에서 사용하는 유일 아이디로 활용하는 것 같습니다.
+`modTime`: 수정 시간입니다. 현재 수정 기능이 막혀있어, 최근 댓글은 모두 입력 시간과 같습니다.
+`regTime`: 입력 시간입니다.
+
+### 원시 데이터 제공
+
+`getComment()` 함수는 네이버 뉴스 댓글의 원시 데이터를 제공하기 위해 `list` 자료형도 지원합니다.
+
+```{r}
+dat <- getComment(
+  "https://n.news.naver.com/article/374/0000300375", 
+  type = "list"
+  )
+str(dat)
+```
+
+### getAllComment
 
 `getComment()` 함수는 최대 100개의 댓글을 가져올 수 있습니다.
 그래서 모든 데이터를 가져오기 위해서는 여러번 요청해야 합니다.
@@ -39,12 +71,21 @@ dat <- getAllComment("https://n.news.naver.com/mnews/article/088/0000772480?sid=
 nrow(dat)
 ```
 
-`getComment()` 함수는 네이버 뉴스의 원시 데이터를 제공하기 위해 `list` 자료형도 지원합니다.
+### getCommentHistory
+
+댓글 사용자의 다른 댓글들을 수집하는 함수입니다.
+우선 `getComment()` 함수를 이용해 추가로 수집하고자 하는 사용자의 기사내 댓글아이디(`commentNo`)를 확보합니다.
 
 ```{r}
-dat <- getComment(
-  "https://n.news.naver.com/article/374/0000300375", 
-  type = "list"
-  )
+turl <- "https://n.news.naver.com/mnews/article/088/0000772480?sid=100"
+dat <- getComment(turl)
+nrow(dat)
+str(dat[1,c("commentNo", "idNo", "userName", "contents")])
+```
+`getCommentHistory()` 함수는 댓글이 달린 본기사주소와 `commentNo`가 모두 필요합니다.
+
+```{r}
+dat <- getCommentHistory(turl, dat$commentNo[1])
 str(dat)
 ```
+
