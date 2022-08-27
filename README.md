@@ -1,6 +1,5 @@
 # N2H4 [<img src="man/figures/logo.png" align="right" height=140/>](https://forkonlp.github.io/N2H4/index.html)
 
-
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg)](#contributors)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) 
@@ -10,34 +9,25 @@
 [![runiverse-package](https://forkonlp.r-universe.dev/badges/N2H4)](https://forkonlp.r-universe.dev/ui#packages)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/N2H4)](https://cran.r-project.org/package=N2H4)
 
-## 네이버 뉴스 수집을 위한 도구 (Naver News Text)
-#### MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.
-#### Feel free to use under the MIT license, but stars make the owner happy.
-###### (MIT 라이선스는 마음껏 쓰되, 출처를 표시해달라는 뜻입니다.)
-###### (It means you can freely use the MIT license, but please indicate the source when using it.)
-#### 사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.
-#### Would be greatly appreciated if you could cite the source (link markable) when you use it.
-###### 문의는 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요. 
-###### For any enquiries, please write through [Issue](https://github.com/forkonlp/N2H4/issues/new).
-###### [이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.
-###### Writing through the [Issue](https://github.com/forkonlp/N2H4/issues/new), will help others who is experiencing the same problem.
-###### [위키](https://github.com/forkonlp/N2H4/wiki/)에 한글 설명이 준비되어 있습니다.
-###### [Wiki](https://github.com/forkonlp/N2H4/wiki/) provides an explanation in Korean.
-###### [디스코드](https://discord.gg/vbtUxnPXab)에 질문해주셔도 좋습니다.
-###### [Discord](https://discord.gg/vbtUxnPXab) is also available for any enquiries.
-###### [엑셀에서 UTF 8 csv 파일 다루기](https://github.com/forkonlp/N2H4/wiki/%EC%97%91%EC%85%80%EC%97%90%EC%84%9C-UTF-8-csv-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EB%A3%A8%EA%B8%B0)를 잘 정리해 주신 글이 있어 공유합니다.
-###### [Handling UTF 8 csv files using Excel](https://github.com/forkonlp/N2H4/wiki/%EC%97%91%EC%85%80%EC%97%90%EC%84%9C-UTF-8-csv-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EB%A3%A8%EA%B8%B0) is shared as it is very informative.
+## <https://forkonlp.github.io/N2H4/>
 
-## 설치방법 (Installation)
+MIT 라이선스로 자유롭게 사용하셔도 좋으나 star는 제작자를 춤추게 합니다.    
+Feel free to use under the MIT license, but stars make the owner happy.    
 
-```
-# CRAN version
-install.packages("N2H4")
+MIT 라이선스는 마음껏 쓰되, 출처를 표시해달라는 뜻입니다.    
+It means you can freely use the MIT license, but please indicate the source when using it.    
 
+사용하실 때 출처(링크 표기 가능)를 밝혀주시면 감사하겠습니다.    
+Would be greatly appreciated if you could cite the source (link markable) when you use it.    
 
-# Dev version
-install.packages("N2H4", repos = "https://forkonlp.r-universe.dev")
-```
+문의는 [이슈](https://github.com/forkonlp/N2H4/issues/new)로 남겨주세요.     
+For any enquiries, please write through [Issue](https://github.com/forkonlp/N2H4/issues/new).    
+
+[이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.    
+Writing through the [Issue](https://github.com/forkonlp/N2H4/issues/new), will help others who is experiencing the same problem.    
+
+[디스코드](https://discord.gg/vbtUxnPXab)에 질문해주셔도 좋습니다.    
+[Discord](https://discord.gg/vbtUxnPXab) is also available for any enquiries.    
 
 ## Contributors
 
