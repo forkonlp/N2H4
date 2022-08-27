@@ -1,3 +1,10 @@
+# N2H4 0.7.1
+
+* urltools 패키지 의존성을 제거하였습니다.
+* getLike() 함수를 제거하였습니다. 추후 대응하는 다른 함수를 추가할 수 있습니다.
+* Remove urltools package on deps.
+* Remove getLike() functoin not work.
+
 # N2H4 0.7.0
 
 * getCommentHistory() 함수를 추가했습니다. 댓글 사용자의 다른 댓글을 수집하는 기능입니다.
