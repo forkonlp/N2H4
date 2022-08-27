@@ -1,0 +1,34 @@
+---
+title: "한글리드미"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(N2H4)
+```
+
+`{N2H4}` 패키지는 [네이버 뉴스][네이버 뉴스]의 기사와 댓글을 수집하는데 필요한 함수를 제공합니다.
+기사와 댓글을 수집하는데 해드리스 브라우저등을 사용하지 않습니다.
+
+## 설치방법
+
+```r
+# CRAN version
+install.packages("N2H4")
+
+# Dev version
+install.packages("N2H4", repos = "https://forkonlp.r-universe.dev")
+```
+
+## 사용법
+
+* [기사 가져오기]
+* [댓글 가져오기]
+
+[네이버 뉴스]: https://news.naver.com/

@@ -19,7 +19,7 @@
 #'   getComment("https://n.news.naver.com/mnews/article/421/0002484966?sid=100")
 #'}
 
-getComment <- function(turl = url,
+getComment <- function(turl,
                        pageSize = 10,
                        page = 1,
                        sort = c("favorite", "reply", "old", "new", "best"),
@@ -89,7 +89,6 @@ get_oid <- function(turl) {
   tem <- strsplit(httr::parse_url(turl)$path, "[/]")[[1]]
   paste0(tem[2], "%2C", tem[3])
 }
-
 
 rm_callback <- function(text) {
   text <- gsub("_callback", "", text)
