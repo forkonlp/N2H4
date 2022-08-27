@@ -16,7 +16,6 @@
 getContent <-
   function(turl,
            col = c("url",
-                   "section",
                    "datetime",
                    "edittime",
                    "press",
