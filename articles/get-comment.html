@@ -73,7 +73,7 @@
 <li class="active nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--">한글문서모음</a>
   <div class="dropdown-menu" aria-labelledby="dropdown--">
-    <a class="dropdown-item" href="../articles/readkr.html">readme</a>
+    <a class="dropdown-item" href="../articles/readmekr.html">리드미</a>
     <a class="dropdown-item" href="../articles/get-content.html">기사 가져오기</a>
     <a class="dropdown-item" href="../articles/get-comment.html">댓글 가져오기</a>
   </div>
@@ -140,7 +140,7 @@
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> news   news37… *       view_e… 767607… 767607…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> news   news37… *       view_e… 767607… 767607…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> news   news37… *       defaul… 767605… 767605…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> news   news37… *       view_e… 767603… 767603…       1       1       1 <span style="color: #BB0000;">NA</span>     </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> news   news37… *       view_e… 767603… 767603…       1       2       2 <span style="color: #BB0000;">NA</span>     </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">9</span> news   news37… *       view_e… 767602… 767602…       1       1       1 <span style="color: #BB0000;">NA</span>     </span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># … with 71 more variables: replyList &lt;lgl&gt;, imageCount &lt;int&gt;, imageList &lt;lgl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   imagePathList &lt;lgl&gt;, imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;,</span></span></span>
@@ -158,8 +158,8 @@
 <span><span class="co">#&gt;  $ commentNo        : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
 <span><span class="co">#&gt;  $ parentCommentNo  : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
 <span><span class="co">#&gt;  $ replyLevel       : int [1:9] 1 1 1 1 1 1 1 1 1</span></span>
-<span><span class="co">#&gt;  $ replyCount       : int [1:9] 0 0 0 0 0 0 0 1 1</span></span>
-<span><span class="co">#&gt;  $ replyAllCount    : int [1:9] 0 0 0 0 0 0 0 1 1</span></span>
+<span><span class="co">#&gt;  $ replyCount       : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
+<span><span class="co">#&gt;  $ replyAllCount    : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
 <span><span class="co">#&gt;  $ replyPreviewNo   : logi [1:9] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ replyList        : logi [1:9] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ imageCount       : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
@@ -185,7 +185,7 @@
 <span><span class="co">#&gt;  $ modTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
 <span><span class="co">#&gt;  $ regTime          : chr [1:9] "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" "2022-08-27T13:44:07+0900" ...</span></span>
 <span><span class="co">#&gt;  $ regTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
-<span><span class="co">#&gt;  $ sympathyCount    : int [1:9] 1 0 0 5 8 0 14 38 11</span></span>
+<span><span class="co">#&gt;  $ sympathyCount    : int [1:9] 1 0 0 5 8 0 14 39 11</span></span>
 <span><span class="co">#&gt;  $ antipathyCount   : int [1:9] 0 0 0 1 1 0 0 1 2</span></span>
 <span><span class="co">#&gt;  $ hideReplyButton  : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ status           : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
@@ -245,7 +245,7 @@
 <span><span class="co">#&gt; [1] 100</span></span>
 <span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getAllComment.html">getAllComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 169</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 170</span></span></code></pre></div>
 <p><code><a href="../reference/getComment.html">getComment()</a></code> 함수는 네이버 뉴스의 원시 데이터를 제공하기 위해 <code>list</code> 자료형도 지원합니다.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span></span>
@@ -269,8 +269,8 @@
 <span><span class="co">#&gt;   .. .. ..$ commentNo        : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ parentCommentNo  : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ replyLevel       : int [1:9] 1 1 1 1 1 1 1 1 1</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyCount       : int [1:9] 0 0 0 0 0 0 0 1 1</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyAllCount    : int [1:9] 0 0 0 0 0 0 0 1 1</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyCount       : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyAllCount    : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
 <span><span class="co">#&gt;   .. .. ..$ replyPreviewNo   : logi [1:9] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ replyList        : logi [1:9] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ imageCount       : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
@@ -296,7 +296,7 @@
 <span><span class="co">#&gt;   .. .. ..$ modTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ regTime          : chr [1:9] "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" "2022-08-27T13:44:07+0900" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ regTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ sympathyCount    : int [1:9] 1 0 0 5 8 0 14 38 11</span></span>
+<span><span class="co">#&gt;   .. .. ..$ sympathyCount    : int [1:9] 1 0 0 5 8 0 14 39 11</span></span>
 <span><span class="co">#&gt;   .. .. ..$ antipathyCount   : int [1:9] 0 0 0 1 1 0 0 1 2</span></span>
 <span><span class="co">#&gt;   .. .. ..$ hideReplyButton  : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ status           : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
@@ -331,13 +331,13 @@
 <span><span class="co">#&gt;   .. .. ..$ idNo             : chr [1:9] "1pSE1" "2mrox" "3UkSl" "1MBFF" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ expose           : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blindReport      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ blind            : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ secret           : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ serviceId        : logi [1:9] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ maskedUserId     : chr [1:9] "430p****" "jyko****" "cyob****" "dire****" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ maskedUserName   : chr [1:9] "43****" "jy****" "cy****" "di****" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ profileUserId    : logi [1:9] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ userBlocked      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ blind            : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ secret           : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ exposeByCountry  : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ validateBanWords : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ containText      : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
@@ -374,13 +374,13 @@
 <span><span class="co">#&gt;   .. ..$ status: chr "COMMENT_ON"</span></span>
 <span><span class="co">#&gt;   ..$ count         :'data.frame':   1 obs. of  8 variables:</span></span>
 <span><span class="co">#&gt;   .. ..$ comment           : int 9</span></span>
-<span><span class="co">#&gt;   .. ..$ reply             : int 2</span></span>
+<span><span class="co">#&gt;   .. ..$ reply             : int 3</span></span>
 <span><span class="co">#&gt;   .. ..$ exposeCount       : int 9</span></span>
 <span><span class="co">#&gt;   .. ..$ delCommentByUser  : int 2</span></span>
 <span><span class="co">#&gt;   .. ..$ delCommentByMon   : int 0</span></span>
 <span><span class="co">#&gt;   .. ..$ blindCommentByUser: int 0</span></span>
 <span><span class="co">#&gt;   .. ..$ blindReplyByUser  : int 0</span></span>
-<span><span class="co">#&gt;   .. ..$ total             : int 11</span></span>
+<span><span class="co">#&gt;   .. ..$ total             : int 12</span></span>
 <span><span class="co">#&gt;   ..$ listStatus    : chr "current"</span></span>
 <span><span class="co">#&gt;   ..$ sort          : chr "NEW"</span></span>
 <span><span class="co">#&gt;   ..$ config        :'data.frame':   1 obs. of  126 variables:</span></span>
@@ -489,7 +489,7 @@
 <span><span class="co">#&gt;   .. .. [list output truncated]</span></span>
 <span><span class="co">#&gt;   ..$ bestList      :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
-<span><span class="co">#&gt;  $ date   : chr "2022-08-27T10:05:47+0000"</span></span>
+<span><span class="co">#&gt;  $ date   : chr "2022-08-27T10:11:45+0000"</span></span>
 <span><span class="co">#&gt;  - attr(*, "row.names")= int 1</span></span></code></pre></div>
   </main>
 </div>
