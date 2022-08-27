@@ -126,128 +126,131 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a></span><span class="op">)</span></span></code></pre></div>
+<div class="section level2">
+<h2 id="함수-소개">함수 소개<a class="anchor" aria-label="anchor" href="#%ED%95%A8%EC%88%98-%EC%86%8C%EA%B0%9C"></a>
+</h2>
+<div class="section level3">
+<h3 id="getcomment">getComment<a class="anchor" aria-label="anchor" href="#getcomment"></a>
+</h3>
 <p>기사에는 사용자의 댓글들이 있습니다. <a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a> 패키지는 셀리늄 등의 브라우저 자동화 도구를 사용하지 않고, 바로 댓글 데이터를 가져올 수 있어 빠르게 수집할 수 있습니다.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/article/374/0000300375"</span><span class="op">)</span></span>
 <span><span class="va">dat</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 9 × 81</span></span></span>
-<span><span class="co">#&gt;   ticket objec…¹ categ…² templ…³ comme…⁴ paren…⁵ reply…⁶ reply…⁷ reply…⁸ reply…⁹</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> news   news37… *       view_e… 767623… 767623…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> news   news37… *       defaul… 767616… 767616…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> news   news37… *       view_e… 767615… 767615…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> news   news37… *       view_e… 767607… 767607…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> news   news37… *       view_e… 767607… 767607…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> news   news37… *       view_e… 767607… 767607…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">7</span> news   news37… *       defaul… 767605… 767605…       1       0       0 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">8</span> news   news37… *       view_e… 767603… 767603…       1       2       2 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">9</span> news   news37… *       view_e… 767602… 767602…       1       1       1 <span style="color: #BB0000;">NA</span>     </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 71 more variables: replyList &lt;lgl&gt;, imageCount &lt;int&gt;, imageList &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   imagePathList &lt;lgl&gt;, imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   commentType &lt;chr&gt;, stickerId &lt;lgl&gt;, sticker &lt;lgl&gt;, sortValue &lt;dbl&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   contents &lt;chr&gt;, userIdNo &lt;chr&gt;, exposedUserIp &lt;lgl&gt;, lang &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   country &lt;chr&gt;, idType &lt;chr&gt;, idProvider &lt;chr&gt;, userName &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   userProfileImage &lt;chr&gt;, profileType &lt;chr&gt;, modTime &lt;chr&gt;, modTimeGmt &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   regTime &lt;chr&gt;, regTimeGmt &lt;chr&gt;, sympathyCount &lt;int&gt;, …</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 81</span></span></span>
+<span><span class="co">#&gt;    ticket objectId       categ…¹ templ…² comme…³ paren…⁴ reply…⁵ reply…⁶ reply…⁷</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>          <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> news   news374,00003… *       view_e… 767638… 767638…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> news   news374,00003… *       view_e… 767623… 767623…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> news   news374,00003… *       defaul… 767616… 767616…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> news   news374,00003… *       view_e… 767615… 767615…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> news   news374,00003… *       view_e… 767607… 767607…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> news   news374,00003… *       view_e… 767607… 767607…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> news   news374,00003… *       view_e… 767607… 767607…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> news   news374,00003… *       defaul… 767605… 767605…       1       0       0</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> news   news374,00003… *       view_e… 767603… 767603…       1       2       2</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> news   news374,00003… *       view_e… 767602… 767602…       1       1       1</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># … with 72 more variables: replyPreviewNo &lt;lgl&gt;, replyList &lt;lgl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   imageCount &lt;int&gt;, imageList &lt;lgl&gt;, imagePathList &lt;lgl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   imageWidthList &lt;lgl&gt;, imageHeightList &lt;lgl&gt;, commentType &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   stickerId &lt;lgl&gt;, sticker &lt;lgl&gt;, sortValue &lt;dbl&gt;, contents &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   userIdNo &lt;chr&gt;, exposedUserIp &lt;lgl&gt;, lang &lt;chr&gt;, country &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   idType &lt;chr&gt;, idProvider &lt;chr&gt;, userName &lt;chr&gt;, userProfileImage &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   profileType &lt;chr&gt;, modTime &lt;chr&gt;, modTimeGmt &lt;chr&gt;, regTime &lt;chr&gt;, …</span></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="co">#&gt; tibble [9 × 81] (S3: tbl_df/tbl/data.frame)</span></span>
-<span><span class="co">#&gt;  $ ticket           : chr [1:9] "news" "news" "news" "news" ...</span></span>
-<span><span class="co">#&gt;  $ objectId         : chr [1:9] "news374,0000300375" "news374,0000300375" "news374,0000300375" "news374,0000300375" ...</span></span>
-<span><span class="co">#&gt;  $ categoryId       : chr [1:9] "*" "*" "*" "*" ...</span></span>
-<span><span class="co">#&gt;  $ templateId       : chr [1:9] "view_economy_m1" "default_economy" "view_economy_m1" "view_economy_m1" ...</span></span>
-<span><span class="co">#&gt;  $ commentNo        : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
-<span><span class="co">#&gt;  $ parentCommentNo  : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
-<span><span class="co">#&gt;  $ replyLevel       : int [1:9] 1 1 1 1 1 1 1 1 1</span></span>
-<span><span class="co">#&gt;  $ replyCount       : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
-<span><span class="co">#&gt;  $ replyAllCount    : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
-<span><span class="co">#&gt;  $ replyPreviewNo   : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ replyList        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ imageCount       : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;  $ imageList        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ imagePathList    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ imageWidthList   : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ imageHeightList  : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ commentType      : chr [1:9] "txt" "txt" "txt" "txt" ...</span></span>
-<span><span class="co">#&gt;  $ stickerId        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ sticker          : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ sortValue        : num [1:9] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
-<span><span class="co">#&gt;  $ contents         : chr [1:9] "벌금 10억 때리니 그렇지" "올영이 좋아서 가는게아니라 딴데가 너무 짜치니까 그렇지 롭스가면 한숨만나옴" "올리브영 안되겠네. 손절!\n 악덕기업으로 열라 흘려야겠군." "악덕도 저런 악덕이 없는듯 ᆢ 반품수량이 시즌 끝났다고 해서 연초되면 전매장 진열상품+ 사용했던제품 + 재고 해서 몇"| __truncated__ ...</span></span>
-<span><span class="co">#&gt;  $ userIdNo         : chr [1:9] "1pSE1" "2mrox" "3UkSl" "1MBFF" ...</span></span>
-<span><span class="co">#&gt;  $ exposedUserIp    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ lang             : chr [1:9] "ko" "ko" "ko" "ko" ...</span></span>
-<span><span class="co">#&gt;  $ country          : chr [1:9] "KR" "KR" "KR" "KR" ...</span></span>
-<span><span class="co">#&gt;  $ idType           : chr [1:9] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;  $ idProvider       : chr [1:9] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;  $ userName         : chr [1:9] "430p****" "jyko****" "cyob****" "dire****" ...</span></span>
-<span><span class="co">#&gt;  $ userProfileImage : chr [1:9] "https://phinf.pstatic.net/contact/20210313_217/1615625721157YI5Cj_JPEG/image.jpg" "https://phinf.pstatic.net/contact/20180405_113/1522895493267mksuW_JPEG/image.jpg" NA NA ...</span></span>
-<span><span class="co">#&gt;  $ profileType      : chr [1:9] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;  $ modTime          : chr [1:9] "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" "2022-08-27T13:44:07+0900" ...</span></span>
-<span><span class="co">#&gt;  $ modTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
-<span><span class="co">#&gt;  $ regTime          : chr [1:9] "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" "2022-08-27T13:44:07+0900" ...</span></span>
-<span><span class="co">#&gt;  $ regTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
-<span><span class="co">#&gt;  $ sympathyCount    : int [1:9] 1 0 0 5 8 0 14 39 11</span></span>
-<span><span class="co">#&gt;  $ antipathyCount   : int [1:9] 0 0 0 1 1 0 0 1 2</span></span>
-<span><span class="co">#&gt;  $ hideReplyButton  : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ status           : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;  $ mine             : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ best             : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ mentions         : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ toUser           : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ userStatus       : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;  $ categoryImage    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ open             : logi [1:9] FALSE FALSE TRUE FALSE FALSE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ levelCode        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ grades           : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ sympathy         : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ antipathy        : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ metaInfo         : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ extension        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ translation      : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ report           : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ middleBlindReport: logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ spamInfo         : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ userHomepageUrl  : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ defamation       : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ hiddenByCleanbot : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ score            : num [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;  $ ratings          : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ following        : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ managerLike      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ pick             : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ visible          : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ manager          : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ deleted          : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ idNo             : chr [1:9] "1pSE1" "2mrox" "3UkSl" "1MBFF" ...</span></span>
-<span><span class="co">#&gt;  $ expose           : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ blindReport      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ serviceId        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ maskedUserId     : chr [1:9] "430p****" "jyko****" "cyob****" "dire****" ...</span></span>
-<span><span class="co">#&gt;  $ maskedUserName   : chr [1:9] "43****" "jy****" "cy****" "di****" ...</span></span>
-<span><span class="co">#&gt;  $ userBlocked      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ blind            : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ secret           : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ profileUserId    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ exposeByCountry  : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ validateBanWords : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ containText      : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ virtual          : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ anonymous        : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span></code></pre></div>
-<p><code><a href="../reference/getComment.html">getComment()</a></code> 함수는 최대 100개의 댓글을 가져올 수 있습니다. 그래서 모든 데이터를 가져오기 위해서는 여러번 요청해야 합니다. <a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a> 패키지는 편의함수인 <code><a href="../reference/getAllComment.html">getAllComment()</a></code>을 제공합니다.</p>
+<span><span class="co">#&gt; tibble [10 × 81] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ ticket           : chr [1:10] "news" "news" "news" "news" ...</span></span>
+<span><span class="co">#&gt;  $ objectId         : chr [1:10] "news374,0000300375" "news374,0000300375" "news374,0000300375" "news374,0000300375" ...</span></span>
+<span><span class="co">#&gt;  $ categoryId       : chr [1:10] "*" "*" "*" "*" ...</span></span>
+<span><span class="co">#&gt;  $ templateId       : chr [1:10] "view_economy_m1" "view_economy_m1" "default_economy" "view_economy_m1" ...</span></span>
+<span><span class="co">#&gt;  $ commentNo        : chr [1:10] "767638730226794657" "767623835313766438" "767616640119472257" "767615592332001332" ...</span></span>
+<span><span class="co">#&gt;  $ parentCommentNo  : chr [1:10] "767638730226794657" "767623835313766438" "767616640119472257" "767615592332001332" ...</span></span>
+<span><span class="co">#&gt;  $ replyLevel       : int [1:10] 1 1 1 1 1 1 1 1 1 1</span></span>
+<span><span class="co">#&gt;  $ replyCount       : int [1:10] 0 0 0 0 0 0 0 0 2 1</span></span>
+<span><span class="co">#&gt;  $ replyAllCount    : int [1:10] 0 0 0 0 0 0 0 0 2 1</span></span>
+<span><span class="co">#&gt;  $ replyPreviewNo   : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ replyList        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imageCount       : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ imageList        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imagePathList    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imageWidthList   : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imageHeightList  : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ commentType      : chr [1:10] "txt" "txt" "txt" "txt" ...</span></span>
+<span><span class="co">#&gt;  $ stickerId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ sticker          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ sortValue        : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
+<span><span class="co">#&gt;  $ contents         : chr [1:10] "윤왈...법적으로 문제 없습니다" "벌금 10억 때리니 그렇지" "올영이 좋아서 가는게아니라 딴데가 너무 짜치니까 그렇지 롭스가면 한숨만나옴" "올리브영 안되겠네. 손절!\n 악덕기업으로 열라 흘려야겠군." ...</span></span>
+<span><span class="co">#&gt;  $ userIdNo         : chr [1:10] "bLC5l" "1pSE1" "2mrox" "3UkSl" ...</span></span>
+<span><span class="co">#&gt;  $ exposedUserIp    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ lang             : chr [1:10] "ko" "ko" "ko" "ko" ...</span></span>
+<span><span class="co">#&gt;  $ country          : chr [1:10] "KR" "KR" "KR" "KR" ...</span></span>
+<span><span class="co">#&gt;  $ idType           : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;  $ idProvider       : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;  $ userName         : chr [1:10] "mume****" "430p****" "jyko****" "cyob****" ...</span></span>
+<span><span class="co">#&gt;  $ userProfileImage : chr [1:10] NA "https://phinf.pstatic.net/contact/20210313_217/1615625721157YI5Cj_JPEG/image.jpg" "https://phinf.pstatic.net/contact/20180405_113/1522895493267mksuW_JPEG/image.jpg" NA ...</span></span>
+<span><span class="co">#&gt;  $ profileType      : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;  $ modTime          : chr [1:10] "2022-08-27T21:41:18+0900" "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" ...</span></span>
+<span><span class="co">#&gt;  $ modTimeGmt       : chr [1:10] "2022-08-27T12:41:18+0000" "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" ...</span></span>
+<span><span class="co">#&gt;  $ regTime          : chr [1:10] "2022-08-27T21:41:18+0900" "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" ...</span></span>
+<span><span class="co">#&gt;  $ regTimeGmt       : chr [1:10] "2022-08-27T12:41:18+0000" "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" ...</span></span>
+<span><span class="co">#&gt;  $ sympathyCount    : int [1:10] 0 2 0 1 9 10 0 18 50 12</span></span>
+<span><span class="co">#&gt;  $ antipathyCount   : int [1:10] 0 0 0 0 1 1 0 0 1 2</span></span>
+<span><span class="co">#&gt;  $ hideReplyButton  : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ status           : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ mine             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ best             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ mentions         : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ toUser           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ userStatus       : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ categoryImage    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ open             : logi [1:10] TRUE FALSE FALSE TRUE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ levelCode        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ grades           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ sympathy         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ antipathy        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ metaInfo         : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ extension        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ translation      : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ report           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ middleBlindReport: logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ spamInfo         : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ userHomepageUrl  : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ defamation       : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ hiddenByCleanbot : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ score            : num [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ ratings          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ following        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ managerLike      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ pick             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ visible          : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ manager          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ deleted          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ idNo             : chr [1:10] "bLC5l" "1pSE1" "2mrox" "3UkSl" ...</span></span>
+<span><span class="co">#&gt;  $ expose           : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ maskedUserId     : chr [1:10] "mume****" "430p****" "jyko****" "cyob****" ...</span></span>
+<span><span class="co">#&gt;  $ maskedUserName   : chr [1:10] "mu****" "43****" "jy****" "cy****" ...</span></span>
+<span><span class="co">#&gt;  $ userBlocked      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ blind            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ secret           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ exposeByCountry  : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ validateBanWords : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ containText      : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ virtual          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ anonymous        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="데이터-설명">데이터 설명<a class="anchor" aria-label="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%84%A4%EB%AA%85"></a>
+</h3>
+<p>컬럼이 많고, 사용하지 않을 정보들이 많아서 주요 컬럼만 소개합니다.</p>
+<p><code>objectId</code>: 기사의 고유 아이디입니다. 앞의 3자리는 매체의, 뒤의 10자리는 기사 아이디인 것으로 파악하고 있습니다. 기사 url에 들어간 아이디와 같습니다. <code>commentNo</code>: 댓글의 고유 아이디입니다. <code>parentCommentNo</code>: 현재 댓글이 대댓글인 경우 앞의 댓글의 고유 아이디입니다. <code>reply*</code>: 대댓글에 대한 정보들입니다. <code>image*</code>: 댓글에 이미지가 포함되어 있는 경우 제공하는 정보들입니다. <code>contents</code>: 댓글 본문 텍스트입니다. <code>userIdNo</code>: 사용자 고유 아이디입니다. <code>idNo</code>와 같습니다. 내부적으로 전체 서비스내에서 사용하는 유일 아이디로 활용하는 것 같습니다. <code>modTime</code>: 수정 시간입니다. 현재 수정 기능이 막혀있어, 최근 댓글은 모두 입력 시간과 같습니다. <code>regTime</code>: 입력 시간입니다.</p>
+</div>
+<div class="section level3">
+<h3 id="원시-데이터-제공">원시 데이터 제공<a class="anchor" aria-label="anchor" href="#%EC%9B%90%EC%8B%9C-%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%9C%EA%B3%B5"></a>
+</h3>
+<p><code><a href="../reference/getComment.html">getComment()</a></code> 함수는 네이버 뉴스 댓글의 원시 데이터를 제공하기 위해 <code>list</code> 자료형도 지원합니다.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 10</span></span>
-<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span></span>
-<span>  <span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span>,</span>
-<span>  pageSize <span class="op">=</span> <span class="fl">100</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 100</span></span>
-<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getAllComment.html">getAllComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 170</span></span></code></pre></div>
-<p><code><a href="../reference/getComment.html">getComment()</a></code> 함수는 네이버 뉴스의 원시 데이터를 제공하기 위해 <code>list</code> 자료형도 지원합니다.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span></span>
 <span>  <span class="st">"https://n.news.naver.com/article/374/0000300375"</span>, </span>
 <span>  type <span class="op">=</span> <span class="st">"list"</span></span>
@@ -261,96 +264,96 @@
 <span><span class="co">#&gt;  $ country: chr "KR"</span></span>
 <span><span class="co">#&gt;  $ result :'data.frame': 1 obs. of  11 variables:</span></span>
 <span><span class="co">#&gt;   ..$ commentList   :List of 1</span></span>
-<span><span class="co">#&gt;   .. ..$ :'data.frame':  9 obs. of  81 variables:</span></span>
-<span><span class="co">#&gt;   .. .. ..$ ticket           : chr [1:9] "news" "news" "news" "news" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ objectId         : chr [1:9] "news374,0000300375" "news374,0000300375" "news374,0000300375" "news374,0000300375" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ categoryId       : chr [1:9] "*" "*" "*" "*" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ templateId       : chr [1:9] "view_economy_m1" "default_economy" "view_economy_m1" "view_economy_m1" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ commentNo        : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ parentCommentNo  : chr [1:9] "767623835313766438" "767616640119472257" "767615592332001332" "767607987874299952" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyLevel       : int [1:9] 1 1 1 1 1 1 1 1 1</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyCount       : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyAllCount    : int [1:9] 0 0 0 0 0 0 0 2 1</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyPreviewNo   : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ replyList        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ imageCount       : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;   .. .. ..$ imageList        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ imagePathList    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ imageWidthList   : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ imageHeightList  : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ commentType      : chr [1:9] "txt" "txt" "txt" "txt" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ stickerId        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ sticker          : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ sortValue        : num [1:9] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ contents         : chr [1:9] "벌금 10억 때리니 그렇지" "올영이 좋아서 가는게아니라 딴데가 너무 짜치니까 그렇지 롭스가면 한숨만나옴" "올리브영 안되겠네. 손절!\n 악덕기업으로 열라 흘려야겠군." "악덕도 저런 악덕이 없는듯 ᆢ 반품수량이 시즌 끝났다고 해서 연초되면 전매장 진열상품+ 사용했던제품 + 재고 해서 몇"| __truncated__ ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ userIdNo         : chr [1:9] "1pSE1" "2mrox" "3UkSl" "1MBFF" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ exposedUserIp    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ lang             : chr [1:9] "ko" "ko" "ko" "ko" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ country          : chr [1:9] "KR" "KR" "KR" "KR" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ idType           : chr [1:9] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ idProvider       : chr [1:9] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ userName         : chr [1:9] "430p****" "jyko****" "cyob****" "dire****" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ userProfileImage : chr [1:9] "https://phinf.pstatic.net/contact/20210313_217/1615625721157YI5Cj_JPEG/image.jpg" "https://phinf.pstatic.net/contact/20180405_113/1522895493267mksuW_JPEG/image.jpg" NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ profileType      : chr [1:9] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ modTime          : chr [1:9] "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" "2022-08-27T13:44:07+0900" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ modTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ regTime          : chr [1:9] "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" "2022-08-27T13:44:07+0900" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ regTimeGmt       : chr [1:9] "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" "2022-08-27T04:44:07+0000" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ sympathyCount    : int [1:9] 1 0 0 5 8 0 14 39 11</span></span>
-<span><span class="co">#&gt;   .. .. ..$ antipathyCount   : int [1:9] 0 0 0 1 1 0 0 1 2</span></span>
-<span><span class="co">#&gt;   .. .. ..$ hideReplyButton  : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ status           : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;   .. .. ..$ mine             : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ best             : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ mentions         : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ toUser           : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ userStatus       : int [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;   .. .. ..$ categoryImage    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ open             : logi [1:9] FALSE FALSE TRUE FALSE FALSE TRUE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ levelCode        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ grades           : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ sympathy         : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ antipathy        : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ metaInfo         : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ extension        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ translation      : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ report           : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ middleBlindReport: logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ spamInfo         : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ userHomepageUrl  : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ defamation       : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ hiddenByCleanbot : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ score            : num [1:9] 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;   .. .. ..$ ratings          : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ following        : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ managerLike      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ pick             : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ visible          : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ manager          : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ deleted          : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ idNo             : chr [1:9] "1pSE1" "2mrox" "3UkSl" "1MBFF" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ expose           : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ blindReport      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ blind            : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ secret           : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ serviceId        : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ maskedUserId     : chr [1:9] "430p****" "jyko****" "cyob****" "dire****" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ maskedUserName   : chr [1:9] "43****" "jy****" "cy****" "di****" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ profileUserId    : logi [1:9] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ userBlocked      : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ exposeByCountry  : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ validateBanWords : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ containText      : logi [1:9] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ virtual          : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ anonymous        : logi [1:9] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. ..$ :'data.frame':  10 obs. of  81 variables:</span></span>
+<span><span class="co">#&gt;   .. .. ..$ ticket           : chr [1:10] "news" "news" "news" "news" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ objectId         : chr [1:10] "news374,0000300375" "news374,0000300375" "news374,0000300375" "news374,0000300375" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ categoryId       : chr [1:10] "*" "*" "*" "*" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ templateId       : chr [1:10] "view_economy_m1" "view_economy_m1" "default_economy" "view_economy_m1" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ commentNo        : chr [1:10] "767638730226794657" "767623835313766438" "767616640119472257" "767615592332001332" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ parentCommentNo  : chr [1:10] "767638730226794657" "767623835313766438" "767616640119472257" "767615592332001332" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyLevel       : int [1:10] 1 1 1 1 1 1 1 1 1 1</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyCount       : int [1:10] 0 0 0 0 0 0 0 0 2 1</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyAllCount    : int [1:10] 0 0 0 0 0 0 0 0 2 1</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyPreviewNo   : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ replyList        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ imageCount       : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;   .. .. ..$ imageList        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ imagePathList    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ imageWidthList   : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ imageHeightList  : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ commentType      : chr [1:10] "txt" "txt" "txt" "txt" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ stickerId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ sticker          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ sortValue        : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ contents         : chr [1:10] "윤왈...법적으로 문제 없습니다" "벌금 10억 때리니 그렇지" "올영이 좋아서 가는게아니라 딴데가 너무 짜치니까 그렇지 롭스가면 한숨만나옴" "올리브영 안되겠네. 손절!\n 악덕기업으로 열라 흘려야겠군." ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ userIdNo         : chr [1:10] "bLC5l" "1pSE1" "2mrox" "3UkSl" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ exposedUserIp    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ lang             : chr [1:10] "ko" "ko" "ko" "ko" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ country          : chr [1:10] "KR" "KR" "KR" "KR" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ idType           : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ idProvider       : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ userName         : chr [1:10] "mume****" "430p****" "jyko****" "cyob****" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ userProfileImage : chr [1:10] NA "https://phinf.pstatic.net/contact/20210313_217/1615625721157YI5Cj_JPEG/image.jpg" "https://phinf.pstatic.net/contact/20180405_113/1522895493267mksuW_JPEG/image.jpg" NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ profileType      : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ modTime          : chr [1:10] "2022-08-27T21:41:18+0900" "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ modTimeGmt       : chr [1:10] "2022-08-27T12:41:18+0000" "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ regTime          : chr [1:10] "2022-08-27T21:41:18+0900" "2022-08-27T17:50:06+0900" "2022-08-27T15:58:25+0900" "2022-08-27T15:42:09+0900" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ regTimeGmt       : chr [1:10] "2022-08-27T12:41:18+0000" "2022-08-27T08:50:06+0000" "2022-08-27T06:58:25+0000" "2022-08-27T06:42:09+0000" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ sympathyCount    : int [1:10] 0 2 0 1 9 10 0 18 50 12</span></span>
+<span><span class="co">#&gt;   .. .. ..$ antipathyCount   : int [1:10] 0 0 0 0 1 1 0 0 1 2</span></span>
+<span><span class="co">#&gt;   .. .. ..$ hideReplyButton  : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ status           : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;   .. .. ..$ mine             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ best             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ mentions         : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ toUser           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ userStatus       : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;   .. .. ..$ categoryImage    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ open             : logi [1:10] TRUE FALSE FALSE TRUE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ levelCode        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ grades           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ sympathy         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ antipathy        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ metaInfo         : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ extension        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ translation      : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ report           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ middleBlindReport: logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ spamInfo         : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ userHomepageUrl  : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ defamation       : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ hiddenByCleanbot : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ score            : num [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;   .. .. ..$ ratings          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ following        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ managerLike      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ pick             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ visible          : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ manager          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ deleted          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ idNo             : chr [1:10] "bLC5l" "1pSE1" "2mrox" "3UkSl" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ expose           : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ maskedUserId     : chr [1:10] "mume****" "430p****" "jyko****" "cyob****" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ maskedUserName   : chr [1:10] "mu****" "43****" "jy****" "cy****" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ userBlocked      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ blind            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ secret           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ exposeByCountry  : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ validateBanWords : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ containText      : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ virtual          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ anonymous        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   ..$ userInfo      :'data.frame':   1 obs. of  0 variables</span></span>
 <span><span class="co">#&gt;   ..$ pageModel     :'data.frame':   1 obs. of  17 variables:</span></span>
 <span><span class="co">#&gt;   .. ..$ page          : int 1</span></span>
 <span><span class="co">#&gt;   .. ..$ pageSize      : int 10</span></span>
 <span><span class="co">#&gt;   .. ..$ indexSize     : int 10</span></span>
 <span><span class="co">#&gt;   .. ..$ startRow      : int 1</span></span>
-<span><span class="co">#&gt;   .. ..$ endRow        : int 9</span></span>
-<span><span class="co">#&gt;   .. ..$ totalRows     : int 9</span></span>
+<span><span class="co">#&gt;   .. ..$ endRow        : int 10</span></span>
+<span><span class="co">#&gt;   .. ..$ totalRows     : int 10</span></span>
 <span><span class="co">#&gt;   .. ..$ startIndex    : int 0</span></span>
 <span><span class="co">#&gt;   .. ..$ totalPages    : int 1</span></span>
 <span><span class="co">#&gt;   .. ..$ firstPage     : int 1</span></span>
@@ -365,22 +368,22 @@
 <span><span class="co">#&gt;   ..$ followList    :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
 <span><span class="co">#&gt;   ..$ morePage      :'data.frame':   1 obs. of  4 variables:</span></span>
-<span><span class="co">#&gt;   .. ..$ prev : chr "05tybxto5pvdy"</span></span>
+<span><span class="co">#&gt;   .. ..$ prev : chr "05tyh7wascz35"</span></span>
 <span><span class="co">#&gt;   .. ..$ next : chr "05ty4ck9xjzrp"</span></span>
-<span><span class="co">#&gt;   .. ..$ start: chr "05tybxto5pvdy"</span></span>
+<span><span class="co">#&gt;   .. ..$ start: chr "05tyh7wascz35"</span></span>
 <span><span class="co">#&gt;   .. ..$ end  : chr "05ty4ck9xjzrp"</span></span>
 <span><span class="co">#&gt;   ..$ exposureConfig:'data.frame':   1 obs. of  2 variables:</span></span>
 <span><span class="co">#&gt;   .. ..$ reason: logi NA</span></span>
 <span><span class="co">#&gt;   .. ..$ status: chr "COMMENT_ON"</span></span>
 <span><span class="co">#&gt;   ..$ count         :'data.frame':   1 obs. of  8 variables:</span></span>
-<span><span class="co">#&gt;   .. ..$ comment           : int 9</span></span>
+<span><span class="co">#&gt;   .. ..$ comment           : int 10</span></span>
 <span><span class="co">#&gt;   .. ..$ reply             : int 3</span></span>
-<span><span class="co">#&gt;   .. ..$ exposeCount       : int 9</span></span>
+<span><span class="co">#&gt;   .. ..$ exposeCount       : int 10</span></span>
 <span><span class="co">#&gt;   .. ..$ delCommentByUser  : int 2</span></span>
 <span><span class="co">#&gt;   .. ..$ delCommentByMon   : int 0</span></span>
 <span><span class="co">#&gt;   .. ..$ blindCommentByUser: int 0</span></span>
 <span><span class="co">#&gt;   .. ..$ blindReplyByUser  : int 0</span></span>
-<span><span class="co">#&gt;   .. ..$ total             : int 12</span></span>
+<span><span class="co">#&gt;   .. ..$ total             : int 13</span></span>
 <span><span class="co">#&gt;   ..$ listStatus    : chr "current"</span></span>
 <span><span class="co">#&gt;   ..$ sort          : chr "NEW"</span></span>
 <span><span class="co">#&gt;   ..$ config        :'data.frame':   1 obs. of  126 variables:</span></span>
@@ -489,9 +492,153 @@
 <span><span class="co">#&gt;   .. .. [list output truncated]</span></span>
 <span><span class="co">#&gt;   ..$ bestList      :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
-<span><span class="co">#&gt;  $ date   : chr "2022-08-27T10:11:45+0000"</span></span>
+<span><span class="co">#&gt;  $ date   : chr "2022-08-27T14:05:15+0000"</span></span>
 <span><span class="co">#&gt;  - attr(*, "row.names")= int 1</span></span></code></pre></div>
-  </main>
+</div>
+<div class="section level3">
+<h3 id="getallcomment">getAllComment<a class="anchor" aria-label="anchor" href="#getallcomment"></a>
+</h3>
+<p><code><a href="../reference/getComment.html">getComment()</a></code> 함수는 최대 100개의 댓글을 가져올 수 있습니다. 그래서 모든 데이터를 가져오기 위해서는 여러번 요청해야 합니다. <a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a> 패키지는 편의함수인 <code><a href="../reference/getAllComment.html">getAllComment()</a></code>을 제공합니다.</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 10</span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span></span>
+<span>  <span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span>,</span>
+<span>  pageSize <span class="op">=</span> <span class="fl">100</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 100</span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getAllComment.html">getAllComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 168</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="getcommenthistory">getCommentHistory<a class="anchor" aria-label="anchor" href="#getcommenthistory"></a>
+</h3>
+<p>댓글 사용자의 다른 댓글들을 수집하는 함수입니다. 우선 <code><a href="../reference/getComment.html">getComment()</a></code> 함수를 이용해 추가로 수집하고자 하는 사용자의 기사내 댓글아이디(<code>commentNo</code>)를 확보합니다.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">turl</span> <span class="op">&lt;-</span> <span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span><span class="va">turl</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 10</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dat</span><span class="op">[</span><span class="fl">1</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"commentNo"</span>, <span class="st">"idNo"</span>, <span class="st">"userName"</span>, <span class="st">"contents"</span><span class="op">)</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="co">#&gt; tibble [1 × 4] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ commentNo: chr "767631583116001475"</span></span>
+<span><span class="co">#&gt;  $ idNo     : chr "wkid"</span></span>
+<span><span class="co">#&gt;  $ userName : chr "cosm****"</span></span>
+<span><span class="co">#&gt;  $ contents : chr "준석이는 당대표로 돌아온다고해도 문제다. 집안 싸움을 당대표라는 늠이 법에 의지해서 가족들을 조지니 다시돌아와서"| __truncated__</span></span></code></pre></div>
+<p><code><a href="../reference/getCommentHistory.html">getCommentHistory()</a></code> 함수는 댓글이 달린 본기사주소와 <code>commentNo</code>가 모두 필요합니다.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getCommentHistory.html">getCommentHistory</a></span><span class="op">(</span><span class="va">turl</span>, <span class="va">dat</span><span class="op">$</span><span class="va">commentNo</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+<span><span class="co">#&gt; tibble [10 × 89] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt;  $ ticket             : chr [1:10] "news" "news" "news" "news" ...</span></span>
+<span><span class="co">#&gt;  $ objectId           : chr [1:10] "news088,0000772480" "news421,0006299900" "news001,0013400723" "news629,0000169102" ...</span></span>
+<span><span class="co">#&gt;  $ categoryId         : chr [1:10] "*" "*" "*" "*" ...</span></span>
+<span><span class="co">#&gt;  $ templateId         : chr [1:10] "default_politics_m3" "default_politics_m2" "view_politics_m1" "default_politics_m3" ...</span></span>
+<span><span class="co">#&gt;  $ commentNo          : chr [1:10] "767631583116001475" "767545537472758198" "767532865742176292" "767532111992193185" ...</span></span>
+<span><span class="co">#&gt;  $ parentCommentNo    : chr [1:10] "767631583116001475" "767545537472758198" "767532865742176292" "767532111992193185" ...</span></span>
+<span><span class="co">#&gt;  $ replyLevel         : int [1:10] 1 1 1 1 1 1 1 2 1 2</span></span>
+<span><span class="co">#&gt;  $ replyCount         : int [1:10] 0 0 0 0 2 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ replyAllCount      : int [1:10] 0 0 0 0 2 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ replyPreviewNo     : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ replyList          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imageCount         : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ imageList          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imagePathList      : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imageWidthList     : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ imageHeightList    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ objectUrl          : chr [1:10] "https://n.news.naver.com/mnews/article/088/0000772480?sid1=001" "https://n.news.naver.com/mnews/article/421/0006299900?sid1=001" "https://n.news.naver.com/mnews/article/001/0013400723?sid1=001" "https://n.news.naver.com/mnews/article/629/0000169102?sid1=001" ...</span></span>
+<span><span class="co">#&gt;  $ commentType        : chr [1:10] "txt" "txt" "txt" "txt" ...</span></span>
+<span><span class="co">#&gt;  $ stickerId          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ sticker            : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ sortValue          : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
+<span><span class="co">#&gt;  $ contents           : chr [1:10] "준석이는 당대표로 돌아온다고해도 문제다. 집안 싸움을 당대표라는 늠이 법에 의지해서 가족들을 조지니 다시돌아와서"| __truncated__ "이준석과 권성동은 국힘당의 암적존재다." "준석이는 당대표로 돌아온다고해도 문제다. 집안 싸움을 당대표라는 늠이 법에 의지해서 가족들을 조지니 다시돌아와서"| __truncated__ "우려가 헌실이 되었네. 판사가 대깨문 전라도 구례라 대깨문의 우상 이준석이를 살릴 것이라고 국힘지지하는 많은 국민"| __truncated__ ...</span></span>
+<span><span class="co">#&gt;  $ userIdNo           : chr [1:10] "wkid" "wkid" "wkid" "wkid" ...</span></span>
+<span><span class="co">#&gt;  $ exposedUserIp      : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ lang               : chr [1:10] "ko" "ko" "ko" "ko" ...</span></span>
+<span><span class="co">#&gt;  $ country            : chr [1:10] "KR" "KR" "KR" "KR" ...</span></span>
+<span><span class="co">#&gt;  $ idType             : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;  $ idProvider         : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;  $ userName           : chr [1:10] "정의와 평등" "정의와 평등" "정의와 평등" "정의와 평등" ...</span></span>
+<span><span class="co">#&gt;  $ userProfileImage   : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ profileType        : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
+<span><span class="co">#&gt;  $ modTime            : chr [1:10] "2022-08-27T19:50:22+0900" "2022-08-26T21:34:46+0900" "2022-08-26T18:18:04+0900" "2022-08-26T18:06:22+0900" ...</span></span>
+<span><span class="co">#&gt;  $ modTimeGmt         : chr [1:10] "2022-08-27T10:50:22+0000" "2022-08-26T12:34:46+0000" "2022-08-26T09:18:04+0000" "2022-08-26T09:06:22+0000" ...</span></span>
+<span><span class="co">#&gt;  $ regTime            : chr [1:10] "2022-08-27T19:50:22+0900" "2022-08-26T21:34:46+0900" "2022-08-26T18:18:04+0900" "2022-08-26T18:06:22+0900" ...</span></span>
+<span><span class="co">#&gt;  $ regTimeGmt         : chr [1:10] "2022-08-27T10:50:22+0000" "2022-08-26T12:34:46+0000" "2022-08-26T09:18:04+0000" "2022-08-26T09:06:22+0000" ...</span></span>
+<span><span class="co">#&gt;  $ sympathyCount      : int [1:10] 0 0 4 0 0 0 18 0 0 0</span></span>
+<span><span class="co">#&gt;  $ antipathyCount     : int [1:10] 0 0 2 0 1 0 3 0 0 0</span></span>
+<span><span class="co">#&gt;  $ hideReplyButton    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ status             : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ mine               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ best               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ mentions           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ toUser             : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ userStatus         : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ categoryImage      : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ open               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ levelCode          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ grades             : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ sympathy           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ antipathy          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ metaInfo           :'data.frame': 10 obs. of  13 variables:</span></span>
+<span><span class="co">#&gt;   ..$ categoryName    : chr [1:10] "정치" "정치" "정치" "정치" ...</span></span>
+<span><span class="co">#&gt;   ..$ publisherCode   : chr [1:10] "088" "421" "001" "629" ...</span></span>
+<span><span class="co">#&gt;   ..$ publisherName   : chr [1:10] "매일신문" "뉴스1" "연합뉴스" "더팩트" ...</span></span>
+<span><span class="co">#&gt;   ..$ title           : chr [1:10] "이준석 '가처분 완승' 후 첫마디 \"당원가입하기 좋은 금요일 저녁\"" "이준석 가처분 완승…'주호영 직무정지' 국민의힘 대혼돈" "\"역사적 판결\" 일단 웃은 이준석…당 대표 복귀까진 '산너머산'" "법원, 이준석 가처분 일부 인용…권성동 \"27일 긴급 의총\"" ...</span></span>
+<span><span class="co">#&gt;   ..$ imageUrl        : chr [1:10] "https://imgnews.pstatic.net/image/origin/088/2022/08/26/772480.jpg" "https://imgnews.pstatic.net/image/origin/421/2022/08/26/6299900.jpg" "https://imgnews.pstatic.net/image/origin/001/2022/08/26/13400723.jpg" "https://imgnews.pstatic.net/image/origin/629/2022/08/26/169102.jpg" ...</span></span>
+<span><span class="co">#&gt;   ..$ source          : chr [1:10] "이준석 전 국민의힘 대표 페이스북국민의힘 비상대책위원회[비대위] 체제 전환에 제동을 거는 취지의 법적 다툼에서 주"| __truncated__ "이준석 전 국민의힘 대표가 17일 서울 양천구 남부지방법원에서 당 비상대책위원회 효력을 정지해달라며 낸 가처분 신"| __truncated__ "가처분신청 인용에 이준석 측 \"사필귀정…대표 자동해임 취소\"당원 만나며 복귀 준비할 듯…법적 리스크·경찰 수사가 "| __truncated__ "하태경 \"당 지도부는 이 파국에 대해 책임져야\"권성동 국민의힘 원내대표는 26일 서울남부지법이 이준석 전 국민의힘"| __truncated__ ...</span></span>
+<span><span class="co">#&gt;   ..$ url             : chr [1:10] "https://n.news.naver.com/mnews/article/088/0000772480?sid1=001" "https://n.news.naver.com/mnews/article/421/0006299900?sid1=001" "https://n.news.naver.com/mnews/article/001/0013400723?sid1=001" "https://n.news.naver.com/mnews/article/629/0000169102?sid1=001" ...</span></span>
+<span><span class="co">#&gt;   ..$ regDate         : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
+<span><span class="co">#&gt;   ..$ ticket          : chr [1:10] "news" "news" "news" "news" ...</span></span>
+<span><span class="co">#&gt;   ..$ statCategoryName: chr [1:10] "정치" "정치" "정치" "정치" ...</span></span>
+<span><span class="co">#&gt;   ..$ commonStatsParam:'data.frame': 10 obs. of  0 variables</span></span>
+<span><span class="co">#&gt;   ..$ commentCount    : int [1:10] 192 370 153 844 549 644 373 161 795 2058</span></span>
+<span><span class="co">#&gt;   ..$ escapedTitle    : chr [1:10] "이준석 '가처분 완승' 후 첫마디 \"당원가입하기 좋은 금요일 저녁\"" "이준석 가처분 완승…'주호영 직무정지' 국민의힘 대혼돈" "\"역사적 판결\" 일단 웃은 이준석…당 대표 복귀까진 '산너머산'" "법원, 이준석 가처분 일부 인용…권성동 \"27일 긴급 의총\"" ...</span></span>
+<span><span class="co">#&gt;  $ extension          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ translation        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ report             : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ middleBlindReport  : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ spamInfo           : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ userHomepageUrl    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ defamation         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ hiddenByCleanbot   : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ score              : num [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ ratings            : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ following          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ managerLike        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ pick               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ objectTitle        : chr [1:10] "이준석 '가처분 완승' 후 첫마디 \"당원가입하기 좋은 금요일 저녁\"" "이준석 가처분 완승…'주호영 직무정지' 국민의힘 대혼돈" "\"역사적 판결\" 일단 웃은 이준석…당 대표 복귀까진 '산너머산'" "법원, 이준석 가처분 일부 인용…권성동 \"27일 긴급 의총\"" ...</span></span>
+<span><span class="co">#&gt;  $ objectImage        : chr [1:10] "https://imgnews.pstatic.net/image/origin/088/2022/08/26/772480.jpg" "https://imgnews.pstatic.net/image/origin/421/2022/08/26/6299900.jpg" "https://imgnews.pstatic.net/image/origin/001/2022/08/26/13400723.jpg" "https://imgnews.pstatic.net/image/origin/629/2022/08/26/169102.jpg" ...</span></span>
+<span><span class="co">#&gt;  $ objectSource       : chr [1:10] "이준석 전 국민의힘 대표 페이스북국민의힘 비상대책위원회[비대위] 체제 전환에 제동을 거는 취지의 법적 다툼에서 주"| __truncated__ "이준석 전 국민의힘 대표가 17일 서울 양천구 남부지방법원에서 당 비상대책위원회 효력을 정지해달라며 낸 가처분 신"| __truncated__ "가처분신청 인용에 이준석 측 \"사필귀정…대표 자동해임 취소\"당원 만나며 복귀 준비할 듯…법적 리스크·경찰 수사가 "| __truncated__ "하태경 \"당 지도부는 이 파국에 대해 책임져야\"권성동 국민의힘 원내대표는 26일 서울남부지법이 이준석 전 국민의힘"| __truncated__ ...</span></span>
+<span><span class="co">#&gt;  $ objectCategoryName : chr [1:10] "정치" "정치" "정치" "정치" ...</span></span>
+<span><span class="co">#&gt;  $ objectPublisherName: chr [1:10] "매일신문" "뉴스1" "연합뉴스" "더팩트" ...</span></span>
+<span><span class="co">#&gt;  $ objectRegDate      : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
+<span><span class="co">#&gt;  $ objectRegTime      : chr [1:10] "2022-08-26T23:59:01+0900" "2022-08-26T16:27:01+0900" "2022-08-26T19:52:57+0900" "2022-08-26T14:17:02+0900" ...</span></span>
+<span><span class="co">#&gt;  $ visible            : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ serviceId          : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ manager            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ deleted            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ idNo               : chr [1:10] "wkid" "wkid" "wkid" "wkid" ...</span></span>
+<span><span class="co">#&gt;  $ expose             : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ blindReport        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ maskedUserId       : chr [1:10] "cosm****" "cosm****" "cosm****" "cosm****" ...</span></span>
+<span><span class="co">#&gt;  $ maskedUserName     : chr [1:10] "정의****" "정의****" "정의****" "정의****" ...</span></span>
+<span><span class="co">#&gt;  $ userBlocked        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ blind              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ secret             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ profileUserId      : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ exposeByCountry    : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ validateBanWords   : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ containText        : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ virtual            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ anonymous          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span></code></pre></div>
+</div>
+</div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
