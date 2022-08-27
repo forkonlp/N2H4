@@ -237,7 +237,7 @@ getContentBody <-
     return(body)
   }
 
-#' @importFrom urltools param_get
+#' @importFrom httr parse_url
 getSection <- function(turl) {
-  return(urltools::param_get(turl, "sid")$sid)
+  return(httr::parse_url(turl)$query$sid)
 }

@@ -24,5 +24,4 @@ Imports:
     rvest,
     httr,
     jsonlite,
-    tibble,
-    urltools
+    tibble

@@ -83,9 +83,10 @@ getComment <- function(turl = url,
   return(dat)
 }
 
+#' @importFrom httr parse_url
 get_oid <- function(turl) {
   turl <- gsub("mnews/", "", turl)
-  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
+  tem <- strsplit(httr::parse_url(turl)$path, "[/]")[[1]]
   paste0(tem[2], "%2C", tem[3])
 }
 
