@@ -28,7 +28,7 @@ install.packages("N2H4", repos = "https://forkonlp.r-universe.dev")
 
 ## 사용법
 
-* [기사 가져오기]
-* [댓글 가져오기]
+* [기사 가져오기](https://forkonlp.github.io/N2H4/articles/get-content.html)
+* [댓글 가져오기](https://forkonlp.github.io/N2H4/articles/get-comment.html)
 
 [네이버 뉴스]: https://news.naver.com/
