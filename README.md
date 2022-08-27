@@ -25,9 +25,18 @@ For any enquiries, please write through [Issue](https://github.com/forkonlp/N2H4
 
 [이슈](https://github.com/forkonlp/N2H4/issues)로 남겨주시면 같은 문제를 겪는 분이 해결하는데 도움이 됩니다.    
 Writing through the [Issue](https://github.com/forkonlp/N2H4/issues/new), will help others who is experiencing the same problem.    
-
 [디스코드](https://discord.gg/vbtUxnPXab)에 질문해주셔도 좋습니다.    
 [Discord](https://discord.gg/vbtUxnPXab) is also available for any enquiries.    
+
+## Installation
+
+```r
+# CRAN version
+install.packages("N2H4")
+
+# Dev version
+install.packages("N2H4", repos = "https://forkonlp.r-universe.dev")
+```
 
 ## Contributors
 

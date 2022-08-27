@@ -26,7 +26,7 @@ install.packages("N2H4")
 install.packages("N2H4", repos = "https://forkonlp.r-universe.dev")
 ```
 
-## 다른 주제
+## 사용법
 
 * [기사 가져오기]
 * [댓글 가져오기]
