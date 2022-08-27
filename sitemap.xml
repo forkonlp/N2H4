@@ -28,7 +28,13 @@
     <loc>https://forkonlp.github.io/N2H4/reference/getAllComment.html</loc>
   </url>
   <url>
+    <loc>https://forkonlp.github.io/N2H4/reference/getAllCommentHistory.html</loc>
+  </url>
+  <url>
     <loc>https://forkonlp.github.io/N2H4/reference/getComment.html</loc>
+  </url>
+  <url>
+    <loc>https://forkonlp.github.io/N2H4/reference/getCommentHistory.html</loc>
   </url>
   <url>
     <loc>https://forkonlp.github.io/N2H4/reference/getContent.html</loc>
