@@ -43,6 +43,16 @@ test_that("getCommentHistory", {
   expect_equal(dat$contents, c("test", "test2","test","test"))
 })
 
+test_that("getAllCommentHistory", {
+  skip_on_cran()
+  url  <-
+    "https://n.news.naver.com/mnews/article/001/0009205077?sid=102"
+  test <- getComment(url)
+  dat <- getAllCommentHistory(url, test$commentNo)
+  expect_equal(dat$contents, c("test", "test2","test","test"))
+})
+
+
 test_that("getContent", {
   skip_on_cran()
   url  <-
