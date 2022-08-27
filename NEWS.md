@@ -1,11 +1,17 @@
 # N2H4 0.7.0
 
+* getCommentHistory() 함수를 추가했습니다. 댓글 사용자의 다른 댓글을 수집하는 기능입니다.
+* Add getCommentHistory() and getAllCommentHistory() function.
+
 # N2H4 0.6.5
 
+* CRAN 등록을 위해 DESCRIPTION 파일을 최신화하였습니다.
 * Update date on DESCRIPTION for cran.
 
 # N2H4 0.6.4
 
+* getCommnet() 함수 동작을 수정했습니다.
+* url 주소의 검증을 추가했습니다.
 * Fix getComment() function not work.
 * Add url validate on getComment().
 
