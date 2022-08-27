@@ -5,7 +5,7 @@
 \title{Get Comment}
 \usage{
 getComment(
-  turl = url,
+  turl,
   pageSize = 10,
   page = 1,
   sort = c("favorite", "reply", "old", "new", "best"),
