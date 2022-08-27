@@ -6,7 +6,9 @@
 \alias{N2H4-package}
 \title{N2H4: Handling Methods for Naver News Text Crawling}
 \description{
-Provides some functions to get Korean text sample from news articles in Naver which is popular news portal service <https://news.naver.com/> in Korea.
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
+Provides some functions to get Korean text sample from news articles in Naver which is popular news portal service \url{https://news.naver.com/} in Korea.
 }
 \seealso{
 Useful links:

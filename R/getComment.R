@@ -27,21 +27,17 @@ getComment <- function(turl = url,
   turl <-
     httr::GET(turl,
               httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
-  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
 
-  oid <- tem[3]
-  aid <- tem[4]
+  oid <- get_oid(turl)
   sort <- toupper(sort[1])
   ticket <- "news"
   pool <- "cbox5"
   templateId <- "view_politics"
-  useAltSort <- "&useAltSort=true"
 
   if (grepl("http(|s)://(m.|)sports.", turl)) {
     ticket <- "sports"
     pool <- "cbox2"
     templateId <- "view"
-    useAltSort <- ""
   }
 
   url <-
@@ -55,14 +51,11 @@ getComment <- function(turl = url,
       pool,
       "&lang=ko&country=KR&objectId=news",
       oid,
-      "%2C",
-      aid,
       "&categoryId=&pageSize=",
       pageSize,
       "&indexSize=10&groupId=&page=",
       page,
       "&initialize=true",
-      useAltSort,
       "&replyPageSize=30&moveTo=&sort=",
       sort
     )
@@ -73,14 +66,9 @@ getComment <- function(turl = url,
     httr::add_headers(Referer = turl)
   )
   tt <- httr::content(con, "text")
-
-  tt <- gsub("_callback", "", tt)
-  tt <- gsub("\\(", "[", tt)
-  tt <- gsub("\\)", "]", tt)
-  tt <- gsub(";", "", tt)
-  tt <- gsub("\n", "", tt)
-
+  tt <- rm_callback(tt)
   dat <- jsonlite::fromJSON(tt)
+
   if (type[1] == "list") {
     class(dat) <- "list"
   }
@@ -95,6 +83,20 @@ getComment <- function(turl = url,
   return(dat)
 }
 
+get_oid <- function(turl) {
+  turl <- gsub("mnews/", "", turl)
+  tem <- strsplit(urltools::path(turl), "[/]")[[1]]
+  paste0(tem[2], "%2C", tem[3])
+}
+
+
+rm_callback <- function(text) {
+  text <- gsub("_callback", "", text)
+  text <- gsub("\\(", "[", text)
+  text <- gsub("\\)", "]", text)
+  text <- gsub(";", "", text)
+  text <- gsub("\n", "", text)
+}
 
 
 #' Get All Comment
@@ -106,7 +108,6 @@ getComment <- function(turl = url,
 #' @param turl character. News article on 'Naver' such as <http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>. News articl url that is not on Naver.com domain will generate an error.
 #' @param ... parameter in getComment function.
 #' @return a [tibble][tibble::tibble-package]
-#' @importFrom dplyr bind_rows
 #' @export
 #' @examples
 #' \dontrun{
@@ -117,9 +118,8 @@ getAllComment <- function(turl = url, ...) {
   temp <-
     getComment(
       turl,
-      pageSize = 1,
+      pageSize = 10,
       page = 1,
-      sort = "favorite",
       type = "list"
     )
   numPage <- ceiling(temp$result$pageModel$totalRows / 100)
@@ -133,7 +133,5 @@ getAllComment <- function(turl = url, ...) {
         ...
       ))
 
-  comments <- dplyr::bind_rows(comments)
-
-  return(comments)
+  return(do.call(rbind, comments))
 }
