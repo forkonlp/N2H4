@@ -16,6 +16,7 @@
 getContent <-
   function(turl,
            col = c("url",
+                   "section",
                    "datetime",
                    "edittime",
                    "press",
@@ -238,5 +239,8 @@ getContentBody <-
 
 #' @importFrom httr parse_url
 getSection <- function(turl) {
+  if (is.null(httr::parse_url(turl)$query$sid)) {
+    return(NA)
+  }
   return(httr::parse_url(turl)$query$sid)
 }
