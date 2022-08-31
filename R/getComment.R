@@ -53,7 +53,7 @@ get_real_url <- function(turl) {
     .$url
 }
 
-basic_comment_req <- function(turl, page, pageSize, morePage) {
+basic_comment_req <- function(turl, page, pageSize, nextid) {
   oid <- paste0("news", get_oid(turl))
   ticket <- "news"
   pool <- "cbox5"
@@ -66,7 +66,7 @@ basic_comment_req <- function(turl, page, pageSize, morePage) {
   }
 
   direction <- "next"
-  if (identical(morePage, list())) {
+  if (is.null(nextid)) {
     direction <- NULL
   }
 
@@ -82,13 +82,15 @@ basic_comment_req <- function(turl, page, pageSize, morePage) {
     httr2::req_url_query(lang = "ko") %>%
     httr2::req_url_query(country = "KR") %>%
     httr2::req_url_query(sort = "new") %>%
+    # 지운 댓글 데이터 포함 여부
     httr2::req_url_query(includeAllStatus = "true") %>%
     httr2::req_url_query(objectId = oid) %>%
     httr2::req_url_query(pageSize = pageSize) %>%
-    httr2::req_url_query(page = page) %>%
+    # 이 부분이 있어야 다음 페이지 데이터를 제공함
+    httr2::req_url_query(pageType = "more") %>%
     httr2::req_url_query(moreParam.direction = direction) %>%
-    httr2::req_url_query(moreParam.prev = morePage$prev) %>%
-    httr2::req_url_query(moreParam.next = morePage$`next`) %>%
+    # httr2::req_url_query(moreParam.prev = morePage$prev) %>%
+    httr2::req_url_query(moreParam.next = nextid) %>%
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
     httr2::req_headers(Referer = turl) %>%
     httr2::req_method("GET")
@@ -168,14 +170,14 @@ get_comment <- function(turl,
   count_case %>%
     purrr::when(. == "base" ~ count,
                 ~ 100) %>%
-    basic_comment_req(turl, 1, ., list()) %>%
+    basic_comment_req(turl, 1, ., NULL) %>%
     httr2::req_perform() %>%
     httr2::resp_body_string() %>%
     rm_callback() %>%
     jsonlite::fromJSON() -> dat
 
   total <- dat$result$pageModel$totalRows
-  morePage <- dat$result$morePage
+  nextid <- dat$result$morePage$`next`
 
   if (count_case == "base") {
     return(transform_return(dat, type))
@@ -188,19 +190,20 @@ get_comment <- function(turl,
                 total
               }) -> tarsize
 
-  2:ceiling(tarsize / 100) %>%
-    purrr::map(~ basic_comment_req(turl, .x, 100, morePage)) %>%
-    httr2::multi_req_perform() %>%
-    purrr::map(
-      ~
-        httr2::resp_body_string(.x) %>%
-        rm_callback() %>%
-        jsonlite::fromJSON() %>%
-        transform_return("df")
-    ) %>%
-    append(list(transform_return(dat, "df")), .) %>%
-    do.call(rbind, .) %>%
-    return()
+  res <- list()
+  res[[1]] <- transform_return(dat, "df")
+
+  for (i in 2:ceiling(tarsize / 100)) {
+    basic_comment_req(turl, .x, 100, nextid) %>%
+      httr2::req_perform() %>%
+      httr2::resp_body_string() %>%
+      rm_callback() %>%
+      jsonlite::fromJSON() -> dat
+    res[[i]] <- transform_return(dat, "df")
+    nextid <- dat$result$morePage$`next`
+  }
+
+  return(do.call(rbind, res) )
 }
 
 transform_return <- function(dat, type) {
