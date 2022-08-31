@@ -4,11 +4,9 @@
 #' if you want to get data only comment, enter command like below.
 #' getComment(url)$result$commentList[[1]]
 #'
-#' @param turl like <https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>.
-#' @param pageSize is a number of comments per page. defult is 10. max is 100.
-#' @param page is defult is 1.
-#' @param sort you can select favorite, reply, old, new. favorite is defult.
-#' @param type type return df or list. Defult is df. df return part of data not all.
+#' @param turl like <https://n.news.naver.com/mnews/article/023/0003712918>.
+#' @param count is a number of comments. Defualt is 10. "all" works to get all comments.
+#' @param type type return df or list. Defualt is df. df return part of data not all.
 #' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom httr GET user_agent add_headers content
@@ -18,18 +16,45 @@
 #' \dontrun{
 #'   getComment("https://n.news.naver.com/mnews/article/421/0002484966?sid=100")
 #'}
+#
+# getComment <- function(turl,
+#                        count = 10,
+#                        type = c("df", "list")) {
+#
+#   turl <- get_real_url(turl)
+#
+#   reqs <- build_comment_urls(turl, count)
+#
+#
+#     httr2::req_perform() %>%
+#     httr2::resp_body_string() %>%
+#     rm_callback() %>%
+#     jsonlite::fromJSON() -> dat
+#
+#   if (type[1] == "list") {
+#     class(dat) <- "list"
+#   }
+#   if (type[1] == "df") {
+#     dat <- dat$result$commentList[[1]]
+#     dat$snsList <- NULL
+#     dat <- tibble::as_tibble(dat)
+#     if (length(dat) == 0) {
+#       dat <- tibble::tibble()
+#     }
+#   }
+#   return(dat)
+# }
 
-getComment <- function(turl,
-                       pageSize = 10,
-                       page = 1,
-                       sort = c("favorite", "reply", "old", "new", "best"),
-                       type = c("df", "list")) {
-  turl <-
-    httr::GET(turl,
-              httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>"))$url
+get_real_url <- function(turl) {
+  httr2::request(turl) %>%
+    httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
+    httr2::req_method("HEAD") %>%
+    httr2::req_perform() %>%
+    .$url
+}
 
-  oid <- get_oid(turl)
-  sort <- toupper(sort[1])
+basic_comment_req <- function(turl, page, pageSize, morePage) {
+  oid <- paste0("news", get_oid(turl))
   ticket <- "news"
   pool <- "cbox5"
   templateId <- "view_politics"
@@ -40,54 +65,40 @@ getComment <- function(turl,
     templateId <- "view"
   }
 
-  url <-
-    paste0(
-      "https://apis.naver.com/commentBox/cbox/web_naver_list_jsonp.json?",
-      "ticket=",
-      ticket,
-      "&templateId=",
-      templateId,
-      "&pool=",
-      pool,
-      "&lang=ko&country=KR&objectId=news",
-      oid,
-      "&categoryId=&pageSize=",
-      pageSize,
-      "&indexSize=10&groupId=&page=",
-      page,
-      "&initialize=true",
-      "&replyPageSize=30&moveTo=&sort=",
-      sort
-    )
-
-  con <- httr::GET(
-    url,
-    httr::user_agent("N2H4 using r by chanyub.park mrchypark@gmail.com"),
-    httr::add_headers(Referer = turl)
-  )
-  tt <- httr::content(con, "text")
-  tt <- rm_callback(tt)
-  dat <- jsonlite::fromJSON(tt)
-
-  if (type[1] == "list") {
-    class(dat) <- "list"
+  direction <- "next"
+  if (identical(morePage, list())) {
+    direction <- NULL
   }
-  if (type[1] == "df") {
-    dat <- dat$result$commentList[[1]]
-    dat$snsList <- NULL
-    dat <- tibble::as_tibble(dat)
-    if (length(dat) == 0) {
-      dat <- tibble::tibble()
-    }
-  }
-  return(dat)
+
+  # moreParam.direction=next&moreParam.prev=05u1vh5j8y1ud&moreParam.next=05u0xbppvtqz9
+
+  httr2::request("https://apis.naver.com/") %>%
+    httr2::req_url_path_append("commentBox") %>%
+    httr2::req_url_path_append("cbox") %>%
+    httr2::req_url_path_append("web_naver_list_jsonp.json") %>%
+    httr2::req_url_query(ticket = ticket) %>%
+    httr2::req_url_query(templateId = templateId) %>%
+    httr2::req_url_query(pool = pool) %>%
+    httr2::req_url_query(lang = "ko") %>%
+    httr2::req_url_query(country = "KR") %>%
+    httr2::req_url_query(sort = "new") %>%
+    httr2::req_url_query(includeAllStatus = "true") %>%
+    httr2::req_url_query(objectId = oid) %>%
+    httr2::req_url_query(pageSize = pageSize) %>%
+    httr2::req_url_query(page = page) %>%
+    httr2::req_url_query(moreParam.direction = direction) %>%
+    httr2::req_url_query(moreParam.prev = morePage$prev) %>%
+    httr2::req_url_query(moreParam.next = morePage$`next`) %>%
+    httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
+    httr2::req_headers(Referer = turl) %>%
+    httr2::req_method("GET")
 }
 
 #' @importFrom httr parse_url
 get_oid <- function(turl) {
   turl <- gsub("mnews/", "", turl)
   tem <- strsplit(httr::parse_url(turl)$path, "[/]")[[1]]
-  paste0(tem[2], "%2C", tem[3])
+  paste0(tem[2], ",", tem[3])
 }
 
 rm_callback <- function(text) {
@@ -114,24 +125,93 @@ rm_callback <- function(text) {
 #'   getAllComment("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   }
 
-getAllComment <- function(turl = url, ...) {
+getAllComment <- function(turl, ...) {
   temp <-
-    getComment(
-      turl,
-      pageSize = 10,
-      page = 1,
-      type = "list"
-    )
+    getComment(turl,
+               pageSize = 10,
+               page = 1,
+               type = "list")
   numPage <- ceiling(temp$result$pageModel$totalRows / 100)
   comments <-
-    lapply(1:numPage, function(x)
+    lapply(1:numPage, function(x) {
       getComment(
         turl = turl,
         pageSize = 100,
         page = x,
-        type = "df",
-        ...
-      ))
+        type = "df"
+      )
+    })
 
   return(do.call(rbind, comments))
+}
+
+
+
+get_comment <- function(turl,
+                        count = 10,
+                        type = c("df", "list")) {
+  type <- match.arg(type)
+  count %>%
+    purrr::when(. == "all" ~ "all",
+                !is.numeric(.) ~ "error",
+                . > 100 ~ "over",
+                . <= 100 ~ "base",
+                ~ "error") -> count_case
+
+  if (count_case == "error") {
+    stop(paste0("count param can accept number or 'all'. your input: ", count))
+  }
+
+  # url 동작용 버전 확인
+  turl <- get_real_url(turl)
+  # 첫 시도용 req 생성
+  count_case %>%
+    purrr::when(. == "base" ~ count,
+                ~ 100) %>%
+    basic_comment_req(turl, 1, ., list()) %>%
+    httr2::req_perform() %>%
+    httr2::resp_body_string() %>%
+    rm_callback() %>%
+    jsonlite::fromJSON() -> dat
+
+  total <- dat$result$pageModel$totalRows
+  morePage <- dat$result$morePage
+
+  if (count_case == "base") {
+    return(transform_return(dat, type))
+  }
+
+  purrr::when(count_case == "all" ~ total,
+              total >= count ~ count,
+              total < count ~ {
+                warning("Request more than the actual total count, and use actual total count.")
+                total
+              }) -> tarsize
+
+  2:ceiling(tarsize / 100) %>%
+    purrr::map(~ basic_comment_req(turl, .x, 100, morePage)) %>%
+    httr2::multi_req_perform() %>%
+    purrr::map(
+      ~
+        httr2::resp_body_string(.x) %>%
+        rm_callback() %>%
+        jsonlite::fromJSON() %>%
+        transform_return("df")
+    ) %>%
+    append(list(transform_return(dat, "df")), .) %>%
+    do.call(rbind, .) %>%
+    return()
+}
+
+transform_return <- function(dat, type) {
+  class(dat) <- "list"
+  if (type == "df") {
+    dat <- dat$result$commentList[[1]]
+    dat$snsList <- NULL
+    dat <- tibble::as_tibble(dat)
+    if (length(dat) == 0) {
+      dat <- tibble::tibble()
+    }
+  }
+  return(dat)
 }

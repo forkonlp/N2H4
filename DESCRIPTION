@@ -22,6 +22,8 @@ Suggests:
     testthat
 Imports: 
     rvest,
-    httr,
     jsonlite,
-    tibble
+    tibble,
+    httr2,
+    magrittr,
+    purrr
