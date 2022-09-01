@@ -9,9 +9,11 @@ getCategory <- function(fresh = FALSE) {
   mcate <- getMainCategory()
   cate <- list()
   for (i in seq_along(mcate$sid1)) {
-    cate[[i]] <- cbind(cate_name = mcate$cate_name[i],
-                       sid1 = mcate$sid1[i],
-                       getSubCategory(sid1 = mcate$sid1[i]))
+    cate[[i]] <- cbind(
+      cate_name = mcate$cate_name[i],
+      sid1 = mcate$sid1[i],
+      getSubCategory(sid1 = mcate$sid1[i])
+    )
   }
   return(do.call(rbind, cate))
 }
@@ -67,7 +69,6 @@ getMainCategory <- function() {
 #' Get naver news sub category names and urls recently.
 #'
 #' @param sid1 Main category id in naver news url. Only 1 value is passible. Default is 100 means Politics.
-#' @param onlySid2 sid2 is sub category id. some sub categories don't have id. If TRUE, functions return data.frame(chr:sub_cate_naem, char:sid2). Defaults is TRUE.
 #' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
@@ -77,8 +78,7 @@ getMainCategory <- function() {
 #'   getSubCategory(100)
 #'   getSubCategory(100, FALSE)
 #'   }
-getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
-
+getSubCategory <- function(sid1 = 100) {
   httr2::request("http://news.naver.com") %>%
     httr2::req_url_path("main/main.naver") %>%
     httr2::req_url_query(mode = "LSD") %>%
@@ -98,22 +98,14 @@ getSubCategory <- function(sid1 = 100, onlySid2 = TRUE) {
   links <- paste0("http://news.naver.com", links)
 
   urls <-
-    tibble::tibble(
-      sub_cate_name = titles,
-      url = links
-    )
-  if (onlySid2 == FALSE)  {
-    return(urls)
-  }
-  else{
-    urls <- urls[grep("sid2=", urls$url), ]
-    sid2 <- sapply(strsplit(urls$url, "="), \(x) {x[5]})
-    urls <-
-      tibble::tibble(
-        sub_cate_name = urls$sub_cate_name,
-        sid2 = sid2
-      )
-    return(urls)
-  }
-
+    tibble::tibble(sub_cate_name = titles,
+                   url = links)
+  urls <- urls[grep("sid2=", urls$url),]
+  sid2 <- sapply(strsplit(urls$url, "="), \(x) {
+    x[5]
+  })
+  urls <-
+    tibble::tibble(sub_cate_name = urls$sub_cate_name,
+                   sid2 = sid2)
+  return(urls)
 }
