@@ -4,13 +4,7 @@
 \alias{getCommentHistory}
 \title{Get Comment History}
 \usage{
-getCommentHistory(
-  turl,
-  commentNo,
-  pageSize = 10,
-  page = 1,
-  type = c("df", "list")
-)
+getCommentHistory(turl, commentNo, count = 10, type = c("df", "list"))
 }
 \arguments{
 \item{turl}{character. News article on 'Naver' such as
@@ -19,9 +13,7 @@ News articl url that is not on Naver.com domain will generate an error.}
 
 \item{commentNo}{Parent Comment No.}
 
-\item{pageSize}{is a number of comments per page. defult is 10. max is 100.}
-
-\item{page}{is defult is 1.}
+\item{count}{is a number of comments. Defualt is 10. "all" works to get all comments.}
 
 \item{type}{type return df or list. Defult is df. df return part of data not all.}
 }
@@ -33,6 +25,8 @@ Get naver news comments on user histories.
 }
 \examples{
 \dontrun{
-  getComment("https://n.news.naver.com/mnews/article/421/0002484966?sid=100")
+  cno <- getComment("https://n.news.naver.com/mnews/article/421/0002484966?sid=100")
+  getCommentHistory("https://n.news.naver.com/mnews/article/421/0002484966?sid=100",
+    cno$commnetNo[1])
 }
 }

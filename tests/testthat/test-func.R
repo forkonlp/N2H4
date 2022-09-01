@@ -48,7 +48,7 @@ test_that("getAllCommentHistory", {
   url  <-
     "https://n.news.naver.com/mnews/article/001/0009205077?sid=102"
   test <- getComment(url)
-  dat <- getAllCommentHistory(url, test$commentNo)
+  dat <- expect_warning(getAllCommentHistory(url, test$commentNo))
   expect_equal(dat$contents, c("test", "test2","test","test"))
 })
 

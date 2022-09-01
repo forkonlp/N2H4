@@ -7,19 +7,21 @@
 #' @return a [tibble][tibble::tibble-package]
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
-#' @importFrom httr GET content user_agent
+#' @importFrom httr2 request req_user_agent req_method req_perform resp_body_html
 #' @examples
 #'  \dontrun{
 #'   getUrlList("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
 #'   }
 
 getUrlList <-
-  function(turl = url,
+  function(turl,
            col = c("titles", "links")) {
-    uat <-
-      httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
-    src <- httr::GET(turl, uat)
-    hobj <- httr::content(src)
+
+  httr2::request(turl) %>%
+    httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
+    httr2::req_method("GET") %>%
+    httr2::req_perform() %>%
+    httr2::resp_body_html() -> hobj
 
     titles <- rvest::html_nodes(hobj, "dt a")
     titles <- rvest::html_text(titles)
@@ -47,6 +49,5 @@ getUrlList <-
     }
 
     return(news_lists[, col])
-
   }
 
