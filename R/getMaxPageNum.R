@@ -5,29 +5,36 @@
 #' @param max is also interval to try max page number is numeric. Default is 100.
 #' @return Get numeric
 #' @export
-#' @importFrom rvest read_html html_node html_text
-#' @importFrom httr GET content
+#' @importFrom rvest html_node html_text
+#' @importFrom httr2 request req_url_query req_method req_perform resp_body_html
 #' @examples
 #' \dontrun{
 #'   getMaxPageNum("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
 #'   }
 
-getMaxPageNum <- function(turl = url, max = 100) {
-  ifmaxUrl <- paste0(turl, "&page=", max)
-  hobj <- rvest::read_html(httr::content(httr::GET(ifmaxUrl), "text"))
+getMaxPageNum <- function(turl, max = 100) {
+  httr2::request(turl) %>%
+    httr2::req_url_query(page = max) %>%
+    httr2::req_method("GET") %>%
+    httr2::req_perform() %>%
+    httr2::resp_body_html() -> hobj
+
   noContent <-  rvest::html_node(hobj, "div.no_content")
   if (inherits(noContent, "xml_node")) {
     return("no result")
   }
   ifmax <- rvest::html_node(hobj, "a.next")
-  while (class(ifmax) == "xml_node") {
+  while (inherits(ifmax, "xml_node")) {
     max <- max + max
-    ifmaxUrl <- paste0(turl, "&page=", max)
-    hobj <- rvest::read_html(ifmaxUrl)
+    httr2::request(turl) %>%
+      httr2::req_url_query(page = max) %>%
+      httr2::req_method("GET") %>%
+      httr2::req_perform() %>%
+      httr2::resp_body_html() -> hobj
     ifmax <- rvest::html_node(hobj, "a.next")
   }
-  maxPageNum <- html_node(hobj, "div.paging strong")
-  maxPageNum <- html_text(maxPageNum)
-  maxPageNum <- as.numeric(maxPageNum)
-  return(maxPageNum)
+  rvest::html_node(hobj, "div.paging strong") %>%
+    rvest::html_text() %>%
+    as.numeric() %>%
+    return()
 }

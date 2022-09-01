@@ -4,30 +4,20 @@
 \alias{getComment}
 \title{Get Comment}
 \usage{
-getComment(
-  turl,
-  pageSize = 10,
-  page = 1,
-  sort = c("favorite", "reply", "old", "new", "best"),
-  type = c("df", "list")
-)
+getComment(turl, count = 10, type = c("df", "list"))
 }
 \arguments{
-\item{turl}{like <https://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>.}
+\item{turl}{like <https://n.news.naver.com/mnews/article/023/0003712918>.}
 
-\item{pageSize}{is a number of comments per page. defult is 10. max is 100.}
+\item{count}{is a number of comments. Defualt is 10. "all" works to get all comments.}
 
-\item{page}{is defult is 1.}
-
-\item{sort}{you can select favorite, reply, old, new. favorite is defult.}
-
-\item{type}{type return df or list. Defult is df. df return part of data not all.}
+\item{type}{type return df or list. Defualt is df. df return part of data not all.}
 }
 \value{
 a [tibble][tibble::tibble-package]
 }
 \description{
-Get naver news comments
+Get naver news comments.
 if you want to get data only comment, enter command like below.
 getComment(url)$result$commentList[[1]]
 }

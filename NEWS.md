@@ -1,3 +1,8 @@
+# N2H4 0.7.2
+
+* getAllCommentHistory()함수와 getAllComment()함수의 다음 페이지 동작을 수정하였습니다.
+* Fix next page fetch with getAllComment(), getAllCommentHistory()
+
 # N2H4 0.7.1
 
 * urltools 패키지 의존성을 제거하였습니다.

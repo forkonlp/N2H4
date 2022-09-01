@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling Methods for Naver News Text Crawling
-Version: 0.7.1
+Version: 0.7.2
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),
@@ -18,10 +18,13 @@ Depends:
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    rmarkdown,
-    testthat
+    testthat,
+    devtools,
+    usethis
 Imports: 
     rvest,
-    httr,
     jsonlite,
-    tibble
+    tibble,
+    purrr,
+    httr2,
+    magrittr

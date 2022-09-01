@@ -4,11 +4,11 @@ test_that("help functions", {
   url  <-
     "https://n.news.naver.com/mnews/article/001/0009205077?sid=102"
   oid <- get_oid(url)
-  expect_equal(oid, "001%2C0009205077")
+  expect_equal(oid, "001,0009205077")
   url  <-
     "https://n.news.naver.com/article/028/0002603835"
   oid <- get_oid(url)
-  expect_equal(oid, "028%2C0002603835")
+  expect_equal(oid, "028,0002603835")
 })
 
 test_that("getComment", {
@@ -29,7 +29,7 @@ test_that("getAllComment", {
   skip_on_cran()
   url  <-
     "https://n.news.naver.com/mnews/article/015/0002303155?sid=100"
-  test <- getAllComment(url)
+  test <- expect_warning(getAllComment(url))
   expect_equal(test$contents, c("test", "test2", "test"))
 })
 
@@ -38,7 +38,7 @@ test_that("getCommentHistory", {
   skip_on_cran()
   url  <-
     "https://n.news.naver.com/mnews/article/001/0009205077?sid=102"
-  test <- getComment(url)
+  test <- getComment(url, type = "df")
   dat <- getCommentHistory(url, test$commentNo)
   expect_equal(dat$contents, c("test", "test2","test","test"))
 })
@@ -48,7 +48,7 @@ test_that("getAllCommentHistory", {
   url  <-
     "https://n.news.naver.com/mnews/article/001/0009205077?sid=102"
   test <- getComment(url)
-  dat <- getAllCommentHistory(url, test$commentNo)
+  dat <- expect_warning(getAllCommentHistory(url, test$commentNo))
   expect_equal(dat$contents, c("test", "test2","test","test"))
 })
 

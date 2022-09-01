@@ -4,7 +4,7 @@
 \alias{getMaxPageNum}
 \title{Get Max Page Number}
 \usage{
-getMaxPageNum(turl = url, max = 100)
+getMaxPageNum(turl, max = 100)
 }
 \arguments{
 \item{turl}{is target url include sid1, sid2, date like below.

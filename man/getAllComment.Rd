@@ -4,12 +4,12 @@
 \alias{getAllComment}
 \title{Get All Comment}
 \usage{
-getAllComment(turl = url, ...)
+getAllComment(turl)
 }
 \arguments{
-\item{turl}{character. News article on 'Naver' such as <http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=100&oid=056&aid=0010335895>. News articl url that is not on Naver.com domain will generate an error.}
-
-\item{...}{parameter in getComment function.}
+\item{turl}{character. News article on 'Naver' such as
+<https://n.news.naver.com/mnews/article/023/0003712918>.
+News article url that is not on Naver.com domain will generate an error.}
 }
 \value{
 a [tibble][tibble::tibble-package]
@@ -18,10 +18,11 @@ a [tibble][tibble::tibble-package]
 Get all comments from the provided news article url on naver
 }
 \details{
-Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.
+Works just like getComment, but this function executed in a fashion
+  where it finds and extracts all comments from the given url.
 }
 \examples{
 \dontrun{
-  getAllComment("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
+  getAllComment("https://n.news.naver.com/mnews/article/214/0001195110")
   }
 }

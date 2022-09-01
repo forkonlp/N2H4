@@ -4,7 +4,7 @@
 \alias{getUrlList}
 \title{Get Url List By Category}
 \usage{
-getUrlList(turl = url, col = c("titles", "links"))
+getUrlList(turl, col = c("titles", "links"))
 }
 \arguments{
 \item{turl}{is target url naver news.}

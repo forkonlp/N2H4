@@ -6,7 +6,7 @@
 #' @param col is what you want to get from news. Defualt is all.
 #' @return a [tibble][tibble::tibble-package]
 #' @export
-#' @importFrom httr GET user_agent content
+#' @importFrom httr2 request req_user_agent req_method req_perform resp_body_html
 #' @importFrom rvest html_nodes html_text html_attr
 #' @examples
 #' \dontrun{
@@ -23,10 +23,13 @@ getContent <-
                    "title",
                    "body",
                    "value")) {
-    uat <-
-      httr::user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>")
-    root <- httr::GET(turl, uat)
-    html_obj <- httr::content(root)
+
+    httr2::request(turl) %>%
+      httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
+      httr2::req_method("GET") %>%
+      httr2::req_perform() -> root
+
+    html_obj <- httr2::resp_body_html(root)
     urlcheck <- root$url
     value <- T
     if (identical(grep("^https?://n.news.naver.com",
@@ -237,10 +240,10 @@ getContentBody <-
     return(body)
   }
 
-#' @importFrom httr parse_url
+#' @importFrom httr2 url_parse
 getSection <- function(turl) {
-  if (is.null(httr::parse_url(turl)$query$sid)) {
+  if (is.null(httr2::url_parse(turl)$query$sid)) {
     return(NA)
   }
-  return(httr::parse_url(turl)$query$sid)
+  return(httr2::url_parse(turl)$query$sid)
 }
