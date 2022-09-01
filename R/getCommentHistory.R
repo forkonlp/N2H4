@@ -102,32 +102,4 @@ get_comment_history <- function(turl,
   return(do.call(rbind, res))
 }
 
-req_build_comment_history <-
-  function(turl, commentNo, pageSize, nextid) {
-    direction <- "next"
-    if (is.null(nextid)) {
-      direction <- NULL
-    }
 
-    httr2::request("https://apis.naver.com/") %>%
-      httr2::req_url_path_append("commentBox") %>%
-      httr2::req_url_path_append("cbox") %>%
-      httr2::req_url_path_append("web_naver_list_per_user_jsonp.json") %>%
-      httr2::req_url_query(ticket = "news") %>%
-      httr2::req_url_query(pool = "cbox5") %>%
-      httr2::req_url_query(lang = "ko") %>%
-      httr2::req_url_query(country = "KR") %>%
-      httr2::req_url_query(sort = "new") %>%
-      # 지운 댓글 데이터 포함 여부
-      httr2::req_url_query(includeAllStatus = "true") %>%
-      httr2::req_url_query(objectId = get_oid(turl)) %>%
-      httr2::req_url_query(pageSize = pageSize) %>%
-      httr2::req_url_query(commentNo = commentNo) %>%
-      # 이 부분이 있어야 다음 페이지 데이터를 제공함
-      httr2::req_url_query(pageType = "more") %>%
-      httr2::req_url_query(moreParam.direction = direction) %>%
-      httr2::req_url_query(moreParam.next = nextid) %>%
-      httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
-      httr2::req_headers(Referer = turl) %>%
-      httr2::req_method("GET")
-  }

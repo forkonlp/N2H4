@@ -20,6 +20,7 @@ LazyData: true
 Suggests: 
     testthat,
     devtools,
+    covr,
     usethis
 Imports: 
     rvest,
@@ -27,4 +28,5 @@ Imports:
     tibble,
     purrr,
     httr2,
-    magrittr
+    magrittr,
+    rappdirs

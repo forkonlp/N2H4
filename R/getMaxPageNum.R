@@ -16,6 +16,7 @@ getMaxPageNum <- function(turl, max = 100) {
   httr2::request(turl) %>%
     httr2::req_url_query(page = max) %>%
     httr2::req_method("GET") %>%
+    httr2::req_cache(cache_path()) %>%
     httr2::req_perform() %>%
     httr2::resp_body_html() -> hobj
 
@@ -29,6 +30,7 @@ getMaxPageNum <- function(turl, max = 100) {
     httr2::request(turl) %>%
       httr2::req_url_query(page = max) %>%
       httr2::req_method("GET") %>%
+      httr2::req_cache(cache_path()) %>%
       httr2::req_perform() %>%
       httr2::resp_body_html() -> hobj
     ifmax <- rvest::html_node(hobj, "a.next")
