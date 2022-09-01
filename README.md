@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg)](#contributors)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing) 
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/mit-license.php) 
-[![Coverage status](https://codecov.io/gh/forkonlp/N2H4/branch/master/graph/badge.svg)](https://codecov.io/github/forkonlp/N2H4?branch=master) 
+[![Coverage status](https://codecov.io/gh/forkonlp/N2H4/branch/main/graph/badge.svg)](https://codecov.io/github/forkonlp/N2H4?branch=main) 
 [![](https://cranlogs.r-pkg.org/badges/N2H4)](https://cran.r-project.org/package=N2H4)
 [![runiverse-name](https://forkonlp.r-universe.dev/badges/:name)](https://forkonlp.r-universe.dev/)
 [![runiverse-package](https://forkonlp.r-universe.dev/badges/N2H4)](https://forkonlp.r-universe.dev/ui#packages)
