@@ -73,6 +73,16 @@ test_that("passSportsnews", {
 
 })
 
+test_that("getCategory", {
+  skip_on_cran()
+  test <- getCategory()
+  expect_equal(test, news_category)
+
+  test <- getCategory(fresh = TRUE)
+  expect_equal(test, news_category)
+
+})
+
 test_that("getMainCategory", {
   skip_on_cran()
   test <- getMainCategory()
