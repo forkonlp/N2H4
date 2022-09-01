@@ -53,9 +53,10 @@ getMainCategory <- function() {
   links <-
     links[grep("\\/main\\/main.naver\\?mode=LSD&mid=shm&sid1=1", links)]
 
-  sid1 <- sapply(strsplit(links, "="), \(x) {
-    x[4]
-  })
+  sid1 <- sapply(strsplit(links, "="),
+                 function(x) {
+                   x[4]
+                 })
 
   urls <-
     tibble::tibble(cate_name = titles,
@@ -101,7 +102,7 @@ getSubCategory <- function(sid1 = 100) {
     tibble::tibble(sub_cate_name = titles,
                    url = links)
   urls <- urls[grep("sid2=", urls$url),]
-  sid2 <- sapply(strsplit(urls$url, "="), \(x) {
+  sid2 <- sapply(strsplit(urls$url, "="), function(x) {
     x[5]
   })
   urls <-
