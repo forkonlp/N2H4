@@ -91,6 +91,14 @@ test_that("getMaxPageNum", {
     "https://news.naver.com/main/list.naver?sid2=254&sid1=102&mid=shm&mode=LS2D&date=20170427"
   test <- getMaxPageNum(url)
   expect_equal(test, 1)
+
+  url <- "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid2=260&sid1=101&date=20220901"
+  test <- getMaxPageNum(url)
+  expect_equal(test, 23)
+
+  url <- "https://news.naver.com/main/list.naver?mode=LS2D&sid2=265&sid1=100&mid=shm&date=20220829"
+  test <- getMaxPageNum(url)
+  expect_equal(test, 108)
 })
 
 test_that("getUrlList", {
