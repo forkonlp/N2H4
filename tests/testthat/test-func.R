@@ -79,12 +79,6 @@ test_that("getMainCategory", {
   expect_equal(test$sid1, c("100", "101", "102", "103", "105", "104"))
 })
 
-test_that("getSubCategory", {
-  skip_on_cran()
-  test <- getSubCategory()
-  expect_equal(test$sid2[1], "264")
-})
-
 test_that("getMaxPageNum", {
   skip_on_cran()
   url  <-
