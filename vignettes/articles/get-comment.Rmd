@@ -23,7 +23,6 @@ library(N2H4)
 
 ```{r}
 dat <- getComment("https://n.news.naver.com/article/374/0000300375")
-dat
 str(dat)
 ```
 ### 데이터 설명
