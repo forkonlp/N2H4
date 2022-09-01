@@ -64,7 +64,7 @@ dat <- getComment("https://n.news.naver.com/mnews/article/088/0000772480?sid=100
 nrow(dat)
 dat <- getComment(
   "https://n.news.naver.com/mnews/article/088/0000772480?sid=100",
-  pageSize = 100
+  count = 100
   )
 nrow(dat)
 dat <- getAllComment("https://n.news.naver.com/mnews/article/088/0000772480?sid=100")
