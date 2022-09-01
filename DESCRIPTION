@@ -1,7 +1,7 @@
 Package: N2H4
 Type: Package
 Title: Handling Methods for Naver News Text Crawling
-Version: 0.7.2
+Version: 0.8.0
 Authors@R: person(given = "Chanyub",
              family = "Park",
              role = c("aut","cre"),

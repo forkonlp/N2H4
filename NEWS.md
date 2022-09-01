@@ -1,3 +1,5 @@
+# N2H4 0.8.0
+
 # N2H4 0.7.2
 
 * getAllCommentHistory()함수와 getAllComment()함수의 다음 페이지 동작을 수정하였습니다.
