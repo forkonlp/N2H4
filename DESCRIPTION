@@ -18,12 +18,15 @@ Depends:
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    rmarkdown,
-    testthat
+    testthat,
+    devtools,
+    usethis
 Imports: 
     rvest,
     jsonlite,
     tibble,
     httr2,
     magrittr,
-    purrr
+    purrr,
+    lifecycle,
+    httr
