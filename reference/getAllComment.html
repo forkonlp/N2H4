@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">N2H4</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,17 +87,15 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getAllComment</span><span class="op">(</span>turl <span class="op">=</span> <span class="va">url</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getAllComment</span><span class="op">(</span><span class="va">turl</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>turl</dt>
-<dd><p>character. News article on 'Naver' such as &lt;http://news.naver.com/main/read.nhn?mode=LSD&amp;mid=shm&amp;sid1=100&amp;oid=056&amp;aid=0010335895&gt;. News articl url that is not on Naver.com domain will generate an error.</p></dd>
-
-
-<dt>...</dt>
-<dd><p>parameter in getComment function.</p></dd>
+<dd><p>character. News article on 'Naver' such as
+&lt;https://n.news.naver.com/mnews/article/023/0003712918&gt;.
+News article url that is not on Naver.com domain will generate an error.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -108,13 +106,14 @@
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p>Works just like getComment, but this function executed in a fashion where it finds and extracts all comments from the given url.</p>
+    <p>Works just like getComment, but this function executed in a fashion
+  where it finds and extracts all comments from the given url.</p>
     </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
-<span class="r-in"><span>  <span class="fu">getAllComment</span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/214/0001195110?sid=103"</span><span class="op">)</span></span></span>
+<span class="r-in"><span>  <span class="fu">getAllComment</span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/214/0001195110"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span></span></span>
 </code></pre></div>
     </div>

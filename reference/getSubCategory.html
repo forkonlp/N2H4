@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">N2H4</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,7 +77,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Get News Sub Categories</h1>
-      <small class="dont-index">Source: <a href="https://github.com/forkonlp/N2H4/blob/HEAD/R/getSubCategory.R" class="external-link"><code>R/getSubCategory.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/forkonlp/N2H4/blob/HEAD/R/getCategory.R" class="external-link"><code>R/getCategory.R</code></a></small>
       <div class="d-none name"><code>getSubCategory.Rd</code></div>
     </div>
 
@@ -87,17 +87,13 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getSubCategory</span><span class="op">(</span>sid1 <span class="op">=</span> <span class="fl">100</span>, onlySid2 <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">getSubCategory</span><span class="op">(</span>sid1 <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>sid1</dt>
 <dd><p>Main category id in naver news url. Only 1 value is passible. Default is 100 means Politics.</p></dd>
-
-
-<dt>onlySid2</dt>
-<dd><p>sid2 is sub category id. some sub categories don't have id. If TRUE, functions return data.frame(chr:sub_cate_naem, char:sid2). Defaults is TRUE.</p></dd>
 
 </dl></div>
     <div class="section level2">
