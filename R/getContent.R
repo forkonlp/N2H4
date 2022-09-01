@@ -16,6 +16,7 @@
 getContent <-
   function(turl,
            col = c("url",
+                   "original_url",
                    "section",
                    "datetime",
                    "edittime",
@@ -36,6 +37,7 @@ getContent <-
     if (identical(grep("^https?://n.news.naver.com",
                        urlcheck),
                   integer(0))) {
+      original_url <- "page is not news section."
       title <- "page is not news section."
       datetime <- "page is not news section."
       edittime <- "page is not news section."
@@ -52,6 +54,7 @@ getContent <-
         chk <- "not error"
       }
       if ("error_msg 404" == chk & value) {
+        original_url <- "page is moved."
         title <- "page is moved."
         datetime <- "page is moved."
         edittime <- "page is moved."
@@ -62,6 +65,7 @@ getContent <-
       }
     }
     if (value) {
+      original_url <- getOriginalUrl(html_obj)
       title <- getContentTitle(html_obj)
       datetime <- getContentDatetime(html_obj)
       edittime <- getContentEditDatetime(html_obj)
@@ -75,6 +79,7 @@ getContent <-
     }
     newsInfo <- tibble::tibble(
       url = turl,
+      original_url = original_url,
       datetime = datetime,
       edittime = edittime,
       press = press,
@@ -86,160 +91,79 @@ getContent <-
     return(newsInfo[, col])
   }
 
-#' Get Content Title
-#'
-#' Get naver news Title from link.
-#'
-#' @param html_obj "xml_document" "xml_node" using read_html function.
-#' @param title_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
-#' @param title_attr if you want to get attribution text, please write down here.
-#' @return Get character title.
-#' @export
-#' @importFrom rvest html_nodes html_attr html_text
-#' @examples
-#' \dontrun{
-#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
-#'   getContentTitle(hobj)
-#'   }
-
 getContentTitle <-
   function(html_obj,
            title_node_info = "h2.media_end_head_headline",
            title_attr = "") {
+    node <- rvest::html_nodes(html_obj, title_node_info)
+    title <- rvest::html_text(node)
     if (title_attr != "") {
-      title <- rvest::html_nodes(html_obj, title_node_info)
-      title <- rvest::html_attr(title, title_attr)
-    } else{
-      title <- rvest::html_nodes(html_obj, title_node_info)
-      title <- rvest::html_text(title)
+      title <- rvest::html_attr(node, title_attr)
     }
     return(title)
   }
 
 
-#' Get Content datetime
-#'
-#' Get naver news published datetime from link.
-#'
-#' @param html_obj "xml_document" "xml_node" using read_html function.
-#' @param datetime_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
-#' @param datetime_attr if you want to get attribution text, please write down here.
-#' @return Get POSIXlt type datetime.
-#' @export
-#' @importFrom rvest html_nodes html_attr html_text
-#' @examples
-#' \dontrun{
-#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
-#'   getContentDatetime(hobj)
-#'   }
-
 getContentDatetime <-
   function(html_obj,
            datetime_node_info = "span._ARTICLE_DATE_TIME",
            datetime_attr = "data-date-time") {
+    node <- rvest::html_nodes(html_obj, datetime_node_info)
+    datetime <- rvest::html_text(node)
     if (datetime_attr != "") {
-      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
-      datetime <- rvest::html_attr(datetime, datetime_attr)
-    } else{
-      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
-      datetime <- rvest::html_text(datetime)
+      datetime <- rvest::html_attr(node, datetime_attr)
     }
     as.POSIXct(datetime, tz = "Asia/Seoul")
   }
-
-#' Get Content Edit datetime
-#'
-#' Get naver news edited datetime from link.
-#'
-#' @param html_obj "xml_document" "xml_node" using read_html function.
-#' @param datetime_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
-#' @param datetime_attr if you want to get attribution text, please write down here.
-#' @return Get POSIXlt type datetime.
-#' @export
-#' @importFrom rvest html_nodes html_attr html_text
-#' @examples
-#' \dontrun{
-#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
-#'   getContentEditDatetime(hobj)
-#'   }
 
 getContentEditDatetime <-
   function(html_obj,
            datetime_node_info = "span._ARTICLE_MODIFY_DATE_TIME",
            datetime_attr = "data-modify-date-time") {
+    node <- rvest::html_nodes(html_obj, datetime_node_info)
+    datetime <- rvest::html_text(node)
     if (datetime_attr != "") {
-      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
-      datetime <- rvest::html_attr(datetime, datetime_attr)
-    } else{
-      datetime <- rvest::html_nodes(html_obj, datetime_node_info)
-      datetime <- rvest::html_text(datetime)
+      datetime <- rvest::html_attr(node, datetime_attr)
     }
     as.POSIXct(datetime, tz = "Asia/Seoul")
   }
-
-#' Get Content Press name.
-#'
-#' Get naver news press name from link.
-#'
-#' @param html_obj "xml_document" "xml_node" using read_html function.
-#' @param press_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
-#' @param press_attr if you want to get attribution text, please write down here. Defalt is "title".
-#' @return Get character press.
-#' @export
-#' @importFrom rvest html_nodes html_attr html_text
-#' @examples
-#' \dontrun{
-#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
-#'   getContentPress(hobj)
-#'   }
 
 getContentPress <-
   function(html_obj,
            press_node_info = "div.media_end_head_top a img",
            press_attr = "title") {
+    node <- rvest::html_nodes(html_obj, press_node_info)
+    press <- rvest::html_text(node)
     if (press_attr != "") {
-      press <- rvest::html_nodes(html_obj, press_node_info)
-      press <- rvest::html_attr(press, press_attr)
-    } else{
-      press <- rvest::html_nodes(html_obj, press_node_info)
-      press <- rvest::html_text(press)
+      press <- rvest::html_attr(node, press_attr)
     }
     return(press[1])
   }
-
-#' Get Content body name.
-#'
-#' Get naver news body from link.
-#'
-#' @param html_obj "xml_document" "xml_node" using read_html function.
-#' @param body_node_info Information about node names like tag with class or id. Default is "div.article_info h3" for naver news title.
-#' @param body_attr if you want to get attribution text, please write down here.
-#' @return Get character body content.
-#' @export
-#' @importFrom rvest html_nodes html_attr html_text
-#' @examples
-#' \dontrun{
-#'   hobj <- rvest::read_html("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
-#'   getContentBody(hobj)
-#'   }
 
 getContentBody <-
   function(html_obj,
            body_node_info = "div#dic_area",
            body_attr = "") {
+    node <- rvest::html_nodes(html_obj, body_node_info)
+    body <- rvest::html_text(node)
     if (body_attr != "") {
-      body <- rvest::html_nodes(html_obj, body_node_info)
-      body <- rvest::html_attr(body, body_attr)
-    } else{
-      body <- rvest::html_nodes(html_obj, body_node_info)
-      body <- rvest::html_text(body)
+      body <- rvest::html_attr(node, body_attr)
     }
-
-    body <- gsub("\r?\n|\r|\t|\n", " ", body)
-    body <- trimws(body)
-
+    body <- trimws(gsub("\r?\n|\r|\t|\n", " ", body))
     return(body)
   }
+
+getOriginalUrl <-   function(html_obj,
+                             origin_url_node_info = "a.media_end_head_origin_link",
+                             origin_url_attr = "href") {
+  node <- rvest::html_nodes(html_obj, origin_url_node_info)
+  body <- rvest::html_text(node)
+  if (origin_url_attr != "") {
+    body <- rvest::html_attr(node, origin_url_attr)
+  }
+  body <- trimws(gsub("\r?\n|\r|\t|\n", " ", body))
+  return(body)
+}
 
 #' @importFrom httr2 url_parse
 getSection <- function(turl) {
@@ -248,3 +172,4 @@ getSection <- function(turl) {
   }
   return(httr2::url_parse(turl)$query$sid)
 }
+

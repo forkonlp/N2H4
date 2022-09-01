@@ -1,5 +1,8 @@
 # N2H4 0.8.0
 
+* getContent() 함수에 원신문사의 기사 링크 기능을 추가했습니다.
+* Add a link to an article from the original newspaper in the getContent() function.
+
 # N2H4 0.7.2
 
 * getAllCommentHistory()함수와 getAllComment()함수의 다음 페이지 동작을 수정하였습니다.

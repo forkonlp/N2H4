@@ -6,7 +6,8 @@
 \usage{
 getContent(
   turl,
-  col = c("url", "section", "datetime", "edittime", "press", "title", "body", "value")
+  col = c("url", "original_url", "section", "datetime", "edittime", "press", "title",
+    "body", "value")
 )
 }
 \arguments{
