@@ -58,7 +58,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">N2H4</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.7.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.8.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -202,17 +202,17 @@
 <span><span class="co">#&gt;  $ pick             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ visible          : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ manager          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ deleted          : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ idNo             : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
-<span><span class="co">#&gt;  $ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ expose           : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId     : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName   : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
-<span><span class="co">#&gt;  $ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ deleted          : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ idNo             : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
+<span><span class="co">#&gt;  $ expose           : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ userBlocked      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ blind            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ secret           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ exposeByCountry  : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ validateBanWords : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ containText      : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
@@ -311,15 +311,15 @@
 <span><span class="co">#&gt;   .. .. ..$ manager          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ deleted          : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ idNo             : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ expose           : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ maskedUserId     : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ maskedUserName   : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ userBlocked      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blind            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ secret           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ exposeByCountry  : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ validateBanWords : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ containText      : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
@@ -366,7 +366,7 @@
 <span><span class="co">#&gt;   ..$ sort          : chr "NEW"</span></span>
 <span><span class="co">#&gt;   ..$ bestList      :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
-<span><span class="co">#&gt;  $ date   : chr "2022-09-01T15:40:41+0000"</span></span>
+<span><span class="co">#&gt;  $ date   : chr "2022-09-02T02:13:29+0000"</span></span>
 <span><span class="co">#&gt;  - attr(*, "row.names")= int 1</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -410,14 +410,14 @@
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
 <span><span class="co">#&gt; tibble [10 × 89] (S3: tbl_df/tbl/data.frame)</span></span>
 <span><span class="co">#&gt;  $ ticket             : chr [1:10] "news" "news" "news" "news" ...</span></span>
-<span><span class="co">#&gt;  $ objectId           : chr [1:10] "news015,0004744087" "news003,0011393950" "news009,0005011342" "news009,0005011342" ...</span></span>
+<span><span class="co">#&gt;  $ objectId           : chr [1:10] "news015,0004744978" "news029,0002752195" "news020,0003448751" "news020,0003448751" ...</span></span>
 <span><span class="co">#&gt;  $ categoryId         : chr [1:10] "*" "*" "*" "*" ...</span></span>
-<span><span class="co">#&gt;  $ templateId         : chr [1:10] "default_politics_m2" "view_politics_m2" "view_politics_m3" "view_politics_m3" ...</span></span>
-<span><span class="co">#&gt;  $ commentNo          : chr [1:10] "767987793291903236" "767978063160934634" "767975255040852415" "767975177328787830" ...</span></span>
-<span><span class="co">#&gt;  $ parentCommentNo    : chr [1:10] "767987793291903236" "767978063160934634" "767975255040852415" "767975177328787830" ...</span></span>
-<span><span class="co">#&gt;  $ replyLevel         : int [1:10] 1 1 1 1 1 1 1 1 2 1</span></span>
-<span><span class="co">#&gt;  $ replyCount         : int [1:10] 1 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;  $ replyAllCount      : int [1:10] 1 0 0 0 0 0 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ templateId         : chr [1:10] "view_life" "default_politics" "default_politics" "view_politics" ...</span></span>
+<span><span class="co">#&gt;  $ commentNo          : chr [1:10] "768152008027799748" "768151684546298093" "768150246470451251" "768149988067770398" ...</span></span>
+<span><span class="co">#&gt;  $ parentCommentNo    : chr [1:10] "768152008027799748" "768151684546298093" "768150090928881959" "768149988067770398" ...</span></span>
+<span><span class="co">#&gt;  $ replyLevel         : int [1:10] 1 1 2 1 1 1 1 1 1 1</span></span>
+<span><span class="co">#&gt;  $ replyCount         : int [1:10] 0 0 0 0 0 1 0 0 0 0</span></span>
+<span><span class="co">#&gt;  $ replyAllCount      : int [1:10] 0 0 0 0 0 1 0 0 0 0</span></span>
 <span><span class="co">#&gt;  $ replyPreviewNo     : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ replyList          : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ imageCount         : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
@@ -425,12 +425,12 @@
 <span><span class="co">#&gt;  $ imagePathList      : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ imageWidthList     : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ imageHeightList    : logi [1:10] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ objectUrl          : chr [1:10] "https://n.news.naver.com/mnews/article/015/0004744087?sid1=001" "https://n.news.naver.com/mnews/article/003/0011393950?sid1=001" "https://n.news.naver.com/mnews/article/009/0005011342?sid1=001" "https://n.news.naver.com/mnews/article/009/0005011342?sid1=001" ...</span></span>
+<span><span class="co">#&gt;  $ objectUrl          : chr [1:10] "https://n.news.naver.com/mnews/article/015/0004744978?sid1=001" "https://n.news.naver.com/mnews/article/029/0002752195?sid1=001" "https://n.news.naver.com/mnews/article/020/0003448751?sid1=001" "https://n.news.naver.com/mnews/article/020/0003448751?sid1=001" ...</span></span>
 <span><span class="co">#&gt;  $ commentType        : chr [1:10] "txt" "txt" "txt" "txt" ...</span></span>
 <span><span class="co">#&gt;  $ stickerId          : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ sticker            : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ sortValue          : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
-<span><span class="co">#&gt;  $ contents           : chr [1:10] "나가 준석세기" "하태경 총질은 문재인과 민주당에 해라" "무속정신이 ㅗ보인다" "이재명 좋아하는 쌍칼 무속인하고 비슷하게 보인다" ...</span></span>
+<span><span class="co">#&gt;  $ contents           : chr [1:10] "장가 도 못 가는  덜 떨어진 아이들  뉴스 타는것은 기자들 잘못아니고 방송사들 잘못인가" "조국 분단 된것은  김일성이  우리민족을 가장 많이 학살한 놈이잖냐 민주당 놈들 심심하면 돈 같다 받치고" "민주당 스럽다 내가 처음 했다  따라 하지 마라" "보수 는 첫째가  착해야 선해야 한다   이것은 착한 것 없고  북괴에서 배웠는지 총질부터 배워서  아주 저질이다" ...</span></span>
 <span><span class="co">#&gt;  $ userIdNo           : chr [1:10] "aPD2N" "aPD2N" "aPD2N" "aPD2N" ...</span></span>
 <span><span class="co">#&gt;  $ exposedUserIp      : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ lang               : chr [1:10] "ko" "ko" "ko" "ko" ...</span></span>
@@ -440,12 +440,12 @@
 <span><span class="co">#&gt;  $ userName           : chr [1:10] "사천왕" "사천왕" "사천왕" "사천왕" ...</span></span>
 <span><span class="co">#&gt;  $ userProfileImage   : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ profileType        : chr [1:10] "naver" "naver" "naver" "naver" ...</span></span>
-<span><span class="co">#&gt;  $ modTime            : chr [1:10] "2022-08-31T15:59:28+0900" "2022-08-31T13:28:27+0900" "2022-08-31T12:44:51+0900" "2022-08-31T12:43:39+0900" ...</span></span>
-<span><span class="co">#&gt;  $ modTimeGmt         : chr [1:10] "2022-08-31T06:59:28+0000" "2022-08-31T04:28:27+0000" "2022-08-31T03:44:51+0000" "2022-08-31T03:43:39+0000" ...</span></span>
-<span><span class="co">#&gt;  $ regTime            : chr [1:10] "2022-08-31T15:59:28+0900" "2022-08-31T13:28:27+0900" "2022-08-31T12:44:51+0900" "2022-08-31T12:43:39+0900" ...</span></span>
-<span><span class="co">#&gt;  $ regTimeGmt         : chr [1:10] "2022-08-31T06:59:28+0000" "2022-08-31T04:28:27+0000" "2022-08-31T03:44:51+0000" "2022-08-31T03:43:39+0000" ...</span></span>
-<span><span class="co">#&gt;  $ sympathyCount      : int [1:10] 2 2 0 0 0 0 0 3 0 0</span></span>
-<span><span class="co">#&gt;  $ antipathyCount     : int [1:10] 2 3 0 0 0 0 0 2 0 0</span></span>
+<span><span class="co">#&gt;  $ modTime            : chr [1:10] "2022-09-02T10:28:25+0900" "2022-09-02T10:23:24+0900" "2022-09-02T10:01:05+0900" "2022-09-02T09:57:04+0900" ...</span></span>
+<span><span class="co">#&gt;  $ modTimeGmt         : chr [1:10] "2022-09-02T01:28:25+0000" "2022-09-02T01:23:24+0000" "2022-09-02T01:01:05+0000" "2022-09-02T00:57:04+0000" ...</span></span>
+<span><span class="co">#&gt;  $ regTime            : chr [1:10] "2022-09-02T10:28:25+0900" "2022-09-02T10:23:24+0900" "2022-09-02T10:01:05+0900" "2022-09-02T09:57:04+0900" ...</span></span>
+<span><span class="co">#&gt;  $ regTimeGmt         : chr [1:10] "2022-09-02T01:28:25+0000" "2022-09-02T01:23:24+0000" "2022-09-02T01:01:05+0000" "2022-09-02T00:57:04+0000" ...</span></span>
+<span><span class="co">#&gt;  $ sympathyCount      : int [1:10] 0 4 0 1 1 2 2 0 0 0</span></span>
+<span><span class="co">#&gt;  $ antipathyCount     : int [1:10] 1 1 0 0 0 2 3 0 0 0</span></span>
 <span><span class="co">#&gt;  $ hideReplyButton    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ status             : int [1:10] 0 0 0 0 0 0 0 0 0 0</span></span>
 <span><span class="co">#&gt;  $ mine               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -460,19 +460,19 @@
 <span><span class="co">#&gt;  $ sympathy           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ antipathy          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ metaInfo           :'data.frame': 10 obs. of  13 variables:</span></span>
-<span><span class="co">#&gt;   ..$ categoryName    : chr [1:10] "정치" "정치" "정치" "정치" ...</span></span>
-<span><span class="co">#&gt;   ..$ publisherCode   : chr [1:10] "015" "003" "009" "009" ...</span></span>
-<span><span class="co">#&gt;   ..$ publisherName   : chr [1:10] "한국경제" "뉴시스" "매일경제" "매일경제" ...</span></span>
-<span><span class="co">#&gt;   ..$ title           : chr [1:10] "이준석, 서병수 전국위의장 사퇴에 \"마음 아프다\"" "하태경 \"새 비대위는 두 번 죽는 길…권성동 큰 내상 입을 것\"" "침묵 깬 박지현 \"이재명 77.77% 득표?…'압도적 외면'으로 읽어야\" 왜" "침묵 깬 박지현 \"이재명 77.77% 득표?…'압도적 외면'으로 읽어야\" 왜" ...</span></span>
-<span><span class="co">#&gt;   ..$ imageUrl        : chr [1:10] "https://imgnews.pstatic.net/image/origin/015/2022/08/31/4744087.jpg" "https://imgnews.pstatic.net/image/origin/003/2022/08/31/11393950.jpg" "https://imgnews.pstatic.net/image/origin/009/2022/08/31/5011342.jpg" "https://imgnews.pstatic.net/image/origin/009/2022/08/31/5011342.jpg" ...</span></span>
-<span><span class="co">#&gt;   ..$ source          : chr [1:10] "국민의힘 이준석 전 대표, 서병수 의원. / 사진=뉴스1이준석 전 국민의힘 대표는 서병수 의원이 전국위원회 의장직에서"| __truncated__ "기사내용 요약\"주류 의원들 현실보다 달콤한 소리만 해\"전날 초·재선 의원들 반기에 \"대안을 안 보는 것\"\"새 원내"| __truncated__ "박지현 전 더불어민주당 공동비대위원장. [한주형 기자] 당 대표 선거 출마가 무산된 후 침묵을 지켜온 박지현 전 더불"| __truncated__ "박지현 전 더불어민주당 공동비대위원장. [한주형 기자] 당 대표 선거 출마가 무산된 후 침묵을 지켜온 박지현 전 더불"| __truncated__ ...</span></span>
-<span><span class="co">#&gt;   ..$ url             : chr [1:10] "https://n.news.naver.com/mnews/article/015/0004744087?sid1=001" "https://n.news.naver.com/mnews/article/003/0011393950?sid1=001" "https://n.news.naver.com/mnews/article/009/0005011342?sid1=001" "https://n.news.naver.com/mnews/article/009/0005011342?sid1=001" ...</span></span>
+<span><span class="co">#&gt;   ..$ categoryName    : chr [1:10] "생활/문화" "정치" "정치" "정치" ...</span></span>
+<span><span class="co">#&gt;   ..$ publisherCode   : chr [1:10] "015" "029" "020" "020" ...</span></span>
+<span><span class="co">#&gt;   ..$ publisherName   : chr [1:10] "한국경제" "디지털타임스" "동아일보" "동아일보" ...</span></span>
+<span><span class="co">#&gt;   ..$ title           : chr [1:10] "김제동 \"18만원 받고 중고등학교서 강연…정치 얘기 안 해\"" "김제동 폭탄발언 “내가 살면서 무슨 정치 얘기 했나, ‘헌법’ 독후감 썼더니…”" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" ...</span></span>
+<span><span class="co">#&gt;   ..$ imageUrl        : chr [1:10] "https://imgnews.pstatic.net/image/origin/015/2022/09/02/4744978.jpg" "https://imgnews.pstatic.net/image/origin/029/2022/09/02/2752195.jpg" "https://imgnews.pstatic.net/image/origin/020/2022/09/02/3448751.jpg" "https://imgnews.pstatic.net/image/origin/020/2022/09/02/3448751.jpg" ...</span></span>
+<span><span class="co">#&gt;   ..$ source          : chr [1:10] "김제동 /사진=한경DB방송인 김제동이 최근 중고등학교에서 강연 중인 자신의 근황을 전했다.김제동은 지난달 27일 경남"| __truncated__ "고[故] 노무현 전 대통령의 77번째 생일을 기념 음악회서 ‘포착’“제가 헌법 읽고 너무 좋아서 헌법 독후감 썼더니, 어"| __truncated__ "이양희 국민의힘 중앙윤리위원회 위원장. 사진공동취재단국민의힘 이준석 전 대표에게 당원권 6개월 정지의 중징계를 "| __truncated__ "이양희 국민의힘 중앙윤리위원회 위원장. 사진공동취재단국민의힘 이준석 전 대표에게 당원권 6개월 정지의 중징계를 "| __truncated__ ...</span></span>
+<span><span class="co">#&gt;   ..$ url             : chr [1:10] "https://n.news.naver.com/mnews/article/015/0004744978?sid1=001" "https://n.news.naver.com/mnews/article/029/0002752195?sid1=001" "https://n.news.naver.com/mnews/article/020/0003448751?sid1=001" "https://n.news.naver.com/mnews/article/020/0003448751?sid1=001" ...</span></span>
 <span><span class="co">#&gt;   ..$ regDate         : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
 <span><span class="co">#&gt;   ..$ ticket          : chr [1:10] "news" "news" "news" "news" ...</span></span>
-<span><span class="co">#&gt;   ..$ statCategoryName: chr [1:10] "정치" "정치" "정치" "정치" ...</span></span>
+<span><span class="co">#&gt;   ..$ statCategoryName: chr [1:10] "생활" "정치" "정치" "정치" ...</span></span>
 <span><span class="co">#&gt;   ..$ commonStatsParam:'data.frame': 10 obs. of  0 variables</span></span>
-<span><span class="co">#&gt;   ..$ commentCount    : int [1:10] 361 89 186 186 212 350 225 88 307 307</span></span>
-<span><span class="co">#&gt;   ..$ escapedTitle    : chr [1:10] "이준석, 서병수 전국위의장 사퇴에 \"마음 아프다\"" "하태경 \"새 비대위는 두 번 죽는 길…권성동 큰 내상 입을 것\"" "침묵 깬 박지현 \"이재명 77.77% 득표?…'압도적 외면'으로 읽어야\" 왜" "침묵 깬 박지현 \"이재명 77.77% 득표?…'압도적 외면'으로 읽어야\" 왜" ...</span></span>
+<span><span class="co">#&gt;   ..$ commentCount    : int [1:10] 1668 893 842 842 842 361 89 186 186 213</span></span>
+<span><span class="co">#&gt;   ..$ escapedTitle    : chr [1:10] "김제동 \"18만원 받고 중고등학교서 강연…정치 얘기 안 해\"" "김제동 폭탄발언 “내가 살면서 무슨 정치 얘기 했나, ‘헌법’ 독후감 썼더니…”" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" ...</span></span>
 <span><span class="co">#&gt;  $ extension          : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ translation        : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ report             : logi [1:10] NA NA NA NA NA NA ...</span></span>
@@ -486,16 +486,15 @@
 <span><span class="co">#&gt;  $ following          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ managerLike        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ pick               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ objectTitle        : chr [1:10] "이준석, 서병수 전국위의장 사퇴에 \"마음 아프다\"" "하태경 \"새 비대위는 두 번 죽는 길…권성동 큰 내상 입을 것\"" "침묵 깬 박지현 \"이재명 77.77% 득표?…'압도적 외면'으로 읽어야\" 왜" "침묵 깬 박지현 \"이재명 77.77% 득표?…'압도적 외면'으로 읽어야\" 왜" ...</span></span>
-<span><span class="co">#&gt;  $ objectImage        : chr [1:10] "https://imgnews.pstatic.net/image/origin/015/2022/08/31/4744087.jpg" "https://imgnews.pstatic.net/image/origin/003/2022/08/31/11393950.jpg" "https://imgnews.pstatic.net/image/origin/009/2022/08/31/5011342.jpg" "https://imgnews.pstatic.net/image/origin/009/2022/08/31/5011342.jpg" ...</span></span>
-<span><span class="co">#&gt;  $ objectSource       : chr [1:10] "국민의힘 이준석 전 대표, 서병수 의원. / 사진=뉴스1이준석 전 국민의힘 대표는 서병수 의원이 전국위원회 의장직에서"| __truncated__ "기사내용 요약\"주류 의원들 현실보다 달콤한 소리만 해\"전날 초·재선 의원들 반기에 \"대안을 안 보는 것\"\"새 원내"| __truncated__ "박지현 전 더불어민주당 공동비대위원장. [한주형 기자] 당 대표 선거 출마가 무산된 후 침묵을 지켜온 박지현 전 더불"| __truncated__ "박지현 전 더불어민주당 공동비대위원장. [한주형 기자] 당 대표 선거 출마가 무산된 후 침묵을 지켜온 박지현 전 더불"| __truncated__ ...</span></span>
-<span><span class="co">#&gt;  $ objectCategoryName : chr [1:10] "정치" "정치" "정치" "정치" ...</span></span>
-<span><span class="co">#&gt;  $ objectPublisherName: chr [1:10] "한국경제" "뉴시스" "매일경제" "매일경제" ...</span></span>
+<span><span class="co">#&gt;  $ objectTitle        : chr [1:10] "김제동 \"18만원 받고 중고등학교서 강연…정치 얘기 안 해\"" "김제동 폭탄발언 “내가 살면서 무슨 정치 얘기 했나, ‘헌법’ 독후감 썼더니…”" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" ...</span></span>
+<span><span class="co">#&gt;  $ objectImage        : chr [1:10] "https://imgnews.pstatic.net/image/origin/015/2022/09/02/4744978.jpg" "https://imgnews.pstatic.net/image/origin/029/2022/09/02/2752195.jpg" "https://imgnews.pstatic.net/image/origin/020/2022/09/02/3448751.jpg" "https://imgnews.pstatic.net/image/origin/020/2022/09/02/3448751.jpg" ...</span></span>
+<span><span class="co">#&gt;  $ objectSource       : chr [1:10] "김제동 /사진=한경DB방송인 김제동이 최근 중고등학교에서 강연 중인 자신의 근황을 전했다.김제동은 지난달 27일 경남"| __truncated__ "고[故] 노무현 전 대통령의 77번째 생일을 기념 음악회서 ‘포착’“제가 헌법 읽고 너무 좋아서 헌법 독후감 썼더니, 어"| __truncated__ "이양희 국민의힘 중앙윤리위원회 위원장. 사진공동취재단국민의힘 이준석 전 대표에게 당원권 6개월 정지의 중징계를 "| __truncated__ "이양희 국민의힘 중앙윤리위원회 위원장. 사진공동취재단국민의힘 이준석 전 대표에게 당원권 6개월 정지의 중징계를 "| __truncated__ ...</span></span>
+<span><span class="co">#&gt;  $ objectCategoryName : chr [1:10] "생활/문화" "정치" "정치" "정치" ...</span></span>
+<span><span class="co">#&gt;  $ objectPublisherName: chr [1:10] "한국경제" "디지털타임스" "동아일보" "동아일보" ...</span></span>
 <span><span class="co">#&gt;  $ objectRegDate      : num [1:10] 1.66e+12 1.66e+12 1.66e+12 1.66e+12 1.66e+12 ...</span></span>
-<span><span class="co">#&gt;  $ objectRegTime      : chr [1:10] "2022-08-31T15:13:04+0900" "2022-08-31T12:00:08+0900" "2022-08-31T09:10:01+0900" "2022-08-31T09:10:01+0900" ...</span></span>
+<span><span class="co">#&gt;  $ objectRegTime      : chr [1:10] "2022-09-02T09:01:01+0900" "2022-09-02T06:21:01+0900" "2022-09-02T03:11:01+0900" "2022-09-02T03:11:01+0900" ...</span></span>
 <span><span class="co">#&gt;  $ visible            : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ manager            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ userBlocked        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ deleted            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ idNo               : chr [1:10] "aPD2N" "aPD2N" "aPD2N" "aPD2N" ...</span></span>
 <span><span class="co">#&gt;  $ expose             : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
@@ -503,6 +502,7 @@
 <span><span class="co">#&gt;  $ serviceId          : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId       : chr [1:10] "rn65****" "rn65****" "rn65****" "rn65****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName     : chr [1:10] "사천****" "사천****" "사천****" "사천****" ...</span></span>
+<span><span class="co">#&gt;  $ userBlocked        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ blind              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ secret             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ profileUserId      : logi [1:10] NA NA NA NA NA NA ...</span></span>
