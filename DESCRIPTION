@@ -20,7 +20,6 @@ LazyData: true
 Suggests: 
     testthat,
     devtools,
-    covr,
     usethis
 Imports: 
     rvest,
