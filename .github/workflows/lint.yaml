@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main, master]
 
-name: lint
+name: Lint and Test Covr
 
 jobs:
   lint:
@@ -22,8 +22,12 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: lintr
+          extra-packages: lintr covr
 
       - name: Lint
         run: lintr::lint_package()
+        shell: Rscript {0}
+
+      - name: Test coverage
+        run: covr::codecov()
         shell: Rscript {0}
