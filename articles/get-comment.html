@@ -202,13 +202,13 @@
 <span><span class="co">#&gt;  $ pick             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ visible          : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ manager          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ maskedUserId     : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
-<span><span class="co">#&gt;  $ maskedUserName   : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
 <span><span class="co">#&gt;  $ deleted          : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ idNo             : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
 <span><span class="co">#&gt;  $ expose           : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ maskedUserId     : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
+<span><span class="co">#&gt;  $ maskedUserName   : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
 <span><span class="co">#&gt;  $ userBlocked      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ blind            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ secret           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -308,19 +308,19 @@
 <span><span class="co">#&gt;   .. .. ..$ managerLike      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ pick             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ visible          : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ manager          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ deleted          : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ idNo             : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ expose           : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blindReport      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ serviceId        : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ expose           : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ maskedUserId     : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ maskedUserName   : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ exposeByCountry  : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ profileUserId    : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ userBlocked      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blind            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ secret           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ exposeByCountry  : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ validateBanWords : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ containText      : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ virtual          : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -366,7 +366,7 @@
 <span><span class="co">#&gt;   ..$ sort          : chr "NEW"</span></span>
 <span><span class="co">#&gt;   ..$ bestList      :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
-<span><span class="co">#&gt;  $ date   : chr "2022-09-02T02:13:29+0000"</span></span>
+<span><span class="co">#&gt;  $ date   : chr "2022-09-02T02:27:34+0000"</span></span>
 <span><span class="co">#&gt;  - attr(*, "row.names")= int 1</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -471,7 +471,7 @@
 <span><span class="co">#&gt;   ..$ ticket          : chr [1:10] "news" "news" "news" "news" ...</span></span>
 <span><span class="co">#&gt;   ..$ statCategoryName: chr [1:10] "생활" "정치" "정치" "정치" ...</span></span>
 <span><span class="co">#&gt;   ..$ commonStatsParam:'data.frame': 10 obs. of  0 variables</span></span>
-<span><span class="co">#&gt;   ..$ commentCount    : int [1:10] 1668 893 842 842 842 361 89 186 186 213</span></span>
+<span><span class="co">#&gt;   ..$ commentCount    : int [1:10] 1828 932 852 852 852 361 89 186 186 213</span></span>
 <span><span class="co">#&gt;   ..$ escapedTitle    : chr [1:10] "김제동 \"18만원 받고 중고등학교서 강연…정치 얘기 안 해\"" "김제동 폭탄발언 “내가 살면서 무슨 정치 얘기 했나, ‘헌법’ 독후감 썼더니…”" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" "與윤리위, 이준석 추가 징계 시사… 李, ‘전국위 저지’ 3차 가처분" ...</span></span>
 <span><span class="co">#&gt;  $ extension          : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ translation        : logi [1:10] NA NA NA NA NA NA ...</span></span>
@@ -497,8 +497,8 @@
 <span><span class="co">#&gt;  $ manager            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ deleted            : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ idNo               : chr [1:10] "aPD2N" "aPD2N" "aPD2N" "aPD2N" ...</span></span>
-<span><span class="co">#&gt;  $ expose             : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ blindReport        : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ expose             : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ serviceId          : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId       : chr [1:10] "rn65****" "rn65****" "rn65****" "rn65****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName     : chr [1:10] "사천****" "사천****" "사천****" "사천****" ...</span></span>
