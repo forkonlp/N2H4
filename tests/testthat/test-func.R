@@ -78,6 +78,11 @@ test_that("getCategory", {
   expect_equal(test, news_category)
 })
 
+test_that("getCategoryFresh", {
+  test <- getCategory(fresh = TRUE)
+  expect_equal(test, news_category)
+})
+
 test_that("getMainCategory", {
   skip_on_cran()
   test <- getMainCategory()

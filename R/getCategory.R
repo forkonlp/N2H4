@@ -15,7 +15,7 @@ getCategory <- function(fresh = FALSE) {
       getSubCategory(sid1 = mcate$sid1[i])
     )
   }
-  return(do.call(rbind, cate))
+  return(tibble::as_tibble(do.call(rbind, cate)))
 }
 
 #' Get News Main Categories
