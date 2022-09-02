@@ -19,3 +19,16 @@ navbar:
         href: articles/get-content.html
       - text: 댓글 가져오기
         href: articles/get-comment.html
+
+reference:
+- title: Content
+  contents:
+  - contains("Content")
+  - contains("Category")
+  - getMaxPageNum
+  - getUrlList
+
+- title: Comment
+  contents:
+  - contains("Comment")
+
