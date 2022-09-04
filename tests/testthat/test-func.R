@@ -75,7 +75,7 @@ test_that("passSportsnews", {
 
 test_that("getCategory", {
   test <- getCategory()
-  expect_equal(test, news_category)
+  expect_equal(test, news_category_data)
 })
 
 test_that("getCategoryFresh", {

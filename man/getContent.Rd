@@ -23,6 +23,6 @@ Get naver news content from links.
 }
 \examples{
 \dontrun{
-  getContent("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
+  news_content_("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
   }
 }
