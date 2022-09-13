@@ -1,5 +1,8 @@
 # N2H4 0.8.1
 
+* cache 의 경로 문제가 있어 cran 정책에 맞지 않아 기능을 제거합니다.
+* Remove cache for cran submit.
+
 # N2H4 0.8.0
 
 * getContent() 함수에 원신문사의 기사 링크 기능을 추가했습니다.
