@@ -27,5 +27,4 @@ Imports:
     tibble,
     purrr,
     httr2,
-    magrittr,
-    rappdirs
+    magrittr

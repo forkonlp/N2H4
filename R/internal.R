@@ -93,7 +93,7 @@ get_real_url <- function(turl) {
   . <- NULL
   httr2::request(turl) %>%
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
-    httr2::req_method("HEAD")
+    httr2::req_method("HEAD") %>%
     httr2::req_perform() %>%
     .$url
 }
