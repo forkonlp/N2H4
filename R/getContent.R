@@ -28,7 +28,6 @@ getContent <-
     httr2::request(turl) %>%
       httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
       httr2::req_method("GET") %>%
-      httr2::req_cache(cache_path()) %>%
       httr2::req_perform() -> root
 
     html_obj <- httr2::resp_body_html(root)

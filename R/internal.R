@@ -1,13 +1,3 @@
-cache_path <- function() {
-  Sys.getenv("N2H4_CACHE_PATH", unset = cache_path_default())
-}
-#' @importFrom rappdirs user_data_dir
-cache_path_default <- function() {
-  root <- normalizePath(rappdirs::user_data_dir(), winslash = "/", mustWork = FALSE)
-  file.path(root, "n2h4-cache")
-}
-
-
 #' @importFrom httr2 url_parse
 get_oid <- function(turl) {
   turl <- gsub("mnews/", "", turl)
@@ -65,8 +55,7 @@ req_build_comment <- function(turl, pageSize, nextid) {
     httr2::req_url_query(moreParam.next = nextid) %>%
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
     httr2::req_headers(Referer = turl) %>%
-    httr2::req_method("GET") %>%
-    httr2::req_cache(cache_path())
+    httr2::req_method("GET")
 }
 
 req_build_comment_history <-
@@ -96,8 +85,7 @@ req_build_comment_history <-
       httr2::req_url_query(moreParam.next = nextid) %>%
       httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
       httr2::req_headers(Referer = turl) %>%
-      httr2::req_method("GET") %>%
-      httr2::req_cache(cache_path())
+      httr2::req_method("GET")
   }
 
 #' @importFrom httr2 request req_user_agent req_method req_perform
@@ -106,7 +94,6 @@ get_real_url <- function(turl) {
   httr2::request(turl) %>%
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
     httr2::req_method("HEAD") %>%
-    httr2::req_cache(cache_path()) %>%
     httr2::req_perform() %>%
     .$url
 }
