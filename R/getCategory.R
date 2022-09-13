@@ -36,7 +36,6 @@ getMainCategory <- function() {
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
     httr2::req_headers("Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9") %>%
     httr2::req_method("GET") %>%
-    httr2::req_cache(cache_path()) %>%
     httr2::req_perform() %>%
     httr2::resp_body_html() -> hobj
 
@@ -87,7 +86,6 @@ getSubCategory <- function(sid1 = 100) {
     httr2::req_url_query(mid = "shm") %>%
     httr2::req_url_query(sid1 = sid1) %>%
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
-    httr2::req_cache(cache_path()) %>%
     httr2::req_perform() %>%
     httr2::resp_body_html() -> hobj
 
