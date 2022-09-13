@@ -4,13 +4,18 @@
 - R-hub fedora-clang-devel (r-devel)
 
 ## R CMD check results
-❯ On windows-x86_64-devel (r-devel)
-  checking for detritus in the temp directory ... NOTE
+❯ checking CRAN incoming feasibility ... [13s] NOTE
+  
+  New submission
+  
+  Package was archived on CRAN
+  Maintainer: 'Chanyub Park <mrchypark@gmail.com>'
+
+❯ checking for detritus in the temp directory ... NOTE
   Found the following files/directories:
     'lastMiKTeXException'
 
-❯ On fedora-clang-devel (r-devel)
-  checking HTML version of manual ... NOTE
-  Skipping checking HTML validation: no command 'tidy' found
-
 0 errors ✔ | 0 warnings ✔ | 2 notes ✖
+
+* I all the time honest. leak of English. cran policy must translate other langauge.
+ English is not only langauge in the earth. I remove cache function in package.

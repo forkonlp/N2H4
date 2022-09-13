@@ -1,5 +1,7 @@
 # N2H4 0.8.2
 
+* Add cran comment honest.
+
 # N2H4 0.8.1
 
 * cache 의 경로 문제가 있어 cran 정책에 맞지 않아 기능을 제거합니다.
