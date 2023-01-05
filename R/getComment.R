@@ -17,7 +17,7 @@
 getComment <- function(turl,
                        count = 10,
                        type = c("df", "list")) {
-  get_comment(turl, count, type)
+  news_comment(turl, count, type)
 }
 
 #' Get All Comment
@@ -37,13 +37,13 @@ getComment <- function(turl,
 #'   getAllComment("https://n.news.naver.com/mnews/article/214/0001195110")
 #'   }
 getAllComment <- function(turl) {
-  get_comment(turl, "all", "df")
+  news_comment(turl, "all", "df")
 }
 
 #' @importFrom purrr when
 #' @importFrom httr2 req_perform resp_body_string
 #' @importFrom jsonlite fromJSON
-get_comment <- function(turl,
+news_comment <- function(turl,
                         count = 10,
                         type = c("df", "list")) {
   . <- NULL

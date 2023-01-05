@@ -13,7 +13,12 @@
 #'   getUrlList("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
 #'   }
 
-getUrlList <-
+getUrlList <- function(turl,
+                       col = c("titles", "links")) {
+  news_urls_from_list(turl, col)
+}
+
+news_urls_from_list <-
   function(turl,
            col = c("titles", "links")) {
 

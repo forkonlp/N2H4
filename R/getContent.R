@@ -10,10 +10,22 @@
 #' @importFrom rvest html_nodes html_text html_attr
 #' @examples
 #' \dontrun{
-#'   getContent("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
+#'   news_content_("https://n.news.naver.com/mnews/article/214/0001195110?sid=103")
 #'   }
+getContent <-   function(turl,
+                         col = c("url",
+                                 "original_url",
+                                 "section",
+                                 "datetime",
+                                 "edittime",
+                                 "press",
+                                 "title",
+                                 "body",
+                                 "value")) {
+  news_content(turl, col)
+}
 
-getContent <-
+news_content <-
   function(turl,
            col = c("url",
                    "original_url",
@@ -64,13 +76,13 @@ getContent <-
       }
     }
     if (value) {
-      original_url <- getOriginalUrl(html_obj)
-      title <- getContentTitle(html_obj)
-      datetime <- getContentDatetime(html_obj)
-      edittime <- getContentEditDatetime(html_obj)
-      press <- getContentPress(html_obj)
-      body <- getContentBody(html_obj)
-      section <- getSection(turl)
+      original_url <- news_content_original_url(html_obj)
+      title <- news_content_title(html_obj)
+      datetime <- news_content_datetime(html_obj)
+      edittime <- news_content_edit_datetime(html_obj)
+      press <- news_content_press(html_obj)
+      body <- news_content_body(html_obj)
+      section <- news_content_section(turl)
     }
 
     if (length(edittime) == 0) {
@@ -90,7 +102,7 @@ getContent <-
     return(newsInfo[, col])
   }
 
-getContentTitle <-
+news_content_title <-
   function(html_obj,
            title_node_info = "h2.media_end_head_headline",
            title_attr = "") {
@@ -103,7 +115,7 @@ getContentTitle <-
   }
 
 
-getContentDatetime <-
+news_content_datetime <-
   function(html_obj,
            datetime_node_info = "span._ARTICLE_DATE_TIME",
            datetime_attr = "data-date-time") {
@@ -115,7 +127,7 @@ getContentDatetime <-
     as.POSIXct(datetime, tz = "Asia/Seoul")
   }
 
-getContentEditDatetime <-
+news_content_edit_datetime <-
   function(html_obj,
            datetime_node_info = "span._ARTICLE_MODIFY_DATE_TIME",
            datetime_attr = "data-modify-date-time") {
@@ -127,7 +139,7 @@ getContentEditDatetime <-
     as.POSIXct(datetime, tz = "Asia/Seoul")
   }
 
-getContentPress <-
+news_content_press <-
   function(html_obj,
            press_node_info = "div.media_end_head_top a img",
            press_attr = "title") {
@@ -139,7 +151,7 @@ getContentPress <-
     return(press[1])
   }
 
-getContentBody <-
+news_content_body <-
   function(html_obj,
            body_node_info = "div#dic_area",
            body_attr = "") {
@@ -152,7 +164,7 @@ getContentBody <-
     return(body)
   }
 
-getOriginalUrl <-   function(html_obj,
+news_content_original_url <-   function(html_obj,
                              origin_url_node_info = "a.media_end_head_origin_link",
                              origin_url_attr = "href") {
   node <- rvest::html_nodes(html_obj, origin_url_node_info)
@@ -165,7 +177,7 @@ getOriginalUrl <-   function(html_obj,
 }
 
 #' @importFrom httr2 url_parse
-getSection <- function(turl) {
+news_content_section <- function(turl) {
   if (is.null(httr2::url_parse(turl)$query$sid)) {
     return(NA)
   }

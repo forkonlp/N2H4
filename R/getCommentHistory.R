@@ -20,7 +20,7 @@ getCommentHistory <- function(turl,
                               commentNo,
                               count = 10,
                               type = c("df", "list")) {
-  get_comment_history(turl, commentNo, count, type)
+  news_comment_history(turl, commentNo, count, type)
 }
 
 #' Get All Comment History
@@ -39,12 +39,12 @@ getCommentHistory <- function(turl,
 
 getAllCommentHistory <- function(turl,
                                  commentNo) {
-  get_comment_history(turl, commentNo, "all", "df")
+  news_comment_history(turl, commentNo, "all", "df")
 }
 
 #' @importFrom purrr when
 #' @importFrom httr2 req_perform
-get_comment_history <- function(turl,
+news_comment_history <- function(turl,
                                 commentNo,
                                 count = 10,
                                 type = c("df", "list")) {

@@ -11,8 +11,10 @@
 #' \dontrun{
 #'   getMaxPageNum("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
 #'   }
-
 getMaxPageNum <- function(turl, max = 100) {
+  news_max_page_num(turl, max)
+}
+news_max_page_num <- function(turl, max = 100) {
   httr2::request(turl) %>%
     httr2::req_url_query(page = max) %>%
     httr2::req_method("GET") %>%
