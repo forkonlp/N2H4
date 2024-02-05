@@ -15,16 +15,16 @@
 
 getContent <-
   function(turl,
-           col = c("url",
-                   "original_url",
-                   "section",
-                   "datetime",
-                   "edittime",
-                   "press",
-                   "title",
-                   "body",
-                   "value")) {
-
+           col = c(
+             "url",
+             "original_url",
+             "section",
+             "datetime",
+             "edittime",
+             "press",
+             "title",
+             "body"
+           )) {
     httr2::request(turl) %>%
       httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
       httr2::req_method("GET") %>%
@@ -32,10 +32,12 @@ getContent <-
 
     html_obj <- httr2::resp_body_html(root)
     urlcheck <- root$url
-    value <- T
-    if (identical(grep("^https?://n.news.naver.com",
-                       urlcheck),
-                  integer(0))) {
+
+    if (
+      identical(
+        grep("^https?://n.news.naver.com", urlcheck), integer(0)
+        )
+      ) {
       original_url <- "page is not news section."
       title <- "page is not news section."
       datetime <- "page is not news section."
@@ -43,27 +45,8 @@ getContent <-
       press <- "page is not news section."
       body <- "page is not news section."
       section <- "page is not news section."
-      value <- F
+
     } else {
-      # TODO: 이거 동작하는지 확인해야 함.
-      chk <- rvest::html_nodes(html_obj, "div#main_content div div")
-      chk <- rvest::html_attr(chk, "class")
-      chk <- chk[1]
-      if (is.na(chk)) {
-        chk <- "not error"
-      }
-      if ("error_msg 404" == chk & value) {
-        original_url <- "page is moved."
-        title <- "page is moved."
-        datetime <- "page is moved."
-        edittime <- "page is moved."
-        press <- "page is moved."
-        body <- "page is moved."
-        section <- "page is moved."
-        value <- F
-      }
-    }
-    if (value) {
       original_url <- getOriginalUrl(html_obj)
       title <- getContentTitle(html_obj)
       datetime <- getContentDatetime(html_obj)
@@ -84,8 +67,7 @@ getContent <-
       press = press,
       title = title,
       body = body,
-      section = section,
-      value = value
+      section = section
     )
     return(newsInfo[, col])
   }
@@ -141,7 +123,7 @@ getContentPress <-
 
 getContentBody <-
   function(html_obj,
-           body_node_info = "div#dic_area",
+           body_node_info = "article#dic_area",
            body_attr = "") {
     node <- rvest::html_nodes(html_obj, body_node_info)
     body <- rvest::html_text(node)
@@ -171,4 +153,3 @@ getSection <- function(turl) {
   }
   return(httr2::url_parse(turl)$query$sid)
 }
-
