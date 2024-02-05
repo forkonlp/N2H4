@@ -27,8 +27,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.1.3/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.1.3/bootstrap.bundle.min.js"></script><link href="../deps/Noto_Sans-0.4.2/font.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Noto_Sans-0.4.8/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="기사 가져오기">
@@ -126,19 +126,21 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a></span><span class="op">)</span></span></code></pre></div>
-<p><a href="https://news.naver.com/" class="external-link">네이버 뉴스</a>의 기사는 여러 부분으로 구성되어 있습니다. 제목, 본문, 게시시간, 수정시간, 신문사 등 입니다.</p>
-<p>기사의 링크로 위 데이터를 가져오는 함수는 <code><a href="../reference/getContent.html">getContent()</a></code> 입니다.</p>
+<p><a href="https://news.naver.com/" class="external-link">네이버 뉴스</a>의 기사는 여러
+부분으로 구성되어 있습니다. 제목, 본문, 게시시간, 수정시간, 신문사 등
+입니다.</p>
+<p>기사의 링크로 위 데이터를 가져오는 함수는 <code><a href="../reference/getContent.html">getContent()</a></code>
+입니다.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getContent.html">getContent</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/article/374/0000300375"</span><span class="op">)</span></span>
 <span><span class="va">dat</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 9</span></span></span>
-<span><span class="co">#&gt;   url        origi…¹ section datetime            edittime            press title</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>      <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> https://n… https:… <span style="color: #BB0000;">NA</span>      2022-08-27 <span style="color: #949494;">11:11:01</span> 2022-08-27 <span style="color: #949494;">21:07:01</span> SBS … 어떻…</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with 2 more variables: body &lt;chr&gt;, value &lt;lgl&gt;, and abbreviated variable</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   name ¹​original_url</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 1 × 8</span></span></span>
+<span><span class="co">#&gt;   url   original_url section datetime            edittime            press title</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;lgl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dttm&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> http… https://biz… <span style="color: #BB0000;">NA</span>      2022-08-27 <span style="color: #949494;">11:11:01</span> 2022-08-27 <span style="color: #949494;">21:07:01</span> SBS … 어떻…</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: body &lt;chr&gt;</span></span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="co">#&gt; tibble [1 × 9] (S3: tbl_df/tbl/data.frame)</span></span>
+<span><span class="co">#&gt; tibble [1 × 8] (S3: tbl_df/tbl/data.frame)</span></span>
 <span><span class="co">#&gt;  $ url         : chr "https://n.news.naver.com/article/374/0000300375"</span></span>
 <span><span class="co">#&gt;  $ original_url: chr "https://biz.sbs.co.kr/article_hub/20000077824?division=NAVER"</span></span>
 <span><span class="co">#&gt;  $ section     : logi NA</span></span>
@@ -146,12 +148,19 @@
 <span><span class="co">#&gt;  $ edittime    : POSIXct[1:1], format: "2022-08-27 21:07:01"</span></span>
 <span><span class="co">#&gt;  $ press       : chr "SBS Biz"</span></span>
 <span><span class="co">#&gt;  $ title       : chr "어떻게 독주 체제 굳혔나…어딜 가나 올리브영만 보이는 이유[브랜드의탄생]"</span></span>
-<span><span class="co">#&gt;  $ body        : chr "화장품숍이야 편의점이야최초 한국형 드럭스토어의 시작      CJ올리브영은 최초의 '한국형 드럭스토어'입니다. 드럭스"| __truncated__</span></span>
-<span><span class="co">#&gt;  $ value       : logi TRUE</span></span></code></pre></div>
+<span><span class="co">#&gt;  $ body        : chr "화장품숍이야 편의점이야최초 한국형 드럭스토어의 시작      CJ올리브영은 최초의 '한국형 드럭스토어'입니다. 드럭스"| __truncated__</span></span></code></pre></div>
 <p>데이터의 각 컬럼은 아래와 같은 의미를 가집니다.</p>
 <p><code>url</code>: 데이터를 수집한 기사의 주소입니다.<br>
-정치, 경제, 생활, 세계 등이 있습니다.<br><code>section</code>: 네이버 뉴스의 기사 카테고리입니다. 3개의 숫자로 되어 있습니다. <code><a href="../reference/getMainCategory.html">getMainCategory()</a></code> 함수에서 한글명을 확인할 수 있습니다. <code>datetime</code>: 기사가 최소 게시된 시간입니다. 원신문사의 게시시간과 차이가 있을 수 있습니다.<br><code>edittime</code>: 기사가 수정된 시간입니다. 기사가 수정되지 않았다면 <code>datetime</code>과 같은 값입니다.<br><code>press</code>: 기사를 송고한 매체입니다. 보통 신문사나 방송사등의 이름입니다.<br><code>title</code>: 기사의 제목입니다.<br><code>body</code>: 기사의 본문입니다.<br><code>value</code>: 기사의 데이터를 가져왔는지 확인하는 컬럼입니다. 기사의 주소가 옮겨졌거나 삭제되었다면, <code>FALSE</code>, 정상이라면 <code>TRUE</code>가 입력됩니다.</p>
-<p><code><a href="../reference/getContent.html">getContent()</a></code> 함수는 필요한 컬럼만 가져올 수 있습니다.</p>
+정치, 경제, 생활, 세계 등이 있습니다.<br><code>section</code>: 네이버 뉴스의 기사 카테고리입니다. 3개의 숫자로
+되어 있습니다. <code><a href="../reference/getMainCategory.html">getMainCategory()</a></code> 함수에서 한글명을 확인할
+수 있습니다. <code>datetime</code>: 기사가 최소 게시된 시간입니다.
+원신문사의 게시시간과 차이가 있을 수 있습니다.<br><code>edittime</code>: 기사가 수정된 시간입니다. 기사가 수정되지
+않았다면 <code>datetime</code>과 같은 값입니다.<br><code>press</code>: 기사를 송고한 매체입니다. 보통 신문사나 방송사등의
+이름입니다.<br><code>title</code>: 기사의 제목입니다.<br><code>body</code>: 기사의 본문입니다.<br><code>value</code>: 기사의 데이터를 가져왔는지 확인하는 컬럼입니다.
+기사의 주소가 옮겨졌거나 삭제되었다면, <code>FALSE</code>, 정상이라면
+<code>TRUE</code>가 입력됩니다.</p>
+<p><code><a href="../reference/getContent.html">getContent()</a></code> 함수는 필요한 컬럼만 가져올 수
+있습니다.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/getContent.html">getContent</a></span><span class="op">(</span></span>
 <span>  <span class="st">"https://n.news.naver.com/article/374/0000300375"</span>,</span>
@@ -173,7 +182,7 @@
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
   <p class="preferably">Using <a href="https://preferably.amirmasoudabdol.name/?source=footer" class="external-link">preferably</a> template.</p>
 </div>
 
