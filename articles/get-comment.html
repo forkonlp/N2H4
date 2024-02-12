@@ -125,14 +125,14 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://forkonlp.github.io/N2H4/">N2H4</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="함수-소개">함수 소개<a class="anchor" aria-label="anchor" href="#%ED%95%A8%EC%88%98-%EC%86%8C%EA%B0%9C"></a>
 </h2>
 <div class="section level3">
 <h3 id="getcomment">getComment<a class="anchor" aria-label="anchor" href="#getcomment"></a>
 </h3>
-<p>기사에는 사용자의 댓글들이 있습니다. <a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a> 패키지는
+<p>기사에는 사용자의 댓글들이 있습니다. <a href="https://forkonlp.github.io/N2H4/">N2H4</a> 패키지는
 셀리늄 등의 브라우저 자동화 도구를 사용하지 않고, 바로 댓글 데이터를
 가져올 수 있어 빠르게 수집할 수 있습니다.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -218,20 +218,20 @@
 <span><span class="co">#&gt;  $ userReplied         : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ visible             : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ idNo                : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
-<span><span class="co">#&gt;  $ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ deleted             : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ expose              : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ expose              : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ serviceId           : chr [1:10] "news" "news" "news" "news" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId        : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName      : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
-<span><span class="co">#&gt;  $ serviceId           : chr [1:10] "news" "news" "news" "news" ...</span></span>
+<span><span class="co">#&gt;  $ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ replyNotificationSet: chr [1:10] "OFF" "OFF" "OFF" "OFF" ...</span></span>
 <span><span class="co">#&gt;  $ blind               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
+<span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ exposeByCountry     : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ containText         : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ virtual             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -355,8 +355,8 @@
 <span><span class="co">#&gt;   .. .. ..$ userReplied         : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ visible             : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ idNo                : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ deleted             : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ deleted             : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ expose              : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -366,9 +366,9 @@
 <span><span class="co">#&gt;   .. .. ..$ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ replyNotificationSet: chr [1:10] "OFF" "OFF" "OFF" "OFF" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blind               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ exposeByCountry     : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ containText         : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ virtual             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -413,7 +413,7 @@
 <span><span class="co">#&gt;   ..$ sort          : chr "NEW"</span></span>
 <span><span class="co">#&gt;   ..$ bestList      :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
-<span><span class="co">#&gt;  $ date   : chr "2024-02-05T16:43:08+0000"</span></span>
+<span><span class="co">#&gt;  $ date   : chr "2024-02-12T19:16:08+0000"</span></span>
 <span><span class="co">#&gt;  - attr(*, "row.names")= int 1</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -421,7 +421,7 @@
 </h3>
 <p><code><a href="../reference/getComment.html">getComment()</a></code> 함수는 최대 100개의 댓글을 가져올 수
 있습니다. 그래서 모든 데이터를 가져오기 위해서는 여러번 요청해야 합니다.
-<a href="https://github.com/forkonlp/N2H4" class="external-link">N2H4</a> 패키지는 편의함수인 <code><a href="../reference/getAllComment.html">getAllComment()</a></code>을
+<a href="https://forkonlp.github.io/N2H4/">N2H4</a> 패키지는 편의함수인 <code><a href="../reference/getAllComment.html">getAllComment()</a></code>을
 제공합니다.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/getComment.html">getComment</a></span><span class="op">(</span><span class="st">"https://n.news.naver.com/mnews/article/088/0000772480?sid=100"</span><span class="op">)</span></span>
@@ -563,21 +563,21 @@
 <span><span class="co">#&gt;  $ objectRegDate       : num [1:10] 1.69e+12 1.67e+12 1.67e+12 1.67e+12 1.67e+12 ...</span></span>
 <span><span class="co">#&gt;  $ objectRegTime       : chr [1:10] "2023-09-14T13:20:01+0900" "2022-10-30T09:19:01+0900" "2022-10-30T09:31:15+0900" "2022-10-30T11:43:03+0900" ...</span></span>
 <span><span class="co">#&gt;  $ visible             : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ idNo                : chr [1:10] "aPD2N" "aPD2N" "aPD2N" "aPD2N" ...</span></span>
 <span><span class="co">#&gt;  $ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ deleted             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ expose              : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ serviceId           : chr [1:10] "news" "news" "news" "news" ...</span></span>
-<span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId        : chr [1:10] "rn65****" "rn65****" "rn65****" "rn65****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName      : chr [1:10] "사천****" "사천****" "사천****" "사천****" ...</span></span>
 <span><span class="co">#&gt;  $ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ replyNotificationSet: chr [1:10] "OFF" "OFF" "OFF" "OFF" ...</span></span>
 <span><span class="co">#&gt;  $ blind               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ exposeByCountry     : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ containText         : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ virtual             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
