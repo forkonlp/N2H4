@@ -40,7 +40,6 @@ getAllComment <- function(turl) {
   get_comment(turl, "all", "df")
 }
 
-#' @importFrom purrr when
 #' @importFrom httr2 req_perform resp_body_string
 #' @importFrom jsonlite fromJSON
 get_comment <- function(turl,
@@ -49,12 +48,17 @@ get_comment <- function(turl,
   . <- NULL
   type <- match.arg(type)
 
-  count %>%
-    purrr::when(. == "all" ~ "all",
-                !is.numeric(.) ~ "error",
-                . > 100 ~ "over",
-                . <= 100 ~ "base",
-                ~ "error") -> count_case
+  if (count == "all") {
+    count_case <- "all"
+  } else if (!is.numeric(count)) {
+    count_case <- "error"
+  } else if (count > 100) {
+    count_case <- "over"
+  } else if (count <= 100) {
+    count_case <- "base"
+  } else {
+    count_case <- "error"
+  }
 
   if (count_case == "error") {
     stop(paste0("count param can accept number or 'all'. your input: ", count))
@@ -62,9 +66,12 @@ get_comment <- function(turl,
 
   turl <- get_real_url(turl)
 
-  count_case %>%
-    purrr::when(. == "base" ~ count,
-                ~ 100) %>%
+  result <- 100
+  if (count_case == "base") {
+    result <- count
+  }
+
+  result %>%
     req_build_comment(turl, ., NULL) %>%
     httr2::req_perform() %>%
     httr2::resp_body_string() %>%
@@ -78,12 +85,14 @@ get_comment <- function(turl,
     return(transform_return(dat, type))
   }
 
-  purrr::when(count_case == "all" ~ total,
-              total >= count ~ count,
-              total < count ~ {
-                warning("Request more than the actual total count, and use actual total count.")
-                total
-              }) -> tarsize
+  if(count_case == "all") {
+    tarsize <- total
+  } else if(total >= count) {
+    tarsize <- count
+  } else if(total < count) {
+    warning("Request more than the actual total count, and use actual total count.")
+    tarsize <- total
+  }
 
   res <- list()
   res[[1]] <- transform_return(dat, "df")

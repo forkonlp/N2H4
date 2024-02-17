@@ -23,3 +23,4 @@ Get Max Page Number
   getMaxPageNum("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
   }
 }
+\keyword{internal}

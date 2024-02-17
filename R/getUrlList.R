@@ -8,6 +8,7 @@
 #' @export
 #' @importFrom rvest html_nodes html_attr html_text
 #' @importFrom httr2 request req_user_agent req_method req_perform resp_body_html
+#' @keywords internal
 #' @examples
 #'  \dontrun{
 #'   getUrlList("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")

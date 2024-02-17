@@ -17,5 +17,4 @@
 
 0 errors ✔ | 0 warnings ✔ | 2 notes ✖
 
-* I all the time honest. leak of English. cran policy must translate other langauge.
- English is not only langauge in the earth. I remove cache function in package.
+

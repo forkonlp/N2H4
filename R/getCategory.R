@@ -81,29 +81,26 @@ getMainCategory <- function() {
 #'   }
 getSubCategory <- function(sid1 = 100) {
   httr2::request("http://news.naver.com") %>%
-    httr2::req_url_path("main/main.naver") %>%
-    httr2::req_url_query(mode = "LSD") %>%
-    httr2::req_url_query(mid = "shm") %>%
-    httr2::req_url_query(sid1 = sid1) %>%
+    httr2::req_url_path("section") %>%
+    httr2::req_url_path_append(sid1) %>%
     httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
     httr2::req_perform() %>%
     httr2::resp_body_html() -> hobj
 
   hobj %>%
-    rvest::html_nodes("div.snb ul.nav li a") %>%
+    rvest::html_nodes("a.ct_snb_nav_item_link") %>%
     rvest::html_text() %>%
     trimws() -> titles
 
-  links <- rvest::html_nodes(hobj, "div.snb ul.nav li a")
+  links <- rvest::html_nodes(hobj, "a.ct_snb_nav_item_link")
   links <- rvest::html_attr(links, "href")
   links <- paste0("http://news.naver.com", links)
 
   urls <-
     tibble::tibble(sub_cate_name = titles,
                    url = links)
-  urls <- urls[grep("sid2=", urls$url),]
-  sid2 <- sapply(strsplit(urls$url, "="), function(x) {
-    x[5]
+  sid2 <- sapply(strsplit(urls$url, "/"), function(x) {
+    x[7]
   })
   urls <-
     tibble::tibble(sub_cate_name = urls$sub_cate_name,

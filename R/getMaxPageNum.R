@@ -7,12 +7,15 @@
 #' @export
 #' @importFrom rvest html_node html_text
 #' @importFrom httr2 request req_url_query req_method req_perform resp_body_html
+#' @keywords internal
 #' @examples
 #' \dontrun{
 #'   getMaxPageNum("https://news.naver.com/main/list.naver?mode=LS2D&mid=shm&sid1=103&sid2=376")
 #'   }
 
 getMaxPageNum <- function(turl, max = 100) {
+  lifecycle::deprecate_soft("1.0.0", "when()", I("`if`"))
+
   httr2::request(turl) %>%
     httr2::req_url_query(page = max) %>%
     httr2::req_method("GET") %>%

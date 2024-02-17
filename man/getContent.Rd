@@ -7,7 +7,7 @@
 getContent(
   turl,
   col = c("url", "original_url", "section", "datetime", "edittime", "press", "title",
-    "body", "value")
+    "body")
 )
 }
 \arguments{
