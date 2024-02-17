@@ -1,5 +1,8 @@
 # N2H4 0.8.3
 
+* 페이지 구조가 변하여 getUrlList() 함수와 getMaxPageNum() 함수를 사용할 수 없어 제거하였습니다.
+* The page structure has changed, so the getUrlList() and getMaxPageNum() functions are no longer usable and have been removed.
+
 # N2H4 0.8.2
 
 * Add cran comment honest.
