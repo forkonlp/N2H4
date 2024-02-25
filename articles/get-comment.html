@@ -219,25 +219,25 @@
 <span><span class="co">#&gt;  $ shareCommentLink    : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ shareCommentUserName: chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;  $ visible             : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;  $ originalStatus      : int [1:10] 1 0 0 0 0 0 0 0 0 0</span></span>
-<span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ idNo                : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
 <span><span class="co">#&gt;  $ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ deleted             : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ expose              : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ expose              : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ serviceId           : chr [1:10] "news" "news" "news" "news" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId        : chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName      : chr [1:10] "jh****" "ha****" "li****" "ja****" ...</span></span>
+<span><span class="co">#&gt;  $ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ replyNotificationSet: chr [1:10] "OFF" "OFF" "OFF" "OFF" ...</span></span>
 <span><span class="co">#&gt;  $ blind               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
-<span><span class="co">#&gt;  $ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ exposeByCountry     : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ containText         : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ virtual             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ originalStatus      : int [1:10] 1 0 0 0 0 0 0 0 0 0</span></span>
 <span><span class="co">#&gt;  $ anonymous           : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -358,10 +358,10 @@
 <span><span class="co">#&gt;   .. .. ..$ shareCommentLink    : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ shareCommentUserName: chr [1:10] "jhjh****" "hanz****" "linu****" "jake****" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ visible             : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ idNo                : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ deleted             : logi [1:10] TRUE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ expose              : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ idNo                : chr [1:10] NA "1YLQY" "md6z" "8pFyW" ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ serviceId           : chr [1:10] "news" "news" "news" "news" ...</span></span>
@@ -371,8 +371,8 @@
 <span><span class="co">#&gt;   .. .. ..$ replyNotificationSet: chr [1:10] "OFF" "OFF" "OFF" "OFF" ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ blind               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;   .. .. ..$ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;   .. .. ..$ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ exposeByCountry     : logi [1:10] FALSE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ containText         : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;   .. .. ..$ virtual             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
@@ -417,7 +417,7 @@
 <span><span class="co">#&gt;   ..$ sort          : chr "NEW"</span></span>
 <span><span class="co">#&gt;   ..$ bestList      :List of 1</span></span>
 <span><span class="co">#&gt;   .. ..$ : list()</span></span>
-<span><span class="co">#&gt;  $ date   : chr "2024-02-25T14:07:29+0000"</span></span>
+<span><span class="co">#&gt;  $ date   : chr "2024-02-25T16:12:06+0000"</span></span>
 <span><span class="co">#&gt;  - attr(*, "row.names")= int 1</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -570,18 +570,18 @@
 <span><span class="co">#&gt;  $ idNo                : chr [1:10] "aPD2N" "aPD2N" "aPD2N" "aPD2N" ...</span></span>
 <span><span class="co">#&gt;  $ manager             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ deleted             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ expose              : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ blindReport         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ expose              : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ serviceId           : chr [1:10] "news" "news" "news" "news" ...</span></span>
+<span><span class="co">#&gt;  $ chattingBridge      : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserId        : chr [1:10] "rn65****" "rn65****" "rn65****" "rn65****" ...</span></span>
 <span><span class="co">#&gt;  $ maskedUserName      : chr [1:10] "사천****" "사천****" "사천****" "사천****" ...</span></span>
 <span><span class="co">#&gt;  $ userBlocked         : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ replyNotificationSet: chr [1:10] "OFF" "OFF" "OFF" "OFF" ...</span></span>
 <span><span class="co">#&gt;  $ blind               : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
 <span><span class="co">#&gt;  $ secret              : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
-<span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ validateBanWords    : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
+<span><span class="co">#&gt;  $ profileUserId       : logi [1:10] NA NA NA NA NA NA ...</span></span>
 <span><span class="co">#&gt;  $ exposeByCountry     : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ containText         : logi [1:10] TRUE TRUE TRUE TRUE TRUE TRUE ...</span></span>
 <span><span class="co">#&gt;  $ virtual             : logi [1:10] FALSE FALSE FALSE FALSE FALSE FALSE ...</span></span>
