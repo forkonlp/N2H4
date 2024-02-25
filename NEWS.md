@@ -1,5 +1,8 @@
 # N2H4 0.8.4
 
+* getMainCategory() 함수를 수정했습니다.
+* Fix getMainCategory() function.
+
 # N2H4 0.8.3
 
 * 페이지 구조가 변하여 getUrlList() 함수와 getMaxPageNum() 함수를 사용할 수 없어 제거하였습니다.
