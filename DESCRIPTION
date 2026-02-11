@@ -19,7 +19,8 @@ Encoding: UTF-8
 Suggests: 
     testthat,
     devtools,
-    usethis
+    usethis,
+    xml2
 Imports: 
     rvest,
     jsonlite,
