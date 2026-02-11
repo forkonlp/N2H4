@@ -1,4 +1,6 @@
 title: N2H4
+lang: ko
+
 url: https://forkonlp.github.io/N2H4
 template:
   package: preferably
@@ -8,17 +10,6 @@ template:
   params:
     toggle: manual
     ganalytics: UA-47822682-17
-navbar:
-  components:
-    articles:
-      text: 한글문서모음
-      menu:
-      - text: 리드미
-        href: articles/readmekr.html
-      - text: 기사 가져오기
-        href: articles/get-content.html
-      - text: 댓글 가져오기
-        href: articles/get-comment.html
 
 reference:
 - title: Content
@@ -31,4 +22,3 @@ reference:
 - title: Comment
   contents:
   - contains("Comment")
-
