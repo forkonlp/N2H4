@@ -7,14 +7,14 @@
 \usage{
 getContent(
   turl,
-  col = c("url", "original_url", "section", "datetime", "edittime", "press", "title",
-    "body")
+  col = c("url", "original_url", "section", "datetime", "edittime", "press", "reporter",
+    "title", "body")
 )
 
 news_content(
   turl,
-  col = c("url", "original_url", "section", "datetime", "edittime", "press", "title",
-    "body")
+  col = c("url", "original_url", "section", "datetime", "edittime", "press", "reporter",
+    "title", "body")
 )
 }
 \arguments{

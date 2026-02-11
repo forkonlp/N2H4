@@ -1,3 +1,9 @@
+# N2H4 (development)
+
+* Add `reporter` column support in `getContent()` / `news_content()`.
+* Add `N2H4_CACHE` environment variable to control category cache usage.
+* Add legacy installation article and migrate selected wiki guides into pkgdown articles.
+
 # N2H4 0.8.4
 
 * getMainCategory() 함수를 수정했습니다.

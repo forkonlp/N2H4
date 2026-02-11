@@ -15,3 +15,8 @@ news_category_get(fresh = FALSE)
 \description{
 News Category
 }
+\details{
+Use `N2H4_CACHE` to control cached data usage when `fresh = FALSE`.
+  truthy values: `1`, `true`, `yes`, `on`; falsy values: `0`, `false`,
+  `no`, `off`.
+}

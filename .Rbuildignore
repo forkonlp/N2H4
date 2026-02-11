@@ -1,4 +1,5 @@
 ^renv$
+^\\.git$
 ^renv\.lock$
 ^.*\.Rproj$
 ^\.Rproj\.user$
