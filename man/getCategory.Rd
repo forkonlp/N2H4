@@ -2,13 +2,21 @@
 % Please edit documentation in R/getCategory.R
 \name{getCategory}
 \alias{getCategory}
+\alias{news_category_get}
 \title{News Category}
 \usage{
 getCategory(fresh = FALSE)
+
+news_category_get(fresh = FALSE)
 }
 \arguments{
 \item{fresh}{get data from online. Default is FALSE using cached built-in data.}
 }
 \description{
 News Category
+}
+\details{
+Use `N2H4_CACHE` to control cached data usage when `fresh = FALSE`.
+  truthy values: `1`, `true`, `yes`, `on`; falsy values: `0`, `false`,
+  `no`, `off`.
 }

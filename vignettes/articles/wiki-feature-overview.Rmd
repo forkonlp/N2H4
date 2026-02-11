@@ -1,0 +1,57 @@
+---
+title: "위키 이관: 기능 설명"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+
+```{r setup}
+library(N2H4)
+```
+
+이 문서는 기존 wiki의 "기능 설명" 페이지를 pkgdown article로 옮긴 버전입니다.
+
+## 핵심 함수
+
+- 기사 본문: `news_content()` (`getContent()`는 호환 래퍼)
+- 댓글: `news_comment()` (`getComment()`는 호환 래퍼)
+- 댓글 히스토리: `news_comment_history()` (`getCommentHistory()`는 호환 래퍼)
+- 카테고리 목록: `news_category_get()` (`getCategory()`는 호환 래퍼)
+- 리스트 페이지 URL 추출: `news_urls_from_list()` (`getUrlList()`는 호환 래퍼)
+- 최대 페이지 탐색: `news_max_page_num()` (`getMaxPageNum()`는 호환 래퍼)
+
+## 기사 수집 예시
+
+```{r}
+dat <- getContent("https://n.news.naver.com/article/374/0000300375")
+names(dat)
+```
+
+`getContent()` 결과 기본 컬럼은 아래를 포함합니다.
+
+- `url`
+- `original_url`
+- `section`
+- `datetime`
+- `edittime`
+- `press`
+- `reporter`
+- `title`
+- `body`
+
+## 댓글 수집 예시
+
+```{r}
+dat <- getComment("https://n.news.naver.com/article/374/0000300375")
+head(dat$contents, 3)
+```
+
+## 비고
+
+- 기존 wiki에서 사용하던 일부 함수(`getUrlListByCategory`, `setUrls` 등)는 현재 버전에서 제거되었거나 대체되었습니다.
+- 레거시 함수는 유지되지만 점진적으로 `news_` 계열 함수 사용을 권장합니다.

@@ -1,0 +1,68 @@
+---
+title: "위키 이관: 카테고리 뉴스 수집"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+```
+
+```{r setup}
+library(N2H4)
+```
+
+이 문서는 기존 wiki의 "카테고리 리스트내 뉴스 수집" 예시를 현재 API에 맞게 정리한 버전입니다.
+
+## 1) 카테고리 확인
+
+```{r}
+main_cate <- getMainCategory()
+main_cate
+```
+
+정치(`sid1 = "100"`)의 서브 카테고리를 가져옵니다.
+
+```{r}
+sub_cate <- getSubCategory(100)
+sub_cate
+```
+
+## 2) 뉴스 리스트 페이지 URL 구성
+
+```{r}
+sid1 <- "100"
+sid2 <- sub_cate$sid2[[1]]
+date <- format(Sys.Date() - 1, "%Y%m%d")
+
+list_url <- paste0(
+  "https://news.naver.com/main/list.naver?mode=LS2D&mid=shm",
+  "&sid1=", sid1,
+  "&sid2=", sid2,
+  "&date=", date
+)
+
+list_url
+```
+
+## 3) 페이지에서 기사 URL 추출
+
+```{r}
+url_list <- getUrlList(list_url)
+head(url_list, 5)
+```
+
+## 4) 기사 본문 수집
+
+```{r}
+first_link <- url_list$links[[1]]
+content <- getContent(first_link)
+content[, c("title", "press", "reporter", "datetime")]
+```
+
+## 주의사항
+
+- 기사/댓글 수집은 대상 서비스 구조 변경에 민감하므로 예외 처리를 함께 두는 것을 권장합니다.
+- 대량 수집 시 요청 간격을 두고 서버 부하를 최소화해야 합니다.

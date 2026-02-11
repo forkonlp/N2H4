@@ -22,6 +22,28 @@ getContent <-
              "datetime",
              "edittime",
              "press",
+             "reporter",
+             "title",
+             "body"
+           )) {
+    warn_legacy("getContent()", "news_content()")
+    news_content(turl, col = col)
+  }
+
+#' @rdname getContent
+#' @export
+#' @importFrom httr2 request req_user_agent req_method req_perform resp_body_html
+#' @importFrom rvest html_nodes html_text html_attr
+news_content <-
+  function(turl,
+           col = c(
+             "url",
+             "original_url",
+             "section",
+             "datetime",
+             "edittime",
+             "press",
+             "reporter",
              "title",
              "body"
            )) {
@@ -36,22 +58,23 @@ getContent <-
     if (
       identical(
         grep("^https?://n.news.naver.com", urlcheck), integer(0)
-        )
-      ) {
+      )
+    ) {
       original_url <- "page is not news section."
       title <- "page is not news section."
       datetime <- "page is not news section."
       edittime <- "page is not news section."
       press <- "page is not news section."
+      reporter <- "page is not news section."
       body <- "page is not news section."
       section <- "page is not news section."
-
     } else {
       original_url <- getOriginalUrl(html_obj)
       title <- getContentTitle(html_obj)
       datetime <- getContentDatetime(html_obj)
       edittime <- getContentEditDatetime(html_obj)
       press <- getContentPress(html_obj)
+      reporter <- news_content_reporter(html_obj)
       body <- getContentBody(html_obj)
       section <- getSection(turl)
     }
@@ -65,6 +88,7 @@ getContent <-
       datetime = datetime,
       edittime = edittime,
       press = press,
+      reporter = reporter,
       title = title,
       body = body,
       section = section
@@ -119,6 +143,22 @@ getContentPress <-
       press <- rvest::html_attr(node, press_attr)
     }
     return(press[1])
+  }
+
+news_content_reporter <-
+  function(html_obj,
+           reporter_node_info = c(
+             ".media_end_head_journalist_name",
+             ".byline_s"
+           )) {
+    node <- rvest::html_nodes(html_obj, paste(reporter_node_info, collapse = ", "))
+    reporter <- trimws(rvest::html_text(node))
+    reporter <- reporter[nchar(reporter) > 0]
+
+    if (length(reporter) == 0) {
+      return(NA_character_)
+    }
+    return(reporter[1])
   }
 
 getContentBody <-

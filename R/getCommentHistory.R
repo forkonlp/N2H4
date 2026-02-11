@@ -20,6 +20,16 @@ getCommentHistory <- function(turl,
                               commentNo,
                               count = 10,
                               type = c("df", "list")) {
+  warn_legacy("getCommentHistory()", "news_comment_history()")
+  news_comment_history(turl, commentNo, count, type)
+}
+
+#' @rdname getCommentHistory
+#' @export
+news_comment_history <- function(turl,
+                                 commentNo,
+                                 count = 10,
+                                 type = c("df", "list")) {
   get_comment_history(turl, commentNo, count, type)
 }
 
@@ -110,5 +120,4 @@ get_comment_history <- function(turl,
 
   return(do.call(rbind, res))
 }
-
 

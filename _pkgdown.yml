@@ -10,6 +10,25 @@ template:
   params:
     toggle: manual
     ganalytics: UA-47822682-17
+navbar:
+  components:
+    articles:
+      text: 한글문서모음
+      menu:
+      - text: 리드미
+        href: articles/readmekr.html
+      - text: 기사 가져오기
+        href: articles/get-content.html
+      - text: 댓글 가져오기
+        href: articles/get-comment.html
+      - text: 레거시 버전 설치
+        href: articles/install-legacy.html
+      - text: 위키 이관 - 기능 설명
+        href: articles/wiki-feature-overview.html
+      - text: 위키 이관 - 카테고리 수집
+        href: articles/wiki-category-collection.html
+      - text: 위키 이관 - 텍스트 수집
+        href: articles/wiki-text-collection.html
 
 reference:
 - title: Content

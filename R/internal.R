@@ -5,6 +5,30 @@ get_oid <- function(turl) {
   paste0(tem[3], ",", tem[4])
 }
 
+warn_legacy <- function(old, new) {
+  lifecycle::deprecate_warn(
+    when = "0.9.0",
+    what = old,
+    with = new,
+    id = paste0("n2h4-", old)
+  )
+}
+
+news_cache_enabled <- function(default = TRUE) {
+  unset <- if (isTRUE(default)) "true" else "false"
+  value <- tolower(trimws(Sys.getenv("N2H4_CACHE", unset = unset)))
+
+  if (value %in% c("1", "true", "yes", "on")) {
+    return(TRUE)
+  }
+  if (value %in% c("0", "false", "no", "off")) {
+    return(FALSE)
+  }
+
+  warning("Invalid N2H4_CACHE value. Falling back to default.")
+  isTRUE(default)
+}
+
 rm_callback <- function(text) {
   text <- gsub("_callback", "", text)
   text <- gsub("\\(", "[", text)

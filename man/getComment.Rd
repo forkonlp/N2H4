@@ -2,9 +2,12 @@
 % Please edit documentation in R/getComment.R
 \name{getComment}
 \alias{getComment}
+\alias{news_comment}
 \title{Get Comment}
 \usage{
 getComment(turl, count = 10, type = c("df", "list"))
+
+news_comment(turl, count = 10, type = c("df", "list"))
 }
 \arguments{
 \item{turl}{like <https://n.news.naver.com/mnews/article/023/0003712918>.}

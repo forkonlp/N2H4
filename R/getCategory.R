@@ -1,9 +1,21 @@
 #' News Category
 #'
 #' @param fresh get data from online. Default is FALSE using cached built-in data.
+#' @details Use `N2H4_CACHE` to control cached data usage when `fresh = FALSE`.
+#'   truthy values: `1`, `true`, `yes`, `on`; falsy values: `0`, `false`,
+#'   `no`, `off`.
 #' @export
 getCategory <- function(fresh = FALSE) {
-  if (!fresh) {
+  warn_legacy("getCategory()", "news_category_get()")
+  news_category_get(fresh = fresh)
+}
+
+#' @rdname getCategory
+#' @export
+news_category_get <- function(fresh = FALSE) {
+  use_cache <- !isTRUE(fresh) && news_cache_enabled(default = TRUE)
+
+  if (use_cache) {
     return(news_category)
   }
   mcate <- getMainCategory()

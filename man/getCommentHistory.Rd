@@ -2,9 +2,12 @@
 % Please edit documentation in R/getCommentHistory.R
 \name{getCommentHistory}
 \alias{getCommentHistory}
+\alias{news_comment_history}
 \title{Get Comment History}
 \usage{
 getCommentHistory(turl, commentNo, count = 10, type = c("df", "list"))
+
+news_comment_history(turl, commentNo, count = 10, type = c("df", "list"))
 }
 \arguments{
 \item{turl}{character. News article on 'Naver' such as

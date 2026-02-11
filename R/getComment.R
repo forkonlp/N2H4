@@ -17,6 +17,15 @@
 getComment <- function(turl,
                        count = 10,
                        type = c("df", "list")) {
+  warn_legacy("getComment()", "news_comment()")
+  news_comment(turl, count, type)
+}
+
+#' @rdname getComment
+#' @export
+news_comment <- function(turl,
+                         count = 10,
+                         type = c("df", "list")) {
   get_comment(turl, count, type)
 }
 
@@ -109,4 +118,3 @@ get_comment <- function(turl,
 
   return(do.call(rbind, res))
 }
-

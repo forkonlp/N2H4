@@ -38,6 +38,30 @@ install.packages("N2H4")
 install.packages("N2H4", repos = "https://forkonlp.r-universe.dev")
 ```
 
+## Legacy installation
+
+```r
+install.packages("remotes")
+remotes::install_version("N2H4", version = "0.8.4", repos = "https://cran.r-project.org")
+```
+
+More details: <https://forkonlp.github.io/N2H4/articles/install-legacy.html>
+
+## Guides
+
+- Korean README: <https://forkonlp.github.io/N2H4/articles/readmekr.html>
+- Get content: <https://forkonlp.github.io/N2H4/articles/get-content.html>
+- Get comments: <https://forkonlp.github.io/N2H4/articles/get-comment.html>
+- Wiki migration - feature overview: <https://forkonlp.github.io/N2H4/articles/wiki-feature-overview.html>
+- Wiki migration - category collection: <https://forkonlp.github.io/N2H4/articles/wiki-category-collection.html>
+- Wiki migration - text collection: <https://forkonlp.github.io/N2H4/articles/wiki-text-collection.html>
+
+## Environment variables
+
+- `N2H4_CACHE`: controls whether cached category data is used in `getCategory()` / `news_category_get()` when `fresh = FALSE`.
+  - truthy: `1`, `true`, `yes`, `on`
+  - falsy: `0`, `false`, `no`, `off`
+
 ## Contributors
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
