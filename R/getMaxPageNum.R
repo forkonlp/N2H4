@@ -14,6 +14,13 @@
 #'   }
 
 getMaxPageNum <- function(turl, max = 100) {
+  warn_legacy("getMaxPageNum()", "news_max_page_num()")
+  news_max_page_num(turl, max = max)
+}
+
+#' @rdname getMaxPageNum
+#' @export
+news_max_page_num <- function(turl, max = 100) {
   lifecycle::deprecate_soft("1.0.0", "when()", I("`if`"))
 
   httr2::request(turl) %>%

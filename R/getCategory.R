@@ -3,6 +3,13 @@
 #' @param fresh get data from online. Default is FALSE using cached built-in data.
 #' @export
 getCategory <- function(fresh = FALSE) {
+  warn_legacy("getCategory()", "news_category_get()")
+  news_category_get(fresh = fresh)
+}
+
+#' @rdname getCategory
+#' @export
+news_category_get <- function(fresh = FALSE) {
   if (!fresh) {
     return(news_category)
   }

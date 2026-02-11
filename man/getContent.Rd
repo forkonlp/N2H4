@@ -2,9 +2,16 @@
 % Please edit documentation in R/getContent.R
 \name{getContent}
 \alias{getContent}
+\alias{news_content}
 \title{Get Content}
 \usage{
 getContent(
+  turl,
+  col = c("url", "original_url", "section", "datetime", "edittime", "press", "title",
+    "body")
+)
+
+news_content(
   turl,
   col = c("url", "original_url", "section", "datetime", "edittime", "press", "title",
     "body")

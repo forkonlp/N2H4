@@ -25,6 +25,26 @@ getContent <-
              "title",
              "body"
            )) {
+    warn_legacy("getContent()", "news_content()")
+    news_content(turl, col = col)
+  }
+
+#' @rdname getContent
+#' @export
+#' @importFrom httr2 request req_user_agent req_method req_perform resp_body_html
+#' @importFrom rvest html_nodes html_text html_attr
+news_content <-
+  function(turl,
+           col = c(
+             "url",
+             "original_url",
+             "section",
+             "datetime",
+             "edittime",
+             "press",
+             "title",
+             "body"
+           )) {
     httr2::request(turl) %>%
       httr2::req_user_agent("N2H4 by chanyub.park <mrchypark@gmail.com>") %>%
       httr2::req_method("GET") %>%
@@ -36,8 +56,8 @@ getContent <-
     if (
       identical(
         grep("^https?://n.news.naver.com", urlcheck), integer(0)
-        )
-      ) {
+      )
+    ) {
       original_url <- "page is not news section."
       title <- "page is not news section."
       datetime <- "page is not news section."
@@ -45,7 +65,6 @@ getContent <-
       press <- "page is not news section."
       body <- "page is not news section."
       section <- "page is not news section."
-
     } else {
       original_url <- getOriginalUrl(html_obj)
       title <- getContentTitle(html_obj)

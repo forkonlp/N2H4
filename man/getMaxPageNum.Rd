@@ -2,9 +2,12 @@
 % Please edit documentation in R/getMaxPageNum.R
 \name{getMaxPageNum}
 \alias{getMaxPageNum}
+\alias{news_max_page_num}
 \title{Get Max Page Number}
 \usage{
 getMaxPageNum(turl, max = 100)
+
+news_max_page_num(turl, max = 100)
 }
 \arguments{
 \item{turl}{is target url include sid1, sid2, date like below.

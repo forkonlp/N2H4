@@ -5,7 +5,7 @@ testthat::test_that("getContent warns and delegates to news_content", {
   )
 
   testthat::expect_warning(
-    out <- getContent("https://example.com"),
+    out <- N2H4::getContent("https://example.com"),
     "deprecated"
   )
   testthat::expect_equal(out$url, "u")
@@ -21,9 +21,9 @@ testthat::test_that("legacy wrappers warn and delegate", {
     .package = "N2H4"
   )
 
-  testthat::expect_warning(getComment("https://example.com"), "deprecated")
-  testthat::expect_warning(getCommentHistory("https://example.com", 1), "deprecated")
-  testthat::expect_warning(getUrlList("https://example.com"), "deprecated")
-  testthat::expect_warning(getMaxPageNum("https://example.com"), "deprecated")
-  testthat::expect_warning(getCategory(), "deprecated")
+  testthat::expect_warning(N2H4::getComment("https://example.com"), "deprecated")
+  testthat::expect_warning(N2H4::getCommentHistory("https://example.com", 1), "deprecated")
+  testthat::expect_warning(N2H4::getUrlList("https://example.com"), "deprecated")
+  testthat::expect_warning(N2H4::getMaxPageNum("https://example.com"), "deprecated")
+  testthat::expect_warning(N2H4::getCategory(), "deprecated")
 })

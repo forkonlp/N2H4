@@ -5,6 +5,15 @@ get_oid <- function(turl) {
   paste0(tem[3], ",", tem[4])
 }
 
+warn_legacy <- function(old, new) {
+  lifecycle::deprecate_warn(
+    when = "0.9.0",
+    what = old,
+    with = new,
+    id = paste0("n2h4-", old)
+  )
+}
+
 rm_callback <- function(text) {
   text <- gsub("_callback", "", text)
   text <- gsub("\\(", "[", text)

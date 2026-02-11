@@ -2,9 +2,12 @@
 % Please edit documentation in R/getUrlList.R
 \name{getUrlList}
 \alias{getUrlList}
+\alias{news_urls_from_list}
 \title{Get Url List By Category}
 \usage{
 getUrlList(turl, col = c("titles", "links"))
+
+news_urls_from_list(turl, col = c("titles", "links"))
 }
 \arguments{
 \item{turl}{is target url naver news.}
